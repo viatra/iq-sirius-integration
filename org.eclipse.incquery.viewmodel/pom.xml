@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>org.eclipse.incquery.parent</artifactId>
+		<groupId>org.eclipse.incquery</groupId>
+		<version>1.0.0-SNAPSHOT</version>
+		<relativePath>../../releng/org.eclipse.incquery.parent/pom.xml</relativePath>
+	</parent>
+	<artifactId>org.eclipse.incquery.viewmodel</artifactId>
+	<packaging>eclipse-plugin</packaging>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-clean-plugin</artifactId>
+				<version>2.5</version>
+				<executions>
+					<execution>
+						<phase>clean</phase>
+						<goals>
+							<goal>clean</goal>
+						</goals>
+						<configuration>
+							<filesets>
+								<fileset><!-- EMF generated code -->
+									<directory>emf-gen</directory>
+									<includes>
+										<include>**/*</include>
+									</includes>
+								</fileset>
+								<fileset><!--  IncQuery generated code -->
+									<directory>src-gen</directory>
+									<includes>
+										<include>**/*</include>
+									</includes>
+								</fileset>
+							</filesets>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.tycho.extras</groupId>
+				<artifactId>tycho-eclipserun-plugin</artifactId>
+				<version>${tycho.version}</version>
+				<configuration>
+					<appArgLine>-data target/workspace -application org.eclipse.emf.codegen.ecore.Generator -projects ${basedir} -model ${basedir}/model/traceability.genmodel emf-gen</appArgLine>
+					<dependencies>
+						<dependency>
+							<artifactId>org.eclipse.emf.codegen.ecore</artifactId>
+							<type>eclipse-plugin</type>
+						</dependency>
+					</dependencies>
+					<repositories>
+						<repository>
+							<id>indigo</id>
+							<layout>p2</layout>
+							<url>http://download.eclipse.org/releases/indigo</url>
+						</repository>
+					</repositories>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>eclipse-run</goal>
+						</goals>
+						<phase>generate-sources</phase>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.incquery</groupId>
+				<artifactId>incquery-maven-plugin</artifactId>
+				<version>${project.version}</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<outputDirectory>src-gen</outputDirectory>
+					<metamodels>
+						<metamodel>
+							<packageClass>org.eclipse.incquery.viewmodels.traceability.TraceabilityPackage</packageClass>
+							<genmodelUri>model/traceability.genmodel</genmodelUri>
+						</metamodel>
+					</metamodels>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
