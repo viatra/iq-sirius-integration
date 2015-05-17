@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" name="onemany1" version="8.1.0">
+  <ownedViewpoints name="vp_social_network_one_many_1" label="Social Network One-Many 1" modelFileExtension="socialnetwork_base">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="dd_social_network_one_many_1" label="Social Network One-Many 1 Diagram" domainClass="socialnetwork_base.SocialNetwork" rootExpression="incquery:init[packageNS=http://hu.bme.mit.inf.models/socialnetwork_one_many_1]">
+      <metamodel href="http://hu.bme.mit.inf.models/socialnetwork_base#/"/>
+      <metamodel href="http://hu.bme.mit.inf.models/socialnetwork_one_many_1#/"/>
+      <metamodel href="http://www.eclipse.org/sirius/diagram/1.1.0#/"/>
+      <defaultLayer name="layer_default" label="Default">
+        <containerMappings name="cn_person_with_house_and_car" label="PersonWithHouseAndCar" semanticCandidatesExpression="incquery:hu.bme.mit.inf.dipterv1.incquery.patterns.personWithHouseAndCar" domainClass="socialnetwork_one_many_1.Person">
+          <subNodeMappings name="sn_house" label="House" semanticCandidatesExpression="incquery:hu.bme.mit.inf.dipterv1.incquery.patterns.personWithHouseAndCar[match=self]" domainClass="socialnetwork_one_many_1.House">
+            <style xsi:type="style:BundledImageDescription" showIcon="false" labelExpression="feature:address" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="sn_car" label="Car" semanticCandidatesExpression="incquery:hu.bme.mit.inf.dipterv1.incquery.patterns.personWithHouseAndCar[match=self]" domainClass="socialnetwork_one_many_1.Car">
+            <style xsi:type="style:BundledImageDescription" showIcon="false" labelExpression="feature:licensePlateNumber" resizeKind="NSEW" shape="triangle">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" backgroundStyle="GradientTopToBottom">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style>
+        </containerMappings>
+      </defaultLayer>
+    </ownedRepresentations>
+  </ownedViewpoints>
+</description:Group>

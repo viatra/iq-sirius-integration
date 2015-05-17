@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" name="socialnetwork_oneone" version="8.1.0">
+  <ownedViewpoints name="vp_social_network_one_one" label="Social Network One-One" modelFileExtension="socialnetwork_base">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="dd_socialnetwork_one_one" label="Social Network One-One Diagram" domainClass="socialnetwork_base.SocialNetwork" rootExpression="incquery:init[http://hu.bme.mit.inf.models/socialnetwork_one_one]">
+      <metamodel href="http://hu.bme.mit.inf.models/socialnetwork_base#/"/>
+      <metamodel href="http://hu.bme.mit.inf.models/socialnetwork_one_one#/"/>
+      <metamodel href="http://www.eclipse.org/sirius/diagram/1.1.0#/"/>
+      <defaultLayer name="layer_dafault" label="Default">
+        <nodeMappings name="node_child" label="Child" semanticCandidatesExpression="incquery:hu.bme.mit.inf.dipterv1.incquery.patterns.child" domainClass="socialnetwork_one_one.Child">
+          <style xsi:type="style:BundledImageDescription" showIcon="false" labelExpression="[self.name /]" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="node_adult" label="Adult" semanticCandidatesExpression="incquery:hu.bme.mit.inf.dipterv1.incquery.patterns.adult" domainClass="socialnetwork_one_one.Adult">
+          <style xsi:type="style:BundledImageDescription" showIcon="false" labelExpression="[self.name /]" resizeKind="NSEW" shape="triangle">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+      </defaultLayer>
+    </ownedRepresentations>
+  </ownedViewpoints>
+</description:Group>

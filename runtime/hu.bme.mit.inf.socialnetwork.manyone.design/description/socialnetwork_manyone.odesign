@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" name="manyone" version="8.1.0">
+  <ownedViewpoints name="vp_social_network_many_one" label="Social Network Many-One" modelFileExtension="socialnetwork_base">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="dd_socialnetwork_many_one" label="Social Network Many-One Diagram" domainClass="socialnetwork_base.SocialNetwork" rootExpression="incquery:init[http://hu.bme.mit.inf.models/socialnetwork_many_one]">
+      <metamodel href="http://hu.bme.mit.inf.models/socialnetwork_base#/"/>
+      <metamodel href="http://hu.bme.mit.inf.models/socialnetwork_many_one#/"/>
+      <defaultLayer name="layer_default" label="Default">
+        <nodeMappings name="node_family" label="Family" semanticCandidatesExpression="incquery:hu.bme.mit.inf.dipterv1.incquery.patterns.family" domainClass="socialnetwork_many_one.Family">
+          <style xsi:type="style:WorkspaceImageDescription" showIcon="false" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/hu.bme.mit.inf.socialnetwork.manyone.design/img/family.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <edgeMappings name="rbe_friend" label="Friend" sourceMapping="//@ownedViewpoints[name='vp_social_network_many_one']/@ownedRepresentations[name='dd_socialnetwork_many_one']/@defaultLayer/@nodeMappings[name='node_family']" targetMapping="//@ownedViewpoints[name='vp_social_network_many_one']/@ownedRepresentations[name='dd_socialnetwork_many_one']/@defaultLayer/@nodeMappings[name='node_family']" targetFinderExpression="incquery:hu.bme.mit.inf.dipterv1.incquery.patterns.friend[ref=friends]">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+      </defaultLayer>
+    </ownedRepresentations>
+  </ownedViewpoints>
+</description:Group>

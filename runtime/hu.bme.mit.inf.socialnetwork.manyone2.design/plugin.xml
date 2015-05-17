@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+  <extension point="org.eclipse.sirius.componentization">
+    <component class="hu.bme.mit.inf.socialnetwork.manyone2.design.Activator"
+               id="hu.bme.mit.inf.socialnetwork.manyone.design"
+	       name="manyone">
+    </component>
+  </extension>
+</plugin>
