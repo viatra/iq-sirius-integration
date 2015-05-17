@@ -1,0 +1,21 @@
+package hu.bme.mit.inf.dipterv1.incquery.patterns
+
+import "http://hu.bme.mit.inf.models/socialnetwork_base"
+
+
+pattern personWithHouseAndCar(person : Person) {
+	SocialNetwork.members(_, person);
+	
+	Person.address(person, address);
+	Person.licensePlateNumber(person, lpn);
+	
+	false == eval (address.isEmpty());
+	false == eval (lpn.isEmpty());
+}
+
+pattern test() {
+	SocialNetwork.members(_, person);
+	Person.firstName(person, fn);
+	
+	fn == "XXXYYYXXX";
+}

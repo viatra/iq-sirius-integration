@@ -1,0 +1,48 @@
+package hu.bme.mit.inf.dipterv1.incquery.patterns
+
+import "http://www.eclipse.org/emf/2002/Ecore"
+import "http://hu.bme.mit.inf.models/socialnetwork_base"
+
+pattern family(father : Man, mother : Woman) {
+	SocialNetwork.members(sn, father);
+	SocialNetwork.members(sn, mother);
+	
+	Man.children(father, child);
+	Woman.children(mother, child);
+	
+	commonChildren == count find commonChild(father, mother, _);
+	
+	fatherParents == count find parent(father, _);
+	
+	motherParents == count find parent(mother, _);
+	
+	check(commonChildren > 0);
+	
+	check(fatherParents == 0);
+	
+	check(motherParents == 0);
+}
+
+pattern friend(f1 : Man, m1 : Woman, f2 : Man, m2 : Woman) {
+	find family(f1, m1);
+	find family(f2, m2);
+	
+	find descendant+(f1, desc1);
+	find descendant+(f2, desc2);
+	
+	Person.friends(desc1, desc2);
+	Person.friends(desc2, desc1);
+}
+
+private pattern descendant(person : Person, descendant : Person) {
+	Person.children(person, descendant);
+}
+
+private pattern commonChild(father : Man, mother : Woman, child : Person) {
+	Man.children(father, child);
+	Woman.children(mother, child);
+}
+
+private pattern parent(person : Person, parent : Person) {
+	Person.children(parent, person);
+}

@@ -1,0 +1,37 @@
+/*******************************************************************************
+ * Copyright (c) 2010-2015, Csaba Debreceni, Istvan Rath and Daniel Varro
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *   Csaba Debreceni - initial API and implementation
+ *******************************************************************************/
+
+package hu.bme.mit.inf.sirius.interpreter.incquery.traceability.patterns
+
+import "http://www.eclipse.org/emf/2002/Ecore"
+import "http://org.eclipse.incquery/viewmodel/traceability/1.0"
+
+
+
+// Get targets by trace id
+pattern getTargetByID(id, target) {
+	Trace.id(trace, id);
+	Trace.targets(trace, target);
+}
+
+// Get tarce by ID
+pattern getTraceByID(id, trace) {
+	Trace.id(trace, id);
+}
+
+// Get source elements by id and target
+pattern getSource(id, target, source) {
+	Trace.id(trace, id);
+	
+	Trace.targets(trace, target);
+	
+	Trace.params(trace, source);
+}

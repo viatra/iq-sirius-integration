@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/hu.bme.mit.inf.dipterv1.models/src" modelPluginID="hu.bme.mit.inf.dipterv1.models"
+    modelName="Socialnetwork_one_many" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>socialnetwork_one_many_1.ecore</foreignModel>
+  <genPackages prefix="Socialnetwork_one_many_1" disposableProviderFactory="true"
+      ecorePackage="socialnetwork_one_many_1.ecore#/">
+    <genClasses ecoreClass="socialnetwork_one_many_1.ecore#//SocialNetwork">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference socialnetwork_one_many_1.ecore#//SocialNetwork/members"/>
+    </genClasses>
+    <genClasses ecoreClass="socialnetwork_one_many_1.ecore#//Person">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute socialnetwork_one_many_1.ecore#//Person/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference socialnetwork_one_many_1.ecore#//Person/house"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference socialnetwork_one_many_1.ecore#//Person/car"/>
+    </genClasses>
+    <genClasses ecoreClass="socialnetwork_one_many_1.ecore#//House">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute socialnetwork_one_many_1.ecore#//House/address"/>
+    </genClasses>
+    <genClasses ecoreClass="socialnetwork_one_many_1.ecore#//Car">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute socialnetwork_one_many_1.ecore#//Car/licensePlateNumber"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

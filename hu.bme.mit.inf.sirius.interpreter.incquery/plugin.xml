@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><?eclipse version="3.4"?><plugin>
+  <extension id="IncQueryInterpreterProvider" name="IncQuery Interpreter Provider" point="org.eclipse.sirius.common.expressionInterpreter">
+    <expressionInterpreterProvider interpreterProviderClass="hu.bme.mit.inf.sirius.interpreter.incquery.IncQueryInterpreterProvider"/>
+  </extension>
+  <extension id="IncQueryInterpreterProposalProvider" point="org.eclipse.sirius.common.proposalProvider">
+    <proposalProvider class="hu.bme.mit.inf.sirius.interpreter.incquery.IncQueryInterpreterProposalProvider" interpreter="hu.bme.mit.inf.sirius.interpreter.incquery.IncQueryInterpreterProvider"/>
+  </extension>
+  <extension point="org.eclipse.emf.ecore.protocol_parser">
+    <parser class="hu.bme.mit.inf.sirius.interpreter.incquery.inmemoryresource.InMemoryResourceFactoryImpl" protocolName="inmemoryresource"/>
+  </extension>
+  <extension id="hu.bme.mit.inf.sirius.interpreter.incquery.traceability.patterns.Helpers" point="org.eclipse.incquery.runtime.queryspecification">
+    <group group="org.eclipse.incquery.runtime.extensibility.SingletonExtensionFactory:hu.bme.mit.inf.sirius.interpreter.incquery.traceability.patterns.Helpers" id="hu.bme.mit.inf.sirius.interpreter.incquery.traceability.patterns.Helpers"/>
+  </extension>
+  <extension id="hu.bme.mit.inf.sirius.interpreter.incquery.traceability.patterns.Patterns" point="org.eclipse.incquery.runtime.queryspecification">
+    <group group="org.eclipse.incquery.runtime.extensibility.SingletonExtensionFactory:hu.bme.mit.inf.sirius.interpreter.incquery.traceability.patterns.Patterns" id="hu.bme.mit.inf.sirius.interpreter.incquery.traceability.patterns.Patterns"/>
+  </extension>
+</plugin>
