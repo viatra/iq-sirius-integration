@@ -33,3 +33,5 @@
 /.DescendantProcessor.java._trace
 /.SameFamiliesQuerySpecification.java._trace
 /.DifferentFamiliesQuerySpecification.java._trace
+/DifferentFamiliesQuerySpecification.java
+/FamilyMemberQuerySpecification.java

@@ -102,8 +102,8 @@ final class FamilyMemberQuerySpecification extends BaseGeneratedEMFQuerySpecific
       				
       		new ExportedParameter(body, var_fm, "fm")
       	));
-      	new TypeUnary(body, var_fm, getClassifierLiteral("http://hu.bme.mit.inf.models/socialnetwork_base", "Man"), "http://hu.bme.mit.inf.models/socialnetwork_base/Man");
       	new TypeUnary(body, var_w, getClassifierLiteral("http://hu.bme.mit.inf.models/socialnetwork_base", "Woman"), "http://hu.bme.mit.inf.models/socialnetwork_base/Woman");
+      	new TypeUnary(body, var_fm, getClassifierLiteral("http://hu.bme.mit.inf.models/socialnetwork_base", "Man"), "http://hu.bme.mit.inf.models/socialnetwork_base/Man");
       	bodies.add(body);
       }
       {
