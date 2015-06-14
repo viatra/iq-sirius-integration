@@ -1,27 +1,28 @@
 package hu.bme.mit.inf.sirius.interpreter.incquery.evm;
 
 import hu.bme.mit.inf.sirius.interpreter.incquery.IncQuerySiriusHelper;
+import hu.bme.mit.inf.sirius.interpreter.incquery.SiriusUtils;
 import hu.bme.mit.inf.sirius.interpreter.incquery.traceability.TraceabilityManager;
 
 import java.util.logging.Logger;
 
-import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EFactory;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
 import org.eclipse.incquery.runtime.api.IPatternMatch;
-import org.eclipse.sirius.business.api.dialect.command.RefreshRepresentationsCommand;
+import org.eclipse.incquery.runtime.evm.api.ExecutionSchema;
 import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.diagram.DDiagram;
 
 public abstract class SiriusMatchProcessor implements IMatchProcessor<IPatternMatch> {
 	
 	protected Logger logger;
+	
+	private ExecutionSchema executionSchema;
 	
 	protected Session session;
 
@@ -36,7 +37,9 @@ public abstract class SiriusMatchProcessor implements IMatchProcessor<IPatternMa
 	protected TraceabilityManager traceabilityManager;
 
 	
-	public SiriusMatchProcessor(IncQuerySiriusHelper helper) throws Exception {
+	public SiriusMatchProcessor(IncQuerySiriusHelper helper, ExecutionSchema executionSchema) throws Exception {
+		this.executionSchema = executionSchema;
+		
 		this.session = helper.getSession();
 		this.diagram = helper.getDiagram();
 		this.target = helper.getTarget();
@@ -44,18 +47,20 @@ public abstract class SiriusMatchProcessor implements IMatchProcessor<IPatternMa
 		this.targetModelFactory = helper.getTargetModelFactory();
 		this.traceabilityManager = helper.getTraceabilityManager();
 		
-		if (this.session == null
+		if (this.executionSchema == null
+				|| this.session == null
 				|| this.diagram == null
 				|| this.target == null
 				|| this.targetModelPackage == null
 				|| this.targetModelFactory == null
 				|| this.traceabilityManager == null) {
 			
-			throw new Exception("The session, diagram, target, targetModelPackage, targetModelFactory"
+			throw new Exception("The executionSchema parameter and session, diagram, target, targetModelPackage, targetModelFactory"
 					+ " and traceabilityManager attributes of the helper must be initialized before the call of SiriusEVM's constructor!");
 		}
 	}
 	
+	protected abstract void doProcess(IPatternMatch match);
 	
 	protected EClass getEClassByName(String name) {
 		if (name == null) {
@@ -76,11 +81,17 @@ public abstract class SiriusMatchProcessor implements IMatchProcessor<IPatternMa
 		}
 
 		return null;
-	}	
-	
-	protected void refreshDiagram() {
-		TransactionalEditingDomain domain = session.getTransactionalEditingDomain();
-		domain.getCommandStack().execute(new RefreshRepresentationsCommand(
-				domain,	new NullProgressMonitor(), diagram));
 	}
+
+	@Override
+	public void process(IPatternMatch match) {
+		doProcess(match);
+		
+		// If all the activations have been processed, we call refreshDiagram method
+		if (executionSchema.getConflictingActivations().isEmpty()) {
+			SiriusUtils.refreshDiagram(session, diagram);
+		}
+	}
+	
+	
 }

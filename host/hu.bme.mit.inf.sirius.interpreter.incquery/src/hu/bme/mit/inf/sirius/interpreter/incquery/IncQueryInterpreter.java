@@ -76,6 +76,7 @@ public class IncQueryInterpreter implements IInterpreter {
 	@Override
 	public boolean provides(String expression) {
 		if (expression.contains(IncQueryInterpreterConstants.PREFIX)) {
+			// TODO
 //			logger.info("provides::expression:" + expression);
 			
 			return true;
@@ -139,17 +140,13 @@ public class IncQueryInterpreter implements IInterpreter {
 		logger.info("evaluateEObject::context:" + context + "::expression:" + expression);
 		
 		if (expression == null) {
-			// TODO hibaüzenet?
-			
-			return null;
+			throw new EvaluationException("The rootExpression field must be filled (incquery:init[packageNS=foo])!");
 		}
 
 		try {
 			IncQueryExpression incQueryExpression = IncQueryExpression.parse(expression);
 			if (incQueryExpression == null) {
-				// TODO hibakezeles?
-				
-				return null;
+				throw new EvaluationException("The given rootExpression is not suitable. Please check it!");
 			}
 			
 			IncQuerySiriusHelperFactory.getHelper(getDiagramVariable())
@@ -195,9 +192,6 @@ public class IncQueryInterpreter implements IInterpreter {
 
 	@Override
 	public void setVariable(String name, Object value) {
-		// TODO
-//		logger.info("setVariable::name:" + name + "::value:" + value.toString());
-		
 		variables.put(name, value);
 	}
 

@@ -28,3 +28,8 @@
 /PersonWithHouseAndCarQuerySpecification.java
 /TestProcessor.java
 /TestQuerySpecification.java
+/.FamilyMemberQuerySpecification.java._trace
+/.FamilyMemberProcessor.java._trace
+/.DescendantProcessor.java._trace
+/.SameFamiliesQuerySpecification.java._trace
+/.DifferentFamiliesQuerySpecification.java._trace

@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.incquery.runtime.api.IPatternMatch;
+import org.eclipse.incquery.runtime.evm.api.ExecutionSchema;
 import org.eclipse.sirius.diagram.description.AbstractNodeMapping;
 
 public class NodeMatchDisappeared extends SiriusMatchProcessor {
@@ -20,9 +21,9 @@ public class NodeMatchDisappeared extends SiriusMatchProcessor {
 	private Map<String, List<AbstractNodeMapping>> nodeMappings;
 	
 
-	public NodeMatchDisappeared(IncQuerySiriusHelper helper,
+	public NodeMatchDisappeared(IncQuerySiriusHelper helper, ExecutionSchema executionSchema,
 			Map<String, List<AbstractNodeMapping>> nodeMappings) throws Exception {
-		super(helper);
+		super(helper, executionSchema);
 
 		if (nodeMappings == null) {
 			throw new IllegalArgumentException("The nodeMappings parameter can not be null!");
@@ -34,7 +35,7 @@ public class NodeMatchDisappeared extends SiriusMatchProcessor {
 	}
 
 	@Override
-	public void process(IPatternMatch match) {
+	public void doProcess(IPatternMatch match) {
 		logger.info("Match disappeared::" + match);
 
 		TransactionalEditingDomain domain = session.getTransactionalEditingDomain();
@@ -69,8 +70,6 @@ public class NodeMatchDisappeared extends SiriusMatchProcessor {
 				}
 			}
 		});
-
-		refreshDiagram();
 	}
 
 }

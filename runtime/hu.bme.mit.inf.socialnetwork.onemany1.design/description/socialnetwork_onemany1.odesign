@@ -8,17 +8,15 @@
       <defaultLayer name="layer_default" label="Default">
         <containerMappings name="cn_person_with_house_and_car" label="PersonWithHouseAndCar" semanticCandidatesExpression="incquery:hu.bme.mit.inf.dipterv1.incquery.patterns.personWithHouseAndCar" domainClass="socialnetwork_one_many_1.Person">
           <subNodeMappings name="sn_house" label="House" semanticCandidatesExpression="incquery:hu.bme.mit.inf.dipterv1.incquery.patterns.personWithHouseAndCar[match=self]" domainClass="socialnetwork_one_many_1.House">
-            <style xsi:type="style:BundledImageDescription" showIcon="false" labelExpression="feature:address" resizeKind="NSEW">
+            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="feature:address" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/hu.bme.mit.inf.socialnetwork.onemany1.design/img/house.png">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </style>
           </subNodeMappings>
           <subNodeMappings name="sn_car" label="Car" semanticCandidatesExpression="incquery:hu.bme.mit.inf.dipterv1.incquery.patterns.personWithHouseAndCar[match=self]" domainClass="socialnetwork_one_many_1.Car">
-            <style xsi:type="style:BundledImageDescription" showIcon="false" labelExpression="feature:licensePlateNumber" resizeKind="NSEW" shape="triangle">
+            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="feature:licensePlateNumber" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/hu.bme.mit.inf.socialnetwork.onemany1.design/img/house.png">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </style>
           </subNodeMappings>
           <style xsi:type="style:FlatContainerStyleDescription" backgroundStyle="GradientTopToBottom">

@@ -1,7 +1,7 @@
 package hu.bme.mit.inf.sirius.interpreter.incquery.evm;
 
 import hu.bme.mit.inf.eclipse.logging.utils.LoggingUtils;
-import hu.bme.mit.inf.sirius.interpreter.incquery.IncQueryExpression;
+import hu.bme.mit.inf.sirius.interpreter.incquery.Disposeable;
 import hu.bme.mit.inf.sirius.interpreter.incquery.IncQuerySiriusHelper;
 
 import java.util.ArrayList;
@@ -26,13 +26,11 @@ import org.eclipse.incquery.runtime.evm.specific.lifecycle.DefaultActivationLife
 import org.eclipse.incquery.runtime.evm.specific.resolver.FixedPriorityConflictResolver;
 import org.eclipse.sirius.diagram.DDiagram;
 import org.eclipse.sirius.diagram.description.AbstractNodeMapping;
-import org.eclipse.sirius.diagram.description.DiagramDescription;
 import org.eclipse.sirius.diagram.description.EdgeMapping;
-import org.eclipse.sirius.diagram.description.NodeMapping;
 
 import com.google.common.collect.Sets;
 
-public class SiriusEVM {
+public class SiriusEVM implements Disposeable {
 
 	private static final int JOB_PRIORITY_NODE = 0;
 
@@ -81,6 +79,13 @@ public class SiriusEVM {
 	}
 	
 	private void init(DDiagram diagram) {
+	}
+
+	@Override
+	public void dispose() {
+		executionSchema.dispose();
+		
+		started = false;
 	}
 
 	public void addNodeMapping(String patternFQN, AbstractNodeMapping mapping) {
@@ -144,10 +149,12 @@ public class SiriusEVM {
 			IncQueryMatcher<IPatternMatch> matcher) throws Exception {
 		
 		Job<IPatternMatch> matchAppeared = Jobs.newStatelessJob(
-				IncQueryActivationStateEnum.APPEARED, new NodeMatchAppeared(helper, nodeMappings));
+				IncQueryActivationStateEnum.APPEARED, new NodeMatchAppeared(helper,
+						executionSchema, nodeMappings));
 
 		Job<IPatternMatch> matchDisappeared = Jobs.newStatelessJob(
-				IncQueryActivationStateEnum.DISAPPEARED, new NodeMatchDisappeared(helper, nodeMappings));
+				IncQueryActivationStateEnum.DISAPPEARED, new NodeMatchDisappeared(helper,
+						executionSchema, nodeMappings));
 
 		DefaultActivationLifeCycle lifecycle = DefaultActivationLifeCycle.DEFAULT_NO_UPDATE;
 
@@ -159,10 +166,12 @@ public class SiriusEVM {
 			IncQueryMatcher<IPatternMatch> matcher) throws Exception {
 		
 		Job<IPatternMatch> matchAppeared = Jobs.newStatelessJob(
-				IncQueryActivationStateEnum.APPEARED, new EdgeMatchAppeared(helper, edgeMappings));
+				IncQueryActivationStateEnum.APPEARED, new EdgeMatchAppeared(helper,
+						executionSchema, edgeMappings));
 
 		Job<IPatternMatch> matchDisappeared = Jobs.newStatelessJob(
-				IncQueryActivationStateEnum.DISAPPEARED, new EdgeMatchDisappeared(helper, edgeMappings));
+				IncQueryActivationStateEnum.DISAPPEARED, new EdgeMatchDisappeared(helper,
+						executionSchema, edgeMappings));
 
 		DefaultActivationLifeCycle lifecycle = DefaultActivationLifeCycle.DEFAULT_NO_UPDATE;
 

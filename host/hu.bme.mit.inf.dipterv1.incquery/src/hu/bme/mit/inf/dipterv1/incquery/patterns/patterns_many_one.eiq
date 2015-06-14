@@ -23,19 +23,37 @@ pattern family(father : Man, mother : Woman) {
 	check(motherParents == 0);
 }
 
-pattern friend(f1 : Man, m1 : Woman, f2 : Man, m2 : Woman) {
-	find family(f1, m1);
-	find family(f2, m2);
-	
-	find descendant+(f1, desc1);
-	find descendant+(f2, desc2);
-	
-	Person.friends(desc1, desc2);
-	Person.friends(desc2, desc1);
+pattern friend(m1 : Man, w1 : Woman, m2 : Man, w2 : Woman) {
+	find differentFamilies(m1, w1, m2, w2);
+
+	find familyMember(m1, w1, fm_1);
+	find familyMember(m2, w2, fm_2);
+
+	Person.friends(fm_1, fm_2);
+	Person.friends(fm_2, fm_1);
 }
 
-private pattern descendant(person : Person, descendant : Person) {
-	Person.children(person, descendant);
+private pattern familyMember(m : Man, w : Woman, fm : Person) {
+	Man(m);
+	Woman(w);
+	Person(fm);
+	
+	m == fm;
+} or {
+	Man(m);
+	Woman(w);
+	Person(fm);
+	
+	w == fm;
+} or {
+	Person(fm);
+	
+	find descendant+(m, fm);
+	find descendant+(w, fm);
+}
+
+private pattern descendant(ancestor : Person, descendant : Person) {
+	Person.children(ancestor, descendant);
 }
 
 private pattern commonChild(father : Man, mother : Woman, child : Person) {
@@ -45,4 +63,16 @@ private pattern commonChild(father : Man, mother : Woman, child : Person) {
 
 private pattern parent(person : Person, parent : Person) {
 	Person.children(parent, person);
+}
+
+private pattern differentFamilies(m1 : Man, w1 : Woman, m2 : Man, w2 : Woman) {
+	find family(m1, w1);
+	find family(m2, w2);
+
+	m1 != m2;
+} or {
+	find family(m1, w1);
+	find family(m2, w2);
+
+	w1 != w2;
 }

@@ -17,6 +17,7 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.incquery.runtime.api.IPatternMatch;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
 import org.eclipse.incquery.runtime.api.IncQueryEngineManager;
+import org.eclipse.incquery.runtime.evm.api.ExecutionSchema;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.sirius.diagram.description.AbstractNodeMapping;
 import org.eclipse.sirius.diagram.description.EdgeMapping;
@@ -25,9 +26,9 @@ public class EdgeMatchDisappeared extends SiriusMatchProcessor {
 
 	private Map<String, List<EdgeMapping>> edgeMappings;
 
-	public EdgeMatchDisappeared(IncQuerySiriusHelper helper,
+	public EdgeMatchDisappeared(IncQuerySiriusHelper helper, ExecutionSchema executionSchema,
 			Map<String, List<EdgeMapping>> edgeMappings) throws Exception {
-		super(helper);
+		super(helper, executionSchema);
 		
 		if (edgeMappings == null) {
 			throw new IllegalArgumentException("The edgeMappings parameter can not be null!");
@@ -39,7 +40,7 @@ public class EdgeMatchDisappeared extends SiriusMatchProcessor {
 	}
 
 	@Override
-	public void process(IPatternMatch match) {
+	public void doProcess(IPatternMatch match) {
 		logger.info("Match disappeared::" + match);
 		
 		if (IncQueryEngineManager.getInstance().getExistingIncQueryEngines().size() == 0) {
@@ -144,8 +145,6 @@ public class EdgeMatchDisappeared extends SiriusMatchProcessor {
 				}
 			}
 		});
-
-		refreshDiagram();
 	}
 
 }

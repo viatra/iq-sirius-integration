@@ -61,6 +61,10 @@ public class IncQueryExpression {
 	}
 	
 	public static IncQueryExpression parse(String expression) {
+		if (expression == null) {
+			return null;
+		}
+		
 		if (!isValid(expression)) {
 			return null;
 		}
