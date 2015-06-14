@@ -14,7 +14,7 @@
             </style>
           </subNodeMappings>
           <subNodeMappings name="sn_car" label="Car" semanticCandidatesExpression="incquery:hu.bme.mit.inf.dipterv1.incquery.patterns.personWithHouseAndCar[match=self]" domainClass="socialnetwork_one_many_1.Car">
-            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="feature:licensePlateNumber" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/hu.bme.mit.inf.socialnetwork.onemany1.design/img/house.png">
+            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="feature:licensePlateNumber" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/hu.bme.mit.inf.socialnetwork.onemany1.design/img/car.png">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </style>
