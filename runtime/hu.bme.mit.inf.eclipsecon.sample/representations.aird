@@ -204,39 +204,6 @@
             <styles xmi:type="notation:ShapeStyle" xmi:id="_rWJEURLkEeW4Osu03-r1jw" fontName="Cantarell" fontHeight="8"/>
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_rWJEUhLkEeW4Osu03-r1jw" x="996" y="276" width="64" height="64"/>
           </children>
-          <children xmi:type="notation:Node" xmi:id="_3JqE8BMAEeWTK52HPHhzsQ" type="2001" element="_3IXEcBMAEeWTK52HPHhzsQ">
-            <children xmi:type="notation:Node" xmi:id="_3JqsABMAEeWTK52HPHhzsQ" type="5002">
-              <layoutConstraint xmi:type="notation:Location" xmi:id="_3JqsARMAEeWTK52HPHhzsQ" y="-21"/>
-            </children>
-            <children xmi:type="notation:Node" xmi:id="_3JrTEBMAEeWTK52HPHhzsQ" type="3005" element="_3IfnUBMAEeWTK52HPHhzsQ">
-              <styles xmi:type="notation:ShapeStyle" xmi:id="_3JrTERMAEeWTK52HPHhzsQ" fontName="Cantarell"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3JrTEhMAEeWTK52HPHhzsQ"/>
-            </children>
-            <styles xmi:type="notation:ShapeStyle" xmi:id="_3JqE8RMAEeWTK52HPHhzsQ" fontName="Cantarell" fontHeight="8"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3JqE8hMAEeWTK52HPHhzsQ" x="1200" y="108" width="64" height="64"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_3fsmYBMAEeWTK52HPHhzsQ" type="2001" element="_3fJMwBMAEeWTK52HPHhzsQ">
-            <children xmi:type="notation:Node" xmi:id="_3ftNcBMAEeWTK52HPHhzsQ" type="5002">
-              <layoutConstraint xmi:type="notation:Location" xmi:id="_3ftNcRMAEeWTK52HPHhzsQ" y="-21"/>
-            </children>
-            <children xmi:type="notation:Node" xmi:id="_3fvCoBMAEeWTK52HPHhzsQ" type="3005" element="_3fJz0BMAEeWTK52HPHhzsQ">
-              <styles xmi:type="notation:ShapeStyle" xmi:id="_3fvCoRMAEeWTK52HPHhzsQ" fontName="Cantarell"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3fvCohMAEeWTK52HPHhzsQ"/>
-            </children>
-            <styles xmi:type="notation:ShapeStyle" xmi:id="_3fsmYRMAEeWTK52HPHhzsQ" fontName="Cantarell" fontHeight="8"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3fsmYhMAEeWTK52HPHhzsQ" x="1140" y="48" width="64" height="64"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_3uX7kBMAEeWTK52HPHhzsQ" type="2001" element="_3tubUBMAEeWTK52HPHhzsQ">
-            <children xmi:type="notation:Node" xmi:id="_3uYioBMAEeWTK52HPHhzsQ" type="5002">
-              <layoutConstraint xmi:type="notation:Location" xmi:id="_3uYioRMAEeWTK52HPHhzsQ" y="-21"/>
-            </children>
-            <children xmi:type="notation:Node" xmi:id="_3uZJsBMAEeWTK52HPHhzsQ" type="3005" element="_3tvpcBMAEeWTK52HPHhzsQ">
-              <styles xmi:type="notation:ShapeStyle" xmi:id="_3uZJsRMAEeWTK52HPHhzsQ" fontName="Cantarell"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3uZJshMAEeWTK52HPHhzsQ"/>
-            </children>
-            <styles xmi:type="notation:ShapeStyle" xmi:id="_3uX7kRMAEeWTK52HPHhzsQ" fontName="Cantarell" fontHeight="8"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3uX7khMAEeWTK52HPHhzsQ" x="1203" y="216" width="64" height="64"/>
-          </children>
           <styles xmi:type="notation:DiagramStyle" xmi:id="_rVdu4hLkEeW4Osu03-r1jw"/>
           <edges xmi:type="notation:Edge" xmi:id="_rWSOQBLkEeW4Osu03-r1jw" type="4001" element="_rVSwCRLkEeW4Osu03-r1jw" source="_rVeV8BLkEeW4Osu03-r1jw" target="_rV4loBLkEeW4Osu03-r1jw">
             <children xmi:type="notation:Node" xmi:id="_rWSORBLkEeW4Osu03-r1jw" type="6001">
@@ -622,38 +589,6 @@
             <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_QamjkBLnEeWgAvotwUALvg" id="(0.5,1.0)"/>
             <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_QamjkRLnEeWgAvotwUALvg" id="(0.6875,0.0)"/>
           </edges>
-          <edges xmi:type="notation:Edge" xmi:id="_4HMEMBMAEeWTK52HPHhzsQ" type="4001" element="_4F5qwBMAEeWTK52HPHhzsQ" source="_3fsmYBMAEeWTK52HPHhzsQ" target="_3uX7kBMAEeWTK52HPHhzsQ">
-            <children xmi:type="notation:Node" xmi:id="_4HMENBMAEeWTK52HPHhzsQ" type="6001">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4HMrQBMAEeWTK52HPHhzsQ" y="-10"/>
-            </children>
-            <children xmi:type="notation:Node" xmi:id="_4HMrQRMAEeWTK52HPHhzsQ" type="6002">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4HMrQhMAEeWTK52HPHhzsQ" y="10"/>
-            </children>
-            <children xmi:type="notation:Node" xmi:id="_4HMrQxMAEeWTK52HPHhzsQ" type="6003">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4HMrRBMAEeWTK52HPHhzsQ" y="10"/>
-            </children>
-            <styles xmi:type="notation:ConnectorStyle" xmi:id="_4HMEMRMAEeWTK52HPHhzsQ"/>
-            <styles xmi:type="notation:FontStyle" xmi:id="_4HMEMhMAEeWTK52HPHhzsQ" fontName="Cantarell" fontHeight="8"/>
-            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_4HMEMxMAEeWTK52HPHhzsQ" points="[0, 0, -24, -104]$[24, 104, 0, 0]"/>
-            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_4HMrRRMAEeWTK52HPHhzsQ" id="(0.75,1.0)"/>
-            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_4HMrRhMAEeWTK52HPHhzsQ" id="(0.140625,0.0)"/>
-          </edges>
-          <edges xmi:type="notation:Edge" xmi:id="_4dK7QBMAEeWTK52HPHhzsQ" type="4001" element="_4b-BYBMAEeWTK52HPHhzsQ" source="_3JqE8BMAEeWTK52HPHhzsQ" target="_3uX7kBMAEeWTK52HPHhzsQ">
-            <children xmi:type="notation:Node" xmi:id="_4dLiUBMAEeWTK52HPHhzsQ" type="6001">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4dLiURMAEeWTK52HPHhzsQ" y="-10"/>
-            </children>
-            <children xmi:type="notation:Node" xmi:id="_4dLiUhMAEeWTK52HPHhzsQ" type="6002">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4dLiUxMAEeWTK52HPHhzsQ" y="10"/>
-            </children>
-            <children xmi:type="notation:Node" xmi:id="_4dLiVBMAEeWTK52HPHhzsQ" type="6003">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4dLiVRMAEeWTK52HPHhzsQ" y="10"/>
-            </children>
-            <styles xmi:type="notation:ConnectorStyle" xmi:id="_4dK7QRMAEeWTK52HPHhzsQ"/>
-            <styles xmi:type="notation:FontStyle" xmi:id="_4dK7QhMAEeWTK52HPHhzsQ" fontName="Cantarell" fontHeight="8"/>
-            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_4dK7QxMAEeWTK52HPHhzsQ" points="[0, 0, 4, -44]$[-4, 44, 0, 0]"/>
-            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_4dLiVhMAEeWTK52HPHhzsQ" id="(0.5625,1.0)"/>
-            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_4dMJYBMAEeWTK52HPHhzsQ" id="(0.453125,0.0)"/>
-          </edges>
         </data>
       </ownedAnnotationEntries>
       <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_rVSvwRLkEeW4Osu03-r1jw" name="Ferenc Pető" outgoingEdges="_rVSwCRLkEeW4Osu03-r1jw _rVSwDhLkEeW4Osu03-r1jw" width="-1" height="-1" resizeKind="NSEW">
@@ -786,26 +721,6 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/hu.bme.mit.inf.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase']/@ownedRepresentations[name='dd_diagram']/@defaultLayer/@nodeMappings[name='node_man']"/>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_3fJMwBMAEeWTK52HPHhzsQ" name="New Man" outgoingEdges="_4F5qwBMAEeWTK52HPHhzsQ" width="-1" height="-1" resizeKind="NSEW">
-        <target xmi:type="socialnetwork_base:Man" href="sample.socialnetwork_base#//@members.19"/>
-        <semanticElements xmi:type="socialnetwork_base:Man" href="sample.socialnetwork_base#//@members.19"/>
-        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_3fJz0BMAEeWTK52HPHhzsQ" showIcon="false" workspacePath="/hu.bme.mit.inf.socialnetwork.base.design/img/man.png">
-          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_3fJz0RMAEeWTK52HPHhzsQ"/>
-          <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/hu.bme.mit.inf.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase']/@ownedRepresentations[name='dd_diagram']/@defaultLayer/@nodeMappings[name='node_man']/@style"/>
-          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_3fJz0hMAEeWTK52HPHhzsQ"/>
-        </ownedStyle>
-        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/hu.bme.mit.inf.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase']/@ownedRepresentations[name='dd_diagram']/@defaultLayer/@nodeMappings[name='node_man']"/>
-      </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_3tubUBMAEeWTK52HPHhzsQ" name="New Man" incomingEdges="_4F5qwBMAEeWTK52HPHhzsQ _4b-BYBMAEeWTK52HPHhzsQ" width="-1" height="-1" resizeKind="NSEW">
-        <target xmi:type="socialnetwork_base:Man" href="sample.socialnetwork_base#//@members.20"/>
-        <semanticElements xmi:type="socialnetwork_base:Man" href="sample.socialnetwork_base#//@members.20"/>
-        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_3tvpcBMAEeWTK52HPHhzsQ" showIcon="false" workspacePath="/hu.bme.mit.inf.socialnetwork.base.design/img/man.png">
-          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_3tvpcRMAEeWTK52HPHhzsQ"/>
-          <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/hu.bme.mit.inf.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase']/@ownedRepresentations[name='dd_diagram']/@defaultLayer/@nodeMappings[name='node_man']/@style"/>
-          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_3tvpchMAEeWTK52HPHhzsQ"/>
-        </ownedStyle>
-        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/hu.bme.mit.inf.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase']/@ownedRepresentations[name='dd_diagram']/@defaultLayer/@nodeMappings[name='node_man']"/>
-      </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_rVSv6RLkEeW4Osu03-r1jw" name="Julianna Jakab" outgoingEdges="_rVSwOxLkEeW4Osu03-r1jw _rVSwQBLkEeW4Osu03-r1jw" width="-1" height="-1" resizeKind="NSEW">
         <target xmi:type="socialnetwork_base:Woman" href="sample.socialnetwork_base#//@members.1"/>
         <semanticElements xmi:type="socialnetwork_base:Woman" href="sample.socialnetwork_base#//@members.1"/>
@@ -907,16 +822,6 @@
           <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_rVSwBxLkEeW4Osu03-r1jw"/>
           <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/hu.bme.mit.inf.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase']/@ownedRepresentations[name='dd_diagram']/@defaultLayer/@nodeMappings[name='node_woman']/@style"/>
           <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_rVSwCBLkEeW4Osu03-r1jw"/>
-        </ownedStyle>
-        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/hu.bme.mit.inf.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase']/@ownedRepresentations[name='dd_diagram']/@defaultLayer/@nodeMappings[name='node_woman']"/>
-      </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_3IXEcBMAEeWTK52HPHhzsQ" name="New Woman" outgoingEdges="_4b-BYBMAEeWTK52HPHhzsQ" width="-1" height="-1" resizeKind="NSEW">
-        <target xmi:type="socialnetwork_base:Woman" href="sample.socialnetwork_base#//@members.18"/>
-        <semanticElements xmi:type="socialnetwork_base:Woman" href="sample.socialnetwork_base#//@members.18"/>
-        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_3IfnUBMAEeWTK52HPHhzsQ" showIcon="false" workspacePath="/hu.bme.mit.inf.socialnetwork.base.design/img/woman.png">
-          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_3IfnURMAEeWTK52HPHhzsQ"/>
-          <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/hu.bme.mit.inf.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase']/@ownedRepresentations[name='dd_diagram']/@defaultLayer/@nodeMappings[name='node_woman']/@style"/>
-          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_3IfnUhMAEeWTK52HPHhzsQ"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/hu.bme.mit.inf.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase']/@ownedRepresentations[name='dd_diagram']/@defaultLayer/@nodeMappings[name='node_woman']"/>
       </ownedDiagramElements>
@@ -1184,28 +1089,6 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/hu.bme.mit.inf.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase']/@ownedRepresentations[name='dd_diagram']/@defaultLayer/@edgeMappings[name='rbe_child']"/>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_4F5qwBMAEeWTK52HPHhzsQ" sourceNode="_3fJMwBMAEeWTK52HPHhzsQ" targetNode="_3tubUBMAEeWTK52HPHhzsQ">
-        <target xmi:type="socialnetwork_base:Man" href="sample.socialnetwork_base#//@members.19"/>
-        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_4F5qwRMAEeWTK52HPHhzsQ" size="2">
-          <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/hu.bme.mit.inf.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase']/@ownedRepresentations[name='dd_diagram']/@defaultLayer/@edgeMappings[name='rbe_child']/@style"/>
-          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_4F5qwhMAEeWTK52HPHhzsQ" red="136" green="136" blue="136"/>
-          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_4F5qwxMAEeWTK52HPHhzsQ" showIcon="false">
-            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_4F5qxBMAEeWTK52HPHhzsQ"/>
-          </centerLabelStyle>
-        </ownedStyle>
-        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/hu.bme.mit.inf.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase']/@ownedRepresentations[name='dd_diagram']/@defaultLayer/@edgeMappings[name='rbe_child']"/>
-      </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_4b-BYBMAEeWTK52HPHhzsQ" sourceNode="_3IXEcBMAEeWTK52HPHhzsQ" targetNode="_3tubUBMAEeWTK52HPHhzsQ">
-        <target xmi:type="socialnetwork_base:Woman" href="sample.socialnetwork_base#//@members.18"/>
-        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_4b-BYRMAEeWTK52HPHhzsQ" size="2">
-          <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/hu.bme.mit.inf.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase']/@ownedRepresentations[name='dd_diagram']/@defaultLayer/@edgeMappings[name='rbe_child']/@style"/>
-          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_4b-BYhMAEeWTK52HPHhzsQ" red="136" green="136" blue="136"/>
-          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_4b-BYxMAEeWTK52HPHhzsQ" showIcon="false">
-            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_4b-BZBMAEeWTK52HPHhzsQ"/>
-          </centerLabelStyle>
-        </ownedStyle>
-        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/hu.bme.mit.inf.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase']/@ownedRepresentations[name='dd_diagram']/@defaultLayer/@edgeMappings[name='rbe_child']"/>
-      </ownedDiagramElements>
       <description xmi:type="description_1:DiagramDescription" href="platform:/resource/hu.bme.mit.inf.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase']/@ownedRepresentations[name='dd_diagram']"/>
       <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_rVVMABLkEeW4Osu03-r1jw"/>
       <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/hu.bme.mit.inf.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase']/@ownedRepresentations[name='dd_diagram']/@defaultLayer"/>
@@ -1249,17 +1132,6 @@
             </children>
             <styles xmi:type="notation:ShapeStyle" xmi:id="_NAx-sRMAEeWTK52HPHhzsQ" fontName="Cantarell" fontHeight="8"/>
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_NAx-shMAEeWTK52HPHhzsQ" width="128" height="128"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_4dsfsBMAEeWTK52HPHhzsQ" type="2001" element="_4dkj4BMAEeWTK52HPHhzsQ">
-            <children xmi:type="notation:Node" xmi:id="_4dsfsxMAEeWTK52HPHhzsQ" type="5002">
-              <layoutConstraint xmi:type="notation:Location" xmi:id="_4dsftBMAEeWTK52HPHhzsQ" x="-1"/>
-            </children>
-            <children xmi:type="notation:Node" xmi:id="_4dtGwBMAEeWTK52HPHhzsQ" type="3005" element="_4dkj4RMAEeWTK52HPHhzsQ">
-              <styles xmi:type="notation:ShapeStyle" xmi:id="_4dtGwRMAEeWTK52HPHhzsQ" fontName="Cantarell"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4dtGwhMAEeWTK52HPHhzsQ"/>
-            </children>
-            <styles xmi:type="notation:ShapeStyle" xmi:id="_4dsfsRMAEeWTK52HPHhzsQ" fontName="Cantarell" fontHeight="8"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4dsfshMAEeWTK52HPHhzsQ" x="348" width="128" height="128"/>
           </children>
           <styles xmi:type="notation:DiagramStyle" xmi:id="_wfZnshLlEeW4Osu03-r1jw"/>
           <edges xmi:type="notation:Edge" xmi:id="_eLMRsBL_EeWTK52HPHhzsQ" type="4001" element="_eLFkABL_EeWTK52HPHhzsQ" source="_TtPsIBL_EeWTK52HPHhzsQ" target="_eLJ1cBL_EeWTK52HPHhzsQ">
@@ -1347,17 +1219,6 @@
           <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_TsrEYRL_EeWTK52HPHhzsQ"/>
           <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/hu.bme.mit.inf.socialnetwork.manyone.design/description/socialnetwork_manyone.odesign#//@ownedViewpoints[name='vp_social_network_many_one']/@ownedRepresentations[name='dd_socialnetwork_many_one']/@defaultLayer/@nodeMappings[name='node_family']/@style"/>
           <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_TsrEYhL_EeWTK52HPHhzsQ"/>
-        </ownedStyle>
-        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/hu.bme.mit.inf.socialnetwork.manyone.design/description/socialnetwork_manyone.odesign#//@ownedViewpoints[name='vp_social_network_many_one']/@ownedRepresentations[name='dd_socialnetwork_many_one']/@defaultLayer/@nodeMappings[name='node_family']"/>
-      </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_4dkj4BMAEeWTK52HPHhzsQ" width="-1" height="-1" resizeKind="NSEW">
-        <target xmi:type="socialnetwork_many_one:Family" href="inmemoryresource:/-175856#/4"/>
-        <semanticElements xmi:type="socialnetwork_base:Woman" href="sample.socialnetwork_base#//@members.18"/>
-        <semanticElements xmi:type="socialnetwork_base:Man" href="sample.socialnetwork_base#//@members.19"/>
-        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_4dkj4RMAEeWTK52HPHhzsQ" showIcon="false" workspacePath="/hu.bme.mit.inf.socialnetwork.manyone.design/img/family.png">
-          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_4dkj4hMAEeWTK52HPHhzsQ"/>
-          <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/hu.bme.mit.inf.socialnetwork.manyone.design/description/socialnetwork_manyone.odesign#//@ownedViewpoints[name='vp_social_network_many_one']/@ownedRepresentations[name='dd_socialnetwork_many_one']/@defaultLayer/@nodeMappings[name='node_family']/@style"/>
-          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_4dkj4xMAEeWTK52HPHhzsQ"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/hu.bme.mit.inf.socialnetwork.manyone.design/description/socialnetwork_manyone.odesign#//@ownedViewpoints[name='vp_social_network_many_one']/@ownedRepresentations[name='dd_socialnetwork_many_one']/@defaultLayer/@nodeMappings[name='node_family']"/>
       </ownedDiagramElements>
