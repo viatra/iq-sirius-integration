@@ -39,7 +39,10 @@
             <viewVariable name="containerView"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.eContainer(SocialNetwork) /]">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="socialnetwork_base.Man" referenceName="members"/>
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="socialnetwork_base.Man" referenceName="members">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="firstName" valueExpression="New"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="lastName" valueExpression="Man"/>
+                </subModelOperations>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
@@ -48,7 +51,10 @@
             <viewVariable name="containerView"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.eContainer(SocialNetwork) /]">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="socialnetwork_base.Woman" referenceName="members"/>
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="socialnetwork_base.Woman" referenceName="members">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="firstName" valueExpression="New"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="lastName" valueExpression="Woman"/>
+                </subModelOperations>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>

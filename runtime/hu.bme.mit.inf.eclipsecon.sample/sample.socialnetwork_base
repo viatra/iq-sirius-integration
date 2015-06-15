@@ -18,4 +18,7 @@
   <members xsi:type="socialnetwork_base:Man" firstName="Lajos" lastName="Gonda" children="//@members.17 //@members.16"/>
   <members xsi:type="socialnetwork_base:Woman" firstName="Bettina" lastName="Gonda" friends="//@members.14"/>
   <members xsi:type="socialnetwork_base:Woman" firstName="Fruzsina" lastName="Gonda"/>
+  <members xsi:type="socialnetwork_base:Woman" firstName="New" lastName="Woman" children="//@members.20"/>
+  <members xsi:type="socialnetwork_base:Man" firstName="New" lastName="Man" children="//@members.20"/>
+  <members xsi:type="socialnetwork_base:Man" firstName="New" lastName="Man"/>
 </socialnetwork_base:SocialNetwork>
