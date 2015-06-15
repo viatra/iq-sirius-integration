@@ -2,7 +2,7 @@
 IncQuery integration into Sirius
 
 ## Telepítési útmutató
- * Eclipse Modeling Tools letöltése (http://www.eclipse.org/downloads/)
+ * Eclipse Modeling Tools letöltése (http://www.eclipse.org/downloads/ ; én a Luna-SR2 verziót használtam ; biztos-ami-biztos azt javaslom, hogy a demóhoz egy teljesen különálló, másra nem használt eclipse-t készítsünk el, nehogy más projektekkel/pluginekkel összeakadjon az eszköz)
  * az _Eclipse Marketplace-ből_ telepítsük az alábbiakat (elképzelhető, hogy a lentiektől eltérő verzióval is működni fog az eszköz, viszont tesztelve ezekkel volt)
   * _EMF-IncQuery 0.9.1_
   * _Sirius 2.0_
