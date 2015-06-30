@@ -33,7 +33,7 @@ First of all I would like to describe some projects in the _host-eclipse_, which
  * _hu.bme.mit.inf.dipterv1.incquery_: this project contains the _IncQuery patterns_ that are used during the transformation. With these patterns we can define transformations between the _socialnetwork_base_-type and _socialnetwork_many_one/one_many/etc_-type models. The patterns were grouped into the same file depending on the transformation. For example if the patterns are used to create a model with the _social_network_many_one_ metamodel, then the patterns will be found in the _patterns_many_one.eiq_ file (we'll use these patterns in the example: see _hu.bme.mit.inf.eclipsecon.sample_ project). From this file, I would like to highlight two patterns:
   * _family_: we can find the "families" in the source instance model with this pattern
   * _friend_: we can find the "friend relationships" between the families with this pattern
-  * _IMPORTANT: EVERY PATTERN, THAT WE WANT TO USE FOR DEFINING A SIRIUS-BASED EDITOR HAVE TO BE DEFINED IN THIS PROJECT. THESE PATTERNS HAVE TO BE PLACED INTO A SUITABLE _.eiq_ FILE LIKE I DESCRIBED ABOVE. THE USED PATTERNS MUST BE PUBLIC!_
+  * _IMPORTANT: EVERY PATTERN, THAT WE WANT TO USE FOR DEFINING A SIRIUS-BASED EDITOR HAVE TO BE DEFINED IN THIS PROJECT. THESE PATTERNS HAVE TO BE PLACED INTO A SUITABLE .eiq FILE LIKE I DESCRIBED ABOVE. THE USED PATTERNS MUST BE PUBLIC!_
 
 In the followings, I will describe some project in the _runtime eclipse_:
  * _hu.bme.mit.inf.socialnetwork.base.design_: this project contains the definition of the Sirius-based editor for the source model.
