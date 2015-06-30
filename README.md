@@ -10,7 +10,7 @@ IncQuery integration into Sirius
  * Import the projects from the _host_ directory into the _host-eclipse_
  * Generate the followings:
   * _org.eclipse.incquery.viewmodel/model/traceability.genmodel->Generate model code_
-  * It can happen, that for some _IncQuery_ patterns the needed classes (_Match, Matcher, etc._) won't be generated autmatically. In this case, you have to open the following _.eig_ files, modify them in a "not harmful" way (e.g. insert and delete a _space_ character), and after that save the files. These steps ensure that the needed files will be generated.
+  * It can happen, that for some _IncQuery_ patterns the needed classes (_Match, Matcher, etc._) won't be generated autmatically. In this case, you have to open the following _.eiq_ files, modify them in a "not harmful" way (e.g. insert and delete a _space_ character), and after that save the files. These steps ensure that the needed files will be generated.
    * The _.eig_ files in the _hu.bme.mit.inf.dipterv1.incquery/src/hu.bme.mit.inf.dipterv1.incquery.patterns/_ package
    * The _.eiq_ files in the _hu.bme.mit.inf.sirius.interpreter.incquery/src/hu.bme.mit.inf.sirius.interpreter.incquery.traceability.patterns_ package
    * The _.eiq_ files in the _org.eclipse.incquery.viewmodel/src/org.eclipse.incquery.viewmodel.traceability.patterns_ package
