@@ -11,9 +11,9 @@ IncQuery integration into Sirius
  * Generate the followings:
   * _org.eclipse.incquery.viewmodel/model/traceability.genmodel->Generate model code_
   * It can happen, that for some _IncQuery_ patterns the needed classes (_Match, Matcher, etc._) won't be generated autmatically. In this case, you have to open the following _.eiq_ files, modify them in a "not harmful" way (e.g. insert and delete a _space_ character), and after that save the files. These steps ensure that the needed files will be generated.
-   * The _.eiq_ files in the _hu.bme.mit.inf.dipterv1.incquery/src/hu.bme.mit.inf.dipterv1.incquery.patterns/_ package
-   * The _.eiq_ files in the _hu.bme.mit.inf.sirius.interpreter.incquery/src/hu.bme.mit.inf.sirius.interpreter.incquery.traceability.patterns_ package
-   * The _.eiq_ files in the _org.eclipse.incquery.viewmodel/src/org.eclipse.incquery.viewmodel.traceability.patterns_ package
+    * The _.eiq_ files in the _hu.bme.mit.inf.dipterv1.incquery/src/hu.bme.mit.inf.dipterv1.incquery.patterns/_ package
+    * The _.eiq_ files in the _hu.bme.mit.inf.sirius.interpreter.incquery/src/hu.bme.mit.inf.sirius.interpreter.incquery.traceability.patterns_ package
+    * The _.eiq_ files in the _org.eclipse.incquery.viewmodel/src/org.eclipse.incquery.viewmodel.traceability.patterns_ package
  * Create a new _Run configuration_ (type: _Eclipse Application_, the default settings will be fine)
  * Run the _Runtime Eclipse_
  * Import the projects from the _runtime_ directory into the _runtime-eclipse_
@@ -54,9 +54,9 @@ In the followings, I will describe some project in the _runtime eclipse_:
  * a szükséges részeket generáljuk le:
   * _org.eclipse.incquery.viewmodel/model/traceability.genmodel->Generate model code_
   * előfordulhat, hogy az egyes projektekben található IncQuery mintákhoz nem generálódnak le automatikusan a szükséges osztályok (Match, Matcher, stb.). Ezt úgy tudjuk orvosolni, hogy az alább felsorolt csomagokban található _.eiq_ fájlokat megnyitjuk, módosítunk bennük valamit (természetesen úgy, hogy ezzel ne tegyünk kárt a már meglévő mintákban), majd mentünk. Ekkor biztosan legenerálódnak a szükséges fájlok.
-   * _hu.bme.mit.inf.dipterv1.incquery/src/hu.bme.mit.inf.dipterv1.incquery.patterns/_ csomagban található fájlok
-   * _hu.bme.mit.inf.sirius.interpreter.incquery/src/hu.bme.mit.inf.sirius.interpreter.incquery.traceability.patterns_ csomagban található fájlok
-   * _org.eclipse.incquery.viewmodel/src/org.eclipse.incquery.viewmodel.traceability.patterns_ csomagban található fájlok
+    * _hu.bme.mit.inf.dipterv1.incquery/src/hu.bme.mit.inf.dipterv1.incquery.patterns/_ csomagban található fájlok
+    * _hu.bme.mit.inf.sirius.interpreter.incquery/src/hu.bme.mit.inf.sirius.interpreter.incquery.traceability.patterns_ csomagban található fájlok
+    * _org.eclipse.incquery.viewmodel/src/org.eclipse.incquery.viewmodel.traceability.patterns_ csomagban található fájlok
  * hozzunk létre egy új _Run configuration-t_ (Eclipse Application típusút, az alapbeállítások jók lesznek)
  * indítsuk el a _Runtime Eclipse-et_
  * importáljuk be a repository _runtime_ mappájában található projekteket
