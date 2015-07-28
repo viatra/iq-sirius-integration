@@ -2,6 +2,16 @@ package hu.bme.mit.inf.dipterv1.incquery.patterns
 
 import "http://hu.bme.mit.inf.models/socialnetwork_base"
 
+/* Pattern to create the root of the model */
+pattern socialNetwork(sn : SocialNetwork) {
+	SocialNetwork(sn);
+}
+
+pattern containment_socialNetwork_person(sn : SocialNetwork, person : Person) {
+	SocialNetwork(sn);
+	find personWithHouseAndCar(person);
+}
+
 
 pattern personWithHouseAndCar(person : Person) {
 	SocialNetwork.members(_, person);

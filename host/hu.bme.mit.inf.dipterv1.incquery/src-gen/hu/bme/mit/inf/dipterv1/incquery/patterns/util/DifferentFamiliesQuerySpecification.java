@@ -5,18 +5,20 @@ import hu.bme.mit.inf.dipterv1.incquery.patterns.util.FamilyQuerySpecification;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.incquery.runtime.api.IPatternMatch;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
 import org.eclipse.incquery.runtime.api.IncQueryMatcher;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedEMFPQuery;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedEMFQuerySpecification;
+import org.eclipse.incquery.runtime.emf.types.EClassTransitiveInstancesKey;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.matchers.psystem.PBody;
 import org.eclipse.incquery.runtime.matchers.psystem.PVariable;
 import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.ExportedParameter;
 import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.Inequality;
 import org.eclipse.incquery.runtime.matchers.psystem.basicenumerables.PositivePatternCall;
-import org.eclipse.incquery.runtime.matchers.psystem.basicenumerables.TypeUnary;
+import org.eclipse.incquery.runtime.matchers.psystem.basicenumerables.TypeConstraint;
 import org.eclipse.incquery.runtime.matchers.psystem.queries.PParameter;
 import org.eclipse.incquery.runtime.matchers.psystem.queries.QueryInitializationException;
 import org.eclipse.incquery.runtime.matchers.tuple.FlatTuple;
@@ -107,10 +109,10 @@ final class DifferentFamiliesQuerySpecification extends BaseGeneratedEMFQuerySpe
       				
       		new ExportedParameter(body, var_w2, "w2")
       	));
-      	new TypeUnary(body, var_m1, getClassifierLiteral("http://hu.bme.mit.inf.models/socialnetwork_base", "Man"), "http://hu.bme.mit.inf.models/socialnetwork_base/Man");
-      	new TypeUnary(body, var_w1, getClassifierLiteral("http://hu.bme.mit.inf.models/socialnetwork_base", "Woman"), "http://hu.bme.mit.inf.models/socialnetwork_base/Woman");
-      	new TypeUnary(body, var_m2, getClassifierLiteral("http://hu.bme.mit.inf.models/socialnetwork_base", "Man"), "http://hu.bme.mit.inf.models/socialnetwork_base/Man");
-      	new TypeUnary(body, var_w2, getClassifierLiteral("http://hu.bme.mit.inf.models/socialnetwork_base", "Woman"), "http://hu.bme.mit.inf.models/socialnetwork_base/Woman");
+      	new TypeConstraint(body, new FlatTuple(var_m1), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://hu.bme.mit.inf.models/socialnetwork_base", "Man")));
+      	new TypeConstraint(body, new FlatTuple(var_w1), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://hu.bme.mit.inf.models/socialnetwork_base", "Woman")));
+      	new TypeConstraint(body, new FlatTuple(var_m2), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://hu.bme.mit.inf.models/socialnetwork_base", "Man")));
+      	new TypeConstraint(body, new FlatTuple(var_w2), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://hu.bme.mit.inf.models/socialnetwork_base", "Woman")));
       	new PositivePatternCall(body, new FlatTuple(var_m1, var_w1), FamilyQuerySpecification.instance().getInternalQueryRepresentation());
       	new PositivePatternCall(body, new FlatTuple(var_m2, var_w2), FamilyQuerySpecification.instance().getInternalQueryRepresentation());
       	new Inequality(body, var_m1, var_m2);
@@ -131,10 +133,10 @@ final class DifferentFamiliesQuerySpecification extends BaseGeneratedEMFQuerySpe
       				
       		new ExportedParameter(body, var_w2, "w2")
       	));
-      	new TypeUnary(body, var_m1, getClassifierLiteral("http://hu.bme.mit.inf.models/socialnetwork_base", "Man"), "http://hu.bme.mit.inf.models/socialnetwork_base/Man");
-      	new TypeUnary(body, var_w1, getClassifierLiteral("http://hu.bme.mit.inf.models/socialnetwork_base", "Woman"), "http://hu.bme.mit.inf.models/socialnetwork_base/Woman");
-      	new TypeUnary(body, var_m2, getClassifierLiteral("http://hu.bme.mit.inf.models/socialnetwork_base", "Man"), "http://hu.bme.mit.inf.models/socialnetwork_base/Man");
-      	new TypeUnary(body, var_w2, getClassifierLiteral("http://hu.bme.mit.inf.models/socialnetwork_base", "Woman"), "http://hu.bme.mit.inf.models/socialnetwork_base/Woman");
+      	new TypeConstraint(body, new FlatTuple(var_m1), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://hu.bme.mit.inf.models/socialnetwork_base", "Man")));
+      	new TypeConstraint(body, new FlatTuple(var_w1), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://hu.bme.mit.inf.models/socialnetwork_base", "Woman")));
+      	new TypeConstraint(body, new FlatTuple(var_m2), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://hu.bme.mit.inf.models/socialnetwork_base", "Man")));
+      	new TypeConstraint(body, new FlatTuple(var_w2), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://hu.bme.mit.inf.models/socialnetwork_base", "Woman")));
       	new PositivePatternCall(body, new FlatTuple(var_m1, var_w1), FamilyQuerySpecification.instance().getInternalQueryRepresentation());
       	new PositivePatternCall(body, new FlatTuple(var_m2, var_w2), FamilyQuerySpecification.instance().getInternalQueryRepresentation());
       	new Inequality(body, var_w1, var_w2);

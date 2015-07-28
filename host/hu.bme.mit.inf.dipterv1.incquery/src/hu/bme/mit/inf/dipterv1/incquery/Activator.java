@@ -1,5 +1,9 @@
 package hu.bme.mit.inf.dipterv1.incquery;
 
+import org.eclipse.incquery.runtime.api.IPatternMatch;
+import org.eclipse.incquery.runtime.api.IQuerySpecification;
+import org.eclipse.incquery.runtime.api.IncQueryMatcher;
+import org.eclipse.incquery.runtime.extensibility.QuerySpecificationRegistry;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
 
@@ -18,6 +22,7 @@ public class Activator extends AbstractUIPlugin {
 	 * The constructor
 	 */
 	public Activator() {
+
 	}
 
 	/*

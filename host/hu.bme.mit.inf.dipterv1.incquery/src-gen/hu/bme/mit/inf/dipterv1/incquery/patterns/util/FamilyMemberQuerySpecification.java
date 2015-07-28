@@ -5,17 +5,20 @@ import hu.bme.mit.inf.dipterv1.incquery.patterns.util.DescendantQuerySpecificati
 import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.incquery.runtime.api.IPatternMatch;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
 import org.eclipse.incquery.runtime.api.IncQueryMatcher;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedEMFPQuery;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedEMFQuerySpecification;
+import org.eclipse.incquery.runtime.emf.types.EClassTransitiveInstancesKey;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.matchers.psystem.PBody;
 import org.eclipse.incquery.runtime.matchers.psystem.PVariable;
+import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.Equality;
 import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.ExportedParameter;
 import org.eclipse.incquery.runtime.matchers.psystem.basicenumerables.BinaryTransitiveClosure;
-import org.eclipse.incquery.runtime.matchers.psystem.basicenumerables.TypeUnary;
+import org.eclipse.incquery.runtime.matchers.psystem.basicenumerables.TypeConstraint;
 import org.eclipse.incquery.runtime.matchers.psystem.queries.PParameter;
 import org.eclipse.incquery.runtime.matchers.psystem.queries.QueryInitializationException;
 import org.eclipse.incquery.runtime.matchers.tuple.FlatTuple;
@@ -93,32 +96,23 @@ final class FamilyMemberQuerySpecification extends BaseGeneratedEMFQuerySpecific
       try {
       {
       	PBody body = new PBody(this);
+      	PVariable var_m = body.getOrCreateVariableByName("m");
       	PVariable var_w = body.getOrCreateVariableByName("w");
       	PVariable var_fm = body.getOrCreateVariableByName("fm");
       	body.setExportedParameters(Arrays.<ExportedParameter>asList(
-      		new ExportedParameter(body, var_fm, "m"),
+      		new ExportedParameter(body, var_m, "m"),
       				
       		new ExportedParameter(body, var_w, "w"),
       				
       		new ExportedParameter(body, var_fm, "fm")
       	));
-      	new TypeUnary(body, var_fm, getClassifierLiteral("http://hu.bme.mit.inf.models/socialnetwork_base", "Man"), "http://hu.bme.mit.inf.models/socialnetwork_base/Man");
-      	new TypeUnary(body, var_w, getClassifierLiteral("http://hu.bme.mit.inf.models/socialnetwork_base", "Woman"), "http://hu.bme.mit.inf.models/socialnetwork_base/Woman");
-      	bodies.add(body);
-      }
-      {
-      	PBody body = new PBody(this);
-      	PVariable var_m = body.getOrCreateVariableByName("m");
-      	PVariable var_fm = body.getOrCreateVariableByName("fm");
-      	body.setExportedParameters(Arrays.<ExportedParameter>asList(
-      		new ExportedParameter(body, var_m, "m"),
-      				
-      		new ExportedParameter(body, var_fm, "w"),
-      				
-      		new ExportedParameter(body, var_fm, "fm")
-      	));
-      	new TypeUnary(body, var_m, getClassifierLiteral("http://hu.bme.mit.inf.models/socialnetwork_base", "Man"), "http://hu.bme.mit.inf.models/socialnetwork_base/Man");
-      	new TypeUnary(body, var_fm, getClassifierLiteral("http://hu.bme.mit.inf.models/socialnetwork_base", "Woman"), "http://hu.bme.mit.inf.models/socialnetwork_base/Woman");
+      	new TypeConstraint(body, new FlatTuple(var_m), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://hu.bme.mit.inf.models/socialnetwork_base", "Man")));
+      	new TypeConstraint(body, new FlatTuple(var_w), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://hu.bme.mit.inf.models/socialnetwork_base", "Woman")));
+      	new TypeConstraint(body, new FlatTuple(var_fm), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://hu.bme.mit.inf.models/socialnetwork_base", "Person")));
+      	new TypeConstraint(body, new FlatTuple(var_m), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://hu.bme.mit.inf.models/socialnetwork_base", "Man")));
+      	new TypeConstraint(body, new FlatTuple(var_w), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://hu.bme.mit.inf.models/socialnetwork_base", "Woman")));
+      	new TypeConstraint(body, new FlatTuple(var_fm), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://hu.bme.mit.inf.models/socialnetwork_base", "Person")));
+      	new Equality(body, var_m, var_fm);
       	bodies.add(body);
       }
       {
@@ -133,9 +127,31 @@ final class FamilyMemberQuerySpecification extends BaseGeneratedEMFQuerySpecific
       				
       		new ExportedParameter(body, var_fm, "fm")
       	));
-      	new TypeUnary(body, var_m, getClassifierLiteral("http://hu.bme.mit.inf.models/socialnetwork_base", "Man"), "http://hu.bme.mit.inf.models/socialnetwork_base/Man");
-      	new TypeUnary(body, var_w, getClassifierLiteral("http://hu.bme.mit.inf.models/socialnetwork_base", "Woman"), "http://hu.bme.mit.inf.models/socialnetwork_base/Woman");
-      	new TypeUnary(body, var_fm, getClassifierLiteral("http://hu.bme.mit.inf.models/socialnetwork_base", "Person"), "http://hu.bme.mit.inf.models/socialnetwork_base/Person");
+      	new TypeConstraint(body, new FlatTuple(var_m), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://hu.bme.mit.inf.models/socialnetwork_base", "Man")));
+      	new TypeConstraint(body, new FlatTuple(var_w), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://hu.bme.mit.inf.models/socialnetwork_base", "Woman")));
+      	new TypeConstraint(body, new FlatTuple(var_fm), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://hu.bme.mit.inf.models/socialnetwork_base", "Person")));
+      	new TypeConstraint(body, new FlatTuple(var_m), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://hu.bme.mit.inf.models/socialnetwork_base", "Man")));
+      	new TypeConstraint(body, new FlatTuple(var_w), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://hu.bme.mit.inf.models/socialnetwork_base", "Woman")));
+      	new TypeConstraint(body, new FlatTuple(var_fm), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://hu.bme.mit.inf.models/socialnetwork_base", "Person")));
+      	new Equality(body, var_w, var_fm);
+      	bodies.add(body);
+      }
+      {
+      	PBody body = new PBody(this);
+      	PVariable var_m = body.getOrCreateVariableByName("m");
+      	PVariable var_w = body.getOrCreateVariableByName("w");
+      	PVariable var_fm = body.getOrCreateVariableByName("fm");
+      	body.setExportedParameters(Arrays.<ExportedParameter>asList(
+      		new ExportedParameter(body, var_m, "m"),
+      				
+      		new ExportedParameter(body, var_w, "w"),
+      				
+      		new ExportedParameter(body, var_fm, "fm")
+      	));
+      	new TypeConstraint(body, new FlatTuple(var_m), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://hu.bme.mit.inf.models/socialnetwork_base", "Man")));
+      	new TypeConstraint(body, new FlatTuple(var_w), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://hu.bme.mit.inf.models/socialnetwork_base", "Woman")));
+      	new TypeConstraint(body, new FlatTuple(var_fm), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://hu.bme.mit.inf.models/socialnetwork_base", "Person")));
+      	new TypeConstraint(body, new FlatTuple(var_fm), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://hu.bme.mit.inf.models/socialnetwork_base", "Person")));
       	new BinaryTransitiveClosure(body, new FlatTuple(var_m, var_fm), DescendantQuerySpecification.instance().getInternalQueryRepresentation());
       	new BinaryTransitiveClosure(body, new FlatTuple(var_w, var_fm), DescendantQuerySpecification.instance().getInternalQueryRepresentation());
       	bodies.add(body);

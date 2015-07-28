@@ -33,3 +33,9 @@
 /.DescendantProcessor.java._trace
 /.SameFamiliesQuerySpecification.java._trace
 /.DifferentFamiliesQuerySpecification.java._trace
+/.SocialNetworkProcessor.java._trace
+/.SocialNetworkQuerySpecification.java._trace
+/.Containment_socialNetwork_familyProcessor.java._trace
+/.Containment_socialNetwork_familyQuerySpecification.java._trace
+/.Containment_socialNetwork_friendProcessor.java._trace
+/.Containment_socialNetwork_friendQuerySpecification.java._trace
