@@ -6,7 +6,7 @@
   <members xsi:type="socialnetwork_base:Woman" firstName="Y" lastName="Fed" age="88" children="//@members.12"/>
   <members xsi:type="socialnetwork_base:Woman" firstName="Y" lastName="Igh" age="18" children="//@members.21"/>
   <members xsi:type="socialnetwork_base:Man" firstName="X" lastName="Ghi" age="21" children="//@members.21"/>
-  <members xsi:type="socialnetwork_base:Woman" firstName="FA" lastName="FAWife" age="20" children="//@members.22 //@members.24" address="FAW Street 42"/>
+  <members xsi:type="socialnetwork_base:Woman" firstName="FA" lastName="FAWife" age="20" children="//@members.22 //@members.23" address="FAW Street 42"/>
   <members xsi:type="socialnetwork_base:Man" firstName="Forever" lastName="Alone" age="21" children="//@members.22" address="FA Street 42" licensePlateNumber="FAC-001"/>
   <members xsi:type="socialnetwork_base:Man" firstName="X2" lastName="Abc2" age="27" children="//@members.11" address="X2 Street 28" licensePlateNumber="lpn-x2"/>
   <members xsi:type="socialnetwork_base:Woman" firstName="Y3" lastName="Abc2" age="25" address="Y3 Street 76" licensePlateNumber="lpn-y3"/>
@@ -23,6 +23,5 @@
   <members xsi:type="socialnetwork_base:Woman" firstName="Y5" lastName="Def4" age="3"/>
   <members xsi:type="socialnetwork_base:Woman" firstName="X+Y-Y1" lastName="Ghi2" age="1"/>
   <members xsi:type="socialnetwork_base:Man" firstName="FA" lastName="Child" age="6"/>
-  <members xsi:type="socialnetwork_base:Man" firstName="Jani" lastName="Tiger"/>
   <members xsi:type="socialnetwork_base:Woman" firstName="FA_Jani" lastName="Child"/>
 </socialnetwork_base:SocialNetwork>

@@ -21,6 +21,7 @@ import org.eclipse.incquery.runtime.evm.specific.ExecutionSchemas;
 import org.eclipse.incquery.runtime.evm.specific.Jobs;
 import org.eclipse.incquery.runtime.evm.specific.Rules;
 import org.eclipse.incquery.runtime.evm.specific.Schedulers;
+import org.eclipse.incquery.runtime.evm.specific.TransactionalSchedulers;
 import org.eclipse.incquery.runtime.evm.specific.event.IncQueryActivationStateEnum;
 import org.eclipse.incquery.runtime.evm.specific.lifecycle.DefaultActivationLifeCycle;
 import org.eclipse.incquery.runtime.evm.specific.resolver.FixedPriorityConflictResolver;
@@ -69,7 +70,7 @@ public class SiriusEVM implements Disposeable {
 		
 		this.engine = IncQueryEngine.on(new EMFScope(helper.getSource()));
 		this.executionSchema = ExecutionSchemas.createIncQueryExecutionSchema(
-				engine, Schedulers.getTransactionSchedulerFactory(
+				engine, TransactionalSchedulers.getTransactionSchedulerFactory(
 						helper.getSession().getTransactionalEditingDomain()));
 		
 		this.started = false;

@@ -22,6 +22,7 @@ Require-Bundle: org.eclipse.incquery.viewmodel,
  org.eclipse.sirius.diagram,
  org.eclipse.incquery.runtime.evm,
  org.eclipse.ui.trace;bundle-version="1.0.201",
- org.eclipse.sirius.ui;bundle-version="2.0.0"
+ org.eclipse.sirius.ui;bundle-version="2.0.0",
+ org.eclipse.incquery.runtime.evm.transactions;bundle-version="1.0.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Import-Package: org.apache.log4j;version="1.2.15"
