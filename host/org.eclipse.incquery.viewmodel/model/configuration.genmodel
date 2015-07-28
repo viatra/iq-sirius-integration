@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.eclipse.incquery.viewmodel/emf-gen" modelPluginID="org.eclipse.incquery.viewmodel"
+    modelName="Configuration" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>configuration.ecore</foreignModel>
+  <genPackages prefix="Configuration" basePackage="org.eclipse.incquery.viewmodel"
+      disposableProviderFactory="true" ecorePackage="configuration.ecore#/">
+    <genClasses ecoreClass="configuration.ecore#//Configuration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute configuration.ecore#//Configuration/targetMetamodelNsURI"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute configuration.ecore#//Configuration/sourceModel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute configuration.ecore#//Configuration/targetModel"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference configuration.ecore#//Configuration/rules"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference configuration.ecore#//Configuration/elementRules"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference configuration.ecore#//Configuration/structuralFeatureRules"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference configuration.ecore#//Configuration/referenceRules"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference configuration.ecore#//Configuration/attributeRules"/>
+    </genClasses>
+    <genClasses ecoreClass="configuration.ecore#//ElementRule">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute configuration.ecore#//ElementRule/id"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference configuration.ecore#//ElementRule/elementType"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference configuration.ecore#//ElementRule/structuralFeatureRules"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference configuration.ecore#//ElementRule/referenceRules"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference configuration.ecore#//ElementRule/attributeRules"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="configuration.ecore#//StructuralFeatureRule">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference configuration.ecore#//StructuralFeatureRule/ownerElementRule"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="configuration.ecore#//Rule">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference configuration.ecore#//Rule/configuration"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute configuration.ecore#//Rule/patternFQN"/>
+    </genClasses>
+    <genClasses ecoreClass="configuration.ecore#//ReferenceRule">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute configuration.ecore#//ReferenceRule/sourceElementPatternVariables"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute configuration.ecore#//ReferenceRule/targetElementPatternVariables"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference configuration.ecore#//ReferenceRule/reference"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference configuration.ecore#//ReferenceRule/targetElementRule"/>
+    </genClasses>
+    <genClasses ecoreClass="configuration.ecore#//AttributeRule">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute configuration.ecore#//AttributeRule/calculatedPatternVariable"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference configuration.ecore#//AttributeRule/attribute"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute configuration.ecore#//AttributeRule/sourceElementPatternVariables"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="configuration.ecore#//NamedElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute configuration.ecore#//NamedElement/name"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

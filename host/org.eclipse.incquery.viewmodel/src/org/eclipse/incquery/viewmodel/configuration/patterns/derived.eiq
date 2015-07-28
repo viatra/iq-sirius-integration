@@ -1,0 +1,39 @@
+package org.eclipse.incquery.viewmodel.configuration.patterns
+
+import "http://org.eclipse.incquery/viewmodel/configuration/1.0"
+
+@QueryBasedFeature(feature = "elementRules")
+pattern configuration_elementRules(This : Configuration, Target : ElementRule) {
+	Configuration.rules(This, Target);
+	ElementRule(Target);
+}
+
+@QueryBasedFeature(feature = "structuralFeatureRules")
+pattern configuration_structuralFeatureRules(This : Configuration, Target : StructuralFeatureRule) {
+	Configuration.rules(This, Target);
+	StructuralFeatureRule(Target);
+}
+
+@QueryBasedFeature(feature = "referenceRules")
+pattern configuration_referenceRules(This : Configuration, Target : ReferenceRule) {
+	Configuration.rules(This, Target);
+	ReferenceRule(Target);
+}
+
+@QueryBasedFeature(feature = "attributeRules")
+pattern configuration_attributeRules(This : Configuration, Target : AttributeRule) {
+	Configuration.rules(This, Target);
+	AttributeRule(Target);
+}
+
+@QueryBasedFeature(feature = "referenceRules")
+pattern elementRule_referenceRules(This : ElementRule, Target : ReferenceRule) {
+	ElementRule.structuralFeatureRules(This, Target);
+	ReferenceRule(Target);
+}
+
+@QueryBasedFeature(feature = "attributeRules")
+pattern elementRule_attributeRules(This : ElementRule, Target : AttributeRule) {
+	ElementRule.structuralFeatureRules(This, Target);
+	AttributeRule(Target);
+}
