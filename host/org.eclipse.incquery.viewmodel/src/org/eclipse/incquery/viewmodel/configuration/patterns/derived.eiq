@@ -1,39 +1,63 @@
 package org.eclipse.incquery.viewmodel.configuration.patterns
 
 import "http://org.eclipse.incquery/viewmodel/configuration/1.0"
+import "http://www.eclipse.org/emf/2002/Ecore"
 
-@QueryBasedFeature(feature = "elementRules")
-pattern configuration_elementRules(This : Configuration, Target : ElementRule) {
-	Configuration.rules(This, Target);
-	ElementRule(Target);
+
+@QueryBasedFeature(feature = "name")
+pattern namedElement_name(This : NamedElement, Target) {
+	ElementRuleDescriptor.elementType.name(This, Target);
+} or {
+	ReferenceRuleDescriptor.ownerElementRuleDescriptor.elementType.name(This, fromName);
+	ReferenceRuleDescriptor.targetElementRuleDescriptor.elementType.name(This, toName);
+	ReferenceRuleDescriptor.reference.name(This, refName);
+	
+	Target == eval(fromName + ":" + refName + "->" + toName);
+} or { 
+	AttributeRuleDescriptor.ownerElementRuleDescriptor.elementType.name(This, ownerName);
+	AttributeRuleDescriptor.attribute.name(This, attrName);
+	
+	Target == eval(ownerName + ":" + attrName);
+} or {
+	PatternParameterMapping.structuralFeatureRuleDescriptor.name(This, ownerName);
+	PatternParameterMapping.sfRulePatternParameterName(This, sfRulePatternParameterName);
+	PatternParameterMapping.eRulePatternParameterName(This, eRulePatternParameterName);
+	
+	Target == eval(ownerName + ":" + sfRulePatternParameterName + "->" + eRulePatternParameterName);
 }
 
-@QueryBasedFeature(feature = "structuralFeatureRules")
-pattern configuration_structuralFeatureRules(This : Configuration, Target : StructuralFeatureRule) {
-	Configuration.rules(This, Target);
-	StructuralFeatureRule(Target);
+@QueryBasedFeature(feature = "elementRuleDescriptors")
+pattern configuration_elementRuleDescriptors(This : Configuration, Target : ElementRuleDescriptor) {
+	Configuration.ruleDescriptors(This, Target);
+	ElementRuleDescriptor(Target);
 }
 
-@QueryBasedFeature(feature = "referenceRules")
-pattern configuration_referenceRules(This : Configuration, Target : ReferenceRule) {
-	Configuration.rules(This, Target);
-	ReferenceRule(Target);
+@QueryBasedFeature(feature = "structuralFeatureRuleDescriptors")
+pattern configuration_structuralFeatureRuleDescriptors(This : Configuration, Target : StructuralFeatureRuleDescriptor) {
+	Configuration.ruleDescriptors(This, Target);
+	StructuralFeatureRuleDescriptor(Target);
 }
 
-@QueryBasedFeature(feature = "attributeRules")
-pattern configuration_attributeRules(This : Configuration, Target : AttributeRule) {
-	Configuration.rules(This, Target);
-	AttributeRule(Target);
+@QueryBasedFeature(feature = "referenceRuleDescriptors")
+pattern configuration_referenceRuleDescriptors(This : Configuration, Target : ReferenceRuleDescriptor) {
+	Configuration.ruleDescriptors(This, Target);
+	ReferenceRuleDescriptor(Target);
 }
 
-@QueryBasedFeature(feature = "referenceRules")
-pattern elementRule_referenceRules(This : ElementRule, Target : ReferenceRule) {
-	ElementRule.structuralFeatureRules(This, Target);
-	ReferenceRule(Target);
+@QueryBasedFeature(feature = "attributeRuleDescriptors")
+pattern configuration_attributeRuleDescriptors(This : Configuration, Target : AttributeRuleDescriptor) {
+	Configuration.ruleDescriptors(This, Target);
+	AttributeRuleDescriptor(Target);
 }
 
-@QueryBasedFeature(feature = "attributeRules")
-pattern elementRule_attributeRules(This : ElementRule, Target : AttributeRule) {
-	ElementRule.structuralFeatureRules(This, Target);
-	AttributeRule(Target);
+@QueryBasedFeature(feature = "referenceRuleDescriptors")
+pattern elementRule_referenceRuleDescriptors(This : ElementRuleDescriptor, Target : ReferenceRuleDescriptor) {
+	ElementRuleDescriptor.structuralFeatureRuleDescriptors(This, Target);
+	ReferenceRuleDescriptor(Target);
+}
+
+@QueryBasedFeature(feature = "attributeRuleDescriptors")
+pattern elementRule_attributeRuleDescriptors(This : ElementRuleDescriptor, Target : AttributeRuleDescriptor) {
+	ElementRuleDescriptor.structuralFeatureRuleDescriptors(This, Target);
+	AttributeRuleDescriptor(Target);
 }

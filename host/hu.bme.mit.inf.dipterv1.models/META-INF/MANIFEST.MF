@@ -13,15 +13,15 @@ Export-Package: socialnetwork_base,
  socialnetwork_many_one,
  socialnetwork_many_one.impl,
  socialnetwork_many_one.util,
- socialnetwork_one_one,
- socialnetwork_one_one.impl,
- socialnetwork_one_one.util,
+ socialnetwork_many_one_2,
+ socialnetwork_many_one_2.impl,
+ socialnetwork_many_one_2.util,
  socialnetwork_one_many_1,
  socialnetwork_one_many_1.impl,
  socialnetwork_one_many_1.util,
- socialnetwork_many_one_2,
- socialnetwork_many_one_2.impl,
- socialnetwork_many_one_2.util
+ socialnetwork_one_one,
+ socialnetwork_one_one.impl,
+ socialnetwork_one_one.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport
 Bundle-ActivationPolicy: lazy

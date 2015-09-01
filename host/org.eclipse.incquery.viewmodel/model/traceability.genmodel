@@ -11,13 +11,11 @@
       disposableProviderFactory="true" ecorePackage="traceability.ecore#/">
     <genClasses ecoreClass="traceability.ecore#//Traceability">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference traceability.ecore#//Traceability/traces"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute traceability.ecore#//Traceability/id"/>
     </genClasses>
     <genClasses ecoreClass="traceability.ecore#//Trace">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference traceability.ecore#//Trace/targets"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute traceability.ecore#//Trace/id"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference traceability.ecore#//Trace/params"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute traceability.ecore#//Trace/objects"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute traceability.ecore#//Trace/ruleDescriptorId"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference traceability.ecore#//Trace/sources"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

@@ -9,8 +9,8 @@ Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: socialnetwork_base.provider,
- socialnetwork_many_one_2.provider,
  socialnetwork_many_one.provider,
+ socialnetwork_many_one_2.provider,
  socialnetwork_one_many_1.provider,
  socialnetwork_one_one.provider
 Require-Bundle: org.eclipse.core.runtime,

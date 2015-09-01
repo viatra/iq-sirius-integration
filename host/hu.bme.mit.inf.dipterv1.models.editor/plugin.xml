@@ -35,33 +35,6 @@
    </extension>
 
    <extension point="org.eclipse.ui.newWizards">
-      <!-- @generated socialnetwork_many_one_2 -->
-      <category
-            id="org.eclipse.emf.ecore.Wizard.category.ID"
-            name="%_UI_Wizard_category"/>
-      <wizard
-            id="socialnetwork_many_one_2.presentation.Socialnetwork_many_one_2ModelWizardID"
-            name="%_UI_Socialnetwork_many_one_2ModelWizard_label"
-            class="socialnetwork_many_one_2.presentation.Socialnetwork_many_one_2ModelWizard"
-            category="org.eclipse.emf.ecore.Wizard.category.ID"
-            icon="icons/full/obj16/Socialnetwork_many_one_2ModelFile.gif">
-         <description>%_UI_Socialnetwork_many_one_2ModelWizard_description</description>
-         <selection class="org.eclipse.core.resources.IResource"/>
-      </wizard>
-   </extension>
-
-   <extension point="org.eclipse.ui.editors">
-      <!-- @generated socialnetwork_many_one_2 -->
-      <editor
-            id="socialnetwork_many_one_2.presentation.Socialnetwork_many_one_2EditorID"
-            name="%_UI_Socialnetwork_many_one_2Editor_label"
-            icon="icons/full/obj16/Socialnetwork_many_one_2ModelFile.gif"
-            extensions="socialnetwork_many_one_2"
-            class="socialnetwork_many_one_2.presentation.Socialnetwork_many_one_2Editor"
-            contributorClass="socialnetwork_many_one_2.presentation.Socialnetwork_many_one_2ActionBarContributor">
-      </editor>
-   </extension>
-   <extension point="org.eclipse.ui.newWizards">
       <!-- @generated socialnetwork_many_one -->
       <category
             id="org.eclipse.emf.ecore.Wizard.category.ID"
@@ -86,6 +59,33 @@
             extensions="socialnetwork_many_one"
             class="socialnetwork_many_one.presentation.Socialnetwork_many_oneEditor"
             contributorClass="socialnetwork_many_one.presentation.Socialnetwork_many_oneActionBarContributor">
+      </editor>
+   </extension>
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated socialnetwork_many_one_2 -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="socialnetwork_many_one_2.presentation.Socialnetwork_many_one_2ModelWizardID"
+            name="%_UI_Socialnetwork_many_one_2ModelWizard_label"
+            class="socialnetwork_many_one_2.presentation.Socialnetwork_many_one_2ModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/Socialnetwork_many_one_2ModelFile.gif">
+         <description>%_UI_Socialnetwork_many_one_2ModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated socialnetwork_many_one_2 -->
+      <editor
+            id="socialnetwork_many_one_2.presentation.Socialnetwork_many_one_2EditorID"
+            name="%_UI_Socialnetwork_many_one_2Editor_label"
+            icon="icons/full/obj16/Socialnetwork_many_one_2ModelFile.gif"
+            extensions="socialnetwork_many_one_2"
+            class="socialnetwork_many_one_2.presentation.Socialnetwork_many_one_2Editor"
+            contributorClass="socialnetwork_many_one_2.presentation.Socialnetwork_many_one_2ActionBarContributor">
       </editor>
    </extension>
    <extension point="org.eclipse.ui.newWizards">

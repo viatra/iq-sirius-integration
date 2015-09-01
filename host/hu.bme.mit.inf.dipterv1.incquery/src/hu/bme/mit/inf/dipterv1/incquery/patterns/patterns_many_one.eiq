@@ -28,6 +28,15 @@ pattern family(father : Man, mother : Woman) {
 	check(motherParents == 0);
 }
 
+pattern family_name(father : Man, mother : Woman, value) {
+	Person.lastName(father, fLastName);
+	Person.lastName(mother, mLastName);
+	
+	find family(father, mother);
+	
+	value == eval(fLastName + "&" + mLastName);
+}
+
 pattern friend(m1 : Man, w1 : Woman, m2 : Man, w2 : Woman) {
 	find differentFamilies(m1, w1, m2, w2);
 

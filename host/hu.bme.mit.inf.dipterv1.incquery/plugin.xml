@@ -8,4 +8,7 @@
   <extension id="hu.bme.mit.inf.dipterv1.incquery.patterns.Patterns_many_one" point="org.eclipse.incquery.runtime.queryspecification">
     <group group="org.eclipse.incquery.runtime.extensibility.SingletonExtensionFactory:hu.bme.mit.inf.dipterv1.incquery.patterns.Patterns_many_one" id="hu.bme.mit.inf.dipterv1.incquery.patterns.Patterns_many_one"/>
   </extension>
+  <extension id="hu.bme.mit.inf.dipterv1.incquery.patterns.Others" point="org.eclipse.incquery.runtime.queryspecification">
+    <group group="org.eclipse.incquery.runtime.extensibility.SingletonExtensionFactory:hu.bme.mit.inf.dipterv1.incquery.patterns.Others" id="hu.bme.mit.inf.dipterv1.incquery.patterns.Others"/>
+  </extension>
 </plugin>
