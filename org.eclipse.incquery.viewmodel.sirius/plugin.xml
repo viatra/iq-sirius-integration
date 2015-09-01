@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><plugin>
+  <extension id="IncQueryInterpreterProvider" name="IncQuery Interpreter Provider" point="org.eclipse.sirius.common.expressionInterpreter">
+    <expressionInterpreterProvider interpreterProviderClass="org.eclipse.incquery.viewmodel.sirius.interpreter.IncQueryInterpreterProvider"/>
+  </extension>
+  <extension
+        id="IncQueryInterpreterProposalProvider"
+        name="IncQuery Interpreter Proposal Provider"
+        point="org.eclipse.sirius.common.proposalProvider">
+    <proposalProvider class="org.eclipse.incquery.viewmodel.sirius.interpreter.IncQueryInterpreterProposalProvider" interpreter="org.eclipse.incquery.sirius.IncQueryInterpreterProvider"/>
+  </extension>
+  <extension point="org.eclipse.emf.ecore.protocol_parser">
+    <parser class="org.eclipse.incquery.viewmodel.sirius.inmemoryresource.InMemoryResourceFactoryImpl" protocolName="inmemoryresource"/>
+  </extension>
+</plugin>
