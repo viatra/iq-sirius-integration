@@ -70,7 +70,7 @@ public class IncQueryInterpreter implements IInterpreter {
 	@SuppressWarnings("deprecation")
 	@Override
 	public Collection<EObject> evaluateCollection(EObject context,
-			String expression) throws EvaluationException {		
+			String expression) throws EvaluationException {
 		return null;
 	}
 

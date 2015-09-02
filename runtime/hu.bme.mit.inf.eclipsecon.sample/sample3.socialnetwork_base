@@ -10,7 +10,7 @@
   <members xsi:type="socialnetwork_base:Woman" firstName="Edina" lastName="Polgár" age="29"/>
   <members xsi:type="socialnetwork_base:Man" firstName="János" lastName="Lengyel" age="79" children="//@members.10 //@members.11"/>
   <members xsi:type="socialnetwork_base:Woman" firstName="Valéria" lastName="Barta" age="75" children="//@members.10 //@members.11"/>
-  <members xsi:type="socialnetwork_base:Man" firstName="János" lastName="Lengyel (Ifj)" age="55" children="//@members.13 //@members.14"/>
+  <members xsi:type="socialnetwork_base:Man" firstName="János" lastName="Lengyel (Ifj)" age="55" children="//@members.13 //@members.14" address="2100 Gödöllő, Palást utca 10/a" licensePlateNumber="ixj-263"/>
   <members xsi:type="socialnetwork_base:Man" firstName="Attila" lastName="Lengyel" age="47"/>
   <members xsi:type="socialnetwork_base:Woman" firstName="Mária" lastName="Varga" age="54" children="//@members.13 //@members.14"/>
   <members xsi:type="socialnetwork_base:Man" firstName="Viktor" lastName="Lengyel" age="29"/>

@@ -42,6 +42,8 @@ public class SiriusTransformationManager {
 	}
 	
 	public EObject initialize(EObject sourceRoot, URI configModelURI) throws IncQueryException, InconsistentEventSemanticsException {
+		EObject result = null;
+		
 		// TODO
 		if (!initialized) {
 			session = SessionManager.INSTANCE.getSession(sourceRoot);
@@ -62,7 +64,7 @@ public class SiriusTransformationManager {
 			viewModelManager.initialize();
 			
 			addInMemoryResourceToSession();
-			
+					
 			this.initialized = true;
 		}
 

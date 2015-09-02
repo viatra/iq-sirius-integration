@@ -474,19 +474,50 @@ public class DiagramElementMappingQuery {
          */
         // The rootExpression evaluation was disabled for EdgeMapping in
         // DEdgeSynchronizedHelper, don't know why
-        if (containerView == diagram && !(mapping instanceof EdgeMapping)) {
+
+        
+        /*
+         * Original version
+         */
+//        if (containerView == diagram && !(mapping instanceof EdgeMapping)) {
+//            final String rootContentExpression = ((DDiagram) containerView).getDescription().getRootExpression();
+//            if (!StringUtil.isEmpty(rootContentExpression)) {
+//                interpreter.setVariable(IInterpreterSiriusVariables.VIEWPOINT, diagram);
+//                interpreter.setVariable(IInterpreterSiriusVariables.DIAGRAM, diagram);
+//                EObject computedRoot = null;
+//                try {
+//                    computedRoot = interpreter.evaluateEObject(rootContent, diagram.getDescription().getRootExpression());
+//                } catch (final EvaluationException e) {
+//                    SiriusPlugin.getDefault().warning("the following diagram description root expression could not be correctly evaluated : " + diagram.getDescription().getRootExpression(), e);
+//                }
+//                interpreter.unSetVariable(IInterpreterSiriusVariables.DIAGRAM);
+//                interpreter.unSetVariable(IInterpreterSiriusVariables.VIEWPOINT);
+//                if (computedRoot != null) {
+//                    rootContent = computedRoot;
+//                }
+//            }
+//        }
+//        return rootContent;
+        
+        /*
+         * Modified version
+         */
+        if (containerView == diagram) {
             final String rootContentExpression = ((DDiagram) containerView).getDescription().getRootExpression();
             if (!StringUtil.isEmpty(rootContentExpression)) {
                 interpreter.setVariable(IInterpreterSiriusVariables.VIEWPOINT, diagram);
                 interpreter.setVariable(IInterpreterSiriusVariables.DIAGRAM, diagram);
+            
                 EObject computedRoot = null;
                 try {
                     computedRoot = interpreter.evaluateEObject(rootContent, diagram.getDescription().getRootExpression());
                 } catch (final EvaluationException e) {
                     SiriusPlugin.getDefault().warning("the following diagram description root expression could not be correctly evaluated : " + diagram.getDescription().getRootExpression(), e);
                 }
+                
                 interpreter.unSetVariable(IInterpreterSiriusVariables.DIAGRAM);
                 interpreter.unSetVariable(IInterpreterSiriusVariables.VIEWPOINT);
+                
                 if (computedRoot != null) {
                     rootContent = computedRoot;
                 }
