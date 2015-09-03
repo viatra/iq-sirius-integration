@@ -31,8 +31,7 @@ Require-Bundle: org.eclipse.incquery.querybasedfeatures.runtime,
  org.eclipse.emf.common,
  org.eclipse.viatra.emf.runtime,
  org.eclipse.incquery.runtime.evm.transactions,
- hu.bme.mit.inf.eclipse.logging.utils,
- hu.bme.mit.inf.dipterv1.models
+ hu.bme.mit.inf.eclipse.logging.utils
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Import-Package: com.google.common.collect,

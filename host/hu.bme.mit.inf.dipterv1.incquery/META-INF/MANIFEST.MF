@@ -4,7 +4,9 @@ Bundle-Name: Incquery
 Bundle-SymbolicName: hu.bme.mit.inf.dipterv1.incquery;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: hu.bme.mit.inf.dipterv1.incquery.Activator
-Export-Package: hu.bme.mit.inf.dipterv1.incquery.patterns,
+Export-Package: hu.bme.mit.inf.dipterv1.incquery.interpreter.patterns,
+ hu.bme.mit.inf.dipterv1.incquery.interpreter.patterns.util,
+ hu.bme.mit.inf.dipterv1.incquery.patterns,
  hu.bme.mit.inf.dipterv1.incquery.patterns.util
 Require-Bundle: org.eclipse.emf.ecore,
  hu.bme.mit.inf.dipterv1.models,

@@ -67,7 +67,7 @@ public class SiriusTransformationManager {
 					
 			this.initialized = true;
 		}
-
+		
 		// Return with the root of the target model as the new root of the Sirius diagrams
 		return getViewModelManager().getConfigurationModel().getTargetModel().getContents().get(0);
 	}

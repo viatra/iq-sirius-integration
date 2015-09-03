@@ -1,4 +1,4 @@
-package hu.bme.mit.inf.dipterv1.incquery.patterns
+package hu.bme.mit.inf.dipterv1.incquery.interpreter.patterns
 
 import "http://hu.bme.mit.inf.models/socialnetwork_base"
 

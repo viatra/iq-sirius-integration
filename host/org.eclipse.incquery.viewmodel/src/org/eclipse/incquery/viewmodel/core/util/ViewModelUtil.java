@@ -30,7 +30,7 @@ public final class ViewModelUtil {
 		attribute = (EAttribute) source.eClass().getEStructuralFeature(attribute.getName());
 		
     	// TODO erre a feltételre igazából nincs szükség, ha van validáció!!!
-    	if (source.eClass().getEAttributes().contains(attribute)) {
+    	if (source.eClass().getEAllAttributes().contains(attribute)) {
     		if (attribute.isMany()) {
     			((EList<Object>) source.eGet(attribute)).add(value);
     		} else {
@@ -44,7 +44,7 @@ public final class ViewModelUtil {
     	reference = (EReference) source.eClass().getEStructuralFeature(reference.getName());
     	
     	// TODO erre a feltételre igazából nincs szükség, ha van validáció!!!
-    	if (source.eClass().getEReferences().contains(reference)) {
+    	if (source.eClass().getEAllReferences().contains(reference)) {
     		if (reference.isMany()) {
     			((EList<EObject>) source.eGet(reference)).add(target);
     		} else {
@@ -58,7 +58,7 @@ public final class ViewModelUtil {
 		attribute = (EAttribute) source.eClass().getEStructuralFeature(attribute.getName());
     	
     	// TODO erre a feltételre igazából nincs szükség, ha van validáció!!!
-    	if (source.eClass().getEAttributes().contains(attribute)) {
+    	if (source.eClass().getEAllAttributes().contains(attribute)) {
     		if (attribute.isMany()) {
     			((EList<Object>) source.eGet(attribute)).remove(value);
     		} else if (source.eGet(attribute).equals(value)) {
@@ -72,7 +72,7 @@ public final class ViewModelUtil {
     	reference = (EReference) source.eClass().getEStructuralFeature(reference.getName());
     	
     	// TODO erre a feltételre igazából nincs szükség, ha van validáció!!!
-    	if (source.eClass().getEReferences().contains(reference)) {
+    	if (source.eClass().getEAllReferences().contains(reference)) {
     		if (reference.isMany()) {
     			((EList<EObject>) source.eGet(reference)).remove(target);
     		} else {
