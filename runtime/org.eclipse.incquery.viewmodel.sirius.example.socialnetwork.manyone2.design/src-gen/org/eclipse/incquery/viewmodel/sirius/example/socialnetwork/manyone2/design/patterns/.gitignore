@@ -11,3 +11,16 @@
 /.Patterns_many_one.java._trace
 /.SocialNetworkMatch.java._trace
 /.SocialNetworkMatcher.java._trace
+/Containment_socialNetwork_familyMatch.java
+/Containment_socialNetwork_familyMatcher.java
+/Containment_socialNetwork_friendMatch.java
+/Containment_socialNetwork_friendMatcher.java
+/FamilyMatch.java
+/FamilyMatcher.java
+/Family_nameMatch.java
+/Family_nameMatcher.java
+/FriendMatch.java
+/FriendMatcher.java
+/Patterns_many_one.java
+/SocialNetworkMatch.java
+/SocialNetworkMatcher.java
