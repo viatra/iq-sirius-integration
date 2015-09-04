@@ -20,7 +20,7 @@ Export-Package: org.eclipse.incquery.viewmodel.configuration,
  org.eclipse.incquery.viewmodel.traceability.util
 Require-Bundle: org.eclipse.incquery.querybasedfeatures.runtime,
  org.eclipse.core.runtime,
- org.eclipse.emf.ecore,
+ org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.emf.transaction,
  org.eclipse.emf.ecore.xmi,
  org.eclipse.incquery.runtime,
