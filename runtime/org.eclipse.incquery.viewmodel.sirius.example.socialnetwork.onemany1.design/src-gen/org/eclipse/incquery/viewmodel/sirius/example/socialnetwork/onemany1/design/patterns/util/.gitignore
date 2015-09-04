@@ -4,3 +4,9 @@
 /.PersonWithHouseAndCarQuerySpecification.java._trace
 /.SocialNetworkProcessor.java._trace
 /.SocialNetworkQuerySpecification.java._trace
+/Containment_socialNetwork_personProcessor.java
+/Containment_socialNetwork_personQuerySpecification.java
+/PersonWithHouseAndCarProcessor.java
+/PersonWithHouseAndCarQuerySpecification.java
+/SocialNetworkProcessor.java
+/SocialNetworkQuerySpecification.java
