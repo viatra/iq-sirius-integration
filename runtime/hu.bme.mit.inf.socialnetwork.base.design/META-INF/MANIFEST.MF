@@ -1,9 +1,9 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: hu.bme.mit.inf.socialnetwork.base.design
-Bundle-SymbolicName: hu.bme.mit.inf.socialnetwork.base.design;singleton:=true
+Bundle-Name: org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.base.design
+Bundle-SymbolicName: org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.base.design;singleton:=true
 Bundle-Version: 1.0.0
-Bundle-Activator: hu.bme.mit.inf.socialnetwork.base.design.Activator
+Bundle-Activator: org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.base.design.Activator
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.sirius,

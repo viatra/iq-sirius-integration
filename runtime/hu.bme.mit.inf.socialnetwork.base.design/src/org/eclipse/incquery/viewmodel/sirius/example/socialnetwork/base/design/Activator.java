@@ -1,4 +1,4 @@
-package hu.bme.mit.inf.socialnetwork.base.design;
+package org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.base.design;
 
 import java.util.HashSet;
 import java.util.Set;
