@@ -14,16 +14,32 @@
         eType="#//RuleDescriptor" containment="true" eOpposite="#//RuleDescriptor/configuration"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="elementRuleDescriptors"
         upperBound="-1" eType="#//ElementRuleDescriptor" changeable="false" volatile="true"
-        transient="true" derived="true"/>
+        transient="true" derived="true">
+      <eAnnotations source="org.eclipse.incquery.querybasedfeature">
+        <details key="patternFQN" value="org.eclipse.incquery.viewmodel.configuration.patterns.configuration_elementRuleDescriptors"/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="structuralFeatureRuleDescriptors"
         upperBound="-1" eType="#//StructuralFeatureRuleDescriptor" changeable="false"
-        volatile="true" transient="true" derived="true"/>
+        volatile="true" transient="true" derived="true">
+      <eAnnotations source="org.eclipse.incquery.querybasedfeature">
+        <details key="patternFQN" value="org.eclipse.incquery.viewmodel.configuration.patterns.configuration_structuralFeatureRuleDescriptors"/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="referenceRuleDescriptors"
         upperBound="-1" eType="#//ReferenceRuleDescriptor" changeable="false" volatile="true"
-        transient="true" derived="true"/>
+        transient="true" derived="true">
+      <eAnnotations source="org.eclipse.incquery.querybasedfeature">
+        <details key="patternFQN" value="org.eclipse.incquery.viewmodel.configuration.patterns.configuration_referenceRuleDescriptors"/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="attributeRuleDescriptors"
         upperBound="-1" eType="#//AttributeRuleDescriptor" changeable="false" volatile="true"
-        transient="true" derived="true"/>
+        transient="true" derived="true">
+      <eAnnotations source="org.eclipse.incquery.querybasedfeature">
+        <details key="patternFQN" value="org.eclipse.incquery.viewmodel.configuration.patterns.configuration_attributeRuleDescriptors"/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="sourceModelURI" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="targetModelURI" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="patternResources" upperBound="-1"
@@ -39,10 +55,18 @@
         upperBound="-1" eType="#//StructuralFeatureRuleDescriptor" eOpposite="#//StructuralFeatureRuleDescriptor/ownerElementRuleDescriptor"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="referenceRuleDescriptors"
         upperBound="-1" eType="#//ReferenceRuleDescriptor" changeable="false" volatile="true"
-        transient="true" derived="true"/>
+        transient="true" derived="true">
+      <eAnnotations source="org.eclipse.incquery.querybasedfeature">
+        <details key="patternFQN" value="org.eclipse.incquery.viewmodel.configuration.patterns.elementRule_referenceRuleDescriptors"/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="attributeRuleDescriptors"
         upperBound="-1" eType="#//AttributeRuleDescriptor" changeable="false" volatile="true"
-        transient="true" derived="true"/>
+        transient="true" derived="true">
+      <eAnnotations source="org.eclipse.incquery.querybasedfeature">
+        <details key="patternFQN" value="org.eclipse.incquery.viewmodel.configuration.patterns.elementRule_attributeRuleDescriptors"/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="StructuralFeatureRuleDescriptor" abstract="true"
       eSuperTypes="#//RuleDescriptor">
@@ -80,6 +104,9 @@
         volatile="true" transient="true" derived="true">
       <eAnnotations>
         <details key="get" value="return org.eclipse.incquery.viewmodel.configuration.util.ConfigurationModelUtil.getInstance(this).getDerivedName(this);"/>
+      </eAnnotations>
+      <eAnnotations source="org.eclipse.incquery.querybasedfeature">
+        <details key="patternFQN" value="org.eclipse.incquery.viewmodel.configuration.patterns.namedElement_name"/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>

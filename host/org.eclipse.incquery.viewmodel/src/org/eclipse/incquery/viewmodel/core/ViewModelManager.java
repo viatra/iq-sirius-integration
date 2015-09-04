@@ -1,10 +1,19 @@
 package org.eclipse.incquery.viewmodel.core;
 
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
+
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
+import org.eclipse.incquery.patternlanguage.emf.specification.SpecificationBuilder;
+import org.eclipse.incquery.patternlanguage.patternLanguage.Pattern;
+import org.eclipse.incquery.patternlanguage.patternLanguage.PatternModel;
+import org.eclipse.incquery.runtime.api.IQuerySpecification;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
 import org.eclipse.incquery.runtime.emf.EMFScope;
 import org.eclipse.incquery.runtime.evm.api.ActivationLifeCycle;
@@ -67,6 +76,9 @@ public class ViewModelManager {
 	
 	// Transactional editing domain for the target model (if it exists)
 	private TransactionalEditingDomain targetTransactionalEditingDomain;
+	
+	// Loaded IQuerySpecification instances
+	private Map<String, IQuerySpecification<?>> querySpecifications;
 
 	
 	
@@ -105,6 +117,8 @@ public class ViewModelManager {
 		
 		this.traceabilityModelManager = new TraceabilityModelManager();
 
+		this.querySpecifications = new HashMap<String, IQuerySpecification<?>>();
+		
 		
 		ResourceSet resourceSet = new ResourceSetImpl();
 		
@@ -133,6 +147,41 @@ public class ViewModelManager {
 			
 			if (this.configurationModel.getTargetModel() == null) {
 				throw new IllegalArgumentException("The given sourceModelURI is not a correct PlatformResourceURI!");
+			}
+		}
+		
+		// Load pattern resources
+		if (this.configurationModel.getPatternResourceURIs() != null) {
+			ResourceSet eiqResourceSet = new ResourceSetImpl();
+			
+			URI patternResourceURI = null;
+			Resource patternResource =  null;
+			for (String uri : this.configurationModel.getPatternResourceURIs()) {
+				patternResourceURI = URI.createPlatformResourceURI(uri, true);
+				
+				if (patternResourceURI != null
+						&& this.configurationModel.getPatternResources() != null
+						&& !containsResourceWithURI(this.configurationModel.getPatternResources(), patternResourceURI)) {
+					patternResource = eiqResourceSet.getResource(patternResourceURI, true);
+					
+					this.configurationModel.getPatternResources().add(patternResource);
+				}
+			}
+		}
+		
+		// Create IQuerySpecification instances from pattern resources
+		PatternModel patternModel = null;
+		IQuerySpecification<?> querySpecification = null;
+		SpecificationBuilder specificationBuilder = new SpecificationBuilder();
+		for (Resource resource : this.configurationModel.getPatternResources()) {
+			if (!resource.getContents().isEmpty() && (resource.getContents().get(0) instanceof PatternModel)) {
+				patternModel = (PatternModel) resource.getContents().get(0);
+
+				for (Pattern pattern : patternModel.getPatterns()) {
+					querySpecification = specificationBuilder.getOrCreateSpecification(pattern);
+					
+					querySpecifications.put(querySpecification.getFullyQualifiedName(), querySpecification);
+				}
 			}
 		}
 		
@@ -230,6 +279,19 @@ public class ViewModelManager {
 	
 	/**
 	 * 
+	 * @param patternFQN The fully qualified name of the pattern
+	 * @return An IQuerySpecification instance with the given FQN or NULL if it doesn't exist
+	 */
+	public IQuerySpecification<?> getQuerySpecification(String patternFQN) {
+		if (querySpecifications != null) {
+			return querySpecifications.get(patternFQN);
+		}
+		
+		return null;
+	}
+	
+	/**
+	 * 
 	 * @return The {@link TransactionalEditingDomain} for the target model if it's exist,
 	 * 	otherwise null
 	 */
@@ -277,5 +339,19 @@ public class ViewModelManager {
 		builder.addLifeCycle(alc);
 		
 		return builder.build();
+	}
+	
+	private boolean containsResourceWithURI(Collection<Resource> resources, URI uri) {
+		if (resources == null || uri == null) {
+			throw new IllegalArgumentException("Parameters must not be null!");
+		}
+		
+		for (Resource resource : resources) {
+			if (resource.getURI() != null && resource.getURI().equals(uri)) {
+				return true;
+			}
+		}
+		
+		return false;
 	}
 }

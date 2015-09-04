@@ -6,7 +6,6 @@ import org.eclipse.incquery.runtime.api.IQuerySpecification;
 import org.eclipse.incquery.runtime.api.IncQueryMatcher;
 import org.eclipse.incquery.runtime.evm.api.ActivationLifeCycle;
 import org.eclipse.incquery.runtime.evm.specific.Lifecycles;
-import org.eclipse.incquery.runtime.extensibility.QuerySpecificationRegistry;
 import org.eclipse.incquery.viewmodel.configuration.RuleDescriptor;
 import org.eclipse.incquery.viewmodel.core.ViewModelManager;
 
@@ -47,7 +46,7 @@ public abstract class ViewModelRule<T extends RuleDescriptor> {
 	public ViewModelRule(T ruleDescriptor, ViewModelManager viewModelManager) {
 		this.ruleDescriptor = ruleDescriptor;
 		this.viewModelManager = viewModelManager;
-		this.querySpecification = QuerySpecificationRegistry.getQuerySpecification(this.ruleDescriptor.getPatternFQN());
+		this.querySpecification = this.viewModelManager.getQuerySpecification(this.ruleDescriptor.getPatternFQN());
 	}
 	
 	public IMatchProcessor<?> getAppearedAction() {

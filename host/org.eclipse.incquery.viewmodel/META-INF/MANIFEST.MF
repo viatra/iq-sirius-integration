@@ -20,7 +20,7 @@ Export-Package: org.eclipse.incquery.viewmodel.configuration,
  org.eclipse.incquery.viewmodel.traceability.util
 Require-Bundle: org.eclipse.incquery.querybasedfeatures.runtime,
  org.eclipse.core.runtime,
- org.eclipse.emf.ecore;visibility:=reexport,
+ org.eclipse.emf.ecore,
  org.eclipse.emf.transaction,
  org.eclipse.emf.ecore.xmi,
  org.eclipse.incquery.runtime,
@@ -31,7 +31,8 @@ Require-Bundle: org.eclipse.incquery.querybasedfeatures.runtime,
  org.eclipse.emf.common,
  org.eclipse.viatra.emf.runtime,
  org.eclipse.incquery.runtime.evm.transactions,
- hu.bme.mit.inf.eclipse.logging.utils
+ hu.bme.mit.inf.eclipse.logging.utils,
+ org.eclipse.incquery.patternlanguage.emf
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Import-Package: com.google.common.collect,
