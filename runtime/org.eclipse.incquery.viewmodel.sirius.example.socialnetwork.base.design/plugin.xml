@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+  <extension point="org.eclipse.sirius.componentization">
+    <component class="org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.base.design.Activator"
+               id="hu.bme.mit.inf.socialnetwork.base.design"
+	       name="socialnwtwork_base">
+    </component>
+  </extension>
+</plugin>
