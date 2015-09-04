@@ -11,12 +11,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link socialnetwork_many_one_2.Friend#getSource <em>Source</em>}</li>
  *   <li>{@link socialnetwork_many_one_2.Friend#getTarget <em>Target</em>}</li>
  *   <li>{@link socialnetwork_many_one_2.Friend#getSince <em>Since</em>}</li>
  * </ul>
- * </p>
  *
  * @see socialnetwork_many_one_2.Socialnetwork_many_one_2Package#getFriend()
  * @model

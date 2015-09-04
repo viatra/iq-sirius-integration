@@ -27,11 +27,11 @@ import socialnetwork_many_one_2.Socialnetwork_many_one_2Package;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link socialnetwork_many_one_2.impl.SocialNetworkImpl#getMembers <em>Members</em>}</li>
  *   <li>{@link socialnetwork_many_one_2.impl.SocialNetworkImpl#getFriends <em>Friends</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

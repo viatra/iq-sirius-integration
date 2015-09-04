@@ -26,10 +26,10 @@ import socialnetwork_many_one.Socialnetwork_many_onePackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link socialnetwork_many_one.impl.SocialNetworkImpl#getMembers <em>Members</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

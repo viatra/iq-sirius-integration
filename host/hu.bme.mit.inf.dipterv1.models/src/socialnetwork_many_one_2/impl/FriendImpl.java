@@ -20,12 +20,12 @@ import socialnetwork_many_one_2.Socialnetwork_many_one_2Package;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link socialnetwork_many_one_2.impl.FriendImpl#getSource <em>Source</em>}</li>
  *   <li>{@link socialnetwork_many_one_2.impl.FriendImpl#getTarget <em>Target</em>}</li>
  *   <li>{@link socialnetwork_many_one_2.impl.FriendImpl#getSince <em>Since</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

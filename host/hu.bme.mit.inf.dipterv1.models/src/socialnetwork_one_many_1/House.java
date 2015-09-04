@@ -11,10 +11,10 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link socialnetwork_one_many_1.House#getAddress <em>Address</em>}</li>
  * </ul>
- * </p>
  *
  * @see socialnetwork_one_many_1.Socialnetwork_one_many_1Package#getHouse()
  * @model

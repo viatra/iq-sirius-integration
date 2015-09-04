@@ -22,12 +22,12 @@ import socialnetwork_one_many_1.Socialnetwork_one_many_1Package;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link socialnetwork_one_many_1.impl.PersonImpl#getName <em>Name</em>}</li>
  *   <li>{@link socialnetwork_one_many_1.impl.PersonImpl#getHouse <em>House</em>}</li>
  *   <li>{@link socialnetwork_one_many_1.impl.PersonImpl#getCar <em>Car</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

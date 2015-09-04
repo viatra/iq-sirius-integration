@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link socialnetwork_base.Person#getFirstName <em>First Name</em>}</li>
  *   <li>{@link socialnetwork_base.Person#getLastName <em>Last Name</em>}</li>
@@ -22,7 +23,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link socialnetwork_base.Person#getAddress <em>Address</em>}</li>
  *   <li>{@link socialnetwork_base.Person#getLicensePlateNumber <em>License Plate Number</em>}</li>
  * </ul>
- * </p>
  *
  * @see socialnetwork_base.Socialnetwork_basePackage#getPerson()
  * @model abstract="true"

@@ -18,10 +18,10 @@ import socialnetwork_one_one.Socialnetwork_one_onePackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link socialnetwork_one_one.impl.PersonImpl#getName <em>Name</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

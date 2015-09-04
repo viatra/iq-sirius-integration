@@ -18,10 +18,10 @@ import socialnetwork_one_many_1.Socialnetwork_one_many_1Package;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link socialnetwork_one_many_1.impl.CarImpl#getLicensePlateNumber <em>License Plate Number</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -11,10 +11,10 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link socialnetwork_one_one.Person#getName <em>Name</em>}</li>
  * </ul>
- * </p>
  *
  * @see socialnetwork_one_one.Socialnetwork_one_onePackage#getPerson()
  * @model abstract="true"

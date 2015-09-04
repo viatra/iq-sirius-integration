@@ -38,7 +38,7 @@ public interface Socialnetwork_one_many_1Package extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://hu.bme.mit.inf.models/socialnetwork_one_many_1";
+	String eNS_URI = "http://org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.models/socialnetwork_one_many_1";
 
 	/**
 	 * The package namespace name.

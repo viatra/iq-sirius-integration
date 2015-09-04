@@ -24,6 +24,7 @@ import socialnetwork_base.Socialnetwork_basePackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link socialnetwork_base.impl.PersonImpl#getFirstName <em>First Name</em>}</li>
  *   <li>{@link socialnetwork_base.impl.PersonImpl#getLastName <em>Last Name</em>}</li>
@@ -33,7 +34,6 @@ import socialnetwork_base.Socialnetwork_basePackage;
  *   <li>{@link socialnetwork_base.impl.PersonImpl#getAddress <em>Address</em>}</li>
  *   <li>{@link socialnetwork_base.impl.PersonImpl#getLicensePlateNumber <em>License Plate Number</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

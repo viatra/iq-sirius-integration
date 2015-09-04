@@ -11,8 +11,6 @@ import socialnetwork_base.Socialnetwork_basePackage;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Man</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */

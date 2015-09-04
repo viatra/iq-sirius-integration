@@ -15,23 +15,15 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated socialnetwork_base -->
       <package
-            uri="http://hu.bme.mit.inf.models/socialnetwork_base"
+            uri="http://org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.models/socialnetwork_base"
             class="socialnetwork_base.Socialnetwork_basePackage"
             genModel="model/socialnetwork_base.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated socialnetwork_many_one -->
-      <package
-            uri="http://hu.bme.mit.inf.models/socialnetwork_many_one"
-            class="socialnetwork_many_one.Socialnetwork_many_onePackage"
-            genModel="model/socialnetwork_many_one.genmodel"/>
-   </extension>
-
-   <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated socialnetwork_many_one_2 -->
       <package
-            uri="http://hu.bme.mit.inf.models/socialnetwork_many_one_2"
+            uri="http://org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.models/socialnetwork_many_one_2"
             class="socialnetwork_many_one_2.Socialnetwork_many_one_2Package"
             genModel="model/socialnetwork_many_one_2.genmodel"/>
    </extension>
@@ -39,7 +31,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated socialnetwork_one_many_1 -->
       <package
-            uri="http://hu.bme.mit.inf.models/socialnetwork_one_many_1"
+            uri="http://org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.models/socialnetwork_one_many_1"
             class="socialnetwork_one_many_1.Socialnetwork_one_many_1Package"
             genModel="model/socialnetwork_one_many_1.genmodel"/>
    </extension>
@@ -47,9 +39,17 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated socialnetwork_one_one -->
       <package
-            uri="http://hu.bme.mit.inf.models/socialnetwork_one_one"
+            uri="http://org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.models/socialnetwork_one_one"
             class="socialnetwork_one_one.Socialnetwork_one_onePackage"
             genModel="model/socialnetwork_one_one.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated socialnetwork_many_one_1 -->
+      <package
+            uri="http://org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.models/socialnetwork_many_one"
+            class="socialnetwork_many_one.Socialnetwork_many_onePackage"
+            genModel="model/socialnetwork_many_one_1.genmodel"/>
    </extension>
 
 </plugin>

@@ -11,8 +11,6 @@ import socialnetwork_one_one.Socialnetwork_one_onePackage;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Child</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */

@@ -13,10 +13,10 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link socialnetwork_one_many_1.SocialNetwork#getMembers <em>Members</em>}</li>
  * </ul>
- * </p>
  *
  * @see socialnetwork_one_many_1.Socialnetwork_one_many_1Package#getSocialNetwork()
  * @model

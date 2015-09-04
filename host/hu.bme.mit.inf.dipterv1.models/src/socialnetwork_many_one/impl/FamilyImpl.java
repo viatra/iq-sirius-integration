@@ -24,11 +24,11 @@ import socialnetwork_many_one.Socialnetwork_many_onePackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link socialnetwork_many_one.impl.FamilyImpl#getName <em>Name</em>}</li>
  *   <li>{@link socialnetwork_many_one.impl.FamilyImpl#getFriends <em>Friends</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

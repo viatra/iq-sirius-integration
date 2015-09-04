@@ -11,10 +11,10 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link socialnetwork_many_one_2.Family#getName <em>Name</em>}</li>
  * </ul>
- * </p>
  *
  * @see socialnetwork_many_one_2.Socialnetwork_many_one_2Package#getFamily()
  * @model

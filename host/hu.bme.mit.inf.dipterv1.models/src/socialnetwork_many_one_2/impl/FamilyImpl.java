@@ -18,10 +18,10 @@ import socialnetwork_many_one_2.Socialnetwork_many_one_2Package;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link socialnetwork_many_one_2.impl.FamilyImpl#getName <em>Name</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
