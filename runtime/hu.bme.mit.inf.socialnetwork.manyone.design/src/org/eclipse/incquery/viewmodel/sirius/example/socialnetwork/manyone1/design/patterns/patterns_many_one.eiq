@@ -1,0 +1,102 @@
+package org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.manyone1.design.patterns
+
+import "http://www.eclipse.org/emf/2002/Ecore"
+import "http://org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.models/socialnetwork_base"
+
+/* Pattern to create the root of the model */
+pattern socialNetwork(sn : SocialNetwork) {
+	SocialNetwork(sn);
+}
+
+pattern family(father : Man, mother : Woman) {
+	SocialNetwork.members(sn, father);
+	SocialNetwork.members(sn, mother);
+	
+	Man.children(father, child);
+	Woman.children(mother, child);
+	
+	commonChildren == count find commonChild(father, mother, _);
+	
+	fatherParents == count find parent(father, _);
+	
+	motherParents == count find parent(mother, _);
+	
+	check(commonChildren > 0);
+	
+	check(fatherParents == 0);
+	
+	check(motherParents == 0);
+}
+
+pattern family_name(father : Man, mother : Woman, value) {
+	Person.lastName(father, fLastName);
+	Person.lastName(mother, mLastName);
+	
+	find family(father, mother);
+	
+	value == eval(fLastName + "&" + mLastName);
+}
+
+pattern friend(m1 : Man, w1 : Woman, m2 : Man, w2 : Woman) {
+	find differentFamilies(m1, w1, m2, w2);
+
+	find familyMember(m1, w1, fm_1);
+	find familyMember(m2, w2, fm_2);
+
+	Person.friends(fm_1, fm_2);
+	Person.friends(fm_2, fm_1);
+}
+
+pattern containment_socialNetwork_family(sn : SocialNetwork, f : Man, m : Woman) {
+	find socialNetwork(sn);
+	find family(f, m);
+}
+
+pattern containment_socialNetwork_friend(sn : SocialNetwork, f1 : Man, m1 : Woman, f2 : Man, m2 : Woman) {
+	find socialNetwork(sn);
+	find friend(f1, m1, f2, m2);
+}
+
+private pattern familyMember(m : Man, w : Woman, fm : Person) {
+	Man(m);
+	Woman(w);
+	Person(fm);
+	
+	m == fm;
+} or {
+	Man(m);
+	Woman(w);
+	Person(fm);
+	
+	w == fm;
+} or {
+	Person(fm);
+	
+	find descendant+(m, fm);
+	find descendant+(w, fm);
+}
+
+private pattern descendant(ancestor : Person, descendant : Person) {
+	Person.children(ancestor, descendant);
+}
+
+private pattern commonChild(father : Man, mother : Woman, child : Person) {
+	Man.children(father, child);
+	Woman.children(mother, child);
+}
+
+private pattern parent(person : Person, parent : Person) {
+	Person.children(parent, person);
+}
+
+private pattern differentFamilies(m1 : Man, w1 : Woman, m2 : Man, w2 : Woman) {
+	find family(m1, w1);
+	find family(m2, w2);
+
+	m1 != m2;
+} or {
+	find family(m1, w1);
+	find family(m2, w2);
+
+	w1 != w2;
+}

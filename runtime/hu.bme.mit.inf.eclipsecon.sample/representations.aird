@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:socialnetwork_base="http://org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.models/socialnetwork_base" xmlns:socialnetwork_many_one="http://org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.models/socialnetwork_many_one" xmlns:socialnetwork_many_one_2="http://org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.models/socialnetwork_many_one_2" xmlns:socialnetwork_one_many_1="http://org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.models/socialnetwork_one_many_1" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style" xmi:id="_2XH_EFMaEeWX_fYyRe1kBQ" selectedViews="_ve2JkFMjEeWcGLRU1LqCJQ _9jmoUFMkEeWcGLRU1LqCJQ _9jxAYFMkEeWcGLRU1LqCJQ _lWvw0FMmEeWA77EC0bX_Dg _4KRhQFMmEeWA77EC0bX_Dg" version="10.0.0.201505222000">
+<viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:socialnetwork_base="http://org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.models/socialnetwork_base" xmlns:socialnetwork_many_one="http://org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.models/socialnetwork_many_one" xmlns:socialnetwork_many_one_2="http://org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.models/socialnetwork_many_one_2" xmlns:socialnetwork_one_many_1="http://org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.models/socialnetwork_one_many_1" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style" xmi:id="_2XH_EFMaEeWX_fYyRe1kBQ" selectedViews="_ve2JkFMjEeWcGLRU1LqCJQ _9jmoUFMkEeWcGLRU1LqCJQ _9jxAYFMkEeWcGLRU1LqCJQ _lWvw0FMmEeWA77EC0bX_Dg _0AuVIFMqEeWtb_HyIqTT1g" version="10.0.0.201505222000">
   <semanticResources>sample4.socialnetwork_base</semanticResources>
   <semanticResources>inmemoryresource:/_HRtsYFMlEeWcGLRU1LqCJQ</semanticResources>
   <semanticResources>inmemoryresource:/_Y60boFMmEeWA77EC0bX_Dg</semanticResources>
@@ -3525,5 +3525,1032 @@
       <target xmi:type="socialnetwork_base:SocialNetwork" href="sample4.socialnetwork_base#/"/>
     </ownedRepresentations>
     <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']"/>
+  </ownedViews>
+  <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_0AuVIFMqEeWtb_HyIqTT1g">
+    <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_1aT-QFMqEeWtb_HyIqTT1g" name="new Social Network Base Diagram IQPL tester">
+      <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_1aT-QVMqEeWtb_HyIqTT1g" source="DANNOTATION_CUSTOMIZATION_KEY">
+        <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_1aT-QlMqEeWtb_HyIqTT1g"/>
+      </ownedAnnotationEntries>
+      <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_1adIMFMqEeWtb_HyIqTT1g" source="GMF_DIAGRAMS">
+        <data xmi:type="notation:Diagram" xmi:id="_1adIMVMqEeWtb_HyIqTT1g" type="Sirius" element="_1aT-QFMqEeWtb_HyIqTT1g" measurementUnit="Pixel">
+          <children xmi:type="notation:Node" xmi:id="_13j68FMqEeWtb_HyIqTT1g" type="2001" element="_13FZ0FMqEeWtb_HyIqTT1g">
+            <children xmi:type="notation:Node" xmi:id="_13mXMFMqEeWtb_HyIqTT1g" type="5002">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_13mXMVMqEeWtb_HyIqTT1g" x="-22" y="7"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_14K-8FMqEeWtb_HyIqTT1g" type="3005" element="_13GA4FMqEeWtb_HyIqTT1g">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_14LmAFMqEeWtb_HyIqTT1g" fontName="Cantarell"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_14LmAVMqEeWtb_HyIqTT1g"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_13j68VMqEeWtb_HyIqTT1g" fontName="Cantarell" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_13j68lMqEeWtb_HyIqTT1g" x="252" y="126" width="64" height="64"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_134EAFMqEeWtb_HyIqTT1g" type="2001" element="_13HPAFMqEeWtb_HyIqTT1g">
+            <children xmi:type="notation:Node" xmi:id="_135SIFMqEeWtb_HyIqTT1g" type="5002">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_135SIVMqEeWtb_HyIqTT1g" x="-22" y="7"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_14MNEFMqEeWtb_HyIqTT1g" type="3005" element="_13HPAVMqEeWtb_HyIqTT1g">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_14MNEVMqEeWtb_HyIqTT1g" fontName="Cantarell"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_14MNElMqEeWtb_HyIqTT1g"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_134EAVMqEeWtb_HyIqTT1g" fontName="Cantarell" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_134EAlMqEeWtb_HyIqTT1g" x="624" y="126" width="64" height="64"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_136gQFMqEeWtb_HyIqTT1g" type="2001" element="_13H2EFMqEeWtb_HyIqTT1g">
+            <children xmi:type="notation:Node" xmi:id="_13_YwFMqEeWtb_HyIqTT1g" type="5002">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_13_YwVMqEeWtb_HyIqTT1g" x="-22" y="7"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_14M0IFMqEeWtb_HyIqTT1g" type="3005" element="_13H2EVMqEeWtb_HyIqTT1g">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_14M0IVMqEeWtb_HyIqTT1g" fontName="Cantarell"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_14M0IlMqEeWtb_HyIqTT1g"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_137HUFMqEeWtb_HyIqTT1g" fontName="Cantarell" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_137HUVMqEeWtb_HyIqTT1g" x="492" width="64" height="64"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_13__0FMqEeWtb_HyIqTT1g" type="2001" element="_13H2ElMqEeWtb_HyIqTT1g">
+            <children xmi:type="notation:Node" xmi:id="_14BN8FMqEeWtb_HyIqTT1g" type="5002">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_14BN8VMqEeWtb_HyIqTT1g" x="-22" y="7"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_14M0I1MqEeWtb_HyIqTT1g" type="3005" element="_13IdIFMqEeWtb_HyIqTT1g">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_14M0JFMqEeWtb_HyIqTT1g" fontName="Cantarell"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_14M0JVMqEeWtb_HyIqTT1g"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_14Am4FMqEeWtb_HyIqTT1g" fontName="Cantarell" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_14Am4VMqEeWtb_HyIqTT1g" x="624" y="252" width="64" height="64"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_14CcEFMqEeWtb_HyIqTT1g" type="2001" element="_13IdIVMqEeWtb_HyIqTT1g">
+            <children xmi:type="notation:Node" xmi:id="_14CcE1MqEeWtb_HyIqTT1g" type="5002">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_14CcFFMqEeWtb_HyIqTT1g" x="-22" y="7"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_14NbMFMqEeWtb_HyIqTT1g" type="3005" element="_13IdIlMqEeWtb_HyIqTT1g">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_14NbMVMqEeWtb_HyIqTT1g" fontName="Cantarell"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_14NbMlMqEeWtb_HyIqTT1g"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_14CcEVMqEeWtb_HyIqTT1g" fontName="Cantarell" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_14CcElMqEeWtb_HyIqTT1g" x="252" y="252" width="64" height="64"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_14DDIFMqEeWtb_HyIqTT1g" type="2001" element="_13IdI1MqEeWtb_HyIqTT1g">
+            <children xmi:type="notation:Node" xmi:id="_14DqMFMqEeWtb_HyIqTT1g" type="5002">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_14DqMVMqEeWtb_HyIqTT1g" x="-22" y="7"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_14OpUFMqEeWtb_HyIqTT1g" type="3005" element="_13IdJFMqEeWtb_HyIqTT1g">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_14OpUVMqEeWtb_HyIqTT1g" fontName="Cantarell"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_14OpUlMqEeWtb_HyIqTT1g"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_14DDIVMqEeWtb_HyIqTT1g" fontName="Cantarell" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_14DDIlMqEeWtb_HyIqTT1g" x="492" y="126" width="64" height="64"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_14DqMlMqEeWtb_HyIqTT1g" type="2001" element="_13JEMFMqEeWtb_HyIqTT1g">
+            <children xmi:type="notation:Node" xmi:id="_14HUkFMqEeWtb_HyIqTT1g" type="5002">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_14HUkVMqEeWtb_HyIqTT1g" x="-22" y="7"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_14PQYFMqEeWtb_HyIqTT1g" type="3005" element="_13JEMVMqEeWtb_HyIqTT1g">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_14PQYVMqEeWtb_HyIqTT1g" fontName="Cantarell"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_14PQYlMqEeWtb_HyIqTT1g"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_14DqM1MqEeWtb_HyIqTT1g" fontName="Cantarell" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_14DqNFMqEeWtb_HyIqTT1g" width="64" height="64"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_14H7oFMqEeWtb_HyIqTT1g" type="2001" element="_13JrQFMqEeWtb_HyIqTT1g">
+            <children xmi:type="notation:Node" xmi:id="_14IisFMqEeWtb_HyIqTT1g" type="5002">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_14IisVMqEeWtb_HyIqTT1g" x="-22" y="7"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_14P3cFMqEeWtb_HyIqTT1g" type="3005" element="_13JrQVMqEeWtb_HyIqTT1g">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_14P3cVMqEeWtb_HyIqTT1g" fontName="Cantarell"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_14P3clMqEeWtb_HyIqTT1g"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_14H7oVMqEeWtb_HyIqTT1g" fontName="Cantarell" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_14H7olMqEeWtb_HyIqTT1g" x="336" width="64" height="64"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_14IislMqEeWtb_HyIqTT1g" type="2001" element="_13JrQlMqEeWtb_HyIqTT1g">
+            <children xmi:type="notation:Node" xmi:id="_14JJwFMqEeWtb_HyIqTT1g" type="5002">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_14JJwVMqEeWtb_HyIqTT1g" x="-22" y="7"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_14P3c1MqEeWtb_HyIqTT1g" type="3005" element="_13JrQ1MqEeWtb_HyIqTT1g">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_14P3dFMqEeWtb_HyIqTT1g" fontName="Cantarell"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_14P3dVMqEeWtb_HyIqTT1g"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_14Iis1MqEeWtb_HyIqTT1g" fontName="Cantarell" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_14IitFMqEeWtb_HyIqTT1g" y="126" width="64" height="64"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_14Jw0FMqEeWtb_HyIqTT1g" type="2001" element="_13KSUFMqEeWtb_HyIqTT1g">
+            <children xmi:type="notation:Node" xmi:id="_14KX4FMqEeWtb_HyIqTT1g" type="5002">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_14KX4VMqEeWtb_HyIqTT1g" x="-22" y="7"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_14QegFMqEeWtb_HyIqTT1g" type="3005" element="_13KSUVMqEeWtb_HyIqTT1g">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_14QegVMqEeWtb_HyIqTT1g" fontName="Cantarell"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_14QeglMqEeWtb_HyIqTT1g"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_14Jw0VMqEeWtb_HyIqTT1g" fontName="Cantarell" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_14Jw0lMqEeWtb_HyIqTT1g" x="720" y="126" width="64" height="64"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_EoYq8FMrEeWtb_HyIqTT1g" type="2001" element="_Enn18FMrEeWtb_HyIqTT1g">
+            <children xmi:type="notation:Node" xmi:id="_EoZSAFMrEeWtb_HyIqTT1g" type="5002">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_EoZSAVMrEeWtb_HyIqTT1g" y="-21"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_EouCIFMrEeWtb_HyIqTT1g" type="3005" element="_EnodAFMrEeWtb_HyIqTT1g">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_EouCIVMrEeWtb_HyIqTT1g" fontName="Cantarell"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EouCIlMrEeWtb_HyIqTT1g"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_EoYq8VMrEeWtb_HyIqTT1g" fontName="Cantarell" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EoYq8lMrEeWtb_HyIqTT1g" x="120" y="126" width="64" height="64"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_EofYoFMrEeWtb_HyIqTT1g" type="2001" element="_EnodAVMrEeWtb_HyIqTT1g">
+            <children xmi:type="notation:Node" xmi:id="_EofYo1MrEeWtb_HyIqTT1g" type="5002">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_EofYpFMrEeWtb_HyIqTT1g" y="-21"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_EoupMFMrEeWtb_HyIqTT1g" type="3005" element="_EnpEEFMrEeWtb_HyIqTT1g">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_EoupMVMrEeWtb_HyIqTT1g" fontName="Cantarell"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EoupMlMrEeWtb_HyIqTT1g"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_EofYoVMrEeWtb_HyIqTT1g" fontName="Cantarell" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EofYolMrEeWtb_HyIqTT1g" x="120" width="64" height="64"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_Eof_sFMrEeWtb_HyIqTT1g" type="2001" element="_EnpEEVMrEeWtb_HyIqTT1g">
+            <children xmi:type="notation:Node" xmi:id="_EogmwFMrEeWtb_HyIqTT1g" type="5002">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_EogmwVMrEeWtb_HyIqTT1g" y="-21"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_EovQQFMrEeWtb_HyIqTT1g" type="3005" element="_EnprIFMrEeWtb_HyIqTT1g">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_EovQQVMrEeWtb_HyIqTT1g" fontName="Cantarell"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EovQQlMrEeWtb_HyIqTT1g"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_Eof_sVMrEeWtb_HyIqTT1g" fontName="Cantarell" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Eof_slMrEeWtb_HyIqTT1g" x="120" y="252" width="64" height="64"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_EohN0FMrEeWtb_HyIqTT1g" type="2001" element="_EnprIVMrEeWtb_HyIqTT1g">
+            <children xmi:type="notation:Node" xmi:id="_EohN01MrEeWtb_HyIqTT1g" type="5002">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_EohN1FMrEeWtb_HyIqTT1g" y="-21"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_EovQQ1MrEeWtb_HyIqTT1g" type="3005" element="_EnprIlMrEeWtb_HyIqTT1g">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_EovQRFMrEeWtb_HyIqTT1g" fontName="Cantarell"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EovQRVMrEeWtb_HyIqTT1g"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_EohN0VMrEeWtb_HyIqTT1g" fontName="Cantarell" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EohN0lMrEeWtb_HyIqTT1g" x="864" width="64" height="64"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_Eoh04FMrEeWtb_HyIqTT1g" type="2001" element="_EnqSMFMrEeWtb_HyIqTT1g">
+            <children xmi:type="notation:Node" xmi:id="_EojDAFMrEeWtb_HyIqTT1g" type="5002">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_EojDAVMrEeWtb_HyIqTT1g" y="-21"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_Eov3UFMrEeWtb_HyIqTT1g" type="3005" element="_EnqSMVMrEeWtb_HyIqTT1g">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_Eov3UVMrEeWtb_HyIqTT1g" fontName="Cantarell"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Eov3UlMrEeWtb_HyIqTT1g"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_Eoh04VMrEeWtb_HyIqTT1g" fontName="Cantarell" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Eoh04lMrEeWtb_HyIqTT1g" x="492" y="252" width="64" height="64"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_EokRIFMrEeWtb_HyIqTT1g" type="2001" element="_Enq5QFMrEeWtb_HyIqTT1g">
+            <children xmi:type="notation:Node" xmi:id="_EonUcFMrEeWtb_HyIqTT1g" type="5002">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_EonUcVMrEeWtb_HyIqTT1g" y="-21"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_EoweYFMrEeWtb_HyIqTT1g" type="3005" element="_Enq5QVMrEeWtb_HyIqTT1g">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_EoweYVMrEeWtb_HyIqTT1g" fontName="Cantarell"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EoweYlMrEeWtb_HyIqTT1g"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_EokRIVMrEeWtb_HyIqTT1g" fontName="Cantarell" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EokRIlMrEeWtb_HyIqTT1g" x="864" y="126" width="64" height="64"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_Eon7gFMrEeWtb_HyIqTT1g" type="2001" element="_Enq5QlMrEeWtb_HyIqTT1g">
+            <children xmi:type="notation:Node" xmi:id="_EopwsFMrEeWtb_HyIqTT1g" type="5002">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_EopwsVMrEeWtb_HyIqTT1g" y="-21"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_EoxFcFMrEeWtb_HyIqTT1g" type="3005" element="_Enq5Q1MrEeWtb_HyIqTT1g">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_EoxFcVMrEeWtb_HyIqTT1g" fontName="Cantarell"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EoxFclMrEeWtb_HyIqTT1g"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_Eon7gVMrEeWtb_HyIqTT1g" fontName="Cantarell" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Eon7glMrEeWtb_HyIqTT1g" x="336" y="126" width="64" height="64"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_EoqXwFMrEeWtb_HyIqTT1g" type="2001" element="_EnrgUFMrEeWtb_HyIqTT1g">
+            <children xmi:type="notation:Node" xmi:id="_Eoq-0FMrEeWtb_HyIqTT1g" type="5002">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_Eoq-0VMrEeWtb_HyIqTT1g" y="-21"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_EoxFc1MrEeWtb_HyIqTT1g" type="3005" element="_EnrgUVMrEeWtb_HyIqTT1g">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_EoxFdFMrEeWtb_HyIqTT1g" fontName="Cantarell"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EoxFdVMrEeWtb_HyIqTT1g"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_EoqXwVMrEeWtb_HyIqTT1g" fontName="Cantarell" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EoqXwlMrEeWtb_HyIqTT1g" x="720" width="64" height="64"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_IEqkkFMrEeWtb_HyIqTT1g" visible="false" type="2001" element="_IAkHsFMrEeWtb_HyIqTT1g">
+            <children xmi:type="notation:Node" xmi:id="_IErLoFMrEeWtb_HyIqTT1g" type="5002">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_IErLoVMrEeWtb_HyIqTT1g" y="-21"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_IE5OEFMrEeWtb_HyIqTT1g" type="3005" element="_IAkuwFMrEeWtb_HyIqTT1g">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_IE5OEVMrEeWtb_HyIqTT1g" fontName="Cantarell"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IE5OElMrEeWtb_HyIqTT1g"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_IEqkkVMrEeWtb_HyIqTT1g" fontName="Cantarell" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IEqkklMrEeWtb_HyIqTT1g" x="12" y="408" width="64" height="64"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_IErysFMrEeWtb_HyIqTT1g" visible="false" type="2001" element="_IAlV0FMrEeWtb_HyIqTT1g">
+            <children xmi:type="notation:Node" xmi:id="_IEsZwFMrEeWtb_HyIqTT1g" type="5002">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_IEsZwVMrEeWtb_HyIqTT1g" y="-21"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_IE51IFMrEeWtb_HyIqTT1g" type="3005" element="_IAlV0VMrEeWtb_HyIqTT1g">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_IE51IVMrEeWtb_HyIqTT1g" fontName="Cantarell"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IE51IlMrEeWtb_HyIqTT1g"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_IErysVMrEeWtb_HyIqTT1g" fontName="Cantarell" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IEryslMrEeWtb_HyIqTT1g" x="-96" y="348" width="64" height="64"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_IEsZwlMrEeWtb_HyIqTT1g" visible="false" type="2001" element="_IAlV0lMrEeWtb_HyIqTT1g">
+            <children xmi:type="notation:Node" xmi:id="_IEtA0FMrEeWtb_HyIqTT1g" type="5002">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_IEtA0VMrEeWtb_HyIqTT1g" y="-21"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_IE51I1MrEeWtb_HyIqTT1g" type="3005" element="_IAt4sFMrEeWtb_HyIqTT1g">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_IE51JFMrEeWtb_HyIqTT1g" fontName="Cantarell"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IE51JVMrEeWtb_HyIqTT1g"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_IEsZw1MrEeWtb_HyIqTT1g" fontName="Cantarell" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IEsZxFMrEeWtb_HyIqTT1g" x="348" y="216" width="64" height="64"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_IEtA0lMrEeWtb_HyIqTT1g" visible="false" type="2001" element="_IAxjEFMrEeWtb_HyIqTT1g">
+            <children xmi:type="notation:Node" xmi:id="_IEzHcFMrEeWtb_HyIqTT1g" type="5002">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_IEzHcVMrEeWtb_HyIqTT1g" y="-21"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_IE7qUFMrEeWtb_HyIqTT1g" type="3005" element="_IAyKIFMrEeWtb_HyIqTT1g">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_IE7qUVMrEeWtb_HyIqTT1g" fontName="Cantarell"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IE7qUlMrEeWtb_HyIqTT1g"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_IEtA01MrEeWtb_HyIqTT1g" fontName="Cantarell" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IEtA1FMrEeWtb_HyIqTT1g" x="96" y="96" width="64" height="64"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_IEzugFMrEeWtb_HyIqTT1g" visible="false" type="2001" element="_IAzYQFMrEeWtb_HyIqTT1g">
+            <children xmi:type="notation:Node" xmi:id="_IEzug1MrEeWtb_HyIqTT1g" type="5002">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_IEzuhFMrEeWtb_HyIqTT1g" y="-21"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_IE8RYFMrEeWtb_HyIqTT1g" type="3005" element="_IAz_UFMrEeWtb_HyIqTT1g">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_IE8RYVMrEeWtb_HyIqTT1g" fontName="Cantarell"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IE8RYlMrEeWtb_HyIqTT1g"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_IEzugVMrEeWtb_HyIqTT1g" fontName="Cantarell" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IEzuglMrEeWtb_HyIqTT1g" x="36" y="216" width="64" height="64"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_IE3Y4FMrEeWtb_HyIqTT1g" visible="false" type="2001" element="_IA0mYFMrEeWtb_HyIqTT1g">
+            <children xmi:type="notation:Node" xmi:id="_IE4nAFMrEeWtb_HyIqTT1g" type="5002">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_IE4nAVMrEeWtb_HyIqTT1g" y="-21"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_IE8RY1MrEeWtb_HyIqTT1g" type="3005" element="_IA0mYVMrEeWtb_HyIqTT1g">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_IE8RZFMrEeWtb_HyIqTT1g" fontName="Cantarell"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IE8RZVMrEeWtb_HyIqTT1g"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_IE3Y4VMrEeWtb_HyIqTT1g" fontName="Cantarell" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IE3Y4lMrEeWtb_HyIqTT1g" x="156" y="216" width="64" height="64"/>
+          </children>
+          <styles xmi:type="notation:DiagramStyle" xmi:id="_1adIMlMqEeWtb_HyIqTT1g"/>
+          <edges xmi:type="notation:Edge" xmi:id="_14RFkFMqEeWtb_HyIqTT1g" type="4001" element="_13WfkFMqEeWtb_HyIqTT1g" source="_13__0FMqEeWtb_HyIqTT1g" target="_14DDIFMqEeWtb_HyIqTT1g">
+            <children xmi:type="notation:Node" xmi:id="_14RsoFMqEeWtb_HyIqTT1g" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_14RsoVMqEeWtb_HyIqTT1g" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_14RsolMqEeWtb_HyIqTT1g" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_14Rso1MqEeWtb_HyIqTT1g" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_14RspFMqEeWtb_HyIqTT1g" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_14RspVMqEeWtb_HyIqTT1g" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_14RFkVMqEeWtb_HyIqTT1g"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_14RFklMqEeWtb_HyIqTT1g" fontName="Cantarell" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_14RFk1MqEeWtb_HyIqTT1g" points="[0, 0, 124, 60]$[-124, -60, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_14S6wFMqEeWtb_HyIqTT1g" id="(0.5,0.0)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_14S6wVMqEeWtb_HyIqTT1g" id="(0.5,1.0)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_14S6wlMqEeWtb_HyIqTT1g" type="4001" element="_13XGoFMqEeWtb_HyIqTT1g" source="_13__0FMqEeWtb_HyIqTT1g" target="_134EAFMqEeWtb_HyIqTT1g">
+            <children xmi:type="notation:Node" xmi:id="_14UI4FMqEeWtb_HyIqTT1g" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_14UI4VMqEeWtb_HyIqTT1g" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_14Uv8FMqEeWtb_HyIqTT1g" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_14Uv8VMqEeWtb_HyIqTT1g" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_14Uv8lMqEeWtb_HyIqTT1g" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_14Uv81MqEeWtb_HyIqTT1g" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_14S6w1MqEeWtb_HyIqTT1g"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_14S6xFMqEeWtb_HyIqTT1g" fontName="Cantarell" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_14S6xVMqEeWtb_HyIqTT1g" points="[0, 0, 0, 60]$[0, -60, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_14Uv9FMqEeWtb_HyIqTT1g" id="(0.5,0.0)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_14Uv9VMqEeWtb_HyIqTT1g" id="(0.5,1.0)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_14VXAFMqEeWtb_HyIqTT1g" type="4001" element="_13XtsFMqEeWtb_HyIqTT1g" source="_14CcEFMqEeWtb_HyIqTT1g" target="_13j68FMqEeWtb_HyIqTT1g">
+            <children xmi:type="notation:Node" xmi:id="_14VXBFMqEeWtb_HyIqTT1g" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_14VXBVMqEeWtb_HyIqTT1g" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_14VXBlMqEeWtb_HyIqTT1g" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_14VXB1MqEeWtb_HyIqTT1g" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_14V-EFMqEeWtb_HyIqTT1g" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_14V-EVMqEeWtb_HyIqTT1g" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_14VXAVMqEeWtb_HyIqTT1g"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_14VXAlMqEeWtb_HyIqTT1g" fontName="Cantarell" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_14VXA1MqEeWtb_HyIqTT1g" points="[0, 0, 0, 60]$[0, -60, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_14V-ElMqEeWtb_HyIqTT1g" id="(0.5,0.0)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_14V-E1MqEeWtb_HyIqTT1g" id="(0.5,1.0)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_14V-FFMqEeWtb_HyIqTT1g" type="4001" element="_13YUwFMqEeWtb_HyIqTT1g" source="_14DDIFMqEeWtb_HyIqTT1g" target="_136gQFMqEeWtb_HyIqTT1g">
+            <children xmi:type="notation:Node" xmi:id="_14WlIFMqEeWtb_HyIqTT1g" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_14WlIVMqEeWtb_HyIqTT1g" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_14WlIlMqEeWtb_HyIqTT1g" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_14WlI1MqEeWtb_HyIqTT1g" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_14WlJFMqEeWtb_HyIqTT1g" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_14WlJVMqEeWtb_HyIqTT1g" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_14V-FVMqEeWtb_HyIqTT1g"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_14V-FlMqEeWtb_HyIqTT1g" fontName="Cantarell" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_14V-F1MqEeWtb_HyIqTT1g" points="[0, 0, 0, 60]$[0, -60, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_14XMMFMqEeWtb_HyIqTT1g" id="(0.5,0.0)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_14XMMVMqEeWtb_HyIqTT1g" id="(0.5,1.0)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_14XMMlMqEeWtb_HyIqTT1g" type="4001" element="_13Y70FMqEeWtb_HyIqTT1g" source="_14DDIFMqEeWtb_HyIqTT1g" target="_14H7oFMqEeWtb_HyIqTT1g">
+            <children xmi:type="notation:Node" xmi:id="_14XMNlMqEeWtb_HyIqTT1g" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_14XMN1MqEeWtb_HyIqTT1g" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_14XMOFMqEeWtb_HyIqTT1g" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_14XMOVMqEeWtb_HyIqTT1g" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_14XzQFMqEeWtb_HyIqTT1g" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_14XzQVMqEeWtb_HyIqTT1g" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_14XMM1MqEeWtb_HyIqTT1g"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_14XMNFMqEeWtb_HyIqTT1g" fontName="Cantarell" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_14XMNVMqEeWtb_HyIqTT1g" points="[0, 0, 124, 60]$[-124, -60, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_14XzQlMqEeWtb_HyIqTT1g" id="(0.5,0.0)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_14XzQ1MqEeWtb_HyIqTT1g" id="(0.5,1.0)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_14XzRFMqEeWtb_HyIqTT1g" type="4001" element="_13Y701MqEeWtb_HyIqTT1g" source="_14IislMqEeWtb_HyIqTT1g" target="_14DqMlMqEeWtb_HyIqTT1g">
+            <children xmi:type="notation:Node" xmi:id="_14YaUFMqEeWtb_HyIqTT1g" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_14YaUVMqEeWtb_HyIqTT1g" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_14YaUlMqEeWtb_HyIqTT1g" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_14YaU1MqEeWtb_HyIqTT1g" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_14YaVFMqEeWtb_HyIqTT1g" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_14YaVVMqEeWtb_HyIqTT1g" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_14XzRVMqEeWtb_HyIqTT1g"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_14XzRlMqEeWtb_HyIqTT1g" fontName="Cantarell" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_14XzR1MqEeWtb_HyIqTT1g" points="[0, 0, 0, 60]$[0, -60, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_14ZBYFMqEeWtb_HyIqTT1g" id="(0.5,0.0)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_14ZBYVMqEeWtb_HyIqTT1g" id="(0.5,1.0)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_EoyTkFMrEeWtb_HyIqTT1g" type="4001" element="_EoJaYFMrEeWtb_HyIqTT1g" source="_EoYq8FMrEeWtb_HyIqTT1g" target="_EofYoFMrEeWtb_HyIqTT1g">
+            <children xmi:type="notation:Node" xmi:id="_EoyTlFMrEeWtb_HyIqTT1g" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EoyTlVMrEeWtb_HyIqTT1g" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_EoyTllMrEeWtb_HyIqTT1g" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EoyTl1MrEeWtb_HyIqTT1g" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_EoyTmFMrEeWtb_HyIqTT1g" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EoyTmVMrEeWtb_HyIqTT1g" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_EoyTkVMrEeWtb_HyIqTT1g"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_EoyTklMrEeWtb_HyIqTT1g" fontName="Cantarell" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_EoyTk1MrEeWtb_HyIqTT1g" points="[0, 0, 0, 60]$[0, -60, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Eoy6oFMrEeWtb_HyIqTT1g" id="(0.5,0.0)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Eoy6oVMrEeWtb_HyIqTT1g" id="(0.5,1.0)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_Eoy6olMrEeWtb_HyIqTT1g" type="4001" element="_EoKBclMrEeWtb_HyIqTT1g" source="_EoYq8FMrEeWtb_HyIqTT1g" target="_14DqMlMqEeWtb_HyIqTT1g">
+            <children xmi:type="notation:Node" xmi:id="_Eoy6plMrEeWtb_HyIqTT1g" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Eoy6p1MrEeWtb_HyIqTT1g" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_Eoy6qFMrEeWtb_HyIqTT1g" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Eoy6qVMrEeWtb_HyIqTT1g" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_EozhsFMrEeWtb_HyIqTT1g" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EozhsVMrEeWtb_HyIqTT1g" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_Eoy6o1MrEeWtb_HyIqTT1g"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_Eoy6pFMrEeWtb_HyIqTT1g" fontName="Cantarell" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Eoy6pVMrEeWtb_HyIqTT1g" points="[0, 0, 124, 60]$[-124, -60, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_EozhslMrEeWtb_HyIqTT1g" id="(0.5,0.0)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Eozhs1MrEeWtb_HyIqTT1g" id="(0.5,1.0)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_Eo0IwFMrEeWtb_HyIqTT1g" type="4001" element="_EoKoglMrEeWtb_HyIqTT1g" source="_Eof_sFMrEeWtb_HyIqTT1g" target="_EoYq8FMrEeWtb_HyIqTT1g">
+            <children xmi:type="notation:Node" xmi:id="_Eo0IxFMrEeWtb_HyIqTT1g" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Eo0IxVMrEeWtb_HyIqTT1g" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_Eo0IxlMrEeWtb_HyIqTT1g" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Eo0Ix1MrEeWtb_HyIqTT1g" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_Eo0v0FMrEeWtb_HyIqTT1g" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Eo0v0VMrEeWtb_HyIqTT1g" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_Eo0IwVMrEeWtb_HyIqTT1g"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_Eo0IwlMrEeWtb_HyIqTT1g" fontName="Cantarell" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Eo0Iw1MrEeWtb_HyIqTT1g" points="[0, 0, 0, 60]$[0, -60, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Eo0v0lMrEeWtb_HyIqTT1g" id="(0.5,0.0)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Eo0v01MrEeWtb_HyIqTT1g" id="(0.5,1.0)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_Eo1W4FMrEeWtb_HyIqTT1g" type="4001" element="_EoLPkFMrEeWtb_HyIqTT1g" source="_Eof_sFMrEeWtb_HyIqTT1g" target="_13j68FMqEeWtb_HyIqTT1g">
+            <children xmi:type="notation:Node" xmi:id="_Eo2lAFMrEeWtb_HyIqTT1g" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Eo2lAVMrEeWtb_HyIqTT1g" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_Eo3MEFMrEeWtb_HyIqTT1g" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Eo3MEVMrEeWtb_HyIqTT1g" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_Eo3zIFMrEeWtb_HyIqTT1g" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Eo3zIVMrEeWtb_HyIqTT1g" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_Eo1W4VMrEeWtb_HyIqTT1g"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_Eo1W4lMrEeWtb_HyIqTT1g" fontName="Cantarell" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Eo1W41MrEeWtb_HyIqTT1g" points="[0, 0, -124, 60]$[124, -60, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Eo4aMFMrEeWtb_HyIqTT1g" id="(0.5,0.0)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Eo4aMVMrEeWtb_HyIqTT1g" id="(0.5,1.0)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_Eo4aMlMrEeWtb_HyIqTT1g" type="4001" element="_EoLPk1MrEeWtb_HyIqTT1g" source="_Eoh04FMrEeWtb_HyIqTT1g" target="_14DDIFMqEeWtb_HyIqTT1g">
+            <children xmi:type="notation:Node" xmi:id="_Eo5BQFMrEeWtb_HyIqTT1g" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Eo5BQVMrEeWtb_HyIqTT1g" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_Eo5BQlMrEeWtb_HyIqTT1g" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Eo5BQ1MrEeWtb_HyIqTT1g" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_Eo5oUFMrEeWtb_HyIqTT1g" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Eo5oUVMrEeWtb_HyIqTT1g" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_Eo4aM1MrEeWtb_HyIqTT1g"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_Eo4aNFMrEeWtb_HyIqTT1g" fontName="Cantarell" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Eo4aNVMrEeWtb_HyIqTT1g" points="[0, 0, 0, 60]$[0, -60, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Eo5oUlMrEeWtb_HyIqTT1g" id="(0.5,0.0)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Eo5oU1MrEeWtb_HyIqTT1g" id="(0.5,1.0)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_Eo5oVFMrEeWtb_HyIqTT1g" type="4001" element="_EoL2oFMrEeWtb_HyIqTT1g" source="_Eoh04FMrEeWtb_HyIqTT1g" target="_134EAFMqEeWtb_HyIqTT1g">
+            <children xmi:type="notation:Node" xmi:id="_Eo6PYFMrEeWtb_HyIqTT1g" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Eo6PYVMrEeWtb_HyIqTT1g" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_Eo6PYlMrEeWtb_HyIqTT1g" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Eo62cFMrEeWtb_HyIqTT1g" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_Eo62cVMrEeWtb_HyIqTT1g" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Eo62clMrEeWtb_HyIqTT1g" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_Eo5oVVMrEeWtb_HyIqTT1g"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_Eo5oVlMrEeWtb_HyIqTT1g" fontName="Cantarell" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Eo5oV1MrEeWtb_HyIqTT1g" points="[0, 0, -124, 60]$[124, -60, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Eo62c1MrEeWtb_HyIqTT1g" id="(0.5,0.0)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Eo62dFMrEeWtb_HyIqTT1g" id="(0.5,1.0)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_Eo62dVMrEeWtb_HyIqTT1g" type="4001" element="_EoL2o1MrEeWtb_HyIqTT1g" source="_EokRIFMrEeWtb_HyIqTT1g" target="_EoqXwFMrEeWtb_HyIqTT1g">
+            <children xmi:type="notation:Node" xmi:id="_Eo7dgFMrEeWtb_HyIqTT1g" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Eo7dgVMrEeWtb_HyIqTT1g" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_Eo7dglMrEeWtb_HyIqTT1g" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Eo7dg1MrEeWtb_HyIqTT1g" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_Eo7dhFMrEeWtb_HyIqTT1g" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Eo7dhVMrEeWtb_HyIqTT1g" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_Eo62dlMrEeWtb_HyIqTT1g"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_Eo62d1MrEeWtb_HyIqTT1g" fontName="Cantarell" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Eo62eFMrEeWtb_HyIqTT1g" points="[0, 0, 124, 60]$[-124, -60, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Eo8EkFMrEeWtb_HyIqTT1g" id="(0.5,0.0)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Eo8EkVMrEeWtb_HyIqTT1g" id="(0.5,1.0)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_Eo8EklMrEeWtb_HyIqTT1g" type="4001" element="_EoMdsFMrEeWtb_HyIqTT1g" source="_EokRIFMrEeWtb_HyIqTT1g" target="_EohN0FMrEeWtb_HyIqTT1g">
+            <children xmi:type="notation:Node" xmi:id="_Eo8EllMrEeWtb_HyIqTT1g" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Eo8El1MrEeWtb_HyIqTT1g" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_Eo8roFMrEeWtb_HyIqTT1g" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Eo8roVMrEeWtb_HyIqTT1g" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_Eo8rolMrEeWtb_HyIqTT1g" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Eo8ro1MrEeWtb_HyIqTT1g" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_Eo8Ek1MrEeWtb_HyIqTT1g"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_Eo8ElFMrEeWtb_HyIqTT1g" fontName="Cantarell" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Eo8ElVMrEeWtb_HyIqTT1g" points="[0, 0, 0, 60]$[0, -60, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Eo8rpFMrEeWtb_HyIqTT1g" id="(0.5,0.0)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Eo8rpVMrEeWtb_HyIqTT1g" id="(0.5,1.0)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_Eo8rplMrEeWtb_HyIqTT1g" type="4001" element="_EoMds1MrEeWtb_HyIqTT1g" source="_Eon7gFMrEeWtb_HyIqTT1g" target="_136gQFMqEeWtb_HyIqTT1g">
+            <children xmi:type="notation:Node" xmi:id="_Eo9SsFMrEeWtb_HyIqTT1g" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Eo9SsVMrEeWtb_HyIqTT1g" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_Eo9SslMrEeWtb_HyIqTT1g" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Eo9Ss1MrEeWtb_HyIqTT1g" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_Eo9StFMrEeWtb_HyIqTT1g" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Eo9StVMrEeWtb_HyIqTT1g" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_Eo8rp1MrEeWtb_HyIqTT1g"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_Eo8rqFMrEeWtb_HyIqTT1g" fontName="Cantarell" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Eo8rqVMrEeWtb_HyIqTT1g" points="[0, 0, -124, 60]$[124, -60, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Eo9StlMrEeWtb_HyIqTT1g" id="(0.5,0.0)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Eo9St1MrEeWtb_HyIqTT1g" id="(0.5,1.0)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_Eo95wFMrEeWtb_HyIqTT1g" type="4001" element="_EoNEwlMrEeWtb_HyIqTT1g" source="_Eon7gFMrEeWtb_HyIqTT1g" target="_14H7oFMqEeWtb_HyIqTT1g">
+            <children xmi:type="notation:Node" xmi:id="_Eo95xFMrEeWtb_HyIqTT1g" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Eo95xVMrEeWtb_HyIqTT1g" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_Eo95xlMrEeWtb_HyIqTT1g" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Eo95x1MrEeWtb_HyIqTT1g" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_Eo95yFMrEeWtb_HyIqTT1g" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Eo95yVMrEeWtb_HyIqTT1g" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_Eo95wVMrEeWtb_HyIqTT1g"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_Eo95wlMrEeWtb_HyIqTT1g" fontName="Cantarell" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Eo95w1MrEeWtb_HyIqTT1g" points="[0, 0, 0, 60]$[0, -60, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Eo-g0FMrEeWtb_HyIqTT1g" id="(0.5,0.0)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Eo-g0VMrEeWtb_HyIqTT1g" id="(0.5,1.0)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_Eo-g0lMrEeWtb_HyIqTT1g" type="4001" element="_EoNr0FMrEeWtb_HyIqTT1g" source="_14CcEFMqEeWtb_HyIqTT1g" target="_EoYq8FMrEeWtb_HyIqTT1g">
+            <children xmi:type="notation:Node" xmi:id="_Eo_H4FMrEeWtb_HyIqTT1g" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Eo_H4VMrEeWtb_HyIqTT1g" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_Eo_H4lMrEeWtb_HyIqTT1g" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Eo_H41MrEeWtb_HyIqTT1g" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_Eo_H5FMrEeWtb_HyIqTT1g" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Eo_H5VMrEeWtb_HyIqTT1g" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_Eo-g01MrEeWtb_HyIqTT1g"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_Eo-g1FMrEeWtb_HyIqTT1g" fontName="Cantarell" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Eo-g1VMrEeWtb_HyIqTT1g" points="[0, 0, 124, 60]$[-124, -60, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Eo_u8FMrEeWtb_HyIqTT1g" id="(0.5,0.0)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Eo_u8VMrEeWtb_HyIqTT1g" id="(0.5,1.0)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_Eo_u8lMrEeWtb_HyIqTT1g" type="4001" element="_EoNr01MrEeWtb_HyIqTT1g" source="_14IislMqEeWtb_HyIqTT1g" target="_EofYoFMrEeWtb_HyIqTT1g">
+            <children xmi:type="notation:Node" xmi:id="_EpAWAFMrEeWtb_HyIqTT1g" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EpAWAVMrEeWtb_HyIqTT1g" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_EpAWAlMrEeWtb_HyIqTT1g" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EpAWA1MrEeWtb_HyIqTT1g" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_EpAWBFMrEeWtb_HyIqTT1g" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EpAWBVMrEeWtb_HyIqTT1g" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_Eo_u81MrEeWtb_HyIqTT1g"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_Eo_u9FMrEeWtb_HyIqTT1g" fontName="Cantarell" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Eo_u9VMrEeWtb_HyIqTT1g" points="[0, 0, -124, 60]$[124, -60, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_EpAWBlMrEeWtb_HyIqTT1g" id="(0.5,0.0)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_EpAWB1MrEeWtb_HyIqTT1g" id="(0.5,1.0)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_EpA9EFMrEeWtb_HyIqTT1g" type="4001" element="_EoOS4FMrEeWtb_HyIqTT1g" source="_14Jw0FMqEeWtb_HyIqTT1g" target="_EohN0FMrEeWtb_HyIqTT1g">
+            <children xmi:type="notation:Node" xmi:id="_EpCLMFMrEeWtb_HyIqTT1g" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EpCLMVMrEeWtb_HyIqTT1g" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_EpCLMlMrEeWtb_HyIqTT1g" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EpCLM1MrEeWtb_HyIqTT1g" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_EpCyQFMrEeWtb_HyIqTT1g" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EpCyQVMrEeWtb_HyIqTT1g" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_EpA9EVMrEeWtb_HyIqTT1g"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_EpA9ElMrEeWtb_HyIqTT1g" fontName="Cantarell" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_EpA9E1MrEeWtb_HyIqTT1g" points="[0, 0, -124, 60]$[124, -60, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_EpCyQlMrEeWtb_HyIqTT1g" id="(0.5,0.0)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_EpCyQ1MrEeWtb_HyIqTT1g" id="(0.5,1.0)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_EpCyRFMrEeWtb_HyIqTT1g" type="4001" element="_EoOS41MrEeWtb_HyIqTT1g" source="_14Jw0FMqEeWtb_HyIqTT1g" target="_EoqXwFMrEeWtb_HyIqTT1g">
+            <children xmi:type="notation:Node" xmi:id="_EpDZUFMrEeWtb_HyIqTT1g" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EpDZUVMrEeWtb_HyIqTT1g" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_EpDZUlMrEeWtb_HyIqTT1g" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EpDZU1MrEeWtb_HyIqTT1g" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_EpDZVFMrEeWtb_HyIqTT1g" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EpDZVVMrEeWtb_HyIqTT1g" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_EpCyRVMrEeWtb_HyIqTT1g"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_EpCyRlMrEeWtb_HyIqTT1g" fontName="Cantarell" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_EpCyR1MrEeWtb_HyIqTT1g" points="[0, 0, 0, 60]$[0, -60, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_EpEAYFMrEeWtb_HyIqTT1g" id="(0.5,0.0)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_EpEAYVMrEeWtb_HyIqTT1g" id="(0.5,1.0)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_IE-GkFMrEeWtb_HyIqTT1g" visible="false" type="4001" element="_IEas8FMrEeWtb_HyIqTT1g" source="_IEqkkFMrEeWtb_HyIqTT1g" target="_IEzugFMrEeWtb_HyIqTT1g">
+            <children xmi:type="notation:Node" xmi:id="_IE-toFMrEeWtb_HyIqTT1g" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IE-toVMrEeWtb_HyIqTT1g" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_IFCYAFMrEeWtb_HyIqTT1g" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IFCYAVMrEeWtb_HyIqTT1g" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_IFCYAlMrEeWtb_HyIqTT1g" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IFCYA1MrEeWtb_HyIqTT1g" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_IE-GkVMrEeWtb_HyIqTT1g"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_IE-GklMrEeWtb_HyIqTT1g" fontName="Cantarell" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_IE-Gk1MrEeWtb_HyIqTT1g" points="[0, 0, 0, 60]$[0, -60, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_IFENMFMrEeWtb_HyIqTT1g" id="(0.5,0.0)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_IFENMVMrEeWtb_HyIqTT1g" id="(0.5,1.0)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_IFENMlMrEeWtb_HyIqTT1g" visible="false" type="4001" element="_IEb7EFMrEeWtb_HyIqTT1g" source="_IErysFMrEeWtb_HyIqTT1g" target="_IEtA0lMrEeWtb_HyIqTT1g">
+            <children xmi:type="notation:Node" xmi:id="_IFE0QFMrEeWtb_HyIqTT1g" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IFE0QVMrEeWtb_HyIqTT1g" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_IFE0QlMrEeWtb_HyIqTT1g" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IFE0Q1MrEeWtb_HyIqTT1g" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_IFE0RFMrEeWtb_HyIqTT1g" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IFE0RVMrEeWtb_HyIqTT1g" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_IFENM1MrEeWtb_HyIqTT1g"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_IFENNFMrEeWtb_HyIqTT1g" fontName="Cantarell" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_IFENNVMrEeWtb_HyIqTT1g" points="[0, 0, 0, 60]$[0, -60, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_IFFbUFMrEeWtb_HyIqTT1g" id="(0.5,0.0)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_IFFbUVMrEeWtb_HyIqTT1g" id="(0.5,1.0)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_IFFbUlMrEeWtb_HyIqTT1g" visible="false" type="4001" element="_IEciIFMrEeWtb_HyIqTT1g" source="_IEsZwlMrEeWtb_HyIqTT1g" target="_IE3Y4FMrEeWtb_HyIqTT1g">
+            <children xmi:type="notation:Node" xmi:id="_IFFbVlMrEeWtb_HyIqTT1g" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IFFbV1MrEeWtb_HyIqTT1g" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_IFFbWFMrEeWtb_HyIqTT1g" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IFFbWVMrEeWtb_HyIqTT1g" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_IFGCYFMrEeWtb_HyIqTT1g" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IFGCYVMrEeWtb_HyIqTT1g" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_IFFbU1MrEeWtb_HyIqTT1g"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_IFFbVFMrEeWtb_HyIqTT1g" fontName="Cantarell" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_IFFbVVMrEeWtb_HyIqTT1g" points="[0, 0, 0, 60]$[0, -60, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_IFH3kFMrEeWtb_HyIqTT1g" id="(0.5,0.0)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_IFH3kVMrEeWtb_HyIqTT1g" id="(0.5,1.0)"/>
+          </edges>
+        </data>
+      </ownedAnnotationEntries>
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_13FZ0FMqEeWtb_HyIqTT1g" name="Ferenc Pető (Ifj.) : 50" incomingEdges="_13XtsFMqEeWtb_HyIqTT1g _EoLPkFMrEeWtb_HyIqTT1g" width="1" height="1" resizeKind="NSEW">
+        <target xmi:type="socialnetwork_base:Man" href="sample4.socialnetwork_base#//@members.3"/>
+        <semanticElements xmi:type="socialnetwork_base:Man" href="sample4.socialnetwork_base#//@members.3"/>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_13GA4FMqEeWtb_HyIqTT1g" showIcon="false" workspacePath="/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/img/man.png">
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@additionalLayers[name='layer_man']/@nodeMappings[name='node_man']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@additionalLayers[name='layer_man']/@nodeMappings[name='node_man']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_13HPAFMqEeWtb_HyIqTT1g" name="Attila Lengyel : 47" incomingEdges="_13XGoFMqEeWtb_HyIqTT1g _EoL2oFMrEeWtb_HyIqTT1g" width="1" height="1" resizeKind="NSEW">
+        <target xmi:type="socialnetwork_base:Man" href="sample4.socialnetwork_base#//@members.11"/>
+        <semanticElements xmi:type="socialnetwork_base:Man" href="sample4.socialnetwork_base#//@members.11"/>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_13HPAVMqEeWtb_HyIqTT1g" showIcon="false" workspacePath="/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/img/man.png">
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@additionalLayers[name='layer_man']/@nodeMappings[name='node_man']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@additionalLayers[name='layer_man']/@nodeMappings[name='node_man']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_13H2EFMqEeWtb_HyIqTT1g" name="Viktor Lengyel : 29" incomingEdges="_13YUwFMqEeWtb_HyIqTT1g _EoMds1MrEeWtb_HyIqTT1g" width="1" height="1" resizeKind="NSEW">
+        <target xmi:type="socialnetwork_base:Man" href="sample4.socialnetwork_base#//@members.13"/>
+        <semanticElements xmi:type="socialnetwork_base:Man" href="sample4.socialnetwork_base#//@members.13"/>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_13H2EVMqEeWtb_HyIqTT1g" showIcon="false" workspacePath="/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/img/man.png">
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@additionalLayers[name='layer_man']/@nodeMappings[name='node_man']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@additionalLayers[name='layer_man']/@nodeMappings[name='node_man']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_13H2ElMqEeWtb_HyIqTT1g" name="János Lengyel : 79" outgoingEdges="_13WfkFMqEeWtb_HyIqTT1g _13XGoFMqEeWtb_HyIqTT1g" width="1" height="1" resizeKind="NSEW">
+        <target xmi:type="socialnetwork_base:Man" href="sample4.socialnetwork_base#//@members.8"/>
+        <semanticElements xmi:type="socialnetwork_base:Man" href="sample4.socialnetwork_base#//@members.8"/>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_13IdIFMqEeWtb_HyIqTT1g" showIcon="false" workspacePath="/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/img/man.png">
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@additionalLayers[name='layer_man']/@nodeMappings[name='node_man']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@additionalLayers[name='layer_man']/@nodeMappings[name='node_man']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_13IdIVMqEeWtb_HyIqTT1g" name="Ferenc Pető : 74" outgoingEdges="_13XtsFMqEeWtb_HyIqTT1g _EoNr0FMrEeWtb_HyIqTT1g" width="1" height="1" resizeKind="NSEW">
+        <target xmi:type="socialnetwork_base:Man" href="sample4.socialnetwork_base#//@members.0"/>
+        <semanticElements xmi:type="socialnetwork_base:Man" href="sample4.socialnetwork_base#//@members.0"/>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_13IdIlMqEeWtb_HyIqTT1g" showIcon="false" workspacePath="/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/img/man.png">
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@additionalLayers[name='layer_man']/@nodeMappings[name='node_man']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@additionalLayers[name='layer_man']/@nodeMappings[name='node_man']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_13IdI1MqEeWtb_HyIqTT1g" name="János Lengyel (Ifj) : 55" outgoingEdges="_13YUwFMqEeWtb_HyIqTT1g _13Y70FMqEeWtb_HyIqTT1g" incomingEdges="_13WfkFMqEeWtb_HyIqTT1g _EoLPk1MrEeWtb_HyIqTT1g" width="1" height="1" resizeKind="NSEW">
+        <target xmi:type="socialnetwork_base:Man" href="sample4.socialnetwork_base#//@members.10"/>
+        <semanticElements xmi:type="socialnetwork_base:Man" href="sample4.socialnetwork_base#//@members.10"/>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_13IdJFMqEeWtb_HyIqTT1g" showIcon="false" workspacePath="/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/img/man.png">
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@additionalLayers[name='layer_man']/@nodeMappings[name='node_man']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@additionalLayers[name='layer_man']/@nodeMappings[name='node_man']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_13JEMFMqEeWtb_HyIqTT1g" name="Zoltán Polgár : 26" incomingEdges="_13Y701MqEeWtb_HyIqTT1g _EoKBclMrEeWtb_HyIqTT1g" width="1" height="1" resizeKind="NSEW">
+        <target xmi:type="socialnetwork_base:Man" href="sample4.socialnetwork_base#//@members.6"/>
+        <semanticElements xmi:type="socialnetwork_base:Man" href="sample4.socialnetwork_base#//@members.6"/>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_13JEMVMqEeWtb_HyIqTT1g" showIcon="false" workspacePath="/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/img/man.png">
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@additionalLayers[name='layer_man']/@nodeMappings[name='node_man']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@additionalLayers[name='layer_man']/@nodeMappings[name='node_man']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_13JrQFMqEeWtb_HyIqTT1g" name="Ádám Lengyel : 26" incomingEdges="_13Y70FMqEeWtb_HyIqTT1g _EoNEwlMrEeWtb_HyIqTT1g" width="1" height="1" resizeKind="NSEW">
+        <target xmi:type="socialnetwork_base:Man" href="sample4.socialnetwork_base#//@members.14"/>
+        <semanticElements xmi:type="socialnetwork_base:Man" href="sample4.socialnetwork_base#//@members.14"/>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_13JrQVMqEeWtb_HyIqTT1g" showIcon="false" workspacePath="/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/img/man.png">
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@additionalLayers[name='layer_man']/@nodeMappings[name='node_man']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@additionalLayers[name='layer_man']/@nodeMappings[name='node_man']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_13JrQlMqEeWtb_HyIqTT1g" name="János Polgár : 50" outgoingEdges="_13Y701MqEeWtb_HyIqTT1g _EoNr01MrEeWtb_HyIqTT1g" width="1" height="1" resizeKind="NSEW">
+        <target xmi:type="socialnetwork_base:Man" href="sample4.socialnetwork_base#//@members.5"/>
+        <semanticElements xmi:type="socialnetwork_base:Man" href="sample4.socialnetwork_base#//@members.5"/>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_13JrQ1MqEeWtb_HyIqTT1g" showIcon="false" workspacePath="/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/img/man.png">
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@additionalLayers[name='layer_man']/@nodeMappings[name='node_man']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@additionalLayers[name='layer_man']/@nodeMappings[name='node_man']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_13KSUFMqEeWtb_HyIqTT1g" name="Lajos Gonda : 49" outgoingEdges="_EoOS4FMrEeWtb_HyIqTT1g _EoOS41MrEeWtb_HyIqTT1g" width="1" height="1" resizeKind="NSEW">
+        <target xmi:type="socialnetwork_base:Man" href="sample4.socialnetwork_base#//@members.15"/>
+        <semanticElements xmi:type="socialnetwork_base:Man" href="sample4.socialnetwork_base#//@members.15"/>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_13KSUVMqEeWtb_HyIqTT1g" showIcon="false" workspacePath="/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/img/man.png">
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@additionalLayers[name='layer_man']/@nodeMappings[name='node_man']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@additionalLayers[name='layer_man']/@nodeMappings[name='node_man']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_13WfkFMqEeWtb_HyIqTT1g" sourceNode="_13H2ElMqEeWtb_HyIqTT1g" targetNode="_13IdI1MqEeWtb_HyIqTT1g">
+        <target xmi:type="socialnetwork_base:Man" href="sample4.socialnetwork_base#//@members.8"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_13WfkVMqEeWtb_HyIqTT1g" size="2">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@defaultLayer/@edgeMappings[name='rbe_child']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_13WfklMqEeWtb_HyIqTT1g" showIcon="false"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@defaultLayer/@edgeMappings[name='rbe_child']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_13XGoFMqEeWtb_HyIqTT1g" sourceNode="_13H2ElMqEeWtb_HyIqTT1g" targetNode="_13HPAFMqEeWtb_HyIqTT1g">
+        <target xmi:type="socialnetwork_base:Man" href="sample4.socialnetwork_base#//@members.8"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_13XGoVMqEeWtb_HyIqTT1g" size="2">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@defaultLayer/@edgeMappings[name='rbe_child']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_13XGolMqEeWtb_HyIqTT1g" showIcon="false"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@defaultLayer/@edgeMappings[name='rbe_child']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_13XtsFMqEeWtb_HyIqTT1g" sourceNode="_13IdIVMqEeWtb_HyIqTT1g" targetNode="_13FZ0FMqEeWtb_HyIqTT1g">
+        <target xmi:type="socialnetwork_base:Man" href="sample4.socialnetwork_base#//@members.0"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_13XtsVMqEeWtb_HyIqTT1g" size="2">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@defaultLayer/@edgeMappings[name='rbe_child']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_13XtslMqEeWtb_HyIqTT1g" showIcon="false"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@defaultLayer/@edgeMappings[name='rbe_child']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_13YUwFMqEeWtb_HyIqTT1g" sourceNode="_13IdI1MqEeWtb_HyIqTT1g" targetNode="_13H2EFMqEeWtb_HyIqTT1g">
+        <target xmi:type="socialnetwork_base:Man" href="sample4.socialnetwork_base#//@members.10"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_13YUwVMqEeWtb_HyIqTT1g" size="2">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@defaultLayer/@edgeMappings[name='rbe_child']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_13YUwlMqEeWtb_HyIqTT1g" showIcon="false"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@defaultLayer/@edgeMappings[name='rbe_child']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_13Y70FMqEeWtb_HyIqTT1g" sourceNode="_13IdI1MqEeWtb_HyIqTT1g" targetNode="_13JrQFMqEeWtb_HyIqTT1g">
+        <target xmi:type="socialnetwork_base:Man" href="sample4.socialnetwork_base#//@members.10"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_13Y70VMqEeWtb_HyIqTT1g" size="2">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@defaultLayer/@edgeMappings[name='rbe_child']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_13Y70lMqEeWtb_HyIqTT1g" showIcon="false"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@defaultLayer/@edgeMappings[name='rbe_child']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_13Y701MqEeWtb_HyIqTT1g" sourceNode="_13JrQlMqEeWtb_HyIqTT1g" targetNode="_13JEMFMqEeWtb_HyIqTT1g">
+        <target xmi:type="socialnetwork_base:Man" href="sample4.socialnetwork_base#//@members.5"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_13Zi4FMqEeWtb_HyIqTT1g" size="2">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@defaultLayer/@edgeMappings[name='rbe_child']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_13Zi4VMqEeWtb_HyIqTT1g" showIcon="false"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@defaultLayer/@edgeMappings[name='rbe_child']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_Enn18FMrEeWtb_HyIqTT1g" name="Julianna Pető : 48" outgoingEdges="_EoJaYFMrEeWtb_HyIqTT1g _EoKBclMrEeWtb_HyIqTT1g" incomingEdges="_EoKoglMrEeWtb_HyIqTT1g _EoNr0FMrEeWtb_HyIqTT1g" width="-1" height="-1" resizeKind="NSEW">
+        <target xmi:type="socialnetwork_base:Woman" href="sample4.socialnetwork_base#//@members.2"/>
+        <semanticElements xmi:type="socialnetwork_base:Woman" href="sample4.socialnetwork_base#//@members.2"/>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_EnodAFMrEeWtb_HyIqTT1g" showIcon="false" workspacePath="/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/img/woman.png">
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@additionalLayers[name='layer_type']/@nodeMappings[name='node_woman']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@additionalLayers[name='layer_type']/@nodeMappings[name='node_woman']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_EnodAVMrEeWtb_HyIqTT1g" name="Edina Polgár : 29" incomingEdges="_EoJaYFMrEeWtb_HyIqTT1g _EoNr01MrEeWtb_HyIqTT1g" width="-1" height="-1" resizeKind="NSEW">
+        <target xmi:type="socialnetwork_base:Woman" href="sample4.socialnetwork_base#//@members.7"/>
+        <semanticElements xmi:type="socialnetwork_base:Woman" href="sample4.socialnetwork_base#//@members.7"/>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_EnpEEFMrEeWtb_HyIqTT1g" showIcon="false" workspacePath="/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/img/woman.png">
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@additionalLayers[name='layer_type']/@nodeMappings[name='node_woman']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@additionalLayers[name='layer_type']/@nodeMappings[name='node_woman']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_EnpEEVMrEeWtb_HyIqTT1g" name="Julianna Jakab : 70" outgoingEdges="_EoKoglMrEeWtb_HyIqTT1g _EoLPkFMrEeWtb_HyIqTT1g" width="-1" height="-1" resizeKind="NSEW">
+        <target xmi:type="socialnetwork_base:Woman" href="sample4.socialnetwork_base#//@members.1"/>
+        <semanticElements xmi:type="socialnetwork_base:Woman" href="sample4.socialnetwork_base#//@members.1"/>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_EnprIFMrEeWtb_HyIqTT1g" showIcon="false" workspacePath="/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/img/woman.png">
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@additionalLayers[name='layer_type']/@nodeMappings[name='node_woman']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@additionalLayers[name='layer_type']/@nodeMappings[name='node_woman']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_EnprIVMrEeWtb_HyIqTT1g" name="Fruzsina Gonda : 17" incomingEdges="_EoMdsFMrEeWtb_HyIqTT1g _EoOS4FMrEeWtb_HyIqTT1g" width="-1" height="-1" resizeKind="NSEW">
+        <target xmi:type="socialnetwork_base:Woman" href="sample4.socialnetwork_base#//@members.17"/>
+        <semanticElements xmi:type="socialnetwork_base:Woman" href="sample4.socialnetwork_base#//@members.17"/>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_EnprIlMrEeWtb_HyIqTT1g" showIcon="false" workspacePath="/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/img/woman.png">
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@additionalLayers[name='layer_type']/@nodeMappings[name='node_woman']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@additionalLayers[name='layer_type']/@nodeMappings[name='node_woman']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_EnqSMFMrEeWtb_HyIqTT1g" name="Valéria Barta : 75" outgoingEdges="_EoLPk1MrEeWtb_HyIqTT1g _EoL2oFMrEeWtb_HyIqTT1g" width="-1" height="-1" resizeKind="NSEW">
+        <target xmi:type="socialnetwork_base:Woman" href="sample4.socialnetwork_base#//@members.9"/>
+        <semanticElements xmi:type="socialnetwork_base:Woman" href="sample4.socialnetwork_base#//@members.9"/>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_EnqSMVMrEeWtb_HyIqTT1g" showIcon="false" workspacePath="/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/img/woman.png">
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@additionalLayers[name='layer_type']/@nodeMappings[name='node_woman']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@additionalLayers[name='layer_type']/@nodeMappings[name='node_woman']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_Enq5QFMrEeWtb_HyIqTT1g" name="Edit Pető : 45" outgoingEdges="_EoL2o1MrEeWtb_HyIqTT1g _EoMdsFMrEeWtb_HyIqTT1g" width="-1" height="-1" resizeKind="NSEW">
+        <target xmi:type="socialnetwork_base:Woman" href="sample4.socialnetwork_base#//@members.4"/>
+        <semanticElements xmi:type="socialnetwork_base:Woman" href="sample4.socialnetwork_base#//@members.4"/>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_Enq5QVMrEeWtb_HyIqTT1g" showIcon="false" workspacePath="/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/img/woman.png">
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@additionalLayers[name='layer_type']/@nodeMappings[name='node_woman']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@additionalLayers[name='layer_type']/@nodeMappings[name='node_woman']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_Enq5QlMrEeWtb_HyIqTT1g" name="Mária Varga : 54" outgoingEdges="_EoMds1MrEeWtb_HyIqTT1g _EoNEwlMrEeWtb_HyIqTT1g" width="-1" height="-1" resizeKind="NSEW">
+        <target xmi:type="socialnetwork_base:Woman" href="sample4.socialnetwork_base#//@members.12"/>
+        <semanticElements xmi:type="socialnetwork_base:Woman" href="sample4.socialnetwork_base#//@members.12"/>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_Enq5Q1MrEeWtb_HyIqTT1g" showIcon="false" workspacePath="/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/img/woman.png">
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@additionalLayers[name='layer_type']/@nodeMappings[name='node_woman']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@additionalLayers[name='layer_type']/@nodeMappings[name='node_woman']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_EnrgUFMrEeWtb_HyIqTT1g" name="Bettina Gonda : 20" incomingEdges="_EoL2o1MrEeWtb_HyIqTT1g _EoOS41MrEeWtb_HyIqTT1g" width="-1" height="-1" resizeKind="NSEW">
+        <target xmi:type="socialnetwork_base:Woman" href="sample4.socialnetwork_base#//@members.16"/>
+        <semanticElements xmi:type="socialnetwork_base:Woman" href="sample4.socialnetwork_base#//@members.16"/>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_EnrgUVMrEeWtb_HyIqTT1g" showIcon="false" workspacePath="/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/img/woman.png">
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@additionalLayers[name='layer_type']/@nodeMappings[name='node_woman']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@additionalLayers[name='layer_type']/@nodeMappings[name='node_woman']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_EoJaYFMrEeWtb_HyIqTT1g" sourceNode="_Enn18FMrEeWtb_HyIqTT1g" targetNode="_EnodAVMrEeWtb_HyIqTT1g">
+        <target xmi:type="socialnetwork_base:Woman" href="sample4.socialnetwork_base#//@members.2"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_EoKBcFMrEeWtb_HyIqTT1g" size="2">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@defaultLayer/@edgeMappings[name='rbe_child']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_EoKBcVMrEeWtb_HyIqTT1g" showIcon="false"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@defaultLayer/@edgeMappings[name='rbe_child']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_EoKBclMrEeWtb_HyIqTT1g" sourceNode="_Enn18FMrEeWtb_HyIqTT1g" targetNode="_13JEMFMqEeWtb_HyIqTT1g">
+        <target xmi:type="socialnetwork_base:Woman" href="sample4.socialnetwork_base#//@members.2"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_EoKogFMrEeWtb_HyIqTT1g" size="2">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@defaultLayer/@edgeMappings[name='rbe_child']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_EoKogVMrEeWtb_HyIqTT1g" showIcon="false"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@defaultLayer/@edgeMappings[name='rbe_child']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_EoKoglMrEeWtb_HyIqTT1g" sourceNode="_EnpEEVMrEeWtb_HyIqTT1g" targetNode="_Enn18FMrEeWtb_HyIqTT1g">
+        <target xmi:type="socialnetwork_base:Woman" href="sample4.socialnetwork_base#//@members.1"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_EoKog1MrEeWtb_HyIqTT1g" size="2">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@defaultLayer/@edgeMappings[name='rbe_child']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_EoKohFMrEeWtb_HyIqTT1g" showIcon="false"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@defaultLayer/@edgeMappings[name='rbe_child']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_EoLPkFMrEeWtb_HyIqTT1g" sourceNode="_EnpEEVMrEeWtb_HyIqTT1g" targetNode="_13FZ0FMqEeWtb_HyIqTT1g">
+        <target xmi:type="socialnetwork_base:Woman" href="sample4.socialnetwork_base#//@members.1"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_EoLPkVMrEeWtb_HyIqTT1g" size="2">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@defaultLayer/@edgeMappings[name='rbe_child']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_EoLPklMrEeWtb_HyIqTT1g" showIcon="false"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@defaultLayer/@edgeMappings[name='rbe_child']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_EoLPk1MrEeWtb_HyIqTT1g" sourceNode="_EnqSMFMrEeWtb_HyIqTT1g" targetNode="_13IdI1MqEeWtb_HyIqTT1g">
+        <target xmi:type="socialnetwork_base:Woman" href="sample4.socialnetwork_base#//@members.9"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_EoLPlFMrEeWtb_HyIqTT1g" size="2">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@defaultLayer/@edgeMappings[name='rbe_child']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_EoLPlVMrEeWtb_HyIqTT1g" showIcon="false"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@defaultLayer/@edgeMappings[name='rbe_child']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_EoL2oFMrEeWtb_HyIqTT1g" sourceNode="_EnqSMFMrEeWtb_HyIqTT1g" targetNode="_13HPAFMqEeWtb_HyIqTT1g">
+        <target xmi:type="socialnetwork_base:Woman" href="sample4.socialnetwork_base#//@members.9"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_EoL2oVMrEeWtb_HyIqTT1g" size="2">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@defaultLayer/@edgeMappings[name='rbe_child']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_EoL2olMrEeWtb_HyIqTT1g" showIcon="false"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@defaultLayer/@edgeMappings[name='rbe_child']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_EoL2o1MrEeWtb_HyIqTT1g" sourceNode="_Enq5QFMrEeWtb_HyIqTT1g" targetNode="_EnrgUFMrEeWtb_HyIqTT1g">
+        <target xmi:type="socialnetwork_base:Woman" href="sample4.socialnetwork_base#//@members.4"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_EoL2pFMrEeWtb_HyIqTT1g" size="2">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@defaultLayer/@edgeMappings[name='rbe_child']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_EoL2pVMrEeWtb_HyIqTT1g" showIcon="false"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@defaultLayer/@edgeMappings[name='rbe_child']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_EoMdsFMrEeWtb_HyIqTT1g" sourceNode="_Enq5QFMrEeWtb_HyIqTT1g" targetNode="_EnprIVMrEeWtb_HyIqTT1g">
+        <target xmi:type="socialnetwork_base:Woman" href="sample4.socialnetwork_base#//@members.4"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_EoMdsVMrEeWtb_HyIqTT1g" size="2">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@defaultLayer/@edgeMappings[name='rbe_child']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_EoMdslMrEeWtb_HyIqTT1g" showIcon="false"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@defaultLayer/@edgeMappings[name='rbe_child']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_EoMds1MrEeWtb_HyIqTT1g" sourceNode="_Enq5QlMrEeWtb_HyIqTT1g" targetNode="_13H2EFMqEeWtb_HyIqTT1g">
+        <target xmi:type="socialnetwork_base:Woman" href="sample4.socialnetwork_base#//@members.12"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_EoNEwFMrEeWtb_HyIqTT1g" size="2">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@defaultLayer/@edgeMappings[name='rbe_child']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_EoNEwVMrEeWtb_HyIqTT1g" showIcon="false"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@defaultLayer/@edgeMappings[name='rbe_child']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_EoNEwlMrEeWtb_HyIqTT1g" sourceNode="_Enq5QlMrEeWtb_HyIqTT1g" targetNode="_13JrQFMqEeWtb_HyIqTT1g">
+        <target xmi:type="socialnetwork_base:Woman" href="sample4.socialnetwork_base#//@members.12"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_EoNEw1MrEeWtb_HyIqTT1g" size="2">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@defaultLayer/@edgeMappings[name='rbe_child']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_EoNExFMrEeWtb_HyIqTT1g" showIcon="false"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@defaultLayer/@edgeMappings[name='rbe_child']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_EoNr0FMrEeWtb_HyIqTT1g" sourceNode="_13IdIVMqEeWtb_HyIqTT1g" targetNode="_Enn18FMrEeWtb_HyIqTT1g">
+        <target xmi:type="socialnetwork_base:Man" href="sample4.socialnetwork_base#//@members.0"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_EoNr0VMrEeWtb_HyIqTT1g" size="2">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@defaultLayer/@edgeMappings[name='rbe_child']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_EoNr0lMrEeWtb_HyIqTT1g" showIcon="false"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@defaultLayer/@edgeMappings[name='rbe_child']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_EoNr01MrEeWtb_HyIqTT1g" sourceNode="_13JrQlMqEeWtb_HyIqTT1g" targetNode="_EnodAVMrEeWtb_HyIqTT1g">
+        <target xmi:type="socialnetwork_base:Man" href="sample4.socialnetwork_base#//@members.5"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_EoNr1FMrEeWtb_HyIqTT1g" size="2">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@defaultLayer/@edgeMappings[name='rbe_child']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_EoNr1VMrEeWtb_HyIqTT1g" showIcon="false"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@defaultLayer/@edgeMappings[name='rbe_child']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_EoOS4FMrEeWtb_HyIqTT1g" sourceNode="_13KSUFMqEeWtb_HyIqTT1g" targetNode="_EnprIVMrEeWtb_HyIqTT1g">
+        <target xmi:type="socialnetwork_base:Man" href="sample4.socialnetwork_base#//@members.15"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_EoOS4VMrEeWtb_HyIqTT1g" size="2">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@defaultLayer/@edgeMappings[name='rbe_child']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_EoOS4lMrEeWtb_HyIqTT1g" showIcon="false"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@defaultLayer/@edgeMappings[name='rbe_child']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_EoOS41MrEeWtb_HyIqTT1g" sourceNode="_13KSUFMqEeWtb_HyIqTT1g" targetNode="_EnrgUFMrEeWtb_HyIqTT1g">
+        <target xmi:type="socialnetwork_base:Man" href="sample4.socialnetwork_base#//@members.15"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_EoOS5FMrEeWtb_HyIqTT1g" size="2">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@defaultLayer/@edgeMappings[name='rbe_child']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_EoOS5VMrEeWtb_HyIqTT1g" showIcon="false"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@defaultLayer/@edgeMappings[name='rbe_child']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_IAkHsFMrEeWtb_HyIqTT1g" name="János Lengyel : 79" visible="false" outgoingEdges="_IEas8FMrEeWtb_HyIqTT1g" width="-1" height="-1" resizeKind="NSEW">
+        <target xmi:type="socialnetwork_base:Man" href="sample4.socialnetwork_base#//@members.8"/>
+        <semanticElements xmi:type="socialnetwork_base:Man" href="sample4.socialnetwork_base#//@members.8"/>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_IAkuwFMrEeWtb_HyIqTT1g" showIcon="false" workspacePath="/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/img/man.png">
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@additionalLayers[name='layer_presentation_2']/@nodeMappings[name='node_man']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@additionalLayers[name='layer_presentation_2']/@nodeMappings[name='node_man']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_IAlV0FMrEeWtb_HyIqTT1g" name="Ferenc Pető : 74" visible="false" outgoingEdges="_IEb7EFMrEeWtb_HyIqTT1g" width="-1" height="-1" resizeKind="NSEW">
+        <target xmi:type="socialnetwork_base:Man" href="sample4.socialnetwork_base#//@members.0"/>
+        <semanticElements xmi:type="socialnetwork_base:Man" href="sample4.socialnetwork_base#//@members.0"/>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_IAlV0VMrEeWtb_HyIqTT1g" showIcon="false" workspacePath="/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/img/man.png">
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@additionalLayers[name='layer_presentation_2']/@nodeMappings[name='node_man']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@additionalLayers[name='layer_presentation_2']/@nodeMappings[name='node_man']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_IAlV0lMrEeWtb_HyIqTT1g" name="Lajos Gonda : 49" visible="false" outgoingEdges="_IEciIFMrEeWtb_HyIqTT1g" width="-1" height="-1" resizeKind="NSEW">
+        <target xmi:type="socialnetwork_base:Man" href="sample4.socialnetwork_base#//@members.15"/>
+        <semanticElements xmi:type="socialnetwork_base:Man" href="sample4.socialnetwork_base#//@members.15"/>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_IAt4sFMrEeWtb_HyIqTT1g" showIcon="false" workspacePath="/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/img/man.png">
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@additionalLayers[name='layer_presentation_2']/@nodeMappings[name='node_man']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@additionalLayers[name='layer_presentation_2']/@nodeMappings[name='node_man']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_IAxjEFMrEeWtb_HyIqTT1g" name="Julianna Jakab : 70" visible="false" incomingEdges="_IEb7EFMrEeWtb_HyIqTT1g" width="-1" height="-1" resizeKind="NSEW">
+        <target xmi:type="socialnetwork_base:Woman" href="sample4.socialnetwork_base#//@members.1"/>
+        <semanticElements xmi:type="socialnetwork_base:Woman" href="sample4.socialnetwork_base#//@members.1"/>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_IAyKIFMrEeWtb_HyIqTT1g" showIcon="false" workspacePath="/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/img/woman.png">
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@additionalLayers[name='layer_presentation_2']/@nodeMappings[name='node_woman']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@additionalLayers[name='layer_presentation_2']/@nodeMappings[name='node_woman']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_IAzYQFMrEeWtb_HyIqTT1g" name="Valéria Barta : 75" visible="false" incomingEdges="_IEas8FMrEeWtb_HyIqTT1g" width="-1" height="-1" resizeKind="NSEW">
+        <target xmi:type="socialnetwork_base:Woman" href="sample4.socialnetwork_base#//@members.9"/>
+        <semanticElements xmi:type="socialnetwork_base:Woman" href="sample4.socialnetwork_base#//@members.9"/>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_IAz_UFMrEeWtb_HyIqTT1g" showIcon="false" workspacePath="/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/img/woman.png">
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@additionalLayers[name='layer_presentation_2']/@nodeMappings[name='node_woman']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@additionalLayers[name='layer_presentation_2']/@nodeMappings[name='node_woman']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_IA0mYFMrEeWtb_HyIqTT1g" name="Edit Pető : 45" visible="false" incomingEdges="_IEciIFMrEeWtb_HyIqTT1g" width="-1" height="-1" resizeKind="NSEW">
+        <target xmi:type="socialnetwork_base:Woman" href="sample4.socialnetwork_base#//@members.4"/>
+        <semanticElements xmi:type="socialnetwork_base:Woman" href="sample4.socialnetwork_base#//@members.4"/>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_IA0mYVMrEeWtb_HyIqTT1g" showIcon="false" workspacePath="/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/img/woman.png">
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@additionalLayers[name='layer_presentation_2']/@nodeMappings[name='node_woman']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@additionalLayers[name='layer_presentation_2']/@nodeMappings[name='node_woman']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_IEas8FMrEeWtb_HyIqTT1g" visible="false" sourceNode="_IAkHsFMrEeWtb_HyIqTT1g" targetNode="_IAzYQFMrEeWtb_HyIqTT1g">
+        <target xmi:type="socialnetwork_base:Man" href="sample4.socialnetwork_base#//@members.8"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_IEbUAFMrEeWtb_HyIqTT1g" targetArrow="NoDecoration" size="2" strokeColor="138,226,52">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@additionalLayers[name='layer_presentation_2']/@edgeMappings[name='rbe_family']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_IEbUAVMrEeWtb_HyIqTT1g"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@additionalLayers[name='layer_presentation_2']/@edgeMappings[name='rbe_family']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_IEb7EFMrEeWtb_HyIqTT1g" visible="false" sourceNode="_IAlV0FMrEeWtb_HyIqTT1g" targetNode="_IAxjEFMrEeWtb_HyIqTT1g">
+        <target xmi:type="socialnetwork_base:Man" href="sample4.socialnetwork_base#//@members.0"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_IEb7EVMrEeWtb_HyIqTT1g" targetArrow="NoDecoration" size="2" strokeColor="138,226,52">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@additionalLayers[name='layer_presentation_2']/@edgeMappings[name='rbe_family']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_IEb7ElMrEeWtb_HyIqTT1g"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@additionalLayers[name='layer_presentation_2']/@edgeMappings[name='rbe_family']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_IEciIFMrEeWtb_HyIqTT1g" visible="false" sourceNode="_IAlV0lMrEeWtb_HyIqTT1g" targetNode="_IA0mYFMrEeWtb_HyIqTT1g">
+        <target xmi:type="socialnetwork_base:Man" href="sample4.socialnetwork_base#//@members.15"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_IEciIVMrEeWtb_HyIqTT1g" targetArrow="NoDecoration" size="2" strokeColor="138,226,52">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@additionalLayers[name='layer_presentation_2']/@edgeMappings[name='rbe_family']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_IEciIlMrEeWtb_HyIqTT1g"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@additionalLayers[name='layer_presentation_2']/@edgeMappings[name='rbe_family']"/>
+      </ownedDiagramElements>
+      <description xmi:type="description_1:DiagramDescription" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']"/>
+      <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_1aT-Q1MqEeWtb_HyIqTT1g"/>
+      <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@defaultLayer"/>
+      <activatedLayers xmi:type="description_1:AdditionalLayer" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@additionalLayers[name='layer_man']"/>
+      <activatedLayers xmi:type="description_1:AdditionalLayer" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']/@ownedRepresentations[name='dd_diagram']/@additionalLayers[name='layer_type']"/>
+      <target xmi:type="socialnetwork_base:SocialNetwork" href="sample4.socialnetwork_base#/"/>
+    </ownedRepresentations>
+    <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design/description/socialnwtwork_base.odesign#//@ownedViewpoints[name='vp_socialNetworkBase_iqpl_tester']"/>
   </ownedViews>
 </viewpoint:DAnalysis>

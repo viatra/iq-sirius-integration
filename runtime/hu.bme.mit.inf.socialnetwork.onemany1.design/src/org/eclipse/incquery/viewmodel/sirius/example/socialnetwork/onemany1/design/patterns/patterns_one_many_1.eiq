@@ -1,0 +1,24 @@
+package org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.onemany1.design.patterns
+
+import "http://org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.models/socialnetwork_base"
+
+/* Pattern to create the root of the model */
+pattern socialNetwork(sn : SocialNetwork) {
+	SocialNetwork(sn);
+}
+
+pattern containment_socialNetwork_person(sn : SocialNetwork, person : Person) {
+	SocialNetwork(sn);
+	find personWithHouseAndCar(person);
+}
+
+
+pattern personWithHouseAndCar(person : Person) {
+	SocialNetwork.members(_, person);
+	
+	Person.address(person, address);
+	Person.licensePlateNumber(person, lpn);
+	
+	false == eval (address.isEmpty());
+	false == eval (lpn.isEmpty());
+}
