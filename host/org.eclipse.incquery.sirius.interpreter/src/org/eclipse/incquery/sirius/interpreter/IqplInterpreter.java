@@ -13,6 +13,7 @@ import java.util.Set;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
@@ -47,6 +48,8 @@ public class IqplInterpreter implements IInterpreter {
 	
 	private Map<String, Object> variables = null;
 	
+	private List<String> importedMetamodels = null;
+	
 	private Map<Resource, AdvancedIncQueryEngine> engines = null;
 	
 	private HashMap<String, IQuerySpecification<?>> expressionToQuerySpecificationMap = null;
@@ -54,6 +57,8 @@ public class IqplInterpreter implements IInterpreter {
 	
 	public IqplInterpreter() {
 		variables = new HashMap<String, Object>();
+		
+		importedMetamodels = new ArrayList<String>();
 		
 		engines = new HashMap<Resource, AdvancedIncQueryEngine>();
 		
@@ -342,6 +347,27 @@ public class IqplInterpreter implements IInterpreter {
 		// Remove the prefix from the expression
 		expression = expression.replace(IqplInterpreterConstants.PREFIX, "");
 
+		// Load imports from DiagramDescription
+		if (getDiagram() != null && getDiagram().getDescription() != null
+				&& getDiagram().getDescription().getMetamodel() != null) {
+			
+			StringBuilder stringBuilder = new StringBuilder();
+			stringBuilder.append("\n");
+			
+			for (EPackage ePackage : getDiagram().getDescription().getMetamodel()) {
+				stringBuilder
+					.append("import \"")
+					.append(ePackage.getNsURI())
+					.append("\"\n");
+			}
+			
+			stringBuilder.append("\n");
+			stringBuilder.append(expression);
+			
+			expression = stringBuilder.toString();
+		}
+
+		
 	    InputStream is = new ByteArrayInputStream( expression.getBytes() );
 	    try {
 			ResourceSet resourceSet = new ResourceSetImpl();
