@@ -1,0 +1,38 @@
+package org.eclipse.incquery.viewmodel.traceability.patterns
+
+import "http://org.eclipse.incquery/viewmodel/traceability/3.0"
+
+@QueryBasedFeature(feature = "hiddenSources")
+pattern trace_hiddenSources(This : Trace, Target : TraceSource) {
+	Trace.sources(This, Target);
+	
+	TraceSource.hidden(Target, true);
+}
+
+@QueryBasedFeature(feature = "eObjectSources")
+pattern trace_eObjectSources(This : Trace, Target : EObjectSource) {
+	Trace.sources(This, Target);
+	
+	EObjectSource(Target);
+}
+
+@QueryBasedFeature(feature = "javaObjectSources")
+pattern trace_javaObjectSources(This : Trace, Target : JavaObjectSource) {
+	Trace.sources(This, Target);
+	
+	JavaObjectSource(Target);
+}
+
+@QueryBasedFeature(feature = "referenceSources")
+pattern trace_referenceSources(This : Trace, Target : ReferenceSource) {
+	Trace.sources(This, traceSource);
+	
+	EObjectSource.references(traceSource, Target);
+}
+
+@QueryBasedFeature(feature = "attributeSources")
+pattern trace_attributeSources(This : Trace, Target : AttributeSource) {
+	Trace.sources(This, traceSource);
+	
+	EObjectSource.attributes(traceSource, Target);
+}

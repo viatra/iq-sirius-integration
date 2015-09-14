@@ -61,3 +61,9 @@ pattern elementRule_attributeRuleDescriptors(This : ElementRuleDescriptor, Targe
 	ElementRuleDescriptor.structuralFeatureRuleDescriptors(This, Target);
 	AttributeRuleDescriptor(Target);
 }
+
+
+// TODO
+pattern test(c : Configuration, pm : PatternParameterMapping) {
+	Configuration.referenceRuleDescriptors.patternParameterMappings(c, pm);
+}

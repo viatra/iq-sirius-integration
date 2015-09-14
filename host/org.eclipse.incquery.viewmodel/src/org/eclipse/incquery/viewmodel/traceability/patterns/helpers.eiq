@@ -1,7 +1,7 @@
 package org.eclipse.incquery.viewmodel.traceability.patterns
 
 import "http://www.eclipse.org/emf/2002/Ecore"
-import "http://org.eclipse.incquery/viewmodel/traceability/2.0"
+import "http://org.eclipse.incquery/viewmodel/traceability/3.0"
 
 
 // Returns a trace instance with the given source and ruleDescriptorId

@@ -60,8 +60,6 @@ public class IqplInterpreter implements IInterpreter {
 	
 	private Map<String, Object> variables = null;
 	
-	private List<String> importedMetamodels = null;
-	
 	private Map<Resource, AdvancedIncQueryEngine> engines = null;
 	
 	private HashMap<String, IQuerySpecification<?>> expressionToQuerySpecificationMap = null;
@@ -69,8 +67,6 @@ public class IqplInterpreter implements IInterpreter {
 	
 	public IqplInterpreter() {
 		variables = new HashMap<String, Object>();
-		
-		importedMetamodels = new ArrayList<String>();
 		
 		engines = new HashMap<Resource, AdvancedIncQueryEngine>();
 		

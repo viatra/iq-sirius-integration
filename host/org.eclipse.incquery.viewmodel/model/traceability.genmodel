@@ -16,6 +16,47 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference traceability.ecore#//Trace/targets"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute traceability.ecore#//Trace/ruleDescriptorId"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference traceability.ecore#//Trace/sources"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference traceability.ecore#//Trace/hiddenSources"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference traceability.ecore#//Trace/eObjectSources"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference traceability.ecore#//Trace/javaObjectSources"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference traceability.ecore#//Trace/referenceSources"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference traceability.ecore#//Trace/attributeSources"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="traceability.ecore#//TraceSource">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute traceability.ecore#//TraceSource/patternParameterName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute traceability.ecore#//TraceSource/hidden"/>
+    </genClasses>
+    <genClasses ecoreClass="traceability.ecore#//EObjectSource">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference traceability.ecore#//EObjectSource/source"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference traceability.ecore#//EObjectSource/references"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference traceability.ecore#//EObjectSource/attributes"/>
+    </genClasses>
+    <genClasses ecoreClass="traceability.ecore#//JavaObjectSource">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute traceability.ecore#//JavaObjectSource/source"/>
+    </genClasses>
+    <genClasses ecoreClass="traceability.ecore#//ReferenceSource">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference traceability.ecore#//ReferenceSource/owner"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference traceability.ecore#//ReferenceSource/target"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute traceability.ecore#//ReferenceSource/referenceName"/>
+    </genClasses>
+    <genClasses ecoreClass="traceability.ecore#//AttributeSource">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference traceability.ecore#//AttributeSource/owner"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference traceability.ecore#//AttributeSource/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute traceability.ecore#//AttributeSource/attributeName"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="traceability.ecore#//TraceTarget"/>
+    <genClasses ecoreClass="traceability.ecore#//EObjectTarget">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference traceability.ecore#//EObjectTarget/target"/>
+    </genClasses>
+    <genClasses ecoreClass="traceability.ecore#//ReferenceTarget">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference traceability.ecore#//ReferenceTarget/owner"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference traceability.ecore#//ReferenceTarget/target"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute traceability.ecore#//ReferenceTarget/referenceName"/>
+    </genClasses>
+    <genClasses ecoreClass="traceability.ecore#//AttributeTarget">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute traceability.ecore#//AttributeTarget/attributeName"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference traceability.ecore#//AttributeTarget/owner"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute traceability.ecore#//AttributeTarget/target"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

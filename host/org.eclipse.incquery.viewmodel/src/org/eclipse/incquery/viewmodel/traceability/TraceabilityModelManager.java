@@ -1,5 +1,6 @@
 package org.eclipse.incquery.viewmodel.traceability;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Set;
@@ -9,6 +10,9 @@ import org.eclipse.incquery.runtime.api.GenericPatternMatch;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
 import org.eclipse.incquery.runtime.emf.EMFScope;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
+import org.eclipse.incquery.viewmodel.configuration.Configuration;
+import org.eclipse.incquery.viewmodel.configuration.RuleDescriptor;
+import org.eclipse.incquery.viewmodel.configuration.util.ConfigurationModelUtil;
 import org.eclipse.incquery.viewmodel.traceability.util.TraceQuerySpecification;
 
 import com.google.common.collect.Lists;
@@ -89,6 +93,17 @@ public class TraceabilityModelManager {
 		for (Trace trace : traces) {
 			result.addAll(trace.getTargets());
 		}
+		
+		return result;
+	}
+	
+	public List<EObject> getHiddenParameters(Configuration configurationModel, Trace trace) {
+		List<EObject> result = new ArrayList<EObject>();
+		
+		RuleDescriptor ruleDescriptor = ConfigurationModelUtil.getRuleDescriptorById(
+				configurationModel, trace.getRuleDescriptorId());
+		
+		// TODO
 		
 		return result;
 	}
