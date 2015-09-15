@@ -4,8 +4,20 @@ import "http://www.eclipse.org/emf/2002/Ecore"
 import "http://org.eclipse.incquery/viewmodel/traceability/3.0"
 
 
-// Returns a trace instance with the given source and ruleDescriptorId
-pattern traceBySourceAndRuleDescriptorId(source, ruleDescriptorId : ELong, trace : Trace) {
+/**
+ * Returns a trace instance that has the given ruleDescrptorId and has a TraceSource
+ *  instance with the give source and patternParameterName.
+ */
+pattern traceBySourceAndRuleDescriptorId(source, patternParameterName, ruleDescriptorId, trace : Trace) {
 	Trace.ruleDescriptorId(trace, ruleDescriptorId);
-	Trace.sources(trace, source);
+	Trace.sources(trace, traceSource);
+	TraceSource.patternParameterName(traceSource, patternParameterName);
+	
+	EObjectSource.source(traceSource, source);
+} or {
+	Trace.ruleDescriptorId(trace, ruleDescriptorId);
+	Trace.sources(trace, traceSource);
+	TraceSource.patternParameterName(traceSource, patternParameterName);
+	
+	JavaObjectSource.source(traceSource, source);	
 }

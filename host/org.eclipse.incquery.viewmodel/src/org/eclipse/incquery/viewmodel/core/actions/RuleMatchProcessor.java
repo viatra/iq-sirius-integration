@@ -1,11 +1,8 @@
 package org.eclipse.incquery.viewmodel.core.actions;
 
-import hu.bme.mit.inf.eclipse.logging.utils.LoggingUtils;
-
-import java.util.Set;
+import java.util.Map;
 import java.util.logging.Logger;
 
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
@@ -17,7 +14,9 @@ import org.eclipse.incquery.viewmodel.configuration.StructuralFeatureRuleDescrip
 import org.eclipse.incquery.viewmodel.core.rules.ViewModelRule;
 import org.eclipse.incquery.viewmodel.traceability.TraceabilityModelManager;
 
-import com.google.common.collect.Sets;
+import com.google.common.collect.Maps;
+
+import hu.bme.mit.inf.eclipse.logging.utils.LoggingUtils;
 
 public abstract class RuleMatchProcessor<T extends ViewModelRule<? extends RuleDescriptor>> implements
 		IMatchProcessor<IPatternMatch> {
@@ -62,45 +61,55 @@ public abstract class RuleMatchProcessor<T extends ViewModelRule<? extends RuleD
 	}
 	
 	public abstract void doProcess(IPatternMatch match);
-	
-	protected Set<EObject> getSourceEObjectsForElementRuleMatch(IPatternMatch match) {
-		Set<EObject> result = Sets.newHashSet();
-		for (String parameterName : match.parameterNames()) {
-			if (match.get(parameterName) instanceof EObject) {
-				result.add((EObject) match.get(parameterName));
-			}
-		}
 
-		return result;
-	}
-	
-	protected Set<EObject> getSourceEObjectsForStructuralFeatureRuleMatch(IPatternMatch match,
-			StructuralFeatureRuleDescriptor descriptor) {
-		Set<EObject> result = Sets.newHashSet();
-		
-		String sfRulePatternParameterName = null;
-		for (PatternParameterMapping parameterMapping : descriptor.getSourceElementParameterMappings()) {
-			sfRulePatternParameterName = parameterMapping.getSfRulePatternParameterName();
-			
-			if (match.get(sfRulePatternParameterName) instanceof EObject) {
-				result.add((EObject) match.get(sfRulePatternParameterName));
-			}
+	/**
+	 * Returns the name - parameter pairs, which belong to the given rule.
+	 * @param match The current IPatternMatch instance
+	 * @return The name - parameter pairs, which belong to the given rule
+	 */	
+	protected Map<String, Object> getSourcesForMatch(IPatternMatch match) {
+		Map<String, Object> result = Maps.newHashMap();
+
+		for (String parameterName : match.parameterNames()) {
+			result.put(parameterName, match.get(parameterName));
 		}
 		
 		return result;
 	}
 	
-	protected Set<EObject> getTargetEObjectsForReferenceRuleMatch(IPatternMatch match,
-			ReferenceRuleDescriptor descriptor) {
-		Set<EObject> result = Sets.newHashSet();
+	/**
+	 * Returns the name - parameter pairs of the StrucutralFeature's owner.
+	 * @param match The current IPatternMatch instance
+	 * @param descriptor The StructuralFeatureRuleDescriptor which belongs to the given match
+	 * @return The name - parameter pairs of the StrucutralFeature's owner
+	 */
+	protected Map<String, Object> getSourcesOfOwnerElement(IPatternMatch match,
+			StructuralFeatureRuleDescriptor descriptor) {
+		Map<String, Object> result = Maps.newHashMap();
 		
-		String sfRulePatternParameterName = null;
+		for (PatternParameterMapping parameterMapping : descriptor.getSourceElementParameterMappings()) {
+			result.put(
+					parameterMapping.getERulePatternParameterName(),
+					match.get(parameterMapping.getSfRulePatternParameterName()));
+		}
+		
+		return result;
+	}
+	
+	/**
+	 * Returns the name - parameter pairs of the ReferenceRules's target.
+	 * @param match The current IPatternMatch instance
+	 * @param descriptor The ReferenceRuleDescriptor which belongs to the given match
+	 * @return The name - parameter pairs of the ReferenceRules's target
+	 */
+	protected Map<String, Object> getSourcesOfTargetElement(IPatternMatch match,
+			ReferenceRuleDescriptor descriptor) {
+		Map<String, Object> result = Maps.newHashMap();
+		
 		for (PatternParameterMapping parameterMapping : descriptor.getTargetElementParameterMappings()) {
-			sfRulePatternParameterName = parameterMapping.getSfRulePatternParameterName();
-			
-			if (match.get(sfRulePatternParameterName) instanceof EObject) {
-				result.add((EObject) match.get(sfRulePatternParameterName));
-			}
+			result.put(
+					parameterMapping.getERulePatternParameterName(),
+					match.get(parameterMapping.getSfRulePatternParameterName()));
 		}
 		
 		return result;

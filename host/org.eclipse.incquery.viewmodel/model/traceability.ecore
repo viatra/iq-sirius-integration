@@ -10,12 +10,12 @@
         eType="#//Trace" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Trace">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="targets" lowerBound="1"
-        upperBound="-1" eType="#//TraceTarget"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
+        eType="#//TraceTarget" containment="true" eOpposite="#//TraceTarget/trace"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ruleDescriptorId" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong" iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="sources" lowerBound="1"
-        upperBound="-1" eType="#//TraceSource"/>
+        upperBound="-1" eType="#//TraceSource" containment="true" eOpposite="#//TraceSource/trace"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="hiddenSources" upperBound="-1"
         eType="#//TraceSource" changeable="false" volatile="true" transient="true"
         derived="true">
@@ -51,12 +51,21 @@
         <details key="patternFQN" value="org.eclipse.incquery.viewmodel.traceability.patterns.trace_attributeSources"/>
       </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="allSources" lowerBound="1"
+        upperBound="-1" eType="#//TraceSource" changeable="false" volatile="true"
+        transient="true" derived="true">
+      <eAnnotations source="org.eclipse.incquery.querybasedfeature">
+        <details key="patternFQN" value="org.eclipse.incquery.viewmodel.traceability.patterns.trace_allSources"/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TraceSource" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="patternParameterName" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="hidden" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="trace" lowerBound="1" eType="#//Trace"
+        eOpposite="#//Trace/sources"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EObjectSource" eSuperTypes="#//TraceSource">
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
@@ -85,7 +94,10 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="attributeName" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TraceTarget" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TraceTarget" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="trace" lowerBound="1" eType="#//Trace"
+        eOpposite="#//Trace/target"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EObjectTarget" eSuperTypes="#//TraceTarget">
     <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
         eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"/>

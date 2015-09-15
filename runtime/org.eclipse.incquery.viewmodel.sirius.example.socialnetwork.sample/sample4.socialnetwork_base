@@ -14,7 +14,7 @@
   <members xsi:type="socialnetwork_base:Man" firstName="Attila" lastName="Lengyel" age="47"/>
   <members xsi:type="socialnetwork_base:Woman" firstName="Mária" lastName="Varga" age="54" children="//@members.13 //@members.14"/>
   <members xsi:type="socialnetwork_base:Man" firstName="Viktor" lastName="Lengyel" age="29"/>
-  <members xsi:type="socialnetwork_base:Man" firstName="Ádám" lastName="Lengyel" age="26" friends="//@members.16 //@members.6"/>
+  <members xsi:type="socialnetwork_base:Man" firstName="Ádám" lastName="Lengyel" age="26" friends="//@members.6 //@members.16"/>
   <members xsi:type="socialnetwork_base:Man" firstName="Lajos" lastName="Gonda" age="49" children="//@members.17 //@members.16"/>
   <members xsi:type="socialnetwork_base:Woman" firstName="Bettina" lastName="Gonda" age="20" friends="//@members.14"/>
   <members xsi:type="socialnetwork_base:Woman" firstName="Fruzsina" lastName="Gonda" age="17"/>

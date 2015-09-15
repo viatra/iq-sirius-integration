@@ -43,16 +43,16 @@
   <extension id="extension.derived.org.eclipse.incquery.viewmodel.traceability.patterns.trace_hiddenSources" point="org.eclipse.incquery.runtime.base.wellbehaving.derived.features">
     <wellbehaving-derived-feature classifier-name="Trace" feature-name="hiddenSources" package-nsUri="http://org.eclipse.incquery/viewmodel/traceability/3.0"/>
   </extension>
-  <extension id="extension.derived.org.eclipse.incquery.viewmodel.traceability.patterns.trace_eObjectSources" point="org.eclipse.incquery.runtime.base.wellbehaving.derived.features">
-    <wellbehaving-derived-feature classifier-name="Trace" feature-name="eObjectSources" package-nsUri="http://org.eclipse.incquery/viewmodel/traceability/3.0"/>
-  </extension>
   <extension id="extension.derived.org.eclipse.incquery.viewmodel.traceability.patterns.trace_javaObjectSources" point="org.eclipse.incquery.runtime.base.wellbehaving.derived.features">
     <wellbehaving-derived-feature classifier-name="Trace" feature-name="javaObjectSources" package-nsUri="http://org.eclipse.incquery/viewmodel/traceability/3.0"/>
   </extension>
-  <extension id="extension.derived.org.eclipse.incquery.viewmodel.traceability.patterns.trace_referenceSources" point="org.eclipse.incquery.runtime.base.wellbehaving.derived.features">
-    <wellbehaving-derived-feature classifier-name="Trace" feature-name="referenceSources" package-nsUri="http://org.eclipse.incquery/viewmodel/traceability/3.0"/>
+  <extension id="extension.derived.org.eclipse.incquery.viewmodel.traceability.patterns.trace_eObjectSources" point="org.eclipse.incquery.runtime.base.wellbehaving.derived.features">
+    <wellbehaving-derived-feature classifier-name="Trace" feature-name="eObjectSources" package-nsUri="http://org.eclipse.incquery/viewmodel/traceability/3.0"/>
   </extension>
   <extension id="extension.derived.org.eclipse.incquery.viewmodel.traceability.patterns.trace_attributeSources" point="org.eclipse.incquery.runtime.base.wellbehaving.derived.features">
     <wellbehaving-derived-feature classifier-name="Trace" feature-name="attributeSources" package-nsUri="http://org.eclipse.incquery/viewmodel/traceability/3.0"/>
+  </extension>
+  <extension id="extension.derived.org.eclipse.incquery.viewmodel.traceability.patterns.trace_referenceSources" point="org.eclipse.incquery.runtime.base.wellbehaving.derived.features">
+    <wellbehaving-derived-feature classifier-name="Trace" feature-name="referenceSources" package-nsUri="http://org.eclipse.incquery/viewmodel/traceability/3.0"/>
   </extension>
 </plugin>

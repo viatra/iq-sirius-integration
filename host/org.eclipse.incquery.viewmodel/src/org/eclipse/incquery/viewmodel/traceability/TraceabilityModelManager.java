@@ -3,9 +3,11 @@ package org.eclipse.incquery.viewmodel.traceability;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-import java.util.Set;
+import java.util.Map;
+import java.util.Map.Entry;
 
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.incquery.runtime.api.GenericPatternMatch;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
 import org.eclipse.incquery.runtime.emf.EMFScope;
@@ -36,13 +38,93 @@ public class TraceabilityModelManager {
 		this.engine = IncQueryEngine.on(new EMFScope(traceability));
 	}
 	
+	private void addSources(Trace trace, Map<String, Object> sources) {
+		if (trace == null || sources == null) {
+			throw new IllegalArgumentException("The trace and sources parameters can not be null!");
+		}
+		
+		for (Entry<String, Object> entry : sources.entrySet()) {
+			if (entry.getValue() instanceof EObject) {
+				// If the parameter is an EObject
+				
+				trace.getSources().add(
+						createEObjectSource(false, entry.getKey(), (EObject) entry.getValue()));
+			} else {
+				// If the parameter is an Object
+				
+				trace.getSources().add(
+						createJavaObjectSource(false, entry.getKey(), entry.getValue()));
+			}
+		}
+	}
 	
-	public Trace createTrace(long ruleDescriptorId, Set<EObject> sources, Set<EObject> targets) {
+	public EObjectSource createEObjectSource(boolean hidden, String patternParameterName, EObject source) {
+		EObjectSource result = createEObjectSourceEObject();
+		result.setHidden(hidden);
+		result.setPatternParameterName(patternParameterName);
+		result.setSource(source);
+		
+		return result;
+	}
+	
+	public JavaObjectSource createJavaObjectSource(boolean hidden, String patternParameterName, Object source) {
+		JavaObjectSource result = createJavaObjectSourceEObject();
+		result.setHidden(hidden);
+		result.setPatternParameterName(patternParameterName);
+		result.setSource(source);
+		
+		return result;
+	}
+	
+	public Trace createTrace(long ruleDescriptorId, Map<String, Object> sources, EObject targetEObject) {
+		Trace result = createTraceEObject();
+
+		result.setRuleDescriptorId(ruleDescriptorId);
+		
+		addSources(result, sources);
+		
+		EObjectTarget eObjectTarget = createEObjectTargetEObject();
+		eObjectTarget.setTarget(targetEObject);
+			
+		result.setTarget(eObjectTarget);
+
+		traceability.getTraces().add(result);
+
+		return result;
+	}	
+	
+	public Trace createTrace(long ruleDescriptorId, Map<String, Object> sources, EObjectTarget owner, EObjectTarget target, String referenceName) {
 		Trace result = createTraceEObject();
 		
 		result.setRuleDescriptorId(ruleDescriptorId);
-		result.getSources().addAll(sources);
-		result.getTargets().addAll(targets);
+		
+		addSources(result, sources);
+		
+		ReferenceTarget referenceTarget = createReferenceTargetEObject();
+		referenceTarget.setOwner(owner);
+		referenceTarget.setTarget(target);
+		referenceTarget.setReferenceName(referenceName);
+		
+		result.setTarget(referenceTarget);
+		
+		traceability.getTraces().add(result);
+		
+		return result;
+	}
+	
+	public Trace createTrace(long ruleDescriptorId, Map<String, Object> sources, EObjectTarget owner, Object target, String attributeName) {
+		Trace result = createTraceEObject();
+		
+		result.setRuleDescriptorId(ruleDescriptorId);
+		
+		addSources(result, sources);
+		
+		AttributeTarget attributeTarget = createAttributeTargetEObject();
+		attributeTarget.setOwner(owner);
+		attributeTarget.setTarget(target);
+		attributeTarget.setAttributeName(attributeName);
+		
+		result.setTarget(attributeTarget);
 		
 		traceability.getTraces().add(result);
 		
@@ -57,16 +139,53 @@ public class TraceabilityModelManager {
 		return TraceabilityFactory.eINSTANCE.createTrace();
 	}
 	
-	public List<Trace> getTraces(Set<EObject> sources, Long ruleDescriptorId) {
+	public EObjectSource createEObjectSourceEObject() {
+		return TraceabilityFactory.eINSTANCE.createEObjectSource();
+	}
+	
+	public JavaObjectSource createJavaObjectSourceEObject() {
+		return TraceabilityFactory.eINSTANCE.createJavaObjectSource();
+	}
+	
+	public ReferenceSource createReferenceSourceEObject() {
+		return TraceabilityFactory.eINSTANCE.createReferenceSource();
+	}
+	
+	public AttributeSource createAttributeSourceEObject() {
+		return TraceabilityFactory.eINSTANCE.createAttributeSource();
+	}
+	
+	public EObjectTarget createEObjectTargetEObject() {
+		return TraceabilityFactory.eINSTANCE.createEObjectTarget();
+	}
+	
+	public ReferenceTarget createReferenceTargetEObject() {
+		return TraceabilityFactory.eINSTANCE.createReferenceTarget();
+	}
+	
+	public AttributeTarget createAttributeTargetEObject() {
+		return TraceabilityFactory.eINSTANCE.createAttributeTarget();
+	}
+	
+	/**
+	 * Get Trace instances from the traceability model by ruleDescriptorId and sources.
+	 * @param sources The source Objects / EObjects, that belong to the trace
+	 * @param ruleDescriptorId The id of the RuleDescriptor instance, that created the Trace
+	 * @return Trace instances, which have the given id and sources
+	 */
+	// TODO TESZT
+	public List<Trace> getTraces(Map<String, Object> sources, Long ruleDescriptorId) {
 		List<Trace> result = Lists.newArrayList();
 
 		try {
 			TraceQuerySpecification querySpecification = new TraceQuerySpecification(sources.size());
-
+			
 			int i = 0;
 			GenericPatternMatch emptyMatch = querySpecification.newEmptyMatch();
-			for (EObject eObject : sources) {
-				emptyMatch.set(TraceQuerySpecification.TracePQuery.getSourceParameterName(i), eObject);
+			for (Entry<String, Object> source : sources.entrySet()) {
+				emptyMatch.set(TraceQuerySpecification.TracePQuery.getSourceParameterName(i), source.getValue());
+				emptyMatch.set(TraceQuerySpecification.TracePQuery.getPatternParameterNameParameterName(i), source.getKey());
+				
 				i++;
 			}
 			
@@ -86,17 +205,25 @@ public class TraceabilityModelManager {
 		return result;
 	}
 	
-	public List<EObject> getTargets(Set<EObject> sources, Long ruleDescriptorId) {
-		List<EObject> result = Lists.newArrayList();
+	/**
+	 * Get TraceTarget instances of the matching traces.
+	 * @param sources Source objects of the trace
+	 * @param ruleDescriptorId Id of the RuleDescriptor instance, that created the trace
+	 * @return TraceTarget instances of the matching traces
+	 */
+	// TODO TESZT
+	public List<TraceTarget> getTargets(Map<String, Object> sources, Long ruleDescriptorId) {
+		List<TraceTarget> result = Lists.newArrayList();
 		
 		List<Trace> traces = getTraces(sources, ruleDescriptorId);
 		for (Trace trace : traces) {
-			result.addAll(trace.getTargets());
+			result.add(trace.getTarget());
 		}
 		
 		return result;
 	}
 	
+	// TODO
 	public List<EObject> getHiddenParameters(Configuration configurationModel, Trace trace) {
 		List<EObject> result = new ArrayList<EObject>();
 		
@@ -106,5 +233,13 @@ public class TraceabilityModelManager {
 		// TODO
 		
 		return result;
+	}
+	
+	/**
+	 * Removes the given Trace instance from the traceability model.
+	 * @param trace The Trace instance to remove
+	 */
+	public void removeTrace(Trace trace) {
+		EcoreUtil.remove(trace);
 	}
 }

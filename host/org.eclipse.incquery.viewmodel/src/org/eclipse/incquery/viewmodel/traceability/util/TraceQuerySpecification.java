@@ -30,8 +30,8 @@ import com.google.common.collect.Sets;
  * 	will be constructed from the given number of source parameters, and from the
  * 	traceBySourceAndRuleDescriptorId pattern.
  * 
- * The created pattern will match on those {@link Trace} instances, which has exactly
- * 	the given sources and id.
+ * The created pattern will match on those {@link Trace} instances, which have the given id
+ * 	and have all the given sources.
  * 
  * @author lengyela
  *
@@ -64,34 +64,50 @@ public class TraceQuerySpecification extends
 		public static final String PARAMETER_TRACE = "trace";
 		
 		public static final String PARAMETER_RULE_DESCRIPTOR_ID = "ruleDescriptorId";
+
+		public static final String PARAMETER_SOURCE_PREFIX = "source_";
 		
-		public static final String SOURCE_PARAMETER_PREFIX = "source_";
+		public static final String PARAMETER_PATTERN_PARAMETER_NAME_PREFIX = "patternParameterName_";
 		
+		
+		private int numberOfSources;
 		
 		private List<PParameter> parameters;
 		
+		private List<PParameter> dynamicParameters;
+		
 		private List<PParameter> sourceParameters;
+		
+		private List<PParameter> patternParamaterNameParamaters;
 		
 		private PParameter ruleDescriptorIdParameter;
 		
 		private PParameter traceParameter;
 
 		
-		public TracePQuery(int numberOfSourceParameters) {
+		public TracePQuery(int numberOfSources) {
+			this.numberOfSources = numberOfSources;
 			
 			this.parameters = Lists.newArrayList();
 			
-			/* Create renamed source parameters with a prefix */
+			/* Create renamed dynamic parameters with a prefix */
+			PParameter createdPParameter = null;
+			this.dynamicParameters = Lists.newArrayList();
 			this.sourceParameters = Lists.newArrayList();
-			for (int i = 0; i < numberOfSourceParameters; i++) {
-				this.sourceParameters.add(new PParameter(
-						getSourceParameterName(i),
-						"org.eclipse.emf.ecore.EObject"));
+			this.patternParamaterNameParamaters = Lists.newArrayList();
+			for (int i = 0; i < numberOfSources; i++) {
+				createdPParameter = new PParameter(getSourceParameterName(i), "java.lang.Object");
+				this.dynamicParameters.add(createdPParameter);
+				this.sourceParameters.add(createdPParameter);
+				
+				createdPParameter = new PParameter(getPatternParameterNameParameterName(i), "java.lang.Object");
+				this.dynamicParameters.add(createdPParameter);
+				this.patternParamaterNameParamaters.add(createdPParameter);
 			}
-			/* ********************************************** */
+			/* *********************************************** */
 			
-			/* Add all sourceParameters to the parameters List */
-			this.parameters.addAll(this.sourceParameters);
+			/* Add all traceSourceParameters to the parameters List */
+			this.parameters.addAll(this.dynamicParameters);
 			
 			/* Create ruleDescriptor parameter and add it to parameters List */
 			this.ruleDescriptorIdParameter = new PParameter("ruleDescriptorId", "java.lang.Long");
@@ -125,11 +141,11 @@ public class TraceQuerySpecification extends
 				
 				List<ExportedParameter> exportedParameters = Lists.newArrayList();
 		
-				PVariable var_source = null;
-				for (PParameter sourceParameter : sourceParameters) {
-					var_source = body.getOrCreateVariableByName(sourceParameter.getName());
+				PVariable var_dynamicParameter = null;
+				for (PParameter dynamicParameter : dynamicParameters) {
+					var_dynamicParameter = body.getOrCreateVariableByName(dynamicParameter.getName());
 					
-					exportedParameters.add(new ExportedParameter(body, var_source, sourceParameter.getName()));
+					exportedParameters.add(new ExportedParameter(body, var_dynamicParameter, dynamicParameter.getName()));
 				}
 
 				exportedParameters.add(new ExportedParameter(body, var_ruleDescriptorId, PARAMETER_RULE_DESCRIPTOR_ID));
@@ -137,12 +153,15 @@ public class TraceQuerySpecification extends
 				
 				body.setExportedParameters(exportedParameters);
 
-				for (PParameter sourceParameter : sourceParameters) {
-					var_source = body.getOrCreateVariableByName(sourceParameter.getName());
+				PVariable var_source = null;
+				PVariable var_patternParameterName = null;
+				for (int i = 0; i < numberOfSources; i++) {
+					var_source = body.getOrCreateVariableByName(sourceParameters.get(i).getName());
+					var_patternParameterName = body.getOrCreateVariableByName(patternParamaterNameParamaters.get(i).getName());
 					
 					new PositivePatternCall(
 							body,
-							new FlatTuple(var_source, var_ruleDescriptorId, var_trace),
+							new FlatTuple(var_source, var_patternParameterName, var_ruleDescriptorId, var_trace),
 							TraceBySourceAndRuleDescriptorIdQuerySpecification.instance().getInternalQueryRepresentation());
 				}
 			} catch (IncQueryException e) {
@@ -153,7 +172,11 @@ public class TraceQuerySpecification extends
 		}
 
 		public static String getSourceParameterName(int position) {
-			return SOURCE_PARAMETER_PREFIX + position;
+			return PARAMETER_SOURCE_PREFIX + position;
+		}
+		
+		public static String getPatternParameterNameParameterName(int position) {
+			return PARAMETER_PATTERN_PARAMETER_NAME_PREFIX + position;
 		}
 	}
 }
