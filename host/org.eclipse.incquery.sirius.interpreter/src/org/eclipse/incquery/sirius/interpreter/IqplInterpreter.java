@@ -24,18 +24,30 @@ import org.eclipse.incquery.patternlanguage.patternLanguage.PatternModel;
 import org.eclipse.incquery.runtime.api.AdvancedIncQueryEngine;
 import org.eclipse.incquery.runtime.api.IPatternMatch;
 import org.eclipse.incquery.runtime.api.IQuerySpecification;
+import org.eclipse.incquery.runtime.api.IncQueryEngine;
+import org.eclipse.incquery.runtime.api.IncQueryEngineManager;
 import org.eclipse.incquery.runtime.api.IncQueryMatcher;
+import org.eclipse.incquery.runtime.base.api.BaseIndexOptions;
 import org.eclipse.incquery.runtime.emf.EMFScope;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.matchers.psystem.annotations.PAnnotation;
+import org.eclipse.sirius.business.api.dialect.DialectManager;
+import org.eclipse.sirius.business.api.session.Session;
+import org.eclipse.sirius.business.api.session.SessionManager;
 import org.eclipse.sirius.common.tools.api.interpreter.EvaluationException;
 import org.eclipse.sirius.common.tools.api.interpreter.IInterpreter;
 import org.eclipse.sirius.common.tools.api.interpreter.IInterpreterContext;
 import org.eclipse.sirius.common.tools.api.interpreter.IInterpreterStatus;
 import org.eclipse.sirius.common.tools.api.interpreter.IVariableStatusListener;
 import org.eclipse.sirius.diagram.DDiagram;
+import org.eclipse.sirius.diagram.DDiagramElement;
+import org.eclipse.sirius.diagram.description.DiagramDescription;
 import org.eclipse.sirius.ecore.extender.business.api.accessor.MetamodelDescriptor;
 import org.eclipse.sirius.ecore.extender.business.api.accessor.ModelAccessor;
+import org.eclipse.sirius.viewpoint.DRepresentation;
+
+import com.google.common.collect.Lists;
+import com.google.common.collect.Sets;
 
 public class IqplInterpreter implements IInterpreter {
 	private static final String RESOURCE_URI = "dummy:/queries.eiq";
@@ -158,7 +170,7 @@ public class IqplInterpreter implements IInterpreter {
 	@Override
 	public void addImport(String dependency) {
 		// TODO Auto-generated method stub
-		System.out.println("IqplInterpreter::addImport");
+		System.out.println("IqplInterpreter::addImport:"+dependency);
 	}
 
 	@Override
@@ -311,7 +323,7 @@ public class IqplInterpreter implements IInterpreter {
 			
 			IncQueryMatcher<IPatternMatch> matcher = null;
 			
-			IQuerySpecification<?> querySpecification = getQuerySpecification(expression);
+			IQuerySpecification<?> querySpecification = getQuerySpecification(context, expression);
 			
 			matcher = (IncQueryMatcher<IPatternMatch>) querySpecification.getMatcher(getEngine(context));
 			
@@ -338,7 +350,7 @@ public class IqplInterpreter implements IInterpreter {
 	 * @param expression The IQPL expression
 	 * @return IQuerySpecification created from the given IQPL expression
 	 */
-	private IQuerySpecification<?> getQuerySpecification(String expression) {
+	private IQuerySpecification<?> getQuerySpecification(EObject context, String expression) {
 		String originalExpression = expression;
 		if (expressionToQuerySpecificationMap.containsKey(expression)) {
 			return expressionToQuerySpecificationMap.get(expression);
@@ -347,26 +359,23 @@ public class IqplInterpreter implements IInterpreter {
 		// Remove the prefix from the expression
 		expression = expression.replace(IqplInterpreterConstants.PREFIX, "");
 
-		// Load imports from DiagramDescription
-		if (getDiagram() != null && getDiagram().getDescription() != null
-				&& getDiagram().getDescription().getMetamodel() != null) {
-			
-			StringBuilder stringBuilder = new StringBuilder();
-			stringBuilder.append("\n");
-			
-			for (EPackage ePackage : getDiagram().getDescription().getMetamodel()) {
-				stringBuilder
-					.append("import \"")
-					.append(ePackage.getNsURI())
-					.append("\"\n");
-			}
-			
-			stringBuilder.append("\n");
-			stringBuilder.append(expression);
-			
-			expression = stringBuilder.toString();
+		/* Load imports from DiagramDescription */
+		StringBuilder stringBuilder = new StringBuilder();
+		stringBuilder.append("\n");
+		
+		for (EPackage ePackage : getImportedMetamodels(context)) {
+			stringBuilder
+				.append("import \"")
+				.append(ePackage.getNsURI())
+				.append("\"\n");
 		}
-
+		
+		stringBuilder.append("\n");
+		stringBuilder.append(expression);
+		
+		expression = stringBuilder.toString();
+		/* ************************************ */
+		
 		
 	    InputStream is = new ByteArrayInputStream( expression.getBytes() );
 	    try {
@@ -469,7 +478,7 @@ public class IqplInterpreter implements IInterpreter {
 			if (resource != null) {
 				try {
 					if (!engines.containsKey(resource)) {
-						engines.put(resource, AdvancedIncQueryEngine.createUnmanagedEngine(new EMFScope(resource)));
+						engines.put(resource, AdvancedIncQueryEngine.createUnmanagedEngine(new EMFScope(resource, new BaseIndexOptions(false, true))));
 					}
 					
 					return engines.get(resource);
@@ -493,5 +502,55 @@ public class IqplInterpreter implements IInterpreter {
 		
 		return null;
 	}
+	
+	private Set<EPackage> getImportedMetamodels(EObject context) {
+		Set<EPackage> result = null;
+		
+		result = getImportedMetamodelsFromVariables();
+		
+		if (result != null) {
+			return result;
+		}
+		
+		result = getImportedMetamodelsFromSession(context);
+		
+		if (result != null) {
+			return result;
+		}
+		
+		return null;
+	}
+	
+	private Set<EPackage> getImportedMetamodelsFromSession(EObject context) {
+		Set<EPackage> result = Sets.newHashSet();
+		
+		Session session = SessionManager.INSTANCE.getSession(context);
+		
+		if (session != null) {
+			DiagramDescription description = null;
+			for (DRepresentation representation : DialectManager.INSTANCE.getAllRepresentations(session)) {
+				if (representation instanceof DDiagram) {
+					description = ((DDiagram) representation).getDescription();
+					
+					result.addAll(description.getMetamodel());
+				}
+			}
+		}
 
+		return result;
+	}
+
+	private Set<EPackage> getImportedMetamodelsFromVariables() {
+		if (getDiagram() != null) {
+			return Sets.newHashSet(getDiagram().getDescription().getMetamodel());
+		} else {
+			for (Object variable : variables.values()) {
+				if (variable instanceof DDiagramElement) {
+					return Sets.newHashSet(((DDiagramElement) variable).getParentDiagram().getDescription().getMetamodel());
+				}
+			}
+		}
+		
+		return null;
+	}
 }
