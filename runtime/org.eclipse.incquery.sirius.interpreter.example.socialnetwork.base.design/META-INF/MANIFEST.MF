@@ -4,8 +4,7 @@ Bundle-Name: org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.
 Bundle-SymbolicName: org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design;singleton:=true
 Bundle-Version: 1.0.0
 Bundle-Activator: org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design.Activator
-Export-Package: org.eclipse.incquery.sirius.interpreter.base.design.patterns,
- org.eclipse.incquery.sirius.interpreter.base.design.patterns.util,
+Export-Package: 
  org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design.patterns,
  org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design.patterns.util
 Require-Bundle: org.eclipse.ui,
