@@ -10,27 +10,6 @@
     <!-- @generated configuration -->
     <package class="org.eclipse.incquery.viewmodel.configuration.ConfigurationPackage" genModel="model/configuration.genmodel" uri="http://org.eclipse.incquery/viewmodel/configuration/1.0"/>
   </extension>
-  <extension id="extension.derived.org.eclipse.incquery.viewmodel.configuration.patterns.elementRule_referenceRuleDescriptors" point="org.eclipse.incquery.runtime.base.wellbehaving.derived.features">
-    <wellbehaving-derived-feature classifier-name="ElementRuleDescriptor" feature-name="referenceRuleDescriptors" package-nsUri="http://org.eclipse.incquery/viewmodel/configuration/1.0"/>
-  </extension>
-  <extension id="extension.derived.org.eclipse.incquery.viewmodel.configuration.patterns.configuration_attributeRuleDescriptors" point="org.eclipse.incquery.runtime.base.wellbehaving.derived.features">
-    <wellbehaving-derived-feature classifier-name="Configuration" feature-name="attributeRuleDescriptors" package-nsUri="http://org.eclipse.incquery/viewmodel/configuration/1.0"/>
-  </extension>
-  <extension id="extension.derived.org.eclipse.incquery.viewmodel.configuration.patterns.configuration_structuralFeatureRuleDescriptors" point="org.eclipse.incquery.runtime.base.wellbehaving.derived.features">
-    <wellbehaving-derived-feature classifier-name="Configuration" feature-name="structuralFeatureRuleDescriptors" package-nsUri="http://org.eclipse.incquery/viewmodel/configuration/1.0"/>
-  </extension>
-  <extension id="extension.derived.org.eclipse.incquery.viewmodel.configuration.patterns.configuration_elementRuleDescriptors" point="org.eclipse.incquery.runtime.base.wellbehaving.derived.features">
-    <wellbehaving-derived-feature classifier-name="Configuration" feature-name="elementRuleDescriptors" package-nsUri="http://org.eclipse.incquery/viewmodel/configuration/1.0"/>
-  </extension>
-  <extension id="extension.derived.org.eclipse.incquery.viewmodel.configuration.patterns.elementRule_attributeRuleDescriptors" point="org.eclipse.incquery.runtime.base.wellbehaving.derived.features">
-    <wellbehaving-derived-feature classifier-name="ElementRuleDescriptor" feature-name="attributeRuleDescriptors" package-nsUri="http://org.eclipse.incquery/viewmodel/configuration/1.0"/>
-  </extension>
-  <extension id="extension.derived.org.eclipse.incquery.viewmodel.configuration.patterns.configuration_referenceRuleDescriptors" point="org.eclipse.incquery.runtime.base.wellbehaving.derived.features">
-    <wellbehaving-derived-feature classifier-name="Configuration" feature-name="referenceRuleDescriptors" package-nsUri="http://org.eclipse.incquery/viewmodel/configuration/1.0"/>
-  </extension>
-  <extension id="extension.derived.org.eclipse.incquery.viewmodel.configuration.patterns.namedElement_name" point="org.eclipse.incquery.runtime.base.wellbehaving.derived.features">
-    <wellbehaving-derived-feature classifier-name="NamedElement" feature-name="name" package-nsUri="http://org.eclipse.incquery/viewmodel/configuration/1.0"/>
-  </extension>
   <extension id="org.eclipse.incquery.viewmodel.traceability.patterns.Helpers" point="org.eclipse.incquery.runtime.queryspecification">
     <group group="org.eclipse.incquery.runtime.extensibility.SingletonExtensionFactory:org.eclipse.incquery.viewmodel.traceability.patterns.Helpers" id="org.eclipse.incquery.viewmodel.traceability.patterns.Helpers"/>
   </extension>
@@ -54,5 +33,41 @@
   </extension>
   <extension id="extension.derived.org.eclipse.incquery.viewmodel.traceability.patterns.trace_referenceSources" point="org.eclipse.incquery.runtime.base.wellbehaving.derived.features">
     <wellbehaving-derived-feature classifier-name="Trace" feature-name="referenceSources" package-nsUri="http://org.eclipse.incquery/viewmodel/traceability/3.0"/>
+  </extension>
+  <extension id="extension.derived.org.eclipse.incquery.viewmodel.configuration.patterns.elementRule_referenceRuleDescriptors" point="org.eclipse.incquery.runtime.base.wellbehaving.derived.features">
+    <wellbehaving-derived-feature classifier-name="ElementRuleDescriptor" feature-name="referenceRuleDescriptors" package-nsUri="http://org.eclipse.incquery/viewmodel/configuration/1.0"/>
+  </extension>
+  <extension id="extension.derived.org.eclipse.incquery.viewmodel.configuration.patterns.configuration_attributeRuleDescriptors" point="org.eclipse.incquery.runtime.base.wellbehaving.derived.features">
+    <wellbehaving-derived-feature classifier-name="Configuration" feature-name="attributeRuleDescriptors" package-nsUri="http://org.eclipse.incquery/viewmodel/configuration/1.0"/>
+  </extension>
+  <extension id="extension.derived.org.eclipse.incquery.viewmodel.configuration.patterns.configuration_structuralFeatureRuleDescriptors" point="org.eclipse.incquery.runtime.base.wellbehaving.derived.features">
+    <wellbehaving-derived-feature classifier-name="Configuration" feature-name="structuralFeatureRuleDescriptors" package-nsUri="http://org.eclipse.incquery/viewmodel/configuration/1.0"/>
+  </extension>
+  <extension id="extension.derived.org.eclipse.incquery.viewmodel.configuration.patterns.configuration_transformationRuleDescriptors" point="org.eclipse.incquery.runtime.base.wellbehaving.derived.features">
+    <wellbehaving-derived-feature classifier-name="Configuration" feature-name="transformationRuleDescriptors" package-nsUri="http://org.eclipse.incquery/viewmodel/configuration/1.0"/>
+  </extension>
+  <extension id="extension.derived.org.eclipse.incquery.viewmodel.configuration.patterns.configuration_elementRuleDescriptors" point="org.eclipse.incquery.runtime.base.wellbehaving.derived.features">
+    <wellbehaving-derived-feature classifier-name="Configuration" feature-name="elementRuleDescriptors" package-nsUri="http://org.eclipse.incquery/viewmodel/configuration/1.0"/>
+  </extension>
+  <extension id="extension.derived.org.eclipse.incquery.viewmodel.configuration.patterns.elementRule_attributeRuleDescriptors" point="org.eclipse.incquery.runtime.base.wellbehaving.derived.features">
+    <wellbehaving-derived-feature classifier-name="ElementRuleDescriptor" feature-name="attributeRuleDescriptors" package-nsUri="http://org.eclipse.incquery/viewmodel/configuration/1.0"/>
+  </extension>
+  <extension id="extension.derived.org.eclipse.incquery.viewmodel.configuration.patterns.configuration_referenceRuleDescriptors" point="org.eclipse.incquery.runtime.base.wellbehaving.derived.features">
+    <wellbehaving-derived-feature classifier-name="Configuration" feature-name="referenceRuleDescriptors" package-nsUri="http://org.eclipse.incquery/viewmodel/configuration/1.0"/>
+  </extension>
+  <extension id="extension.derived.org.eclipse.incquery.viewmodel.configuration.patterns.namedElement_name" point="org.eclipse.incquery.runtime.base.wellbehaving.derived.features">
+    <wellbehaving-derived-feature classifier-name="NamedElement" feature-name="name" package-nsUri="http://org.eclipse.incquery/viewmodel/configuration/1.0"/>
+  </extension>
+  <extension id="extension.derived.org.eclipse.incquery.viewmodel.configuration.patterns.configuration_traceabilityRuleDescriptors" point="org.eclipse.incquery.runtime.base.wellbehaving.derived.features">
+    <wellbehaving-derived-feature classifier-name="Configuration" feature-name="traceabilityRuleDescriptors" package-nsUri="http://org.eclipse.incquery/viewmodel/configuration/1.0"/>
+  </extension>
+  <extension id="extension.derived.org.eclipse.incquery.viewmodel.configuration.patterns.configuration_hiddenParametersRuleDescriptors" point="org.eclipse.incquery.runtime.base.wellbehaving.derived.features">
+    <wellbehaving-derived-feature classifier-name="Configuration" feature-name="hiddenParametersRuleDescriptors" package-nsUri="http://org.eclipse.incquery/viewmodel/configuration/1.0"/>
+  </extension>
+  <extension id="extension.derived.org.eclipse.incquery.viewmodel.configuration.patterns.hiddenParametersRuleDescriptors_transformationRuleDescriptors" point="org.eclipse.incquery.runtime.base.wellbehaving.derived.features">
+    <wellbehaving-derived-feature classifier-name="HiddenParametersRuleDescriptor" feature-name="transformationRuleDescriptors" package-nsUri="http://org.eclipse.incquery/viewmodel/configuration/1.0"/>
+  </extension>
+  <extension id="extension.derived.org.eclipse.incquery.viewmodel.traceability.patterns.trace_visibleSources" point="org.eclipse.incquery.runtime.base.wellbehaving.derived.features">
+    <wellbehaving-derived-feature classifier-name="Trace" feature-name="visibleSources" package-nsUri="http://org.eclipse.incquery/viewmodel/traceability/3.0"/>
   </extension>
 </plugin>

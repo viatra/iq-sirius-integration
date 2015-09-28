@@ -11,13 +11,61 @@ import "http://org.eclipse.incquery/viewmodel/traceability/3.0"
 pattern traceBySourceAndRuleDescriptorId(source, patternParameterName, ruleDescriptorId, trace : Trace) {
 	Trace.ruleDescriptorId(trace, ruleDescriptorId);
 	Trace.sources(trace, traceSource);
+	TraceSource.hidden(traceSource, false);
 	TraceSource.patternParameterName(traceSource, patternParameterName);
 	
 	EObjectSource.source(traceSource, source);
 } or {
 	Trace.ruleDescriptorId(trace, ruleDescriptorId);
 	Trace.sources(trace, traceSource);
+	TraceSource.hidden(traceSource, false);
 	TraceSource.patternParameterName(traceSource, patternParameterName);
 	
 	JavaObjectSource.source(traceSource, source);	
+}
+
+// TODO teszt
+// TODO javadoc
+pattern getTraceSource(patternParameterName, hidden, source, trace : Trace, traceSource : TraceSource) {
+	Trace.sources(trace, traceSource);
+	EObjectSource.hidden(traceSource, hidden);
+	EObjectSource.source(traceSource, source);
+	EObjectSource.patternParameterName(traceSource, patternParameterName);
+} or {
+	Trace.sources(trace, traceSource);
+	JavaObjectSource.hidden(traceSource, hidden);
+	JavaObjectSource.source(traceSource, source);
+	JavaObjectSource.patternParameterName(traceSource, patternParameterName);
+}
+
+// TODO teszt, javadoc
+pattern getTraceByEObjectTarget(targetEObject, trace : Trace) {
+	EObjectTarget.target(eObjectTarget, targetEObject);
+
+	EObjectTarget.trace(eObjectTarget, trace);
+}
+
+// TODO teszt, javadoc
+pattern getTraceByReferenceTarget(ownerEObject, targetEObject, referenceName, trace : Trace) {
+	ReferenceTarget.owner.target(referenceTarget, ownerEObject);
+	ReferenceTarget.target.target(referenceTarget, targetEObject);
+	ReferenceTarget.referenceName(referenceTarget, referenceName);
+
+	ReferenceTarget.trace(referenceTarget, trace);
+}
+
+// TODO teszt, javadoc
+pattern getTraceByAttributeTarget(ownerEObject, targetJavaObject, attributeName, trace : Trace) {
+	AttributeTarget.owner.target(attributeTarget, ownerEObject);
+	AttributeTarget.target(attributeTarget, targetJavaObject);
+	AttributeTarget.attributeName(attributeTarget, attributeName);
+	
+	AttributeTarget.trace(attributeTarget, trace);
+}
+
+// TODO
+pattern test(a, b) {
+	EObjectSource.attributes.owner.references.target(a, b);
+	
+	a == b;
 }

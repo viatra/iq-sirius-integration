@@ -3,26 +3,26 @@
   <ruleDescriptors xsi:type="org.eclipse.incquery.viewmodel.configuration:ElementRuleDescriptor" patternFQN="org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.manyone1.design.patterns.family" structuralFeatureRuleDescriptors="3 4">
     <elementType href="../../../plugin/org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.models/model/socialnetwork_many_one_1.ecore#//Family"/>
   </ruleDescriptors>
-  <ruleDescriptors xsi:type="org.eclipse.incquery.viewmodel.configuration:ReferenceRuleDescriptor" id="1" patternFQN="org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.manyone1.design.patterns.containment_socialNetwork_family" ownerElementRuleDescriptor="2" sourceElementParameterMappings="//@ruleDescriptors.1/@patternParameterMappings.0" targetElementRuleDescriptor="//@ruleDescriptors.0" targetElementParameterMappings="//@ruleDescriptors.1/@patternParameterMappings.1 //@ruleDescriptors.1/@patternParameterMappings.2">
+  <ruleDescriptors xsi:type="org.eclipse.incquery.viewmodel.configuration:ReferenceRuleDescriptor" patternFQN="org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.manyone1.design.patterns.containment_socialNetwork_family" id="1" ownerElementRuleDescriptor="2" sourceElementParameterMappings="//@ruleDescriptors.1/@patternParameterMappings.0" targetElementRuleDescriptor="//@ruleDescriptors.0" targetElementParameterMappings="//@ruleDescriptors.1/@patternParameterMappings.1 //@ruleDescriptors.1/@patternParameterMappings.2">
     <patternParameterMappings sfRulePatternParameterName="sn" eRulePatternParameterName="sn"/>
     <patternParameterMappings sfRulePatternParameterName="f" eRulePatternParameterName="father"/>
     <patternParameterMappings sfRulePatternParameterName="m" eRulePatternParameterName="mother"/>
     <reference href="../../../plugin/org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.models/model/socialnetwork_many_one_1.ecore#//SocialNetwork/members"/>
   </ruleDescriptors>
-  <ruleDescriptors xsi:type="org.eclipse.incquery.viewmodel.configuration:ElementRuleDescriptor" id="2" patternFQN="org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.manyone1.design.patterns.socialNetwork" structuralFeatureRuleDescriptors="1">
+  <ruleDescriptors xsi:type="org.eclipse.incquery.viewmodel.configuration:ElementRuleDescriptor" patternFQN="org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.manyone1.design.patterns.socialNetwork" id="2" structuralFeatureRuleDescriptors="1">
     <elementType href="../../../plugin/org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.models/model/socialnetwork_many_one_1.ecore#//SocialNetwork"/>
   </ruleDescriptors>
-  <ruleDescriptors xsi:type="org.eclipse.incquery.viewmodel.configuration:AttributeRuleDescriptor" id="3" patternFQN="org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.manyone1.design.patterns.family_name" ownerElementRuleDescriptor="//@ruleDescriptors.0" sourceElementParameterMappings="//@ruleDescriptors.3/@patternParameterMappings.0 //@ruleDescriptors.3/@patternParameterMappings.1" calculatedPatternParameterName="value">
+  <ruleDescriptors xsi:type="org.eclipse.incquery.viewmodel.configuration:AttributeRuleDescriptor" patternFQN="org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.manyone1.design.patterns.family_name" id="3" ownerElementRuleDescriptor="//@ruleDescriptors.0" sourceElementParameterMappings="//@ruleDescriptors.3/@patternParameterMappings.0 //@ruleDescriptors.3/@patternParameterMappings.1" calculatedPatternParameterName="value">
     <patternParameterMappings sfRulePatternParameterName="father" eRulePatternParameterName="father"/>
     <patternParameterMappings sfRulePatternParameterName="mother" eRulePatternParameterName="mother"/>
     <attribute href="../../../plugin/org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.models/model/socialnetwork_many_one_1.ecore#//Family/name"/>
   </ruleDescriptors>
-  <ruleDescriptors xsi:type="org.eclipse.incquery.viewmodel.configuration:ReferenceRuleDescriptor" id="4" patternFQN="org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.manyone1.design.patterns.friend" ownerElementRuleDescriptor="//@ruleDescriptors.0" sourceElementParameterMappings="//@ruleDescriptors.4/@patternParameterMappings.0 //@ruleDescriptors.4/@patternParameterMappings.1" targetElementRuleDescriptor="//@ruleDescriptors.0" targetElementParameterMappings="//@ruleDescriptors.4/@patternParameterMappings.2 //@ruleDescriptors.4/@patternParameterMappings.3">
+  <ruleDescriptors xsi:type="org.eclipse.incquery.viewmodel.configuration:ReferenceRuleDescriptor" patternFQN="org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.manyone1.design.patterns.friend" id="4" ownerElementRuleDescriptor="//@ruleDescriptors.0" sourceElementParameterMappings="//@ruleDescriptors.4/@patternParameterMappings.0 //@ruleDescriptors.4/@patternParameterMappings.1" targetElementRuleDescriptor="//@ruleDescriptors.0" targetElementParameterMappings="//@ruleDescriptors.4/@patternParameterMappings.2 //@ruleDescriptors.4/@patternParameterMappings.3">
     <patternParameterMappings sfRulePatternParameterName="m1" eRulePatternParameterName="father"/>
     <patternParameterMappings sfRulePatternParameterName="w1" eRulePatternParameterName="mother"/>
     <patternParameterMappings sfRulePatternParameterName="m2" eRulePatternParameterName="father"/>
     <patternParameterMappings sfRulePatternParameterName="w2" eRulePatternParameterName="mother"/>
     <reference href="../../../plugin/org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.models/model/socialnetwork_many_one_1.ecore#//Family/friends"/>
   </ruleDescriptors>
-  <patternResourceURIs>/org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.manyone1.design/src/org/eclipse/incquery/viewmodel/sirius/example/socialnetwork/manyone1/design/patterns/patterns_many_one.eiq</patternResourceURIs>
+  <patternResourceURIs>platform:/resource/org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.manyone1.design/src/org/eclipse/incquery/viewmodel/sirius/example/socialnetwork/manyone1/design/patterns/patterns_many_one.eiq</patternResourceURIs>
 </org.eclipse.incquery.viewmodel.configuration:Configuration>

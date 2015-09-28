@@ -13,24 +13,24 @@
   </ruleDescriptors>
   <ruleDescriptors
       xsi:type="org.eclipse.incquery.viewmodel.configuration:ElementRuleDescriptor"
-      id="1"
       patternFQN="org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.manyone2.design.patterns.family"
+      id="1"
       structuralFeatureRuleDescriptors="7">
     <elementType
         href="../../../plugin/org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.models/model/socialnetwork_many_one_2.ecore#//Family"/>
   </ruleDescriptors>
   <ruleDescriptors
       xsi:type="org.eclipse.incquery.viewmodel.configuration:ElementRuleDescriptor"
-      id="2"
       patternFQN="org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.manyone2.design.patterns.friend"
+      id="2"
       structuralFeatureRuleDescriptors="6 5">
     <elementType
         href="../../../plugin/org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.models/model/socialnetwork_many_one_2.ecore#//Friend"/>
   </ruleDescriptors>
   <ruleDescriptors
       xsi:type="org.eclipse.incquery.viewmodel.configuration:ReferenceRuleDescriptor"
-      id="3"
       patternFQN="org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.manyone2.design.patterns.containment_socialNetwork_family"
+      id="3"
       ownerElementRuleDescriptor="//@ruleDescriptors.0"
       sourceElementParameterMappings="//@ruleDescriptors.3/@patternParameterMappings.0"
       targetElementRuleDescriptor="1"
@@ -49,8 +49,8 @@
   </ruleDescriptors>
   <ruleDescriptors
       xsi:type="org.eclipse.incquery.viewmodel.configuration:ReferenceRuleDescriptor"
-      id="4"
       patternFQN="org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.manyone2.design.patterns.containment_socialNetwork_friend"
+      id="4"
       ownerElementRuleDescriptor="//@ruleDescriptors.0"
       sourceElementParameterMappings="//@ruleDescriptors.4/@patternParameterMappings.0"
       targetElementRuleDescriptor="2"
@@ -75,8 +75,8 @@
   </ruleDescriptors>
   <ruleDescriptors
       xsi:type="org.eclipse.incquery.viewmodel.configuration:ReferenceRuleDescriptor"
-      id="5"
       patternFQN="org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.manyone2.design.patterns.friend"
+      id="5"
       ownerElementRuleDescriptor="2"
       sourceElementParameterMappings="//@ruleDescriptors.5/@patternParameterMappings.2 //@ruleDescriptors.5/@patternParameterMappings.4 //@ruleDescriptors.5/@patternParameterMappings.3 //@ruleDescriptors.5/@patternParameterMappings.5"
       targetElementRuleDescriptor="1"
@@ -104,8 +104,8 @@
   </ruleDescriptors>
   <ruleDescriptors
       xsi:type="org.eclipse.incquery.viewmodel.configuration:ReferenceRuleDescriptor"
-      id="6"
       patternFQN="org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.manyone2.design.patterns.friend"
+      id="6"
       ownerElementRuleDescriptor="2"
       sourceElementParameterMappings="//@ruleDescriptors.6/@patternParameterMappings.2 //@ruleDescriptors.6/@patternParameterMappings.4 //@ruleDescriptors.6/@patternParameterMappings.3 //@ruleDescriptors.6/@patternParameterMappings.5"
       targetElementRuleDescriptor="1"
@@ -133,8 +133,8 @@
   </ruleDescriptors>
   <ruleDescriptors
       xsi:type="org.eclipse.incquery.viewmodel.configuration:AttributeRuleDescriptor"
-      id="7"
       patternFQN="org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.manyone2.design.patterns.family_name"
+      id="7"
       ownerElementRuleDescriptor="1"
       sourceElementParameterMappings="//@ruleDescriptors.7/@patternParameterMappings.0 //@ruleDescriptors.7/@patternParameterMappings.1"
       calculatedPatternParameterName="value">
@@ -147,5 +147,5 @@
     <attribute
         href="../../../plugin/org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.models/model/socialnetwork_many_one_2.ecore#//Family/name"/>
   </ruleDescriptors>
-  <patternResourceURIs>/org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.manyone2.design/src/org/eclipse/incquery/viewmodel/sirius/example/socialnetwork/manyone2/design/patterns/patterns_many_one.eiq</patternResourceURIs>
+  <patternResourceURIs>platform:/resource/org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.manyone2.design/src/org/eclipse/incquery/viewmodel/sirius/example/socialnetwork/manyone2/design/patterns/patterns_many_one.eiq</patternResourceURIs>
 </org.eclipse.incquery.viewmodel.configuration:Configuration>

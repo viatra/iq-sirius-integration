@@ -51,11 +51,11 @@
         <details key="patternFQN" value="org.eclipse.incquery.viewmodel.traceability.patterns.trace_attributeSources"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="allSources" lowerBound="1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="visibleSources" lowerBound="1"
         upperBound="-1" eType="#//TraceSource" changeable="false" volatile="true"
         transient="true" derived="true">
       <eAnnotations source="org.eclipse.incquery.querybasedfeature">
-        <details key="patternFQN" value="org.eclipse.incquery.viewmodel.traceability.patterns.trace_allSources"/>
+        <details key="patternFQN" value="org.eclipse.incquery.viewmodel.traceability.patterns.trace_visibleSources"/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
@@ -66,6 +66,8 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="trace" lowerBound="1" eType="#//Trace"
         eOpposite="#//Trace/sources"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="referenced" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong" defaultValueLiteral="1"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EObjectSource" eSuperTypes="#//TraceSource">
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"

@@ -24,6 +24,22 @@ pattern namedElement_name(This : NamedElement, Target) {
 	PatternParameterMapping.eRulePatternParameterName(This, eRulePatternParameterName);
 	
 	Target == eval(ownerName + ":" + sfRulePatternParameterName + "->" + eRulePatternParameterName);
+} or {
+	HiddenParametersRuleDescriptor.originalPatternFQN(This, originalPatternFQN);
+	
+	Target == eval("HiddenParametersRuleDescriptor->" + originalPatternFQN);
+}
+
+@QueryBasedFeature(feature = "transformationRuleDescriptors")
+pattern configuration_transformationRuleDescriptors(This : Configuration, Target : TransformationRuleDescriptor) {
+	Configuration.ruleDescriptors(This, Target);
+	TransformationRuleDescriptor(Target);
+}
+
+@QueryBasedFeature(feature = "traceabilityRuleDescriptors")
+pattern configuration_traceabilityRuleDescriptors(This : Configuration, Target : TraceabilityRuleDescriptor) {
+	Configuration.ruleDescriptors(This, Target);
+	TraceabilityRuleDescriptor(Target);
 }
 
 @QueryBasedFeature(feature = "elementRuleDescriptors")
@@ -62,8 +78,15 @@ pattern elementRule_attributeRuleDescriptors(This : ElementRuleDescriptor, Targe
 	AttributeRuleDescriptor(Target);
 }
 
+@QueryBasedFeature(feature = "hiddenParametersRuleDescriptors")
+pattern configuration_hiddenParametersRuleDescriptors(This : Configuration, Target : HiddenParametersRuleDescriptor) {
+	Configuration.ruleDescriptors(This, Target);
+	HiddenParametersRuleDescriptor(Target);
+}
 
-// TODO
-pattern test(c : Configuration, pm : PatternParameterMapping) {
-	Configuration.referenceRuleDescriptors.patternParameterMappings(c, pm);
+@QueryBasedFeature(feature = "transformationRuleDescriptors")
+pattern hiddenParametersRuleDescriptors_transformationRuleDescriptors(This : HiddenParametersRuleDescriptor, Target : TransformationRuleDescriptor) {
+	HiddenParametersRuleDescriptor.configuration.transformationRuleDescriptors(This, Target);
+	TransformationRuleDescriptor.patternFQN(Target, patternFQN);
+	HiddenParametersRuleDescriptor.originalPatternFQN(This, patternFQN);
 }

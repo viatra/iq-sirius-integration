@@ -2,6 +2,7 @@ package org.eclipse.incquery.viewmodel.core;
 
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.URI;
@@ -25,22 +26,30 @@ import org.eclipse.incquery.runtime.evm.specific.resolver.FixedPriorityConflictR
 import org.eclipse.incquery.runtime.evm.specific.scheduler.UpdateCompleteBasedScheduler.UpdateCompleteBasedSchedulerFactory;
 import org.eclipse.incquery.runtime.evm.update.IQEngineUpdateCompleteProvider;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
+import org.eclipse.incquery.runtime.matchers.psystem.PBody;
 import org.eclipse.incquery.viewmodel.configuration.AttributeRuleDescriptor;
 import org.eclipse.incquery.viewmodel.configuration.Configuration;
+import org.eclipse.incquery.viewmodel.configuration.ConfigurationFactory;
 import org.eclipse.incquery.viewmodel.configuration.ElementRuleDescriptor;
+import org.eclipse.incquery.viewmodel.configuration.HiddenParametersRuleDescriptor;
 import org.eclipse.incquery.viewmodel.configuration.ReferenceRuleDescriptor;
 import org.eclipse.incquery.viewmodel.configuration.RuleDescriptor;
+import org.eclipse.incquery.viewmodel.configuration.TransformationRuleDescriptor;
 import org.eclipse.incquery.viewmodel.core.rules.AttributeRule;
 import org.eclipse.incquery.viewmodel.core.rules.ElementRule;
+import org.eclipse.incquery.viewmodel.core.rules.HiddenParametersRule;
 import org.eclipse.incquery.viewmodel.core.rules.ReferenceRule;
 import org.eclipse.incquery.viewmodel.core.rules.ViewModelRule;
 import org.eclipse.incquery.viewmodel.traceability.TraceabilityModelManager;
+import org.eclipse.incquery.viewmodel.traceability.util.HiddenParametersQuerySpecification;
 import org.eclipse.viatra.emf.runtime.rules.eventdriven.EventDrivenTransformationRule;
 import org.eclipse.viatra.emf.runtime.rules.eventdriven.EventDrivenTransformationRuleFactory;
 import org.eclipse.viatra.emf.runtime.transformation.eventdriven.EventDrivenTransformation;
 import org.eclipse.viatra.emf.runtime.transformation.eventdriven.EventDrivenTransformation.EventDrivenTransformationBuilder;
 import org.eclipse.viatra.emf.runtime.transformation.eventdriven.ExecutionSchemaBuilder;
 import org.eclipse.viatra.emf.runtime.transformation.eventdriven.InconsistentEventSemanticsException;
+
+import com.google.common.collect.Lists;
 
 /**
  * Manager class which do the necessary steps for the transformation: initializes the transformation
@@ -95,6 +104,21 @@ public class ViewModelManager {
 	public ViewModelManager(URI configurationModelURI) {
 		// TODO implement...
 		throw new UnsupportedOperationException();
+		
+//		ResourceSet rset = new ResourceSetImpl();
+//		Resource res = rset.getResource(configurationModelURI, true);
+//		
+//		if (res.getContents().isEmpty() || !(res.getContents().get(0) instanceof Configuration)) {
+//			throw new IllegalArgumentException("The configuration model can not be empty and the root of the model have to be a Configuration element!");
+//		}
+//		
+//		Configuration configuration = (Configuration) res.getContents().get(0);
+//		configuration.setSourceModel(null);
+//		configuration.setTargetModel(null);
+//		
+//		if (configuration.getSourceModelURI() == null || configuration.getTargetModelURI() == null) {
+//			throw new IllegalArgumentException("The 'SourceModelURI' and 'TargetModelURI' attribute of the Configuration element must be set!");
+//		}
 	}
 	
 	/**
@@ -127,12 +151,12 @@ public class ViewModelManager {
 			if (this.configurationModel.getSourceModelURI() == null) {
 				throw new IllegalArgumentException("If the sourceModel attribute is null, the sourceModelURI attribute must not be null!");
 			}
-			
+
 			this.configurationModel.setSourceModel(resourceSet.getResource(
-					URI.createPlatformResourceURI(this.configurationModel.getSourceModelURI(), true), false));
+					URI.createURI(this.configurationModel.getSourceModelURI(), true), true));
 			
 			if (this.configurationModel.getSourceModel() == null) {
-				throw new IllegalArgumentException("The given sourceModelURI is not a correct PlatformResourceURI!");
+				throw new IllegalArgumentException("The given sourceModelURI is not correct!");
 			}
 		}
 
@@ -143,10 +167,10 @@ public class ViewModelManager {
 			}
 
 			this.configurationModel.setTargetModel(resourceSet.getResource(
-					URI.createPlatformResourceURI(this.configurationModel.getTargetModelURI(), true), false));
+					URI.createURI(this.configurationModel.getTargetModelURI(), true), true));
 			
 			if (this.configurationModel.getTargetModel() == null) {
-				throw new IllegalArgumentException("The given sourceModelURI is not a correct PlatformResourceURI!");
+				throw new IllegalArgumentException("The given sourceModelURI is not correct!");
 			}
 		}
 		
@@ -157,7 +181,7 @@ public class ViewModelManager {
 			URI patternResourceURI = null;
 			Resource patternResource =  null;
 			for (String uri : this.configurationModel.getPatternResourceURIs()) {
-				patternResourceURI = URI.createPlatformResourceURI(uri, true);
+				patternResourceURI = URI.createURI(uri, true);
 				
 				if (patternResourceURI != null
 						&& this.configurationModel.getPatternResources() != null
@@ -221,7 +245,7 @@ public class ViewModelManager {
 		
 		
 		edtb.setSchema(esb.build());
-		
+				
 		EventDrivenTransformationRule builtRule = null;
 		ViewModelRule<? extends RuleDescriptor> rule = null;
 		
@@ -247,6 +271,18 @@ public class ViewModelManager {
 		
 		for (AttributeRuleDescriptor ruleDescriptor : configurationModel.getAttributeRuleDescriptors()) {
 			rule = new AttributeRule(ruleDescriptor, this);
+			
+			builtRule = buildRule(rule);
+			
+			edtb.addRule(builtRule);
+			
+			conflictResolver.setPriority(builtRule.getRuleSpecification(), rule.getPriority());
+		}
+		
+		// Creating HiddenParametersRuleDescriptors
+		createHiddenParametersRuleDescriptors();
+		for (HiddenParametersRuleDescriptor ruleDescriptor : configurationModel.getHiddenParametersRuleDescriptors()) {
+			rule = new HiddenParametersRule(ruleDescriptor, this);
 			
 			builtRule = buildRule(rule);
 			
@@ -308,6 +344,53 @@ public class ViewModelManager {
 		return this.traceabilityModelManager;
 	}
 	
+	// TODO comment
+	private void createHiddenParametersRuleDescriptors() {
+		if (configurationModel == null) {
+			throw new IllegalStateException("ConfigurationModel can not be null while creating HiddenParameterRuleDescriptors!");
+		}
+		
+		// TODO csak akkor csináljunk, ha feltétlenül szükséges
+		// TODO ha OR van az eredeti mintában, akkor több HiddenParametersRuleDescriptors példány szükséges...
+		List<String> processedPatternFQNs = Lists.newArrayList();
+		HiddenParametersRuleDescriptor hiddenParametersRuleDescriptor = null;
+		IQuerySpecification<?> transformationRuleQuerySpecification = null;
+		IQuerySpecification<?> hiddenParametersRuleQuerySpecification = null;
+		for (TransformationRuleDescriptor transformationRuleDescriptor : configurationModel.getTransformationRuleDescriptors()) {
+			// If the given FQN has been processed, we skip it...
+			if (processedPatternFQNs.contains(transformationRuleDescriptor.getPatternFQN())) {
+				continue;
+			}
+			
+			// If the given QuerySpecification contains more than one body...
+			transformationRuleQuerySpecification = querySpecifications.get(transformationRuleDescriptor.getPatternFQN());
+			if (transformationRuleQuerySpecification == null
+					|| transformationRuleQuerySpecification.getInternalQueryRepresentation().getDisjunctBodies().getBodies().size() > 1) {
+				throw new IllegalStateException("Disjunct bodies in the transformation patterns are not supported!");
+			}
+			
+			int bodyIndex = 0;
+			for (PBody body : transformationRuleQuerySpecification.getInternalQueryRepresentation().getDisjunctBodies().getBodies()) {
+				hiddenParametersRuleQuerySpecification = new HiddenParametersQuerySpecification(
+						body,
+						bodyIndex);
+			
+				querySpecifications.put(hiddenParametersRuleQuerySpecification.getFullyQualifiedName(), hiddenParametersRuleQuerySpecification);
+				
+				hiddenParametersRuleDescriptor = ConfigurationFactory.eINSTANCE.createHiddenParametersRuleDescriptor();
+				hiddenParametersRuleDescriptor.setOriginalPatternFQN(transformationRuleDescriptor.getPatternFQN());
+				hiddenParametersRuleDescriptor.setPatternFQN(hiddenParametersRuleQuerySpecification.getFullyQualifiedName());
+				
+				configurationModel.getRuleDescriptors().add(hiddenParametersRuleDescriptor);
+				
+				bodyIndex++;
+			}
+			
+			// Add current FQN to the processed list
+			processedPatternFQNs.add(transformationRuleDescriptor.getPatternFQN());
+		}
+	}
+	
 	/**
 	 * Builds the transformation rules based on the given configuration model.
 	 * @param rule The {@link ViewModelRule} instance which will be built
@@ -354,4 +437,16 @@ public class ViewModelManager {
 		
 		return false;
 	}
+	
+	// TODO JAVADOC
+	// TODO kell ez?
+	private void refreshRuleDescriptorIds() {
+		if (configurationModel == null) {
+			throw new IllegalStateException("ConfigurationModel can not be null!");
+		}
+		
+		for (int i = 0; i < configurationModel.getRuleDescriptors().size(); i++) {
+			configurationModel.getTransformationRuleDescriptors().get(i).setId(i);
+		}
+	}	
 }

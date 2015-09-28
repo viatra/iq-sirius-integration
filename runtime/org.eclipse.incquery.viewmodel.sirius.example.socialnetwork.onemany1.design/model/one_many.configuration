@@ -13,30 +13,30 @@
   </ruleDescriptors>
   <ruleDescriptors
       xsi:type="org.eclipse.incquery.viewmodel.configuration:ElementRuleDescriptor"
-      id="1"
       patternFQN="org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.onemany1.design.patterns.personWithHouseAndCar"
+      id="1"
       structuralFeatureRuleDescriptors="5 6">
     <elementType
         href="../../../plugin/org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.models/model/socialnetwork_one_many_1.ecore#//Person"/>
   </ruleDescriptors>
   <ruleDescriptors
       xsi:type="org.eclipse.incquery.viewmodel.configuration:ElementRuleDescriptor"
-      id="2"
-      patternFQN="org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.onemany1.design.patterns.personWithHouseAndCar">
+      patternFQN="org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.onemany1.design.patterns.personWithHouseAndCar"
+      id="2">
     <elementType
         href="../../../plugin/org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.models/model/socialnetwork_one_many_1.ecore#//House"/>
   </ruleDescriptors>
   <ruleDescriptors
       xsi:type="org.eclipse.incquery.viewmodel.configuration:ElementRuleDescriptor"
-      id="3"
-      patternFQN="org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.onemany1.design.patterns.personWithHouseAndCar">
+      patternFQN="org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.onemany1.design.patterns.personWithHouseAndCar"
+      id="3">
     <elementType
         href="../../../plugin/org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.models/model/socialnetwork_one_many_1.ecore#//Car"/>
   </ruleDescriptors>
   <ruleDescriptors
       xsi:type="org.eclipse.incquery.viewmodel.configuration:ReferenceRuleDescriptor"
-      id="4"
       patternFQN="org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.onemany1.design.patterns.containment_socialNetwork_person"
+      id="4"
       ownerElementRuleDescriptor="//@ruleDescriptors.0"
       sourceElementParameterMappings="//@ruleDescriptors.4/@patternParameterMappings.0"
       targetElementRuleDescriptor="1"
@@ -52,8 +52,8 @@
   </ruleDescriptors>
   <ruleDescriptors
       xsi:type="org.eclipse.incquery.viewmodel.configuration:ReferenceRuleDescriptor"
-      id="5"
       patternFQN="org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.onemany1.design.patterns.personWithHouseAndCar"
+      id="5"
       ownerElementRuleDescriptor="1"
       sourceElementParameterMappings="//@ruleDescriptors.5/@patternParameterMappings.0"
       targetElementRuleDescriptor="2"
@@ -66,8 +66,8 @@
   </ruleDescriptors>
   <ruleDescriptors
       xsi:type="org.eclipse.incquery.viewmodel.configuration:ReferenceRuleDescriptor"
-      id="6"
       patternFQN="org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.onemany1.design.patterns.personWithHouseAndCar"
+      id="6"
       ownerElementRuleDescriptor="1"
       sourceElementParameterMappings="//@ruleDescriptors.6/@patternParameterMappings.0"
       targetElementRuleDescriptor="3"
@@ -78,5 +78,5 @@
     <reference
         href="../../../plugin/org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.models/model/socialnetwork_one_many_1.ecore#//Person/car"/>
   </ruleDescriptors>
-  <patternResourceURIs>/org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.onemany1.design/src/org/eclipse/incquery/viewmodel/sirius/example/socialnetwork/onemany1/design/patterns/patterns_one_many_1.eiq</patternResourceURIs>
+  <patternResourceURIs>platform:/resource/org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.onemany1.design/src/org/eclipse/incquery/viewmodel/sirius/example/socialnetwork/onemany1/design/patterns/patterns_one_many_1.eiq</patternResourceURIs>
 </org.eclipse.incquery.viewmodel.configuration:Configuration>

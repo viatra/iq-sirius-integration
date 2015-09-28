@@ -104,7 +104,7 @@ public class IncQueryInterpreter implements IInterpreter {
 				SiriusTransformationManager manager = SiriusTransformationManagerFactory.getSiriusTransformationManager(getDiagramVariable());
 				
 				if (manager != null) {
-					return manager.initialize(context, URI.createPlatformResourceURI(incQueryExpression.getParameter(Parameter.configModelURI), true));
+					return manager.initialize(context, URI.createURI(incQueryExpression.getParameter(Parameter.configModelURI), true));
 				} else {
 					return context;
 				}

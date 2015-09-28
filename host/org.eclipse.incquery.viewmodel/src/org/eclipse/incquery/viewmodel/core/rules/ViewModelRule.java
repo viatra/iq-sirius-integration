@@ -23,13 +23,14 @@ public abstract class ViewModelRule<T extends RuleDescriptor> {
 	protected ViewModelManager viewModelManager;
 	
 	protected IQuerySpecification<? extends IncQueryMatcher<? extends IPatternMatch>> querySpecification;
-	
+
 	
 	public static enum DefaultRulePriority {
 		DEFAULT(0),
 		ELEMENT_RULE(1),
 		REFERENCE_RULE(2),
-		ATTRIBUTE_RULE(3);
+		ATTRIBUTE_RULE(3),
+		HIDDEN_PARAMETRS_RULE(10);
 		
 		private int priorityValue = 0;
 		
@@ -46,6 +47,7 @@ public abstract class ViewModelRule<T extends RuleDescriptor> {
 	public ViewModelRule(T ruleDescriptor, ViewModelManager viewModelManager) {
 		this.ruleDescriptor = ruleDescriptor;
 		this.viewModelManager = viewModelManager;
+		
 		this.querySpecification = this.viewModelManager.getQuerySpecification(this.ruleDescriptor.getPatternFQN());
 	}
 	
@@ -69,12 +71,12 @@ public abstract class ViewModelRule<T extends RuleDescriptor> {
 		return DefaultRulePriority.DEFAULT.getPriorityValue();
 	}
 	
-	public T getRuleDescriptor() {
-		return ruleDescriptor;
+	public IQuerySpecification<?> getQuerySpecification() {
+		return querySpecification;
 	}
 	
-	public IQuerySpecification<? extends IncQueryMatcher<? extends IPatternMatch>> getQuerySpecification() {
-		return querySpecification;
+	public T getRuleDescriptor() {
+		return ruleDescriptor;
 	}
 	
 	public ViewModelManager getViewModelManager() {

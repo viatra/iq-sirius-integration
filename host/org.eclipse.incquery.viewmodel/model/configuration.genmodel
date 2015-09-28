@@ -19,6 +19,9 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute configuration.ecore#//Configuration/targetModelURI"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute configuration.ecore#//Configuration/patternResources"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute configuration.ecore#//Configuration/patternResourceURIs"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference configuration.ecore#//Configuration/transformationRuleDescriptors"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference configuration.ecore#//Configuration/traceabilityRuleDescriptors"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference configuration.ecore#//Configuration/hiddenParametersRuleDescriptors"/>
     </genClasses>
     <genClasses ecoreClass="configuration.ecore#//ElementRuleDescriptor">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference configuration.ecore#//ElementRuleDescriptor/elementType"/>
@@ -33,7 +36,6 @@
     </genClasses>
     <genClasses image="false" ecoreClass="configuration.ecore#//RuleDescriptor">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference configuration.ecore#//RuleDescriptor/configuration"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute configuration.ecore#//RuleDescriptor/id"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute configuration.ecore#//RuleDescriptor/patternFQN"/>
     </genClasses>
     <genClasses ecoreClass="configuration.ecore#//ReferenceRuleDescriptor">
@@ -52,6 +54,14 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute configuration.ecore#//PatternParameterMapping/sfRulePatternParameterName"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute configuration.ecore#//PatternParameterMapping/eRulePatternParameterName"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference configuration.ecore#//PatternParameterMapping/structuralFeatureRuleDescriptor"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="configuration.ecore#//TransformationRuleDescriptor">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute configuration.ecore#//TransformationRuleDescriptor/id"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="configuration.ecore#//TraceabilityRuleDescriptor"/>
+    <genClasses ecoreClass="configuration.ecore#//HiddenParametersRuleDescriptor">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute configuration.ecore#//HiddenParametersRuleDescriptor/originalPatternFQN"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference configuration.ecore#//HiddenParametersRuleDescriptor/transformationRuleDescriptors"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

@@ -176,6 +176,10 @@
                 <styles xmi:type="notation:FontStyle" xmi:id="_xfu14Vq7EeWIZrWunJ2Aaw" fontColor="2697711" fontName="Cantarell" fontHeight="8"/>
                 <layoutConstraint xmi:type="notation:Location" xmi:id="_xfu14lq7EeWIZrWunJ2Aaw"/>
               </children>
+              <children xmi:type="notation:Node" xmi:id="_mwTioGXbEeW5PtIOXSOHoQ" type="3010" element="_muMCwGXbEeW5PtIOXSOHoQ">
+                <styles xmi:type="notation:FontStyle" xmi:id="_mwTioWXbEeW5PtIOXSOHoQ" fontColor="2697711" fontName="Cantarell" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_mwTiomXbEeW5PtIOXSOHoQ"/>
+              </children>
               <styles xmi:type="notation:SortingStyle" xmi:id="_5pZJAVhoEeWtc7gGm6CxJQ"/>
               <styles xmi:type="notation:FilteringStyle" xmi:id="_5pZJAlhoEeWtc7gGm6CxJQ"/>
             </children>
@@ -841,7 +845,7 @@
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_DtpKcFsBEeWIZrWunJ2Aaw" iconPath="/org.eclipse.emf.ecoretools.design/icons/full/obj16/EClass_abstract.gif" borderColor="125,125,125" backgroundStyle="Liquid" foregroundColor="228,228,228">
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_pNevsGXbEeW5PtIOXSOHoQ" iconPath="/org.eclipse.emf.ecoretools.design/icons/full/obj16/EClass_abstract.gif" borderColor="125,125,125" backgroundStyle="Liquid" foregroundColor="228,228,228">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@conditionnalStyles.1/@style"/>
         </ownedStyle>
@@ -858,6 +862,14 @@
           <target xmi:type="ecore:EAttribute" href="traceability.ecore#//TraceSource/hidden"/>
           <semanticElements xmi:type="ecore:EAttribute" href="traceability.ecore#//TraceSource/hidden"/>
           <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_2Z5p0Fq7EeWIZrWunJ2Aaw" labelAlignment="LEFT" description="_RlDAwDhzEeW3rIZINIWpRA">
+            <labelFormat>bold</labelFormat>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_muMCwGXbEeW5PtIOXSOHoQ" name="referenced : ELong = 1" tooltipText="">
+          <target xmi:type="ecore:EAttribute" href="traceability.ecore#//TraceSource/referenced"/>
+          <semanticElements xmi:type="ecore:EAttribute" href="traceability.ecore#//TraceSource/referenced"/>
+          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_rTdkwGXbEeW5PtIOXSOHoQ" labelAlignment="LEFT" description="_RlDAwDhzEeW3rIZINIWpRA">
             <labelFormat>bold</labelFormat>
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
@@ -1239,9 +1251,9 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='Bi-directional%20EC_EReference%20']"/>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_fCla8FsEEeWIZrWunJ2Aaw" name="[1..*] /allSources" sourceNode="_LS2tQDR-EeWPz6AaasJkeQ" targetNode="_5oQgkFhoEeWtc7gGm6CxJQ">
-        <target xmi:type="ecore:EReference" href="traceability.ecore#//Trace/allSources"/>
-        <semanticElements xmi:type="ecore:EReference" href="traceability.ecore#//Trace/allSources"/>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_fCla8FsEEeWIZrWunJ2Aaw" name="[1..*] /visibleSources" sourceNode="_LS2tQDR-EeWPz6AaasJkeQ" targetNode="_5oQgkFhoEeWtc7gGm6CxJQ">
+        <target xmi:type="ecore:EReference" href="traceability.ecore#//Trace/visibleSources"/>
+        <semanticElements xmi:type="ecore:EReference" href="traceability.ecore#//Trace/visibleSources"/>
         <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_ixfVo1sEEeWIZrWunJ2Aaw" description="_ixfVoFsEEeWIZrWunJ2Aaw" routingStyle="manhattan" strokeColor="114,159,207">
           <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_ixfVpFsEEeWIZrWunJ2Aaw" showIcon="false" labelColor="39,76,114">
             <labelFormat>bold</labelFormat>

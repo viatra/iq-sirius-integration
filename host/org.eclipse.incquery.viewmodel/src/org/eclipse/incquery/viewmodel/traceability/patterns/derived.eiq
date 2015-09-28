@@ -2,39 +2,18 @@ package org.eclipse.incquery.viewmodel.traceability.patterns
 
 import "http://org.eclipse.incquery/viewmodel/traceability/3.0"
 
-// TODO delete
-/**
- * This derived feature collects the sources for a trace.
- * The first body collects the sources for a trace, if it has an EObjectTarget-type target.
- * Bodies 2-4 collects the sources for a trace, if it has a ReferenceTarget-type target.
- * Bodies 5-6 collects the sources for a trace, if it has a AttributeTarget-type target.
- */
-//@QueryBasedFeature(feature = "allSources")
-//pattern trace_allSources(This : Trace, Target : TraceSource) {
-//	Trace.sources(This, Target);
-//	EObjectTarget.trace(_, This);
-//} or {
-//	Trace.sources(This, Target);
-//	ReferenceTarget.trace(_, This);
-//} or {
-//	Trace.target(This, traceTarget);
-//	ReferenceTarget.owner.trace.sources(traceTarget, Target);
-//} or {
-//	Trace.target(This, traceTarget);
-//	ReferenceTarget.target.trace.sources(traceTarget, Target);	
-//} or {
-//	Trace.sources(This, Target);
-//	AttributeTarget.trace(_, This);
-//} or {
-//	Trace.target(This, traceTarget);
-//	AttributeTarget.owner.trace.sources(traceTarget, Target);
-//}
-
 @QueryBasedFeature(feature = "hiddenSources")
 pattern trace_hiddenSources(This : Trace, Target : TraceSource) {
 	Trace.sources(This, Target);
 	
 	TraceSource.hidden(Target, true);
+}
+
+@QueryBasedFeature(feature = "visibleSources")
+pattern trace_visibleSources(This : Trace, Target : TraceSource) {
+	Trace.sources(This, Target);
+	
+	TraceSource.hidden(Target, false);
 }
 
 @QueryBasedFeature(feature = "eObjectSources")

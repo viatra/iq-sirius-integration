@@ -1,33 +1,42 @@
 package org.eclipse.incquery.viewmodel.traceability.util;
 
 import java.util.ArrayList;
-import java.util.Iterator;
+import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 
-import org.eclipse.incquery.runtime.api.GenericPatternMatcher;
-import org.eclipse.incquery.runtime.api.GenericQuerySpecification;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedEMFPQuery;
+import org.eclipse.incquery.runtime.api.impl.BaseQuerySpecification;
 import org.eclipse.incquery.runtime.api.scope.IncQueryScope;
 import org.eclipse.incquery.runtime.emf.EMFScope;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.matchers.psystem.PBody;
 import org.eclipse.incquery.runtime.matchers.psystem.PVariable;
+import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.Equality;
 import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.ExportedParameter;
+import org.eclipse.incquery.runtime.matchers.psystem.basicenumerables.TypeConstraint;
 import org.eclipse.incquery.runtime.matchers.psystem.queries.PParameter;
-import org.eclipse.incquery.runtime.matchers.psystem.queries.PQuery;
 import org.eclipse.incquery.runtime.matchers.psystem.queries.QueryInitializationException;
-import org.eclipse.incquery.runtime.matchers.psystem.rewriters.PBodyCopier;
+import org.eclipse.incquery.runtime.matchers.tuple.FlatTuple;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 
-public class HiddenParametersQuerySpecification extends GenericQuerySpecification<GenericPatternMatcher> {
-
+public class HiddenParametersQuerySpecification extends BaseQuerySpecification<HiddenParametersPatternMatcher> {
 	
-	public HiddenParametersQuerySpecification(PQuery wrappedPQuery) {
-		super(wrappedPQuery);
+	public HiddenParametersQuerySpecification(PBody body, int bodyIndex) {
+		super(new HiddenParametersPQuery(body, bodyIndex));
+	}
+
+	@Override
+	public HiddenParametersMatch newEmptyMatch() {
+		return HiddenParametersMatch.newEmptyMatch(this);
+	}
+
+	@Override
+	public HiddenParametersMatch newMatch(Object... parameters) {
+		return HiddenParametersMatch.newMatch(this, parameters);
 	}
 
 	@Override
@@ -36,47 +45,63 @@ public class HiddenParametersQuerySpecification extends GenericQuerySpecificatio
 	}
 
 	@Override
-	protected GenericPatternMatcher instantiate(IncQueryEngine engine)
-			throws IncQueryException {
-		GenericPatternMatcher matcher = defaultInstantiate(engine);
-        return matcher;
+	protected HiddenParametersPatternMatcher instantiate(IncQueryEngine engine) throws IncQueryException {
+		return HiddenParametersPatternMatcher.instantiate(engine, this);
+	}
+	
+	@Override
+	public HiddenParametersPQuery getInternalQueryRepresentation() {
+		return (HiddenParametersPQuery) super.getInternalQueryRepresentation();
 	}
 	
 	public static class HiddenParametersPQuery extends BaseGeneratedEMFPQuery {
 
 		private static final String FQN_SUFFIX = "_hp";
 
-		private int index;
+		private int bodyIndex;
 
 		private PBody body = null;
+
+		private PBody originalBody = null;
 		
 		private List<PParameter> parameters = null;
 		
-		private List<PVariable> nonExportedVariables = null;
+		private List<PParameter> visibleParameters = null;
+		
+		private List<PParameter> hiddenParameters = null;
+
+		private List<PVariable> hiddenParameterVariables = null;
 		
 		
-		public HiddenParametersPQuery(PBody body, int index) {
-			if (body == null) {
+		public HiddenParametersPQuery(PBody originalBody, int bodyIndex) {
+			if (originalBody == null) {
 				throw new IllegalArgumentException("The body parameter can not be null!");
 			}
 			
-			this.body = body;
+			this.originalBody = originalBody;
 			
-			this.index = index;
+			this.bodyIndex = bodyIndex;
 			
-			this.nonExportedVariables = getNonExportedVariables();
+			this.body = new ExtendedPBodyCopier(originalBody, this).getCopiedBody();
+
+			this.hiddenParameterVariables = getHiddenParameterVariables(this.body);
+			
+			this.visibleParameters = this.originalBody.getPattern().getParameters();
+			
+			this.hiddenParameters = Lists.newArrayList();
+			for (PVariable variable : hiddenParameterVariables) {
+				this.hiddenParameters.add(new PParameter(variable.getName()));
+			}
 			
 			this.parameters = new ArrayList<PParameter>();
-			this.parameters.addAll(this.body.getPattern().getParameters());
-			for (PVariable variable : nonExportedVariables) {
-				this.parameters.add(new PParameter(variable.getName()));
-			}
+			this.parameters.addAll(visibleParameters);
+			this.parameters.addAll(hiddenParameters);
 		}
 		
 		@Override
 		public String getFullyQualifiedName() {
-			if (body != null) {
-				return body.getPattern().getFullyQualifiedName() + FQN_SUFFIX + "_" + index;
+			if (originalBody != null) {
+				return originalBody.getPattern().getFullyQualifiedName() + FQN_SUFFIX + "_" + bodyIndex;
 			}
 			
 			return null;
@@ -86,40 +111,131 @@ public class HiddenParametersQuerySpecification extends GenericQuerySpecificatio
 		public List<PParameter> getParameters() {
 			return parameters;
 		}
+		
+		public List<PParameter> getVisibleParameters() {
+			return visibleParameters;
+		}
+		
+		public List<PParameter> getHiddenParameters() {
+			return hiddenParameters;
+		}
 
 		@Override
 		protected Set<PBody> doGetContainedBodies() throws QueryInitializationException {
 			Set<PBody> result = Sets.newHashSet();
-
-			PBody newBody = new PBodyCopier(body).getCopiedBody();
 			
-			List<ExportedParameter> exportedParameters = newBody.getSymbolicParameters();
-			for (PVariable variable : nonExportedVariables) {
-				exportedParameters.add(new ExportedParameter(newBody, variable, variable.getName()));
+			List<ExportedParameter> exportedParameters = body.getSymbolicParameters();
+			
+			for (PVariable nonExportedVariable : hiddenParameterVariables) {
+				exportedParameters.add(new ExportedParameter(body, nonExportedVariable, nonExportedVariable.getName()));
 			}
 			
-			newBody.setExportedParameters(exportedParameters);
+			body.setExportedParameters(exportedParameters);
 
-			result.add(newBody);
+			result.add(body);
 
 			return result;
 		}
 		
-		private List<PVariable> getNonExportedVariables() {
-			List<PVariable> variables = Lists.newArrayList(body.getAllVariables());
-			variables.removeAll(body.getSymbolicParameterVariables());
+		// TODO javadoc
+		private Set<PVariable> getExportedVariables(PBody body) {
+			Set<PVariable> result = Sets.newHashSet();
 			
-			PVariable variable = null;
-			Iterator<PVariable> iterator = variables.iterator();
-			while (iterator.hasNext()) {
-				variable = iterator.next();
-				
-				if (variable.isVirtual() || !variable.isDeducable()) {
-					iterator.remove();
+			for (ExportedParameter exportedParameter : body.getSymbolicParameters()) {
+				result.add(exportedParameter.getParameterVariable());
+			}
+			
+			return result;
+		}
+		
+		// TODO teszt
+		// TODO javadoc
+		private List<PVariable> getHiddenParameterVariables(PBody body) {
+			List<PVariable> result = Lists.newArrayList();
+			
+			Set<PVariable> exportedVariables = getExportedVariables(body);
+	
+			Set<PVariable> hiddenParameterVariableCandidates = Sets.newHashSet();
+			
+			
+			FlatTuple tuple = null;
+			PVariable tupleVariable = null;
+			for (TypeConstraint c : body.getConstraintsOfType(TypeConstraint.class)) {
+				if (c.getVariablesTuple() instanceof FlatTuple) {
+					tuple = (FlatTuple) c.getVariablesTuple();
+					
+					for (Object element : tuple.getElements()) {
+						// TODO Mindig az?!
+						if (element instanceof PVariable) {
+							tupleVariable = (PVariable) element;
+							
+							if (!isSingleUseVariable(tupleVariable) && !exportedVariables.contains(tupleVariable)) {
+								hiddenParameterVariableCandidates.add(tupleVariable);
+							}
+						}
+					}
 				}
 			}
 			
-			return variables;
+			// Remove those hidden parameter candidates, which are equal to the originally exported variables
+			for (PVariable exportedVariable : exportedVariables) {
+				removeEqualVariables(exportedVariable, hiddenParameterVariableCandidates);
+			}
+			
+			// Get variables for hidden parameters
+			PVariable hiddenParameterVariable = null;
+			while (!hiddenParameterVariableCandidates.isEmpty()) {
+				hiddenParameterVariable = hiddenParameterVariableCandidates.iterator().next();
+				
+				result.add(hiddenParameterVariable);
+				
+				removeEqualVariables(hiddenParameterVariable, hiddenParameterVariableCandidates);
+			}
+			
+			return result;
+		}
+		
+		/**
+		 * 
+		 * @param variable The examined variable
+		 * @return True, if the variable is a single-use variable, otherwise false
+		 */
+		private boolean isSingleUseVariable(PVariable variable) {
+			return variable.getName().startsWith("_");
+		}
+		
+		/**
+		 * This method removes those variables from the list, which are equal to the given root variable
+		 * 	(even transitively).
+		 * @param rootVariable The variable, that we want to find the equals for.
+		 * @param variables The list, where the equal variables are looked for.
+		 */
+		private void removeEqualVariables(PVariable rootVariable, Collection<PVariable> variables) {
+			// Remove the given variable first
+			variables.remove(rootVariable);
+			
+			// Find those variables, which are equal to the given root
+			PVariable equalsTo = null;
+			Set<PVariable> equalsToVariables = Sets.newHashSet();
+			Set<Equality> equalities = rootVariable.getReferringConstraintsOfType(Equality.class);
+			for (Equality equality : equalities) {
+				if (equality.getWho().equals(rootVariable)) {
+					equalsTo = equality.getWithWhom();
+				} else {
+					equalsTo = equality.getWho();
+				}
+
+				if (variables.contains(equalsTo)) {
+					equalsToVariables.add(equalsTo);
+					
+					variables.remove(equalsTo);
+				}
+			}
+			
+			// Call this method recursively on the found variables
+			for (PVariable variable : equalsToVariables) {
+				removeEqualVariables(variable, variables);
+			}
 		}
 	}
 }

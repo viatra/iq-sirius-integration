@@ -47,8 +47,29 @@
         transient="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="patternResourceURIs" upperBound="-1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="transformationRuleDescriptors"
+        upperBound="-1" eType="#//TransformationRuleDescriptor" changeable="false"
+        volatile="true" transient="true" derived="true">
+      <eAnnotations source="org.eclipse.incquery.querybasedfeature">
+        <details key="patternFQN" value="org.eclipse.incquery.viewmodel.configuration.patterns.configuration_transformationRuleDescriptors"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="traceabilityRuleDescriptors"
+        upperBound="-1" eType="#//TraceabilityRuleDescriptor" changeable="false" volatile="true"
+        transient="true" derived="true">
+      <eAnnotations source="org.eclipse.incquery.querybasedfeature">
+        <details key="patternFQN" value="org.eclipse.incquery.viewmodel.configuration.patterns.configuration_traceabilityRuleDescriptors"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hiddenParametersRuleDescriptors"
+        upperBound="-1" eType="#//HiddenParametersRuleDescriptor" changeable="false"
+        volatile="true" transient="true" derived="true">
+      <eAnnotations source="org.eclipse.incquery.querybasedfeature">
+        <details key="patternFQN" value="org.eclipse.incquery.viewmodel.configuration.patterns.configuration_hiddenParametersRuleDescriptors"/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ElementRuleDescriptor" eSuperTypes="#//RuleDescriptor">
+  <eClassifiers xsi:type="ecore:EClass" name="ElementRuleDescriptor" eSuperTypes="#//TransformationRuleDescriptor">
     <eStructuralFeatures xsi:type="ecore:EReference" name="elementType" lowerBound="1"
         eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="structuralFeatureRuleDescriptors"
@@ -69,7 +90,7 @@
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="StructuralFeatureRuleDescriptor" abstract="true"
-      eSuperTypes="#//RuleDescriptor">
+      eSuperTypes="#//TransformationRuleDescriptor">
     <eStructuralFeatures xsi:type="ecore:EReference" name="ownerElementRuleDescriptor"
         lowerBound="1" eType="#//ElementRuleDescriptor" eOpposite="#//ElementRuleDescriptor/structuralFeatureRuleDescriptors"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="patternParameterMappings"
@@ -80,8 +101,6 @@
   <eClassifiers xsi:type="ecore:EClass" name="RuleDescriptor" abstract="true" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="configuration" lowerBound="1"
         eType="#//Configuration" eOpposite="#//Configuration/ruleDescriptors"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"
-        iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="patternFQN" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
@@ -117,5 +136,23 @@
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="structuralFeatureRuleDescriptor"
         lowerBound="1" eType="#//StructuralFeatureRuleDescriptor" eOpposite="#//StructuralFeatureRuleDescriptor/patternParameterMappings"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TransformationRuleDescriptor" abstract="true"
+      eSuperTypes="#//RuleDescriptor">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"
+        iD="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TraceabilityRuleDescriptor" abstract="true"
+      eSuperTypes="#//RuleDescriptor"/>
+  <eClassifiers xsi:type="ecore:EClass" name="HiddenParametersRuleDescriptor" eSuperTypes="#//TraceabilityRuleDescriptor">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="originalPatternFQN" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="transformationRuleDescriptors"
+        upperBound="-1" eType="#//TransformationRuleDescriptor" changeable="false"
+        volatile="true" transient="true" derived="true">
+      <eAnnotations source="org.eclipse.incquery.querybasedfeature">
+        <details key="patternFQN" value="org.eclipse.incquery.viewmodel.configuration.patterns.hiddenParametersRuleDescriptors_transformationRuleDescriptors"/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
 </ecore:EPackage>
