@@ -3,9 +3,6 @@ package org.eclipse.incquery.sirius.interpreter;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.net.URLClassLoader;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -16,8 +13,6 @@ import java.util.Set;
 
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.ResourcesPlugin;
-import org.eclipse.core.runtime.CoreException;
-import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
@@ -37,9 +32,6 @@ import org.eclipse.incquery.runtime.base.api.BaseIndexOptions;
 import org.eclipse.incquery.runtime.emf.EMFScope;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.matchers.psystem.annotations.PAnnotation;
-import org.eclipse.jdt.core.IJavaProject;
-import org.eclipse.jdt.core.JavaCore;
-import org.eclipse.jdt.launching.JavaRuntime;
 import org.eclipse.sirius.business.api.dialect.DialectManager;
 import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.business.api.session.SessionManager;
@@ -54,8 +46,6 @@ import org.eclipse.sirius.diagram.description.DiagramDescription;
 import org.eclipse.sirius.ecore.extender.business.api.accessor.MetamodelDescriptor;
 import org.eclipse.sirius.ecore.extender.business.api.accessor.ModelAccessor;
 import org.eclipse.sirius.viewpoint.DRepresentation;
-import org.eclipse.xtext.resource.XtextResource;
-import org.eclipse.xtext.resource.XtextResourceSet;
 import org.eclipse.xtext.ui.resource.XtextResourceSetProvider;
 
 import com.google.common.collect.Sets;
@@ -368,26 +358,6 @@ public class IqplInterpreter implements IInterpreter {
 //		resourceSet.addLoadOption(XtextResource.OPTION_RESOLVE_ALL, Boolean.TRUE);
 		return resourceSet;
 	}
-	
-	private ClassLoader getClassLoader(IProject project) throws CoreException, MalformedURLException {
-		IJavaProject jp = JavaCore.create(project);
-		String[] classPathEntries = JavaRuntime.computeDefaultRuntimeClassPath(jp);
-		List<URL> classURLs = getClassesAsURLs(classPathEntries);
-		URL[] urls = (URL[]) classURLs.toArray(new URL[classURLs.size()]);
-		URLClassLoader loader = URLClassLoader.newInstance(urls, jp.getClass().getClassLoader());
-		return loader;
-    }
-	
-    private List<URL> getClassesAsURLs(String[] classPathEntries) throws MalformedURLException {
-        List<URL> urlList = new ArrayList<URL>();
-        for (int i = 0; i < classPathEntries.length; i++) {
-            String entry = classPathEntries[i];
-            IPath path = new Path(entry);
-            URL url = path.toFile().toURI().toURL();
-            urlList.add(url);
-        }
-        return urlList;
-    }
 	
 	/**
 	 * Get IQuerySpecification from the given expression
