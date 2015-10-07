@@ -3,6 +3,9 @@ package org.eclipse.incquery.sirius.interpreter;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLClassLoader;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -11,26 +14,32 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 
+import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.IPath;
+import org.eclipse.core.runtime.Path;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.ECrossReferenceAdapter;
 import org.eclipse.incquery.patternlanguage.emf.specification.SpecificationBuilder;
+import org.eclipse.incquery.patternlanguage.emf.ui.internal.EMFPatternLanguageActivator;
 import org.eclipse.incquery.patternlanguage.patternLanguage.Pattern;
 import org.eclipse.incquery.patternlanguage.patternLanguage.PatternModel;
 import org.eclipse.incquery.runtime.api.AdvancedIncQueryEngine;
 import org.eclipse.incquery.runtime.api.IPatternMatch;
 import org.eclipse.incquery.runtime.api.IQuerySpecification;
-import org.eclipse.incquery.runtime.api.IncQueryEngine;
-import org.eclipse.incquery.runtime.api.IncQueryEngineManager;
 import org.eclipse.incquery.runtime.api.IncQueryMatcher;
 import org.eclipse.incquery.runtime.base.api.BaseIndexOptions;
 import org.eclipse.incquery.runtime.emf.EMFScope;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.matchers.psystem.annotations.PAnnotation;
+import org.eclipse.jdt.core.IJavaProject;
+import org.eclipse.jdt.core.JavaCore;
+import org.eclipse.jdt.launching.JavaRuntime;
 import org.eclipse.sirius.business.api.dialect.DialectManager;
 import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.business.api.session.SessionManager;
@@ -45,9 +54,12 @@ import org.eclipse.sirius.diagram.description.DiagramDescription;
 import org.eclipse.sirius.ecore.extender.business.api.accessor.MetamodelDescriptor;
 import org.eclipse.sirius.ecore.extender.business.api.accessor.ModelAccessor;
 import org.eclipse.sirius.viewpoint.DRepresentation;
+import org.eclipse.xtext.resource.XtextResource;
+import org.eclipse.xtext.resource.XtextResourceSet;
+import org.eclipse.xtext.ui.resource.XtextResourceSetProvider;
 
-import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
+import com.google.inject.Injector;
 
 public class IqplInterpreter implements IInterpreter {
 	private static final String RESOURCE_URI = "dummy:/queries.eiq";
@@ -343,7 +355,40 @@ public class IqplInterpreter implements IInterpreter {
 		
 		return result;
 	}
-
+	
+	private IProject getContextProject(EObject eobject){
+		URI uri = eobject.eResource().getURI();
+		String path = uri.toPlatformString(true);
+		return ResourcesPlugin.getWorkspace().getRoot().getFile(new Path(path)).getProject();
+	}
+	
+	private ResourceSet createResourceSet(IProject project){
+		Injector injector = EMFPatternLanguageActivator.getInstance().getInjector(EMFPatternLanguageActivator.ORG_ECLIPSE_INCQUERY_PATTERNLANGUAGE_EMF_EMFPATTERNLANGUAGE);
+		ResourceSet resourceSet = injector.getInstance(XtextResourceSetProvider.class).get(project);
+//		resourceSet.addLoadOption(XtextResource.OPTION_RESOLVE_ALL, Boolean.TRUE);
+		return resourceSet;
+	}
+	
+	private ClassLoader getClassLoader(IProject project) throws CoreException, MalformedURLException {
+		IJavaProject jp = JavaCore.create(project);
+		String[] classPathEntries = JavaRuntime.computeDefaultRuntimeClassPath(jp);
+		List<URL> classURLs = getClassesAsURLs(classPathEntries);
+		URL[] urls = (URL[]) classURLs.toArray(new URL[classURLs.size()]);
+		URLClassLoader loader = URLClassLoader.newInstance(urls, jp.getClass().getClassLoader());
+		return loader;
+    }
+	
+    private List<URL> getClassesAsURLs(String[] classPathEntries) throws MalformedURLException {
+        List<URL> urlList = new ArrayList<URL>();
+        for (int i = 0; i < classPathEntries.length; i++) {
+            String entry = classPathEntries[i];
+            IPath path = new Path(entry);
+            URL url = path.toFile().toURI().toURL();
+            urlList.add(url);
+        }
+        return urlList;
+    }
+	
 	/**
 	 * Get IQuerySpecification from the given expression
 	 * @param context The context on which the expression is called
@@ -361,7 +406,7 @@ public class IqplInterpreter implements IInterpreter {
 
 		/* Load imports from DiagramDescription */
 		StringBuilder stringBuilder = new StringBuilder();
-		stringBuilder.append("\n");
+		stringBuilder.append("package org.eclipse.incquery.sirius.generated\n");
 		
 		for (EPackage ePackage : getImportedMetamodels(context)) {
 			stringBuilder
@@ -379,8 +424,13 @@ public class IqplInterpreter implements IInterpreter {
 		
 	    InputStream is = new ByteArrayInputStream( expression.getBytes() );
 	    try {
-			ResourceSet resourceSet = new ResourceSetImpl();
-			Resource resource = resourceSet.createResource(URI.createURI(RESOURCE_URI));
+	    	//TODO extract project from context
+			//IProject contextProject = getContextProject(context);
+	    	IProject contextProject = ResourcesPlugin.getWorkspace().getRoot().getProject("org.eclipse.incquery.examples.cps.viewpoint");
+			ResourceSet resourceSet = createResourceSet(contextProject);
+//			URI uri = URI.createURI(RESOURCE_URI);
+			URI uri = URI.createPlatformResourceURI("/"+contextProject.getName()+"/src/org.eclipse/incquery/sirius/generated/pattern"+expression.hashCode()+".eiq", true);
+			Resource resource = resourceSet.createResource(uri);
 			SpecificationBuilder specificationBuilder = new SpecificationBuilder();
 	    	
 		    // Load Resource from the given expression
