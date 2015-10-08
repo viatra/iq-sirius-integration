@@ -1,0 +1,29 @@
+package hu.bme.mit.concerto.telecare.example.tdk.view.design.patterns
+
+import "http://hu.bme.mit.inf.concerto/telecare/example/tdk/1.0"
+
+
+pattern element_viewModel(telecareSystem : TelecareSystem) {
+	TelecareSystem(telecareSystem);
+}
+
+pattern element_server(host : Host) {
+	ReportingEvent.address(_, host);
+}
+
+pattern element_trigger(trigger : FixedIntervalTrigger) {
+	FixedIntervalTrigger.triggeredEvents(trigger, measurementEvent);
+	Measurement(measurementEvent);
+	
+	EventCompletedTrigger.triggeredBy(ecTrigger, measurementEvent);
+	EventCompletedTrigger.triggeredEvents(ecTrigger, reportingEvent);
+	
+	ReportingEvent(reportingEvent);
+}
+
+pattern element_sensor(sensor : Sensor) {
+	Sensor.measurementTypes(sensor, mt1);
+	Sensor.measurementTypes(sensor, mt2);
+	
+	mt1 != mt2;
+}

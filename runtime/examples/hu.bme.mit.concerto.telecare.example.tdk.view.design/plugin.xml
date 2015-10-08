@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><?eclipse version="3.0"?><plugin>
+  <extension point="org.eclipse.sirius.componentization">
+    <component class="hu.bme.mit.concerto.telecare.example.tdk.view.design.Activator" id="hu.bme.mit.concerto.telecare.view.design" name="view"/>
+  </extension>
+  <extension id="hu.bme.mit.concerto.telecare.example.tdk.view.design.patterns.Reference_rules" point="org.eclipse.incquery.runtime.queryspecification">
+    <group group="org.eclipse.incquery.runtime.extensibility.SingletonExtensionFactory:hu.bme.mit.concerto.telecare.example.tdk.view.design.patterns.Reference_rules" id="hu.bme.mit.concerto.telecare.example.tdk.view.design.patterns.Reference_rules"/>
+  </extension>
+  <extension id="hu.bme.mit.concerto.telecare.example.tdk.view.design.patterns.Attribute_rules" point="org.eclipse.incquery.runtime.queryspecification">
+    <group group="org.eclipse.incquery.runtime.extensibility.SingletonExtensionFactory:hu.bme.mit.concerto.telecare.example.tdk.view.design.patterns.Attribute_rules" id="hu.bme.mit.concerto.telecare.example.tdk.view.design.patterns.Attribute_rules"/>
+  </extension>
+  <extension id="hu.bme.mit.concerto.telecare.example.tdk.view.design.patterns.Element_rules" point="org.eclipse.incquery.runtime.queryspecification">
+    <group group="org.eclipse.incquery.runtime.extensibility.SingletonExtensionFactory:hu.bme.mit.concerto.telecare.example.tdk.view.design.patterns.Element_rules" id="hu.bme.mit.concerto.telecare.example.tdk.view.design.patterns.Element_rules"/>
+  </extension>
+</plugin>

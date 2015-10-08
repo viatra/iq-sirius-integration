@@ -1,0 +1,28 @@
+package hu.bme.mit.concerto.telecare.example.tdk.view.design.patterns
+
+import "http://hu.bme.mit.inf.concerto/telecare/example/tdk/1.0"
+
+
+pattern attr_server_name(host : Host, value) {
+	find element_server(host);
+	
+	Host.name(host, name);
+	
+	value == eval ("Server::" + name);
+}
+
+pattern attr_trigger_name(trigger : FixedIntervalTrigger, value) {
+	find element_trigger(trigger);
+	
+	Trigger.name(trigger, name);
+	
+	value == eval ("Trigger::" + name);
+}
+
+pattern attr_sensor_name(sensor : Sensor, value) {
+	find element_sensor(sensor);
+	
+	Sensor.name(sensor, name);
+	
+	value == eval ("Sensor::" + name);
+}

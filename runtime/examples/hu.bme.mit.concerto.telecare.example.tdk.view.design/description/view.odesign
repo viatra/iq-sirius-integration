@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" name="view" version="10.0.0.201505222000">
+  <ownedViewpoints name="vp_telecare_tdk_view" label="Telecare TDK View" modelFileExtension="telecare">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="dd_diagram" label="Diagram" domainClass="tdktelecareview.ViewModel" rootExpression="incquery:initTransformation[configModelURI=platform:/resource/hu.bme.mit.concerto.telecare.example.tdk.view.design/model/telecareview_transformation.configuration]" enablePopupBars="true">
+      <metamodel href="http://hu.bme.mit.inf.concerto/telecare/example/tdk/view/1.0#/"/>
+      <defaultLayer name="Default">
+        <nodeMappings name="sn_server" label="Server" semanticCandidatesExpression="[self.servers /]" domainClass="tdktelecareview.Server">
+          <style xsi:type="style:WorkspaceImageDescription" showIcon="false" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/hu.bme.mit.concerto.telecare.example.tdk.view.design/img/server.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="sn_sensor" label="Sensor" semanticCandidatesExpression="[self.sensors /]" domainClass="tdktelecareview.Sensor">
+          <style xsi:type="style:WorkspaceImageDescription" showIcon="false" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/hu.bme.mit.concerto.telecare.example.tdk.view.design/img/sensor.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="sn_trigger" label="Trigger" semanticCandidatesExpression="[self.triggers /]" domainClass="tdktelecareview.Tigger">
+          <style xsi:type="style:WorkspaceImageDescription" showIcon="false" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/hu.bme.mit.concerto.telecare.example.tdk.view.design/img/trigger.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+      </defaultLayer>
+      <additionalLayers name="layer_sensor_connectedTo" label="Sensor ConnectedTo">
+        <edgeMappings name="rbe_sensor_connectedTo" label="Sensor ConnectedTo" sourceMapping="//@ownedViewpoints[name='vp_telecare_tdk_view']/@ownedRepresentations[name='dd_diagram']/@defaultLayer/@nodeMappings[name='sn_sensor']" targetMapping="//@ownedViewpoints[name='vp_telecare_tdk_view']/@ownedRepresentations[name='dd_diagram']/@defaultLayer/@nodeMappings[name='sn_server']" targetFinderExpression="[self.connectedTo /]">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+      </additionalLayers>
+      <additionalLayers name="layer_sensor_triggeredBy" label="Sensor TriggeredBy">
+        <edgeMappings name="rbe_sensor_connectedTo" label="Sensor ConnectedTo" sourceMapping="//@ownedViewpoints[name='vp_telecare_tdk_view']/@ownedRepresentations[name='dd_diagram']/@defaultLayer/@nodeMappings[name='sn_sensor']" targetMapping="//@ownedViewpoints[name='vp_telecare_tdk_view']/@ownedRepresentations[name='dd_diagram']/@defaultLayer/@nodeMappings[name='sn_trigger']" targetFinderExpression="[self.triggeredBy /]">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+      </additionalLayers>
+    </ownedRepresentations>
+  </ownedViewpoints>
+</description:Group>
