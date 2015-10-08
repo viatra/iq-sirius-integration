@@ -278,7 +278,7 @@ public class ViewModelManager {
 			
 			conflictResolver.setPriority(builtRule.getRuleSpecification(), rule.getPriority());
 		}
-		
+
 		// Creating HiddenParametersRuleDescriptors
 		createHiddenParametersRuleDescriptors();
 		for (HiddenParametersRuleDescriptor ruleDescriptor : configurationModel.getHiddenParametersRuleDescriptors()) {
@@ -362,12 +362,13 @@ public class ViewModelManager {
 				continue;
 			}
 			
+			// TODO teszt OR!!!!
 			// If the given QuerySpecification contains more than one body...
 			transformationRuleQuerySpecification = querySpecifications.get(transformationRuleDescriptor.getPatternFQN());
-			if (transformationRuleQuerySpecification == null
-					|| transformationRuleQuerySpecification.getInternalQueryRepresentation().getDisjunctBodies().getBodies().size() > 1) {
-				throw new IllegalStateException("Disjunct bodies in the transformation patterns are not supported!");
-			}
+//			if (transformationRuleQuerySpecification == null
+//					|| transformationRuleQuerySpecification.getInternalQueryRepresentation().getDisjunctBodies().getBodies().size() > 1) {
+//				throw new IllegalStateException("Disjunct bodies in the transformation patterns are not supported!");
+//			}
 			
 			int bodyIndex = 0;
 			for (PBody body : transformationRuleQuerySpecification.getInternalQueryRepresentation().getDisjunctBodies().getBodies()) {

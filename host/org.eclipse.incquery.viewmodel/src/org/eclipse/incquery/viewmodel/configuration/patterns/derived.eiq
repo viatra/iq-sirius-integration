@@ -6,15 +6,18 @@ import "http://www.eclipse.org/emf/2002/Ecore"
 
 @QueryBasedFeature(feature = "name")
 pattern namedElement_name(This : NamedElement, Target) {
-	ElementRuleDescriptor.elementType.name(This, Target);
+	ElementRuleDescriptor.id(This, id);
+	ElementRuleDescriptor.elementType.name(This, name);
+	
+	Target == eval (name + "(" + id + ")");
 } or {
-	ReferenceRuleDescriptor.ownerElementRuleDescriptor.elementType.name(This, fromName);
-	ReferenceRuleDescriptor.targetElementRuleDescriptor.elementType.name(This, toName);
+	ReferenceRuleDescriptor.ownerElementRuleDescriptor.name(This, fromName);
+	ReferenceRuleDescriptor.targetElementRuleDescriptor.name(This, toName);
 	ReferenceRuleDescriptor.reference.name(This, refName);
 	
 	Target == eval(fromName + ":" + refName + "->" + toName);
 } or { 
-	AttributeRuleDescriptor.ownerElementRuleDescriptor.elementType.name(This, ownerName);
+	AttributeRuleDescriptor.ownerElementRuleDescriptor.name(This, ownerName);
 	AttributeRuleDescriptor.attribute.name(This, attrName);
 	
 	Target == eval(ownerName + ":" + attrName);

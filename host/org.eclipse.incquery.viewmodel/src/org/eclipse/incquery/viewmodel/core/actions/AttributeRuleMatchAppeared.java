@@ -30,7 +30,7 @@ public class AttributeRuleMatchAppeared extends
 		List<TraceTarget> owners = traceabilityModelManager.getTargets(sourcesOfOwnerElement, ownerERD.getId());
 
 		if (owners.size() != 1) {
-			throw new IllegalStateException("Not exactly one owner belongs to the given match and ruleDescriptorId!");
+			throw new IllegalStateException("Not exactly one owner belongs to the given match and ruleDescriptorId!(" + owners.toString() + ")");
 		}
 		
 		// Set the corresponding attribute in the target model

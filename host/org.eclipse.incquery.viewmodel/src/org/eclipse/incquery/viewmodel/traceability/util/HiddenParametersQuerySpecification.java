@@ -169,7 +169,7 @@ public class HiddenParametersQuerySpecification extends BaseQuerySpecification<H
 						if (element instanceof PVariable) {
 							tupleVariable = (PVariable) element;
 							
-							if (!isSingleUseVariable(tupleVariable) && !exportedVariables.contains(tupleVariable)) {
+							if (!exportedVariables.contains(tupleVariable)) {
 								hiddenParameterVariableCandidates.add(tupleVariable);
 							}
 						}
@@ -193,15 +193,6 @@ public class HiddenParametersQuerySpecification extends BaseQuerySpecification<H
 			}
 			
 			return result;
-		}
-		
-		/**
-		 * 
-		 * @param variable The examined variable
-		 * @return True, if the variable is a single-use variable, otherwise false
-		 */
-		private boolean isSingleUseVariable(PVariable variable) {
-			return variable.getName().startsWith("_");
 		}
 		
 		/**
