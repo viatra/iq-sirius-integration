@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="telecare" nsURI="http://hu.bme.mit.inf.concerto/telecare/example/tdk/1.0"
+    nsPrefix="telecare">
+  <eClassifiers xsi:type="ecore:EClass" name="TelecareSystem">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sensors" upperBound="-1"
+        eType="#//Sensor" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hosts" upperBound="-1"
+        eType="#//Host" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="triggers" upperBound="-1"
+        eType="#//Trigger" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Sensor" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="measurementTypes" lowerBound="1"
+        upperBound="-1" eType="#//MeasurementType" containment="true" eOpposite="#//MeasurementType/sensor"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Host" eSuperTypes="#//NamedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Trigger" abstract="true" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="triggeredEvents" upperBound="-1"
+        eType="#//Event" containment="true" eOpposite="#//Event/trigger"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NamedElement" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MeasurementType" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minInterval" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="measurement" upperBound="-1"
+        eType="#//Measurement" eOpposite="#//Measurement/measurementType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sensor" lowerBound="1"
+        eType="#//Sensor" eOpposite="#//Sensor/measurementTypes"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FixedIntervalTrigger" eSuperTypes="#//Trigger">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="interval" ordered="false"
+        unique="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"
+        defaultValueLiteral="0"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EventCompletedTrigger" eSuperTypes="#//Trigger">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="triggeredBy" lowerBound="1"
+        upperBound="-1" eType="#//Event"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Event" abstract="true" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="trigger" lowerBound="1"
+        eType="#//Trigger" eOpposite="#//Trigger/triggeredEvents"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Measurement" eSuperTypes="#//Event">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="measurementType" lowerBound="1"
+        eType="#//MeasurementType" eOpposite="#//MeasurementType/measurement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReportingEvent" eSuperTypes="#//Event">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="address" lowerBound="1"
+        eType="#//Host"/>
+  </eClassifiers>
+</ecore:EPackage>
