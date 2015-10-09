@@ -10,15 +10,6 @@
     <!-- @generated configuration -->
     <package class="org.eclipse.incquery.viewmodel.configuration.ConfigurationPackage" genModel="model/configuration.genmodel" uri="http://org.eclipse.incquery/viewmodel/configuration/1.0"/>
   </extension>
-  <extension id="org.eclipse.incquery.viewmodel.traceability.patterns.Helpers" point="org.eclipse.incquery.runtime.queryspecification">
-    <group group="org.eclipse.incquery.runtime.extensibility.SingletonExtensionFactory:org.eclipse.incquery.viewmodel.traceability.patterns.Helpers" id="org.eclipse.incquery.viewmodel.traceability.patterns.Helpers"/>
-  </extension>
-  <extension id="org.eclipse.incquery.viewmodel.configuration.patterns.Derived" point="org.eclipse.incquery.runtime.queryspecification">
-    <group group="org.eclipse.incquery.runtime.extensibility.SingletonExtensionFactory:org.eclipse.incquery.viewmodel.configuration.patterns.Derived" id="org.eclipse.incquery.viewmodel.configuration.patterns.Derived"/>
-  </extension>
-  <extension id="org.eclipse.incquery.viewmodel.traceability.patterns.Derived" point="org.eclipse.incquery.runtime.queryspecification">
-    <group group="org.eclipse.incquery.runtime.extensibility.SingletonExtensionFactory:org.eclipse.incquery.viewmodel.traceability.patterns.Derived" id="org.eclipse.incquery.viewmodel.traceability.patterns.Derived"/>
-  </extension>
   <extension id="extension.derived.org.eclipse.incquery.viewmodel.traceability.patterns.trace_hiddenSources" point="org.eclipse.incquery.runtime.base.wellbehaving.derived.features">
     <wellbehaving-derived-feature classifier-name="Trace" feature-name="hiddenSources" package-nsUri="http://org.eclipse.incquery/viewmodel/traceability/3.0"/>
   </extension>
@@ -69,5 +60,14 @@
   </extension>
   <extension id="extension.derived.org.eclipse.incquery.viewmodel.traceability.patterns.trace_visibleSources" point="org.eclipse.incquery.runtime.base.wellbehaving.derived.features">
     <wellbehaving-derived-feature classifier-name="Trace" feature-name="visibleSources" package-nsUri="http://org.eclipse.incquery/viewmodel/traceability/3.0"/>
+  </extension>
+  <extension id="org.eclipse.incquery.viewmodel.configuration.patterns.Derived" point="org.eclipse.incquery.runtime.queryspecification">
+    <group group="org.eclipse.incquery.runtime.extensibility.SingletonExtensionFactory:org.eclipse.incquery.viewmodel.configuration.patterns.Derived" id="org.eclipse.incquery.viewmodel.configuration.patterns.Derived"/>
+  </extension>
+  <extension id="org.eclipse.incquery.viewmodel.traceability.patterns.Derived" point="org.eclipse.incquery.runtime.queryspecification">
+    <group group="org.eclipse.incquery.runtime.extensibility.SingletonExtensionFactory:org.eclipse.incquery.viewmodel.traceability.patterns.Derived" id="org.eclipse.incquery.viewmodel.traceability.patterns.Derived"/>
+  </extension>
+  <extension id="org.eclipse.incquery.viewmodel.traceability.patterns.Helpers" point="org.eclipse.incquery.runtime.queryspecification">
+    <group group="org.eclipse.incquery.runtime.extensibility.SingletonExtensionFactory:org.eclipse.incquery.viewmodel.traceability.patterns.Helpers" id="org.eclipse.incquery.viewmodel.traceability.patterns.Helpers"/>
   </extension>
 </plugin>
