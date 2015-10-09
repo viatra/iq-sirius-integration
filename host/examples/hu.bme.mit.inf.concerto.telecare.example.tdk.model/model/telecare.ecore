@@ -7,12 +7,14 @@
         eType="#//Sensor" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="hosts" upperBound="-1"
         eType="#//Host" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="triggers" upperBound="-1"
-        eType="#//Trigger" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="gateways" upperBound="-1"
+        eType="#//Gateway" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Sensor" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="measurementTypes" lowerBound="1"
         upperBound="-1" eType="#//MeasurementType" containment="true" eOpposite="#//MeasurementType/sensor"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="connectedTo" eType="#//Gateway"
+        eOpposite="#//Gateway/sensors"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Host" eSuperTypes="#//NamedElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="Trigger" abstract="true" eSuperTypes="#//NamedElement">
@@ -50,5 +52,11 @@
   <eClassifiers xsi:type="ecore:EClass" name="ReportingEvent" eSuperTypes="#//Event">
     <eStructuralFeatures xsi:type="ecore:EReference" name="address" lowerBound="1"
         eType="#//Host"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Gateway">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="triggers" upperBound="-1"
+        eType="#//Trigger" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sensors" upperBound="-1"
+        eType="#//Sensor" eOpposite="#//Sensor/connectedTo"/>
   </eClassifiers>
 </ecore:EPackage>
