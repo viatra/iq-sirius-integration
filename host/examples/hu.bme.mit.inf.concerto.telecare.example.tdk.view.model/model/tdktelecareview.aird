@@ -171,7 +171,7 @@
           <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
-        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_4_HacGrTEeWn395JN7ZPZg" name="name : EString" tooltipText="&#xA;ERROR : The required feature 'eAttributeType' of 'org.eclipse.emf.ecore.impl.EAttributeImpl@2ec083df{platform:/resource/hu.bme.mit.inf.concerto.telecare.example.tdk.view.model/model/tdktelecareview.ecore#//Tigger/newAttribute}' must be set&#xA;ERROR : The typed element must have a type">
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_4_HacGrTEeWn395JN7ZPZg" name="name : EString" tooltipText="">
           <target xmi:type="ecore:EAttribute" href="tdktelecareview.ecore#//Tigger/name"/>
           <semanticElements xmi:type="ecore:EAttribute" href="tdktelecareview.ecore#//Tigger/name"/>
           <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_6Xe7kGrTEeWn395JN7ZPZg" labelAlignment="LEFT">
@@ -190,7 +190,7 @@
           <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
-        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_-FmGsGrAEeWn395JN7ZPZg" name="name : EString" tooltipText="&#xA;ERROR : The required feature 'eAttributeType' of 'org.eclipse.emf.ecore.impl.EAttributeImpl@618e4afb{platform:/resource/hu.bme.mit.inf.concerto.telecare.example.tdk.view.model/model/tdktelecareview.ecore#//Server/newAttribute}' must be set&#xA;ERROR : The typed element must have a type">
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_-FmGsGrAEeWn395JN7ZPZg" name="name : EString" tooltipText="">
           <target xmi:type="ecore:EAttribute" href="tdktelecareview.ecore#//Server/name"/>
           <semanticElements xmi:type="ecore:EAttribute" href="tdktelecareview.ecore#//Server/name"/>
           <ownedStyle xmi:type="diagram:BundledImage" xmi:id="__vW50GrAEeWn395JN7ZPZg" labelAlignment="LEFT">
@@ -209,7 +209,7 @@
           <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
-        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_U4kvQGrBEeWn395JN7ZPZg" name="name : EString" tooltipText="&#xA;ERROR : The required feature 'eAttributeType' of 'org.eclipse.emf.ecore.impl.EAttributeImpl@6c28ba68{platform:/resource/hu.bme.mit.inf.concerto.telecare.example.tdk.view.model/model/tdktelecareview.ecore#//Sensor/newAttribute}' must be set&#xA;ERROR : The typed element must have a type">
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_U4kvQGrBEeWn395JN7ZPZg" name="name : EString" tooltipText="">
           <target xmi:type="ecore:EAttribute" href="tdktelecareview.ecore#//Sensor/name"/>
           <semanticElements xmi:type="ecore:EAttribute" href="tdktelecareview.ecore#//Sensor/name"/>
           <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_WCJmcGrBEeWn395JN7ZPZg" labelAlignment="LEFT">
