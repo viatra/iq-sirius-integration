@@ -22,3 +22,7 @@
 /.Ref_viewModel_triggersQuerySpecification.java._trace
 /.Attr_sensor_nameProcessor.java._trace
 /.Attr_sensor_nameQuerySpecification.java._trace
+/.FixedIntervalTriggerWithMeasurementQuerySpecification.java._trace
+/.EventCompletedTriggerWithMeasurementQuerySpecification.java._trace
+/.Not_element_serverQuerySpecification.java._trace
+/.At_least_three_sensorQuerySpecification.java._trace

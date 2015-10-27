@@ -1,6 +1,7 @@
 package hu.bme.mit.concerto.telecare.example.tdk.view.design.patterns;
 
 import hu.bme.mit.concerto.telecare.example.tdk.view.design.patterns.util.Element_sensorQuerySpecification;
+import hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor;
 import java.util.Arrays;
 import java.util.List;
 import org.eclipse.incquery.runtime.api.IPatternMatch;
@@ -22,11 +23,11 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  */
 @SuppressWarnings("all")
 public abstract class Element_sensorMatch extends BasePatternMatch {
-  private hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor fSensor;
+  private Sensor fSensor;
   
   private static List<String> parameterNames = makeImmutableList("sensor");
   
-  private Element_sensorMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor pSensor) {
+  private Element_sensorMatch(final Sensor pSensor) {
     this.fSensor = pSensor;
   }
   
@@ -36,7 +37,7 @@ public abstract class Element_sensorMatch extends BasePatternMatch {
     return null;
   }
   
-  public hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor getSensor() {
+  public Sensor getSensor() {
     return this.fSensor;
   }
   
@@ -50,7 +51,7 @@ public abstract class Element_sensorMatch extends BasePatternMatch {
     return false;
   }
   
-  public void setSensor(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor pSensor) {
+  public void setSensor(final Sensor pSensor) {
     if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fSensor = pSensor;
   }
@@ -142,7 +143,7 @@ public abstract class Element_sensorMatch extends BasePatternMatch {
    * @return the new, mutable (partial) match object.
    * 
    */
-  public static Element_sensorMatch newMutableMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor pSensor) {
+  public static Element_sensorMatch newMutableMatch(final Sensor pSensor) {
     return new Mutable(pSensor);
   }
   
@@ -154,12 +155,12 @@ public abstract class Element_sensorMatch extends BasePatternMatch {
    * @return the (partial) match object.
    * 
    */
-  public static Element_sensorMatch newMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor pSensor) {
+  public static Element_sensorMatch newMatch(final Sensor pSensor) {
     return new Immutable(pSensor);
   }
   
   private static final class Mutable extends Element_sensorMatch {
-    Mutable(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor pSensor) {
+    Mutable(final Sensor pSensor) {
       super(pSensor);
     }
     
@@ -170,7 +171,7 @@ public abstract class Element_sensorMatch extends BasePatternMatch {
   }
   
   private static final class Immutable extends Element_sensorMatch {
-    Immutable(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor pSensor) {
+    Immutable(final Sensor pSensor) {
       super(pSensor);
     }
     

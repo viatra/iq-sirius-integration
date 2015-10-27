@@ -89,7 +89,7 @@ public final class Ref_viewModel_sensorsQuerySpecification extends BaseGenerated
     
     @Override
     public List<PParameter> getParameters() {
-      return Arrays.asList(new PParameter("telecareSystem", ""),new PParameter("sensor", ""));
+      return Arrays.asList(new PParameter("telecareSystem", "hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem"),new PParameter("sensor", "hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor"));
     }
     
     @Override

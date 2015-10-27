@@ -89,7 +89,7 @@ public final class Ref_viewModel_triggersQuerySpecification extends BaseGenerate
     
     @Override
     public List<PParameter> getParameters() {
-      return Arrays.asList(new PParameter("telecareSystem", ""),new PParameter("trigger", ""));
+      return Arrays.asList(new PParameter("telecareSystem", "hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem"),new PParameter("trigger", "hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger"));
     }
     
     @Override
@@ -101,6 +101,7 @@ public final class Ref_viewModel_triggersQuerySpecification extends BaseGenerate
       	PVariable var_telecareSystem = body.getOrCreateVariableByName("telecareSystem");
       	PVariable var_trigger = body.getOrCreateVariableByName("trigger");
       	PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
+      	PVariable var__virtual_1_ = body.getOrCreateVariableByName(".virtual{1}");
       	body.setExportedParameters(Arrays.<ExportedParameter>asList(
       		new ExportedParameter(body, var_telecareSystem, "telecareSystem"),
       				
@@ -111,8 +112,9 @@ public final class Ref_viewModel_triggersQuerySpecification extends BaseGenerate
       	new PositivePatternCall(body, new FlatTuple(var_telecareSystem), Element_viewModelQuerySpecification.instance().getInternalQueryRepresentation());
       	new PositivePatternCall(body, new FlatTuple(var_trigger), Element_triggerQuerySpecification.instance().getInternalQueryRepresentation());
       	new TypeConstraint(body, new FlatTuple(var_telecareSystem), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://hu.bme.mit.inf.concerto/telecare/example/tdk/1.0", "TelecareSystem")));
-      	new TypeConstraint(body, new FlatTuple(var_telecareSystem, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://hu.bme.mit.inf.concerto/telecare/example/tdk/1.0", "TelecareSystem", "triggers")));
-      	new Equality(body, var__virtual_0_, var_trigger);
+      	new TypeConstraint(body, new FlatTuple(var_telecareSystem, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://hu.bme.mit.inf.concerto/telecare/example/tdk/1.0", "TelecareSystem", "gateways")));
+      	new TypeConstraint(body, new FlatTuple(var__virtual_0_, var__virtual_1_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://hu.bme.mit.inf.concerto/telecare/example/tdk/1.0", "Gateway", "triggers")));
+      	new Equality(body, var__virtual_1_, var_trigger);
       	bodies.add(body);
       }
       	// to silence compiler error

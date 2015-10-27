@@ -1,6 +1,7 @@
 package hu.bme.mit.concerto.telecare.example.tdk.view.design.patterns;
 
 import hu.bme.mit.concerto.telecare.example.tdk.view.design.patterns.util.Attr_sensor_nameQuerySpecification;
+import hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor;
 import java.util.Arrays;
 import java.util.List;
 import org.eclipse.incquery.runtime.api.IPatternMatch;
@@ -22,13 +23,13 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  */
 @SuppressWarnings("all")
 public abstract class Attr_sensor_nameMatch extends BasePatternMatch {
-  private hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor fSensor;
+  private Sensor fSensor;
   
   private String fValue;
   
   private static List<String> parameterNames = makeImmutableList("sensor", "value");
   
-  private Attr_sensor_nameMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor pSensor, final String pValue) {
+  private Attr_sensor_nameMatch(final Sensor pSensor, final String pValue) {
     this.fSensor = pSensor;
     this.fValue = pValue;
   }
@@ -40,7 +41,7 @@ public abstract class Attr_sensor_nameMatch extends BasePatternMatch {
     return null;
   }
   
-  public hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor getSensor() {
+  public Sensor getSensor() {
     return this.fSensor;
   }
   
@@ -62,7 +63,7 @@ public abstract class Attr_sensor_nameMatch extends BasePatternMatch {
     return false;
   }
   
-  public void setSensor(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor pSensor) {
+  public void setSensor(final Sensor pSensor) {
     if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fSensor = pSensor;
   }
@@ -165,7 +166,7 @@ public abstract class Attr_sensor_nameMatch extends BasePatternMatch {
    * @return the new, mutable (partial) match object.
    * 
    */
-  public static Attr_sensor_nameMatch newMutableMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor pSensor, final String pValue) {
+  public static Attr_sensor_nameMatch newMutableMatch(final Sensor pSensor, final String pValue) {
     return new Mutable(pSensor, pValue);
   }
   
@@ -178,12 +179,12 @@ public abstract class Attr_sensor_nameMatch extends BasePatternMatch {
    * @return the (partial) match object.
    * 
    */
-  public static Attr_sensor_nameMatch newMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor pSensor, final String pValue) {
+  public static Attr_sensor_nameMatch newMatch(final Sensor pSensor, final String pValue) {
     return new Immutable(pSensor, pValue);
   }
   
   private static final class Mutable extends Attr_sensor_nameMatch {
-    Mutable(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor pSensor, final String pValue) {
+    Mutable(final Sensor pSensor, final String pValue) {
       super(pSensor, pValue);
     }
     
@@ -194,7 +195,7 @@ public abstract class Attr_sensor_nameMatch extends BasePatternMatch {
   }
   
   private static final class Immutable extends Attr_sensor_nameMatch {
-    Immutable(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor pSensor, final String pValue) {
+    Immutable(final Sensor pSensor, final String pValue) {
       super(pSensor, pValue);
     }
     

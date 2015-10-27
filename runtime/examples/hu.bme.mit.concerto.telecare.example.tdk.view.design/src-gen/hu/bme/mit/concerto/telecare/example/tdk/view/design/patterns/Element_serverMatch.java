@@ -1,6 +1,7 @@
 package hu.bme.mit.concerto.telecare.example.tdk.view.design.patterns;
 
 import hu.bme.mit.concerto.telecare.example.tdk.view.design.patterns.util.Element_serverQuerySpecification;
+import hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host;
 import java.util.Arrays;
 import java.util.List;
 import org.eclipse.incquery.runtime.api.IPatternMatch;
@@ -22,11 +23,11 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  */
 @SuppressWarnings("all")
 public abstract class Element_serverMatch extends BasePatternMatch {
-  private hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host fHost;
+  private Host fHost;
   
   private static List<String> parameterNames = makeImmutableList("host");
   
-  private Element_serverMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host pHost) {
+  private Element_serverMatch(final Host pHost) {
     this.fHost = pHost;
   }
   
@@ -36,7 +37,7 @@ public abstract class Element_serverMatch extends BasePatternMatch {
     return null;
   }
   
-  public hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host getHost() {
+  public Host getHost() {
     return this.fHost;
   }
   
@@ -50,7 +51,7 @@ public abstract class Element_serverMatch extends BasePatternMatch {
     return false;
   }
   
-  public void setHost(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host pHost) {
+  public void setHost(final Host pHost) {
     if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fHost = pHost;
   }
@@ -142,7 +143,7 @@ public abstract class Element_serverMatch extends BasePatternMatch {
    * @return the new, mutable (partial) match object.
    * 
    */
-  public static Element_serverMatch newMutableMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host pHost) {
+  public static Element_serverMatch newMutableMatch(final Host pHost) {
     return new Mutable(pHost);
   }
   
@@ -154,12 +155,12 @@ public abstract class Element_serverMatch extends BasePatternMatch {
    * @return the (partial) match object.
    * 
    */
-  public static Element_serverMatch newMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host pHost) {
+  public static Element_serverMatch newMatch(final Host pHost) {
     return new Immutable(pHost);
   }
   
   private static final class Mutable extends Element_serverMatch {
-    Mutable(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host pHost) {
+    Mutable(final Host pHost) {
       super(pHost);
     }
     
@@ -170,7 +171,7 @@ public abstract class Element_serverMatch extends BasePatternMatch {
   }
   
   private static final class Immutable extends Element_serverMatch {
-    Immutable(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host pHost) {
+    Immutable(final Host pHost) {
       super(pHost);
     }
     

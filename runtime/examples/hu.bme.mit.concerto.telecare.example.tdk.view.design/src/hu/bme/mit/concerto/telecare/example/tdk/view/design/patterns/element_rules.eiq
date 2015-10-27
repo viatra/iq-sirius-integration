@@ -8,7 +8,13 @@ pattern element_viewModel(telecareSystem : TelecareSystem) {
 }
 
 pattern element_server(host : Host) {
-	ReportingEvent.address(_, host);
+	TelecareSystem.gateways(_, gateway);
+
+	Gateway.triggers(gateway, ect);
+
+	EventCompletedTrigger(ect);	
+	EventCompletedTrigger.triggeredEvents(ect, re);
+	ReportingEvent.address(re, host);
 }
 
 pattern element_trigger(trigger : FixedIntervalTrigger) {
@@ -22,8 +28,15 @@ pattern element_trigger(trigger : FixedIntervalTrigger) {
 }
 
 pattern element_sensor(sensor : Sensor) {
-	Sensor.measurementTypes(sensor, mt1);
-	Sensor.measurementTypes(sensor, mt2);
+	Sensor.connectedTo(sensor, gateway);
 	
-	mt1 != mt2;
+	Gateway.triggers(gateway, ect);
+	Gateway.triggers(gateway, fit);
+	
+	EventCompletedTrigger.triggeredEvents(ect, re);
+	ReportingEvent.address(re, _);
+	
+	FixedIntervalTrigger.triggeredEvents(fit, measurement);
+	EventCompletedTrigger.triggeredBy(ect, measurement);
+	Measurement.measurementType.sensor(measurement, sensor);
 }

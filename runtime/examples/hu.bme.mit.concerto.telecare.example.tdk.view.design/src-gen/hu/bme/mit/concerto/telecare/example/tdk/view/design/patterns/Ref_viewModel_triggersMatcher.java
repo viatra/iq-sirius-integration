@@ -2,6 +2,8 @@ package hu.bme.mit.concerto.telecare.example.tdk.view.design.patterns;
 
 import hu.bme.mit.concerto.telecare.example.tdk.view.design.patterns.Ref_viewModel_triggersMatch;
 import hu.bme.mit.concerto.telecare.example.tdk.view.design.patterns.util.Ref_viewModel_triggersQuerySpecification;
+import hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger;
+import hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
@@ -30,7 +32,7 @@ import org.eclipse.incquery.runtime.util.IncQueryLoggingUtil;
  * 	find element_viewModel(telecareSystem);
  * 	find element_trigger(trigger);
  * 	
- * 	TelecareSystem.triggers(telecareSystem, trigger);
+ * 	TelecareSystem.gateways.triggers(telecareSystem, trigger);
  * }
  * </pre></code>
  * 
@@ -103,7 +105,7 @@ public class Ref_viewModel_triggersMatcher extends BaseMatcher<Ref_viewModel_tri
    * @return matches represented as a Ref_viewModel_triggersMatch object.
    * 
    */
-  public Collection<Ref_viewModel_triggersMatch> getAllMatches(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem pTelecareSystem, final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger pTrigger) {
+  public Collection<Ref_viewModel_triggersMatch> getAllMatches(final TelecareSystem pTelecareSystem, final FixedIntervalTrigger pTrigger) {
     return rawGetAllMatches(new Object[]{pTelecareSystem, pTrigger});
   }
   
@@ -115,7 +117,7 @@ public class Ref_viewModel_triggersMatcher extends BaseMatcher<Ref_viewModel_tri
    * @return a match represented as a Ref_viewModel_triggersMatch object, or null if no match is found.
    * 
    */
-  public Ref_viewModel_triggersMatch getOneArbitraryMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem pTelecareSystem, final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger pTrigger) {
+  public Ref_viewModel_triggersMatch getOneArbitraryMatch(final TelecareSystem pTelecareSystem, final FixedIntervalTrigger pTrigger) {
     return rawGetOneArbitraryMatch(new Object[]{pTelecareSystem, pTrigger});
   }
   
@@ -127,7 +129,7 @@ public class Ref_viewModel_triggersMatcher extends BaseMatcher<Ref_viewModel_tri
    * @return true if the input is a valid (partial) match of the pattern.
    * 
    */
-  public boolean hasMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem pTelecareSystem, final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger pTrigger) {
+  public boolean hasMatch(final TelecareSystem pTelecareSystem, final FixedIntervalTrigger pTrigger) {
     return rawHasMatch(new Object[]{pTelecareSystem, pTrigger});
   }
   
@@ -138,7 +140,7 @@ public class Ref_viewModel_triggersMatcher extends BaseMatcher<Ref_viewModel_tri
    * @return the number of pattern matches found.
    * 
    */
-  public int countMatches(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem pTelecareSystem, final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger pTrigger) {
+  public int countMatches(final TelecareSystem pTelecareSystem, final FixedIntervalTrigger pTrigger) {
     return rawCountMatches(new Object[]{pTelecareSystem, pTrigger});
   }
   
@@ -149,7 +151,7 @@ public class Ref_viewModel_triggersMatcher extends BaseMatcher<Ref_viewModel_tri
    * @param processor the action that will process each pattern match.
    * 
    */
-  public void forEachMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem pTelecareSystem, final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger pTrigger, final IMatchProcessor<? super Ref_viewModel_triggersMatch> processor) {
+  public void forEachMatch(final TelecareSystem pTelecareSystem, final FixedIntervalTrigger pTrigger, final IMatchProcessor<? super Ref_viewModel_triggersMatch> processor) {
     rawForEachMatch(new Object[]{pTelecareSystem, pTrigger}, processor);
   }
   
@@ -162,7 +164,7 @@ public class Ref_viewModel_triggersMatcher extends BaseMatcher<Ref_viewModel_tri
    * @return true if the pattern has at least one match with the given parameter values, false if the processor was not invoked
    * 
    */
-  public boolean forOneArbitraryMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem pTelecareSystem, final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger pTrigger, final IMatchProcessor<? super Ref_viewModel_triggersMatch> processor) {
+  public boolean forOneArbitraryMatch(final TelecareSystem pTelecareSystem, final FixedIntervalTrigger pTrigger, final IMatchProcessor<? super Ref_viewModel_triggersMatch> processor) {
     return rawForOneArbitraryMatch(new Object[]{pTelecareSystem, pTrigger}, processor);
   }
   
@@ -175,7 +177,7 @@ public class Ref_viewModel_triggersMatcher extends BaseMatcher<Ref_viewModel_tri
    * @return the (partial) match object.
    * 
    */
-  public Ref_viewModel_triggersMatch newMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem pTelecareSystem, final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger pTrigger) {
+  public Ref_viewModel_triggersMatch newMatch(final TelecareSystem pTelecareSystem, final FixedIntervalTrigger pTrigger) {
     return Ref_viewModel_triggersMatch.newMatch(pTelecareSystem, pTrigger);
   }
   
@@ -184,8 +186,8 @@ public class Ref_viewModel_triggersMatcher extends BaseMatcher<Ref_viewModel_tri
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  protected /* Set<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem> */Object rawAccumulateAllValuesOftelecareSystem(final Object[] parameters) {
-    Set<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem> results = new HashSet<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem>();
+  protected Set<TelecareSystem> rawAccumulateAllValuesOftelecareSystem(final Object[] parameters) {
+    Set<TelecareSystem> results = new HashSet<TelecareSystem>();
     rawAccumulateAllValues(POSITION_TELECARESYSTEM, parameters, results);
     return results;
   }
@@ -195,7 +197,7 @@ public class Ref_viewModel_triggersMatcher extends BaseMatcher<Ref_viewModel_tri
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public /* Set<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem> */Object getAllValuesOftelecareSystem() {
+  public Set<TelecareSystem> getAllValuesOftelecareSystem() {
     return rawAccumulateAllValuesOftelecareSystem(emptyArray());
   }
   
@@ -204,7 +206,7 @@ public class Ref_viewModel_triggersMatcher extends BaseMatcher<Ref_viewModel_tri
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public /* Set<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem> */Object getAllValuesOftelecareSystem(final Ref_viewModel_triggersMatch partialMatch) {
+  public Set<TelecareSystem> getAllValuesOftelecareSystem(final Ref_viewModel_triggersMatch partialMatch) {
     return rawAccumulateAllValuesOftelecareSystem(partialMatch.toArray());
   }
   
@@ -213,7 +215,7 @@ public class Ref_viewModel_triggersMatcher extends BaseMatcher<Ref_viewModel_tri
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public /* Set<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem> */Object getAllValuesOftelecareSystem(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger pTrigger) {
+  public Set<TelecareSystem> getAllValuesOftelecareSystem(final FixedIntervalTrigger pTrigger) {
     return rawAccumulateAllValuesOftelecareSystem(new Object[]{
     null, 
     pTrigger
@@ -225,8 +227,8 @@ public class Ref_viewModel_triggersMatcher extends BaseMatcher<Ref_viewModel_tri
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  protected /* Set<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger> */Object rawAccumulateAllValuesOftrigger(final Object[] parameters) {
-    Set<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger> results = new HashSet<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger>();
+  protected Set<FixedIntervalTrigger> rawAccumulateAllValuesOftrigger(final Object[] parameters) {
+    Set<FixedIntervalTrigger> results = new HashSet<FixedIntervalTrigger>();
     rawAccumulateAllValues(POSITION_TRIGGER, parameters, results);
     return results;
   }
@@ -236,7 +238,7 @@ public class Ref_viewModel_triggersMatcher extends BaseMatcher<Ref_viewModel_tri
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public /* Set<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger> */Object getAllValuesOftrigger() {
+  public Set<FixedIntervalTrigger> getAllValuesOftrigger() {
     return rawAccumulateAllValuesOftrigger(emptyArray());
   }
   
@@ -245,7 +247,7 @@ public class Ref_viewModel_triggersMatcher extends BaseMatcher<Ref_viewModel_tri
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public /* Set<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger> */Object getAllValuesOftrigger(final Ref_viewModel_triggersMatch partialMatch) {
+  public Set<FixedIntervalTrigger> getAllValuesOftrigger(final Ref_viewModel_triggersMatch partialMatch) {
     return rawAccumulateAllValuesOftrigger(partialMatch.toArray());
   }
   
@@ -254,7 +256,7 @@ public class Ref_viewModel_triggersMatcher extends BaseMatcher<Ref_viewModel_tri
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public /* Set<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger> */Object getAllValuesOftrigger(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem pTelecareSystem) {
+  public Set<FixedIntervalTrigger> getAllValuesOftrigger(final TelecareSystem pTelecareSystem) {
     return rawAccumulateAllValuesOftrigger(new Object[]{
     pTelecareSystem, 
     null

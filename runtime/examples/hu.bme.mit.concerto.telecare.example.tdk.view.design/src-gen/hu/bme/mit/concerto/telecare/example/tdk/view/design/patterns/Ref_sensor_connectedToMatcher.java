@@ -2,6 +2,8 @@ package hu.bme.mit.concerto.telecare.example.tdk.view.design.patterns;
 
 import hu.bme.mit.concerto.telecare.example.tdk.view.design.patterns.Ref_sensor_connectedToMatch;
 import hu.bme.mit.concerto.telecare.example.tdk.view.design.patterns.util.Ref_sensor_connectedToQuerySpecification;
+import hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host;
+import hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
@@ -107,7 +109,7 @@ public class Ref_sensor_connectedToMatcher extends BaseMatcher<Ref_sensor_connec
    * @return matches represented as a Ref_sensor_connectedToMatch object.
    * 
    */
-  public Collection<Ref_sensor_connectedToMatch> getAllMatches(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor pSensor, final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host pHost) {
+  public Collection<Ref_sensor_connectedToMatch> getAllMatches(final Sensor pSensor, final Host pHost) {
     return rawGetAllMatches(new Object[]{pSensor, pHost});
   }
   
@@ -119,7 +121,7 @@ public class Ref_sensor_connectedToMatcher extends BaseMatcher<Ref_sensor_connec
    * @return a match represented as a Ref_sensor_connectedToMatch object, or null if no match is found.
    * 
    */
-  public Ref_sensor_connectedToMatch getOneArbitraryMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor pSensor, final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host pHost) {
+  public Ref_sensor_connectedToMatch getOneArbitraryMatch(final Sensor pSensor, final Host pHost) {
     return rawGetOneArbitraryMatch(new Object[]{pSensor, pHost});
   }
   
@@ -131,7 +133,7 @@ public class Ref_sensor_connectedToMatcher extends BaseMatcher<Ref_sensor_connec
    * @return true if the input is a valid (partial) match of the pattern.
    * 
    */
-  public boolean hasMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor pSensor, final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host pHost) {
+  public boolean hasMatch(final Sensor pSensor, final Host pHost) {
     return rawHasMatch(new Object[]{pSensor, pHost});
   }
   
@@ -142,7 +144,7 @@ public class Ref_sensor_connectedToMatcher extends BaseMatcher<Ref_sensor_connec
    * @return the number of pattern matches found.
    * 
    */
-  public int countMatches(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor pSensor, final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host pHost) {
+  public int countMatches(final Sensor pSensor, final Host pHost) {
     return rawCountMatches(new Object[]{pSensor, pHost});
   }
   
@@ -153,7 +155,7 @@ public class Ref_sensor_connectedToMatcher extends BaseMatcher<Ref_sensor_connec
    * @param processor the action that will process each pattern match.
    * 
    */
-  public void forEachMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor pSensor, final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host pHost, final IMatchProcessor<? super Ref_sensor_connectedToMatch> processor) {
+  public void forEachMatch(final Sensor pSensor, final Host pHost, final IMatchProcessor<? super Ref_sensor_connectedToMatch> processor) {
     rawForEachMatch(new Object[]{pSensor, pHost}, processor);
   }
   
@@ -166,7 +168,7 @@ public class Ref_sensor_connectedToMatcher extends BaseMatcher<Ref_sensor_connec
    * @return true if the pattern has at least one match with the given parameter values, false if the processor was not invoked
    * 
    */
-  public boolean forOneArbitraryMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor pSensor, final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host pHost, final IMatchProcessor<? super Ref_sensor_connectedToMatch> processor) {
+  public boolean forOneArbitraryMatch(final Sensor pSensor, final Host pHost, final IMatchProcessor<? super Ref_sensor_connectedToMatch> processor) {
     return rawForOneArbitraryMatch(new Object[]{pSensor, pHost}, processor);
   }
   
@@ -179,7 +181,7 @@ public class Ref_sensor_connectedToMatcher extends BaseMatcher<Ref_sensor_connec
    * @return the (partial) match object.
    * 
    */
-  public Ref_sensor_connectedToMatch newMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor pSensor, final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host pHost) {
+  public Ref_sensor_connectedToMatch newMatch(final Sensor pSensor, final Host pHost) {
     return Ref_sensor_connectedToMatch.newMatch(pSensor, pHost);
   }
   
@@ -188,8 +190,8 @@ public class Ref_sensor_connectedToMatcher extends BaseMatcher<Ref_sensor_connec
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  protected /* Set<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor> */Object rawAccumulateAllValuesOfsensor(final Object[] parameters) {
-    Set<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor> results = new HashSet<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor>();
+  protected Set<Sensor> rawAccumulateAllValuesOfsensor(final Object[] parameters) {
+    Set<Sensor> results = new HashSet<Sensor>();
     rawAccumulateAllValues(POSITION_SENSOR, parameters, results);
     return results;
   }
@@ -199,7 +201,7 @@ public class Ref_sensor_connectedToMatcher extends BaseMatcher<Ref_sensor_connec
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public /* Set<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor> */Object getAllValuesOfsensor() {
+  public Set<Sensor> getAllValuesOfsensor() {
     return rawAccumulateAllValuesOfsensor(emptyArray());
   }
   
@@ -208,7 +210,7 @@ public class Ref_sensor_connectedToMatcher extends BaseMatcher<Ref_sensor_connec
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public /* Set<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor> */Object getAllValuesOfsensor(final Ref_sensor_connectedToMatch partialMatch) {
+  public Set<Sensor> getAllValuesOfsensor(final Ref_sensor_connectedToMatch partialMatch) {
     return rawAccumulateAllValuesOfsensor(partialMatch.toArray());
   }
   
@@ -217,7 +219,7 @@ public class Ref_sensor_connectedToMatcher extends BaseMatcher<Ref_sensor_connec
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public /* Set<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor> */Object getAllValuesOfsensor(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host pHost) {
+  public Set<Sensor> getAllValuesOfsensor(final Host pHost) {
     return rawAccumulateAllValuesOfsensor(new Object[]{
     null, 
     pHost
@@ -229,8 +231,8 @@ public class Ref_sensor_connectedToMatcher extends BaseMatcher<Ref_sensor_connec
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  protected /* Set<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host> */Object rawAccumulateAllValuesOfhost(final Object[] parameters) {
-    Set<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host> results = new HashSet<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host>();
+  protected Set<Host> rawAccumulateAllValuesOfhost(final Object[] parameters) {
+    Set<Host> results = new HashSet<Host>();
     rawAccumulateAllValues(POSITION_HOST, parameters, results);
     return results;
   }
@@ -240,7 +242,7 @@ public class Ref_sensor_connectedToMatcher extends BaseMatcher<Ref_sensor_connec
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public /* Set<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host> */Object getAllValuesOfhost() {
+  public Set<Host> getAllValuesOfhost() {
     return rawAccumulateAllValuesOfhost(emptyArray());
   }
   
@@ -249,7 +251,7 @@ public class Ref_sensor_connectedToMatcher extends BaseMatcher<Ref_sensor_connec
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public /* Set<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host> */Object getAllValuesOfhost(final Ref_sensor_connectedToMatch partialMatch) {
+  public Set<Host> getAllValuesOfhost(final Ref_sensor_connectedToMatch partialMatch) {
     return rawAccumulateAllValuesOfhost(partialMatch.toArray());
   }
   
@@ -258,7 +260,7 @@ public class Ref_sensor_connectedToMatcher extends BaseMatcher<Ref_sensor_connec
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public /* Set<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host> */Object getAllValuesOfhost(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor pSensor) {
+  public Set<Host> getAllValuesOfhost(final Sensor pSensor) {
     return rawAccumulateAllValuesOfhost(new Object[]{
     pSensor, 
     null

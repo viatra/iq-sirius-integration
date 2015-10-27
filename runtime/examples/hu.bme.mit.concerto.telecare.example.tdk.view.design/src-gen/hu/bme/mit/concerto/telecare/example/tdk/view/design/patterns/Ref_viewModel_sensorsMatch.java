@@ -1,6 +1,8 @@
 package hu.bme.mit.concerto.telecare.example.tdk.view.design.patterns;
 
 import hu.bme.mit.concerto.telecare.example.tdk.view.design.patterns.util.Ref_viewModel_sensorsQuerySpecification;
+import hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor;
+import hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem;
 import java.util.Arrays;
 import java.util.List;
 import org.eclipse.incquery.runtime.api.IPatternMatch;
@@ -22,13 +24,13 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  */
 @SuppressWarnings("all")
 public abstract class Ref_viewModel_sensorsMatch extends BasePatternMatch {
-  private hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem fTelecareSystem;
+  private TelecareSystem fTelecareSystem;
   
-  private hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor fSensor;
+  private Sensor fSensor;
   
   private static List<String> parameterNames = makeImmutableList("telecareSystem", "sensor");
   
-  private Ref_viewModel_sensorsMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem pTelecareSystem, final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor pSensor) {
+  private Ref_viewModel_sensorsMatch(final TelecareSystem pTelecareSystem, final Sensor pSensor) {
     this.fTelecareSystem = pTelecareSystem;
     this.fSensor = pSensor;
   }
@@ -40,11 +42,11 @@ public abstract class Ref_viewModel_sensorsMatch extends BasePatternMatch {
     return null;
   }
   
-  public hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem getTelecareSystem() {
+  public TelecareSystem getTelecareSystem() {
     return this.fTelecareSystem;
   }
   
-  public hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor getSensor() {
+  public Sensor getSensor() {
     return this.fSensor;
   }
   
@@ -62,12 +64,12 @@ public abstract class Ref_viewModel_sensorsMatch extends BasePatternMatch {
     return false;
   }
   
-  public void setTelecareSystem(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem pTelecareSystem) {
+  public void setTelecareSystem(final TelecareSystem pTelecareSystem) {
     if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fTelecareSystem = pTelecareSystem;
   }
   
-  public void setSensor(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor pSensor) {
+  public void setSensor(final Sensor pSensor) {
     if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fSensor = pSensor;
   }
@@ -165,7 +167,7 @@ public abstract class Ref_viewModel_sensorsMatch extends BasePatternMatch {
    * @return the new, mutable (partial) match object.
    * 
    */
-  public static Ref_viewModel_sensorsMatch newMutableMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem pTelecareSystem, final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor pSensor) {
+  public static Ref_viewModel_sensorsMatch newMutableMatch(final TelecareSystem pTelecareSystem, final Sensor pSensor) {
     return new Mutable(pTelecareSystem, pSensor);
   }
   
@@ -178,12 +180,12 @@ public abstract class Ref_viewModel_sensorsMatch extends BasePatternMatch {
    * @return the (partial) match object.
    * 
    */
-  public static Ref_viewModel_sensorsMatch newMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem pTelecareSystem, final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor pSensor) {
+  public static Ref_viewModel_sensorsMatch newMatch(final TelecareSystem pTelecareSystem, final Sensor pSensor) {
     return new Immutable(pTelecareSystem, pSensor);
   }
   
   private static final class Mutable extends Ref_viewModel_sensorsMatch {
-    Mutable(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem pTelecareSystem, final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor pSensor) {
+    Mutable(final TelecareSystem pTelecareSystem, final Sensor pSensor) {
       super(pTelecareSystem, pSensor);
     }
     
@@ -194,7 +196,7 @@ public abstract class Ref_viewModel_sensorsMatch extends BasePatternMatch {
   }
   
   private static final class Immutable extends Ref_viewModel_sensorsMatch {
-    Immutable(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem pTelecareSystem, final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor pSensor) {
+    Immutable(final TelecareSystem pTelecareSystem, final Sensor pSensor) {
       super(pTelecareSystem, pSensor);
     }
     

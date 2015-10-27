@@ -1,6 +1,7 @@
 package hu.bme.mit.concerto.telecare.example.tdk.view.design.patterns.util;
 
 import hu.bme.mit.concerto.telecare.example.tdk.view.design.patterns.Element_viewModelMatch;
+import hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem;
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
 
 /**
@@ -16,7 +17,7 @@ public abstract class Element_viewModelProcessor implements IMatchProcessor<Elem
    * @param pTelecareSystem the value of pattern parameter telecareSystem in the currently processed match
    * 
    */
-  public abstract void process(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem pTelecareSystem);
+  public abstract void process(final TelecareSystem pTelecareSystem);
   
   @Override
   public void process(final Element_viewModelMatch match) {

@@ -1,6 +1,7 @@
 package hu.bme.mit.concerto.telecare.example.tdk.view.design.patterns;
 
 import hu.bme.mit.concerto.telecare.example.tdk.view.design.patterns.util.Element_viewModelQuerySpecification;
+import hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem;
 import java.util.Arrays;
 import java.util.List;
 import org.eclipse.incquery.runtime.api.IPatternMatch;
@@ -22,11 +23,11 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  */
 @SuppressWarnings("all")
 public abstract class Element_viewModelMatch extends BasePatternMatch {
-  private hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem fTelecareSystem;
+  private TelecareSystem fTelecareSystem;
   
   private static List<String> parameterNames = makeImmutableList("telecareSystem");
   
-  private Element_viewModelMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem pTelecareSystem) {
+  private Element_viewModelMatch(final TelecareSystem pTelecareSystem) {
     this.fTelecareSystem = pTelecareSystem;
   }
   
@@ -36,7 +37,7 @@ public abstract class Element_viewModelMatch extends BasePatternMatch {
     return null;
   }
   
-  public hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem getTelecareSystem() {
+  public TelecareSystem getTelecareSystem() {
     return this.fTelecareSystem;
   }
   
@@ -50,7 +51,7 @@ public abstract class Element_viewModelMatch extends BasePatternMatch {
     return false;
   }
   
-  public void setTelecareSystem(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem pTelecareSystem) {
+  public void setTelecareSystem(final TelecareSystem pTelecareSystem) {
     if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fTelecareSystem = pTelecareSystem;
   }
@@ -142,7 +143,7 @@ public abstract class Element_viewModelMatch extends BasePatternMatch {
    * @return the new, mutable (partial) match object.
    * 
    */
-  public static Element_viewModelMatch newMutableMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem pTelecareSystem) {
+  public static Element_viewModelMatch newMutableMatch(final TelecareSystem pTelecareSystem) {
     return new Mutable(pTelecareSystem);
   }
   
@@ -154,12 +155,12 @@ public abstract class Element_viewModelMatch extends BasePatternMatch {
    * @return the (partial) match object.
    * 
    */
-  public static Element_viewModelMatch newMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem pTelecareSystem) {
+  public static Element_viewModelMatch newMatch(final TelecareSystem pTelecareSystem) {
     return new Immutable(pTelecareSystem);
   }
   
   private static final class Mutable extends Element_viewModelMatch {
-    Mutable(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem pTelecareSystem) {
+    Mutable(final TelecareSystem pTelecareSystem) {
       super(pTelecareSystem);
     }
     
@@ -170,7 +171,7 @@ public abstract class Element_viewModelMatch extends BasePatternMatch {
   }
   
   private static final class Immutable extends Element_viewModelMatch {
-    Immutable(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem pTelecareSystem) {
+    Immutable(final TelecareSystem pTelecareSystem) {
       super(pTelecareSystem);
     }
     

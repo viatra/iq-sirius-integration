@@ -1,6 +1,8 @@
 package hu.bme.mit.concerto.telecare.example.tdk.view.design.patterns;
 
 import hu.bme.mit.concerto.telecare.example.tdk.view.design.patterns.util.Ref_viewModel_triggersQuerySpecification;
+import hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger;
+import hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem;
 import java.util.Arrays;
 import java.util.List;
 import org.eclipse.incquery.runtime.api.IPatternMatch;
@@ -22,13 +24,13 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  */
 @SuppressWarnings("all")
 public abstract class Ref_viewModel_triggersMatch extends BasePatternMatch {
-  private hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem fTelecareSystem;
+  private TelecareSystem fTelecareSystem;
   
-  private hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger fTrigger;
+  private FixedIntervalTrigger fTrigger;
   
   private static List<String> parameterNames = makeImmutableList("telecareSystem", "trigger");
   
-  private Ref_viewModel_triggersMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem pTelecareSystem, final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger pTrigger) {
+  private Ref_viewModel_triggersMatch(final TelecareSystem pTelecareSystem, final FixedIntervalTrigger pTrigger) {
     this.fTelecareSystem = pTelecareSystem;
     this.fTrigger = pTrigger;
   }
@@ -40,11 +42,11 @@ public abstract class Ref_viewModel_triggersMatch extends BasePatternMatch {
     return null;
   }
   
-  public hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem getTelecareSystem() {
+  public TelecareSystem getTelecareSystem() {
     return this.fTelecareSystem;
   }
   
-  public hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger getTrigger() {
+  public FixedIntervalTrigger getTrigger() {
     return this.fTrigger;
   }
   
@@ -62,12 +64,12 @@ public abstract class Ref_viewModel_triggersMatch extends BasePatternMatch {
     return false;
   }
   
-  public void setTelecareSystem(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem pTelecareSystem) {
+  public void setTelecareSystem(final TelecareSystem pTelecareSystem) {
     if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fTelecareSystem = pTelecareSystem;
   }
   
-  public void setTrigger(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger pTrigger) {
+  public void setTrigger(final FixedIntervalTrigger pTrigger) {
     if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fTrigger = pTrigger;
   }
@@ -165,7 +167,7 @@ public abstract class Ref_viewModel_triggersMatch extends BasePatternMatch {
    * @return the new, mutable (partial) match object.
    * 
    */
-  public static Ref_viewModel_triggersMatch newMutableMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem pTelecareSystem, final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger pTrigger) {
+  public static Ref_viewModel_triggersMatch newMutableMatch(final TelecareSystem pTelecareSystem, final FixedIntervalTrigger pTrigger) {
     return new Mutable(pTelecareSystem, pTrigger);
   }
   
@@ -178,12 +180,12 @@ public abstract class Ref_viewModel_triggersMatch extends BasePatternMatch {
    * @return the (partial) match object.
    * 
    */
-  public static Ref_viewModel_triggersMatch newMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem pTelecareSystem, final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger pTrigger) {
+  public static Ref_viewModel_triggersMatch newMatch(final TelecareSystem pTelecareSystem, final FixedIntervalTrigger pTrigger) {
     return new Immutable(pTelecareSystem, pTrigger);
   }
   
   private static final class Mutable extends Ref_viewModel_triggersMatch {
-    Mutable(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem pTelecareSystem, final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger pTrigger) {
+    Mutable(final TelecareSystem pTelecareSystem, final FixedIntervalTrigger pTrigger) {
       super(pTelecareSystem, pTrigger);
     }
     
@@ -194,7 +196,7 @@ public abstract class Ref_viewModel_triggersMatch extends BasePatternMatch {
   }
   
   private static final class Immutable extends Ref_viewModel_triggersMatch {
-    Immutable(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem pTelecareSystem, final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger pTrigger) {
+    Immutable(final TelecareSystem pTelecareSystem, final FixedIntervalTrigger pTrigger) {
       super(pTelecareSystem, pTrigger);
     }
     

@@ -2,6 +2,7 @@ package hu.bme.mit.concerto.telecare.example.tdk.view.design.patterns;
 
 import hu.bme.mit.concerto.telecare.example.tdk.view.design.patterns.Element_sensorMatch;
 import hu.bme.mit.concerto.telecare.example.tdk.view.design.patterns.util.Element_sensorQuerySpecification;
+import hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
@@ -27,10 +28,17 @@ import org.eclipse.incquery.runtime.util.IncQueryLoggingUtil;
  * <p>Original source:
  * <code><pre>
  * pattern element_sensor(sensor : Sensor) {
- * 	Sensor.measurementTypes(sensor, mt1);
- * 	Sensor.measurementTypes(sensor, mt2);
+ * 	Sensor.connectedTo(sensor, gateway);
  * 	
- * 	mt1 != mt2;
+ * 	Gateway.triggers(gateway, ect);
+ * 	Gateway.triggers(gateway, fit);
+ * 	
+ * 	EventCompletedTrigger.triggeredEvents(ect, re);
+ * 	ReportingEvent.address(re, _);
+ * 	
+ * 	FixedIntervalTrigger.triggeredEvents(fit, measurement);
+ * 	EventCompletedTrigger.triggeredBy(ect, measurement);
+ * 	Measurement.measurementType.sensor(measurement, sensor);
  * }
  * </pre></code>
  * 
@@ -100,7 +108,7 @@ public class Element_sensorMatcher extends BaseMatcher<Element_sensorMatch> {
    * @return matches represented as a Element_sensorMatch object.
    * 
    */
-  public Collection<Element_sensorMatch> getAllMatches(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor pSensor) {
+  public Collection<Element_sensorMatch> getAllMatches(final Sensor pSensor) {
     return rawGetAllMatches(new Object[]{pSensor});
   }
   
@@ -111,7 +119,7 @@ public class Element_sensorMatcher extends BaseMatcher<Element_sensorMatch> {
    * @return a match represented as a Element_sensorMatch object, or null if no match is found.
    * 
    */
-  public Element_sensorMatch getOneArbitraryMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor pSensor) {
+  public Element_sensorMatch getOneArbitraryMatch(final Sensor pSensor) {
     return rawGetOneArbitraryMatch(new Object[]{pSensor});
   }
   
@@ -122,7 +130,7 @@ public class Element_sensorMatcher extends BaseMatcher<Element_sensorMatch> {
    * @return true if the input is a valid (partial) match of the pattern.
    * 
    */
-  public boolean hasMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor pSensor) {
+  public boolean hasMatch(final Sensor pSensor) {
     return rawHasMatch(new Object[]{pSensor});
   }
   
@@ -132,7 +140,7 @@ public class Element_sensorMatcher extends BaseMatcher<Element_sensorMatch> {
    * @return the number of pattern matches found.
    * 
    */
-  public int countMatches(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor pSensor) {
+  public int countMatches(final Sensor pSensor) {
     return rawCountMatches(new Object[]{pSensor});
   }
   
@@ -142,7 +150,7 @@ public class Element_sensorMatcher extends BaseMatcher<Element_sensorMatch> {
    * @param processor the action that will process each pattern match.
    * 
    */
-  public void forEachMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor pSensor, final IMatchProcessor<? super Element_sensorMatch> processor) {
+  public void forEachMatch(final Sensor pSensor, final IMatchProcessor<? super Element_sensorMatch> processor) {
     rawForEachMatch(new Object[]{pSensor}, processor);
   }
   
@@ -154,7 +162,7 @@ public class Element_sensorMatcher extends BaseMatcher<Element_sensorMatch> {
    * @return true if the pattern has at least one match with the given parameter values, false if the processor was not invoked
    * 
    */
-  public boolean forOneArbitraryMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor pSensor, final IMatchProcessor<? super Element_sensorMatch> processor) {
+  public boolean forOneArbitraryMatch(final Sensor pSensor, final IMatchProcessor<? super Element_sensorMatch> processor) {
     return rawForOneArbitraryMatch(new Object[]{pSensor}, processor);
   }
   
@@ -166,7 +174,7 @@ public class Element_sensorMatcher extends BaseMatcher<Element_sensorMatch> {
    * @return the (partial) match object.
    * 
    */
-  public Element_sensorMatch newMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor pSensor) {
+  public Element_sensorMatch newMatch(final Sensor pSensor) {
     return Element_sensorMatch.newMatch(pSensor);
   }
   
@@ -175,8 +183,8 @@ public class Element_sensorMatcher extends BaseMatcher<Element_sensorMatch> {
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  protected /* Set<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor> */Object rawAccumulateAllValuesOfsensor(final Object[] parameters) {
-    Set<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor> results = new HashSet<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor>();
+  protected Set<Sensor> rawAccumulateAllValuesOfsensor(final Object[] parameters) {
+    Set<Sensor> results = new HashSet<Sensor>();
     rawAccumulateAllValues(POSITION_SENSOR, parameters, results);
     return results;
   }
@@ -186,7 +194,7 @@ public class Element_sensorMatcher extends BaseMatcher<Element_sensorMatch> {
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public /* Set<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor> */Object getAllValuesOfsensor() {
+  public Set<Sensor> getAllValuesOfsensor() {
     return rawAccumulateAllValuesOfsensor(emptyArray());
   }
   

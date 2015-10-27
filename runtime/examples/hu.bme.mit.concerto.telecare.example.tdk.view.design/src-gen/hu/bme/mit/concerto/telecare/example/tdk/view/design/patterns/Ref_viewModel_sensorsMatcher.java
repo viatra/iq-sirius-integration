@@ -2,6 +2,8 @@ package hu.bme.mit.concerto.telecare.example.tdk.view.design.patterns;
 
 import hu.bme.mit.concerto.telecare.example.tdk.view.design.patterns.Ref_viewModel_sensorsMatch;
 import hu.bme.mit.concerto.telecare.example.tdk.view.design.patterns.util.Ref_viewModel_sensorsQuerySpecification;
+import hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor;
+import hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
@@ -103,7 +105,7 @@ public class Ref_viewModel_sensorsMatcher extends BaseMatcher<Ref_viewModel_sens
    * @return matches represented as a Ref_viewModel_sensorsMatch object.
    * 
    */
-  public Collection<Ref_viewModel_sensorsMatch> getAllMatches(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem pTelecareSystem, final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor pSensor) {
+  public Collection<Ref_viewModel_sensorsMatch> getAllMatches(final TelecareSystem pTelecareSystem, final Sensor pSensor) {
     return rawGetAllMatches(new Object[]{pTelecareSystem, pSensor});
   }
   
@@ -115,7 +117,7 @@ public class Ref_viewModel_sensorsMatcher extends BaseMatcher<Ref_viewModel_sens
    * @return a match represented as a Ref_viewModel_sensorsMatch object, or null if no match is found.
    * 
    */
-  public Ref_viewModel_sensorsMatch getOneArbitraryMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem pTelecareSystem, final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor pSensor) {
+  public Ref_viewModel_sensorsMatch getOneArbitraryMatch(final TelecareSystem pTelecareSystem, final Sensor pSensor) {
     return rawGetOneArbitraryMatch(new Object[]{pTelecareSystem, pSensor});
   }
   
@@ -127,7 +129,7 @@ public class Ref_viewModel_sensorsMatcher extends BaseMatcher<Ref_viewModel_sens
    * @return true if the input is a valid (partial) match of the pattern.
    * 
    */
-  public boolean hasMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem pTelecareSystem, final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor pSensor) {
+  public boolean hasMatch(final TelecareSystem pTelecareSystem, final Sensor pSensor) {
     return rawHasMatch(new Object[]{pTelecareSystem, pSensor});
   }
   
@@ -138,7 +140,7 @@ public class Ref_viewModel_sensorsMatcher extends BaseMatcher<Ref_viewModel_sens
    * @return the number of pattern matches found.
    * 
    */
-  public int countMatches(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem pTelecareSystem, final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor pSensor) {
+  public int countMatches(final TelecareSystem pTelecareSystem, final Sensor pSensor) {
     return rawCountMatches(new Object[]{pTelecareSystem, pSensor});
   }
   
@@ -149,7 +151,7 @@ public class Ref_viewModel_sensorsMatcher extends BaseMatcher<Ref_viewModel_sens
    * @param processor the action that will process each pattern match.
    * 
    */
-  public void forEachMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem pTelecareSystem, final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor pSensor, final IMatchProcessor<? super Ref_viewModel_sensorsMatch> processor) {
+  public void forEachMatch(final TelecareSystem pTelecareSystem, final Sensor pSensor, final IMatchProcessor<? super Ref_viewModel_sensorsMatch> processor) {
     rawForEachMatch(new Object[]{pTelecareSystem, pSensor}, processor);
   }
   
@@ -162,7 +164,7 @@ public class Ref_viewModel_sensorsMatcher extends BaseMatcher<Ref_viewModel_sens
    * @return true if the pattern has at least one match with the given parameter values, false if the processor was not invoked
    * 
    */
-  public boolean forOneArbitraryMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem pTelecareSystem, final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor pSensor, final IMatchProcessor<? super Ref_viewModel_sensorsMatch> processor) {
+  public boolean forOneArbitraryMatch(final TelecareSystem pTelecareSystem, final Sensor pSensor, final IMatchProcessor<? super Ref_viewModel_sensorsMatch> processor) {
     return rawForOneArbitraryMatch(new Object[]{pTelecareSystem, pSensor}, processor);
   }
   
@@ -175,7 +177,7 @@ public class Ref_viewModel_sensorsMatcher extends BaseMatcher<Ref_viewModel_sens
    * @return the (partial) match object.
    * 
    */
-  public Ref_viewModel_sensorsMatch newMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem pTelecareSystem, final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor pSensor) {
+  public Ref_viewModel_sensorsMatch newMatch(final TelecareSystem pTelecareSystem, final Sensor pSensor) {
     return Ref_viewModel_sensorsMatch.newMatch(pTelecareSystem, pSensor);
   }
   
@@ -184,8 +186,8 @@ public class Ref_viewModel_sensorsMatcher extends BaseMatcher<Ref_viewModel_sens
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  protected /* Set<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem> */Object rawAccumulateAllValuesOftelecareSystem(final Object[] parameters) {
-    Set<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem> results = new HashSet<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem>();
+  protected Set<TelecareSystem> rawAccumulateAllValuesOftelecareSystem(final Object[] parameters) {
+    Set<TelecareSystem> results = new HashSet<TelecareSystem>();
     rawAccumulateAllValues(POSITION_TELECARESYSTEM, parameters, results);
     return results;
   }
@@ -195,7 +197,7 @@ public class Ref_viewModel_sensorsMatcher extends BaseMatcher<Ref_viewModel_sens
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public /* Set<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem> */Object getAllValuesOftelecareSystem() {
+  public Set<TelecareSystem> getAllValuesOftelecareSystem() {
     return rawAccumulateAllValuesOftelecareSystem(emptyArray());
   }
   
@@ -204,7 +206,7 @@ public class Ref_viewModel_sensorsMatcher extends BaseMatcher<Ref_viewModel_sens
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public /* Set<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem> */Object getAllValuesOftelecareSystem(final Ref_viewModel_sensorsMatch partialMatch) {
+  public Set<TelecareSystem> getAllValuesOftelecareSystem(final Ref_viewModel_sensorsMatch partialMatch) {
     return rawAccumulateAllValuesOftelecareSystem(partialMatch.toArray());
   }
   
@@ -213,7 +215,7 @@ public class Ref_viewModel_sensorsMatcher extends BaseMatcher<Ref_viewModel_sens
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public /* Set<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem> */Object getAllValuesOftelecareSystem(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor pSensor) {
+  public Set<TelecareSystem> getAllValuesOftelecareSystem(final Sensor pSensor) {
     return rawAccumulateAllValuesOftelecareSystem(new Object[]{
     null, 
     pSensor
@@ -225,8 +227,8 @@ public class Ref_viewModel_sensorsMatcher extends BaseMatcher<Ref_viewModel_sens
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  protected /* Set<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor> */Object rawAccumulateAllValuesOfsensor(final Object[] parameters) {
-    Set<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor> results = new HashSet<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor>();
+  protected Set<Sensor> rawAccumulateAllValuesOfsensor(final Object[] parameters) {
+    Set<Sensor> results = new HashSet<Sensor>();
     rawAccumulateAllValues(POSITION_SENSOR, parameters, results);
     return results;
   }
@@ -236,7 +238,7 @@ public class Ref_viewModel_sensorsMatcher extends BaseMatcher<Ref_viewModel_sens
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public /* Set<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor> */Object getAllValuesOfsensor() {
+  public Set<Sensor> getAllValuesOfsensor() {
     return rawAccumulateAllValuesOfsensor(emptyArray());
   }
   
@@ -245,7 +247,7 @@ public class Ref_viewModel_sensorsMatcher extends BaseMatcher<Ref_viewModel_sens
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public /* Set<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor> */Object getAllValuesOfsensor(final Ref_viewModel_sensorsMatch partialMatch) {
+  public Set<Sensor> getAllValuesOfsensor(final Ref_viewModel_sensorsMatch partialMatch) {
     return rawAccumulateAllValuesOfsensor(partialMatch.toArray());
   }
   
@@ -254,7 +256,7 @@ public class Ref_viewModel_sensorsMatcher extends BaseMatcher<Ref_viewModel_sens
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public /* Set<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor> */Object getAllValuesOfsensor(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem pTelecareSystem) {
+  public Set<Sensor> getAllValuesOfsensor(final TelecareSystem pTelecareSystem) {
     return rawAccumulateAllValuesOfsensor(new Object[]{
     pTelecareSystem, 
     null

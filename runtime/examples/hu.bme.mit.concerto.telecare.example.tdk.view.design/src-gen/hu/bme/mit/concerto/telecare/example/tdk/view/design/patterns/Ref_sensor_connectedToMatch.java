@@ -1,6 +1,8 @@
 package hu.bme.mit.concerto.telecare.example.tdk.view.design.patterns;
 
 import hu.bme.mit.concerto.telecare.example.tdk.view.design.patterns.util.Ref_sensor_connectedToQuerySpecification;
+import hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host;
+import hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor;
 import java.util.Arrays;
 import java.util.List;
 import org.eclipse.incquery.runtime.api.IPatternMatch;
@@ -22,13 +24,13 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  */
 @SuppressWarnings("all")
 public abstract class Ref_sensor_connectedToMatch extends BasePatternMatch {
-  private hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor fSensor;
+  private Sensor fSensor;
   
-  private hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host fHost;
+  private Host fHost;
   
   private static List<String> parameterNames = makeImmutableList("sensor", "host");
   
-  private Ref_sensor_connectedToMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor pSensor, final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host pHost) {
+  private Ref_sensor_connectedToMatch(final Sensor pSensor, final Host pHost) {
     this.fSensor = pSensor;
     this.fHost = pHost;
   }
@@ -40,11 +42,11 @@ public abstract class Ref_sensor_connectedToMatch extends BasePatternMatch {
     return null;
   }
   
-  public hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor getSensor() {
+  public Sensor getSensor() {
     return this.fSensor;
   }
   
-  public hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host getHost() {
+  public Host getHost() {
     return this.fHost;
   }
   
@@ -62,12 +64,12 @@ public abstract class Ref_sensor_connectedToMatch extends BasePatternMatch {
     return false;
   }
   
-  public void setSensor(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor pSensor) {
+  public void setSensor(final Sensor pSensor) {
     if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fSensor = pSensor;
   }
   
-  public void setHost(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host pHost) {
+  public void setHost(final Host pHost) {
     if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fHost = pHost;
   }
@@ -165,7 +167,7 @@ public abstract class Ref_sensor_connectedToMatch extends BasePatternMatch {
    * @return the new, mutable (partial) match object.
    * 
    */
-  public static Ref_sensor_connectedToMatch newMutableMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor pSensor, final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host pHost) {
+  public static Ref_sensor_connectedToMatch newMutableMatch(final Sensor pSensor, final Host pHost) {
     return new Mutable(pSensor, pHost);
   }
   
@@ -178,12 +180,12 @@ public abstract class Ref_sensor_connectedToMatch extends BasePatternMatch {
    * @return the (partial) match object.
    * 
    */
-  public static Ref_sensor_connectedToMatch newMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor pSensor, final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host pHost) {
+  public static Ref_sensor_connectedToMatch newMatch(final Sensor pSensor, final Host pHost) {
     return new Immutable(pSensor, pHost);
   }
   
   private static final class Mutable extends Ref_sensor_connectedToMatch {
-    Mutable(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor pSensor, final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host pHost) {
+    Mutable(final Sensor pSensor, final Host pHost) {
       super(pSensor, pHost);
     }
     
@@ -194,7 +196,7 @@ public abstract class Ref_sensor_connectedToMatch extends BasePatternMatch {
   }
   
   private static final class Immutable extends Ref_sensor_connectedToMatch {
-    Immutable(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor pSensor, final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host pHost) {
+    Immutable(final Sensor pSensor, final Host pHost) {
       super(pSensor, pHost);
     }
     

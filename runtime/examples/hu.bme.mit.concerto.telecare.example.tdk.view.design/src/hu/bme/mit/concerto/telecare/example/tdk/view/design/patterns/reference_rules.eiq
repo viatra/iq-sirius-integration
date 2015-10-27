@@ -14,7 +14,7 @@ pattern ref_viewModel_triggers(telecareSystem : TelecareSystem, trigger : FixedI
 	find element_viewModel(telecareSystem);
 	find element_trigger(trigger);
 	
-	TelecareSystem.triggers(telecareSystem, trigger);
+	TelecareSystem.gateways.triggers(telecareSystem, trigger);
 }
 
 pattern ref_viewModel_sensors(telecareSystem : TelecareSystem, sensor : Sensor) {

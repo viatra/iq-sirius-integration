@@ -29,7 +29,7 @@
       id="2"
       structuralFeatureRuleDescriptors="_TBZ3oGrUEeW3_8IX3m-4nA">
     <elementType
-        href="platform:/plugin/hu.bme.mit.inf.concerto.telecare.example.tdk.view.model/model/tdktelecareview.ecore#//Tigger"/>
+        href="platform:/plugin/hu.bme.mit.inf.concerto.telecare.example.tdk.view.model/model/tdktelecareview.ecore#//Trigger"/>
   </ruleDescriptors>
   <ruleDescriptors
       xsi:type="org.eclipse.incquery.viewmodel.configuration:ElementRuleDescriptor"

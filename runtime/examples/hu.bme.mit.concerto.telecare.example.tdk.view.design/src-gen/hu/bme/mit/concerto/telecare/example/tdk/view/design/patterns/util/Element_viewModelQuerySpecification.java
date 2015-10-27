@@ -84,7 +84,7 @@ public final class Element_viewModelQuerySpecification extends BaseGeneratedEMFQ
     
     @Override
     public List<PParameter> getParameters() {
-      return Arrays.asList(new PParameter("telecareSystem", ""));
+      return Arrays.asList(new PParameter("telecareSystem", "hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem"));
     }
     
     @Override

@@ -91,7 +91,7 @@ public final class Attr_sensor_nameQuerySpecification extends BaseGeneratedEMFQu
     
     @Override
     public List<PParameter> getParameters() {
-      return Arrays.asList(new PParameter("sensor", ""),new PParameter("value", "java.lang.String"));
+      return Arrays.asList(new PParameter("sensor", "hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor"),new PParameter("value", "java.lang.String"));
     }
     
     @Override

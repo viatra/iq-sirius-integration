@@ -2,6 +2,7 @@ package hu.bme.mit.concerto.telecare.example.tdk.view.design.patterns;
 
 import hu.bme.mit.concerto.telecare.example.tdk.view.design.patterns.Element_viewModelMatch;
 import hu.bme.mit.concerto.telecare.example.tdk.view.design.patterns.util.Element_viewModelQuerySpecification;
+import hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
@@ -97,7 +98,7 @@ public class Element_viewModelMatcher extends BaseMatcher<Element_viewModelMatch
    * @return matches represented as a Element_viewModelMatch object.
    * 
    */
-  public Collection<Element_viewModelMatch> getAllMatches(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem pTelecareSystem) {
+  public Collection<Element_viewModelMatch> getAllMatches(final TelecareSystem pTelecareSystem) {
     return rawGetAllMatches(new Object[]{pTelecareSystem});
   }
   
@@ -108,7 +109,7 @@ public class Element_viewModelMatcher extends BaseMatcher<Element_viewModelMatch
    * @return a match represented as a Element_viewModelMatch object, or null if no match is found.
    * 
    */
-  public Element_viewModelMatch getOneArbitraryMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem pTelecareSystem) {
+  public Element_viewModelMatch getOneArbitraryMatch(final TelecareSystem pTelecareSystem) {
     return rawGetOneArbitraryMatch(new Object[]{pTelecareSystem});
   }
   
@@ -119,7 +120,7 @@ public class Element_viewModelMatcher extends BaseMatcher<Element_viewModelMatch
    * @return true if the input is a valid (partial) match of the pattern.
    * 
    */
-  public boolean hasMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem pTelecareSystem) {
+  public boolean hasMatch(final TelecareSystem pTelecareSystem) {
     return rawHasMatch(new Object[]{pTelecareSystem});
   }
   
@@ -129,7 +130,7 @@ public class Element_viewModelMatcher extends BaseMatcher<Element_viewModelMatch
    * @return the number of pattern matches found.
    * 
    */
-  public int countMatches(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem pTelecareSystem) {
+  public int countMatches(final TelecareSystem pTelecareSystem) {
     return rawCountMatches(new Object[]{pTelecareSystem});
   }
   
@@ -139,7 +140,7 @@ public class Element_viewModelMatcher extends BaseMatcher<Element_viewModelMatch
    * @param processor the action that will process each pattern match.
    * 
    */
-  public void forEachMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem pTelecareSystem, final IMatchProcessor<? super Element_viewModelMatch> processor) {
+  public void forEachMatch(final TelecareSystem pTelecareSystem, final IMatchProcessor<? super Element_viewModelMatch> processor) {
     rawForEachMatch(new Object[]{pTelecareSystem}, processor);
   }
   
@@ -151,7 +152,7 @@ public class Element_viewModelMatcher extends BaseMatcher<Element_viewModelMatch
    * @return true if the pattern has at least one match with the given parameter values, false if the processor was not invoked
    * 
    */
-  public boolean forOneArbitraryMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem pTelecareSystem, final IMatchProcessor<? super Element_viewModelMatch> processor) {
+  public boolean forOneArbitraryMatch(final TelecareSystem pTelecareSystem, final IMatchProcessor<? super Element_viewModelMatch> processor) {
     return rawForOneArbitraryMatch(new Object[]{pTelecareSystem}, processor);
   }
   
@@ -163,7 +164,7 @@ public class Element_viewModelMatcher extends BaseMatcher<Element_viewModelMatch
    * @return the (partial) match object.
    * 
    */
-  public Element_viewModelMatch newMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem pTelecareSystem) {
+  public Element_viewModelMatch newMatch(final TelecareSystem pTelecareSystem) {
     return Element_viewModelMatch.newMatch(pTelecareSystem);
   }
   
@@ -172,8 +173,8 @@ public class Element_viewModelMatcher extends BaseMatcher<Element_viewModelMatch
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  protected /* Set<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem> */Object rawAccumulateAllValuesOftelecareSystem(final Object[] parameters) {
-    Set<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem> results = new HashSet<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem>();
+  protected Set<TelecareSystem> rawAccumulateAllValuesOftelecareSystem(final Object[] parameters) {
+    Set<TelecareSystem> results = new HashSet<TelecareSystem>();
     rawAccumulateAllValues(POSITION_TELECARESYSTEM, parameters, results);
     return results;
   }
@@ -183,7 +184,7 @@ public class Element_viewModelMatcher extends BaseMatcher<Element_viewModelMatch
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public /* Set<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem> */Object getAllValuesOftelecareSystem() {
+  public Set<TelecareSystem> getAllValuesOftelecareSystem() {
     return rawAccumulateAllValuesOftelecareSystem(emptyArray());
   }
   

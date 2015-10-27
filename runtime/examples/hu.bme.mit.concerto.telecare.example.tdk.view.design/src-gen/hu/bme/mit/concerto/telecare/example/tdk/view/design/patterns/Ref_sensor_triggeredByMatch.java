@@ -1,6 +1,8 @@
 package hu.bme.mit.concerto.telecare.example.tdk.view.design.patterns;
 
 import hu.bme.mit.concerto.telecare.example.tdk.view.design.patterns.util.Ref_sensor_triggeredByQuerySpecification;
+import hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger;
+import hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor;
 import java.util.Arrays;
 import java.util.List;
 import org.eclipse.incquery.runtime.api.IPatternMatch;
@@ -22,13 +24,13 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  */
 @SuppressWarnings("all")
 public abstract class Ref_sensor_triggeredByMatch extends BasePatternMatch {
-  private hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor fSensor;
+  private Sensor fSensor;
   
-  private hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger fTrigger;
+  private FixedIntervalTrigger fTrigger;
   
   private static List<String> parameterNames = makeImmutableList("sensor", "trigger");
   
-  private Ref_sensor_triggeredByMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor pSensor, final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger pTrigger) {
+  private Ref_sensor_triggeredByMatch(final Sensor pSensor, final FixedIntervalTrigger pTrigger) {
     this.fSensor = pSensor;
     this.fTrigger = pTrigger;
   }
@@ -40,11 +42,11 @@ public abstract class Ref_sensor_triggeredByMatch extends BasePatternMatch {
     return null;
   }
   
-  public hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor getSensor() {
+  public Sensor getSensor() {
     return this.fSensor;
   }
   
-  public hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger getTrigger() {
+  public FixedIntervalTrigger getTrigger() {
     return this.fTrigger;
   }
   
@@ -62,12 +64,12 @@ public abstract class Ref_sensor_triggeredByMatch extends BasePatternMatch {
     return false;
   }
   
-  public void setSensor(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor pSensor) {
+  public void setSensor(final Sensor pSensor) {
     if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fSensor = pSensor;
   }
   
-  public void setTrigger(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger pTrigger) {
+  public void setTrigger(final FixedIntervalTrigger pTrigger) {
     if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fTrigger = pTrigger;
   }
@@ -165,7 +167,7 @@ public abstract class Ref_sensor_triggeredByMatch extends BasePatternMatch {
    * @return the new, mutable (partial) match object.
    * 
    */
-  public static Ref_sensor_triggeredByMatch newMutableMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor pSensor, final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger pTrigger) {
+  public static Ref_sensor_triggeredByMatch newMutableMatch(final Sensor pSensor, final FixedIntervalTrigger pTrigger) {
     return new Mutable(pSensor, pTrigger);
   }
   
@@ -178,12 +180,12 @@ public abstract class Ref_sensor_triggeredByMatch extends BasePatternMatch {
    * @return the (partial) match object.
    * 
    */
-  public static Ref_sensor_triggeredByMatch newMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor pSensor, final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger pTrigger) {
+  public static Ref_sensor_triggeredByMatch newMatch(final Sensor pSensor, final FixedIntervalTrigger pTrigger) {
     return new Immutable(pSensor, pTrigger);
   }
   
   private static final class Mutable extends Ref_sensor_triggeredByMatch {
-    Mutable(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor pSensor, final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger pTrigger) {
+    Mutable(final Sensor pSensor, final FixedIntervalTrigger pTrigger) {
       super(pSensor, pTrigger);
     }
     
@@ -194,7 +196,7 @@ public abstract class Ref_sensor_triggeredByMatch extends BasePatternMatch {
   }
   
   private static final class Immutable extends Ref_sensor_triggeredByMatch {
-    Immutable(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor pSensor, final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger pTrigger) {
+    Immutable(final Sensor pSensor, final FixedIntervalTrigger pTrigger) {
       super(pSensor, pTrigger);
     }
     

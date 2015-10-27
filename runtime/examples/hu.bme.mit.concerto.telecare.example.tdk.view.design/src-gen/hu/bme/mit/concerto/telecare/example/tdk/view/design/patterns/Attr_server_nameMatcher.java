@@ -2,6 +2,7 @@ package hu.bme.mit.concerto.telecare.example.tdk.view.design.patterns;
 
 import hu.bme.mit.concerto.telecare.example.tdk.view.design.patterns.Attr_server_nameMatch;
 import hu.bme.mit.concerto.telecare.example.tdk.view.design.patterns.util.Attr_server_nameQuerySpecification;
+import hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
@@ -104,7 +105,7 @@ public class Attr_server_nameMatcher extends BaseMatcher<Attr_server_nameMatch> 
    * @return matches represented as a Attr_server_nameMatch object.
    * 
    */
-  public Collection<Attr_server_nameMatch> getAllMatches(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host pHost, final String pValue) {
+  public Collection<Attr_server_nameMatch> getAllMatches(final Host pHost, final String pValue) {
     return rawGetAllMatches(new Object[]{pHost, pValue});
   }
   
@@ -116,7 +117,7 @@ public class Attr_server_nameMatcher extends BaseMatcher<Attr_server_nameMatch> 
    * @return a match represented as a Attr_server_nameMatch object, or null if no match is found.
    * 
    */
-  public Attr_server_nameMatch getOneArbitraryMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host pHost, final String pValue) {
+  public Attr_server_nameMatch getOneArbitraryMatch(final Host pHost, final String pValue) {
     return rawGetOneArbitraryMatch(new Object[]{pHost, pValue});
   }
   
@@ -128,7 +129,7 @@ public class Attr_server_nameMatcher extends BaseMatcher<Attr_server_nameMatch> 
    * @return true if the input is a valid (partial) match of the pattern.
    * 
    */
-  public boolean hasMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host pHost, final String pValue) {
+  public boolean hasMatch(final Host pHost, final String pValue) {
     return rawHasMatch(new Object[]{pHost, pValue});
   }
   
@@ -139,7 +140,7 @@ public class Attr_server_nameMatcher extends BaseMatcher<Attr_server_nameMatch> 
    * @return the number of pattern matches found.
    * 
    */
-  public int countMatches(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host pHost, final String pValue) {
+  public int countMatches(final Host pHost, final String pValue) {
     return rawCountMatches(new Object[]{pHost, pValue});
   }
   
@@ -150,7 +151,7 @@ public class Attr_server_nameMatcher extends BaseMatcher<Attr_server_nameMatch> 
    * @param processor the action that will process each pattern match.
    * 
    */
-  public void forEachMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host pHost, final String pValue, final IMatchProcessor<? super Attr_server_nameMatch> processor) {
+  public void forEachMatch(final Host pHost, final String pValue, final IMatchProcessor<? super Attr_server_nameMatch> processor) {
     rawForEachMatch(new Object[]{pHost, pValue}, processor);
   }
   
@@ -163,7 +164,7 @@ public class Attr_server_nameMatcher extends BaseMatcher<Attr_server_nameMatch> 
    * @return true if the pattern has at least one match with the given parameter values, false if the processor was not invoked
    * 
    */
-  public boolean forOneArbitraryMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host pHost, final String pValue, final IMatchProcessor<? super Attr_server_nameMatch> processor) {
+  public boolean forOneArbitraryMatch(final Host pHost, final String pValue, final IMatchProcessor<? super Attr_server_nameMatch> processor) {
     return rawForOneArbitraryMatch(new Object[]{pHost, pValue}, processor);
   }
   
@@ -176,7 +177,7 @@ public class Attr_server_nameMatcher extends BaseMatcher<Attr_server_nameMatch> 
    * @return the (partial) match object.
    * 
    */
-  public Attr_server_nameMatch newMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host pHost, final String pValue) {
+  public Attr_server_nameMatch newMatch(final Host pHost, final String pValue) {
     return Attr_server_nameMatch.newMatch(pHost, pValue);
   }
   
@@ -185,8 +186,8 @@ public class Attr_server_nameMatcher extends BaseMatcher<Attr_server_nameMatch> 
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  protected /* Set<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host> */Object rawAccumulateAllValuesOfhost(final Object[] parameters) {
-    Set<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host> results = new HashSet<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host>();
+  protected Set<Host> rawAccumulateAllValuesOfhost(final Object[] parameters) {
+    Set<Host> results = new HashSet<Host>();
     rawAccumulateAllValues(POSITION_HOST, parameters, results);
     return results;
   }
@@ -196,7 +197,7 @@ public class Attr_server_nameMatcher extends BaseMatcher<Attr_server_nameMatch> 
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public /* Set<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host> */Object getAllValuesOfhost() {
+  public Set<Host> getAllValuesOfhost() {
     return rawAccumulateAllValuesOfhost(emptyArray());
   }
   
@@ -205,7 +206,7 @@ public class Attr_server_nameMatcher extends BaseMatcher<Attr_server_nameMatch> 
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public /* Set<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host> */Object getAllValuesOfhost(final Attr_server_nameMatch partialMatch) {
+  public Set<Host> getAllValuesOfhost(final Attr_server_nameMatch partialMatch) {
     return rawAccumulateAllValuesOfhost(partialMatch.toArray());
   }
   
@@ -214,7 +215,7 @@ public class Attr_server_nameMatcher extends BaseMatcher<Attr_server_nameMatch> 
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public /* Set<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host> */Object getAllValuesOfhost(final String pValue) {
+  public Set<Host> getAllValuesOfhost(final String pValue) {
     return rawAccumulateAllValuesOfhost(new Object[]{
     null, 
     pValue
@@ -255,7 +256,7 @@ public class Attr_server_nameMatcher extends BaseMatcher<Attr_server_nameMatch> 
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<String> getAllValuesOfvalue(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host pHost) {
+  public Set<String> getAllValuesOfvalue(final Host pHost) {
     return rawAccumulateAllValuesOfvalue(new Object[]{
     pHost, 
     null

@@ -89,7 +89,7 @@ public final class Ref_sensor_connectedToQuerySpecification extends BaseGenerate
     
     @Override
     public List<PParameter> getParameters() {
-      return Arrays.asList(new PParameter("sensor", ""),new PParameter("host", ""));
+      return Arrays.asList(new PParameter("sensor", "hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor"),new PParameter("host", "hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host"));
     }
     
     @Override

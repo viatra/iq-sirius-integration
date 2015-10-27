@@ -2,6 +2,7 @@ package hu.bme.mit.concerto.telecare.example.tdk.view.design.patterns;
 
 import hu.bme.mit.concerto.telecare.example.tdk.view.design.patterns.Attr_trigger_nameMatch;
 import hu.bme.mit.concerto.telecare.example.tdk.view.design.patterns.util.Attr_trigger_nameQuerySpecification;
+import hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
@@ -104,7 +105,7 @@ public class Attr_trigger_nameMatcher extends BaseMatcher<Attr_trigger_nameMatch
    * @return matches represented as a Attr_trigger_nameMatch object.
    * 
    */
-  public Collection<Attr_trigger_nameMatch> getAllMatches(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger pTrigger, final String pValue) {
+  public Collection<Attr_trigger_nameMatch> getAllMatches(final FixedIntervalTrigger pTrigger, final String pValue) {
     return rawGetAllMatches(new Object[]{pTrigger, pValue});
   }
   
@@ -116,7 +117,7 @@ public class Attr_trigger_nameMatcher extends BaseMatcher<Attr_trigger_nameMatch
    * @return a match represented as a Attr_trigger_nameMatch object, or null if no match is found.
    * 
    */
-  public Attr_trigger_nameMatch getOneArbitraryMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger pTrigger, final String pValue) {
+  public Attr_trigger_nameMatch getOneArbitraryMatch(final FixedIntervalTrigger pTrigger, final String pValue) {
     return rawGetOneArbitraryMatch(new Object[]{pTrigger, pValue});
   }
   
@@ -128,7 +129,7 @@ public class Attr_trigger_nameMatcher extends BaseMatcher<Attr_trigger_nameMatch
    * @return true if the input is a valid (partial) match of the pattern.
    * 
    */
-  public boolean hasMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger pTrigger, final String pValue) {
+  public boolean hasMatch(final FixedIntervalTrigger pTrigger, final String pValue) {
     return rawHasMatch(new Object[]{pTrigger, pValue});
   }
   
@@ -139,7 +140,7 @@ public class Attr_trigger_nameMatcher extends BaseMatcher<Attr_trigger_nameMatch
    * @return the number of pattern matches found.
    * 
    */
-  public int countMatches(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger pTrigger, final String pValue) {
+  public int countMatches(final FixedIntervalTrigger pTrigger, final String pValue) {
     return rawCountMatches(new Object[]{pTrigger, pValue});
   }
   
@@ -150,7 +151,7 @@ public class Attr_trigger_nameMatcher extends BaseMatcher<Attr_trigger_nameMatch
    * @param processor the action that will process each pattern match.
    * 
    */
-  public void forEachMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger pTrigger, final String pValue, final IMatchProcessor<? super Attr_trigger_nameMatch> processor) {
+  public void forEachMatch(final FixedIntervalTrigger pTrigger, final String pValue, final IMatchProcessor<? super Attr_trigger_nameMatch> processor) {
     rawForEachMatch(new Object[]{pTrigger, pValue}, processor);
   }
   
@@ -163,7 +164,7 @@ public class Attr_trigger_nameMatcher extends BaseMatcher<Attr_trigger_nameMatch
    * @return true if the pattern has at least one match with the given parameter values, false if the processor was not invoked
    * 
    */
-  public boolean forOneArbitraryMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger pTrigger, final String pValue, final IMatchProcessor<? super Attr_trigger_nameMatch> processor) {
+  public boolean forOneArbitraryMatch(final FixedIntervalTrigger pTrigger, final String pValue, final IMatchProcessor<? super Attr_trigger_nameMatch> processor) {
     return rawForOneArbitraryMatch(new Object[]{pTrigger, pValue}, processor);
   }
   
@@ -176,7 +177,7 @@ public class Attr_trigger_nameMatcher extends BaseMatcher<Attr_trigger_nameMatch
    * @return the (partial) match object.
    * 
    */
-  public Attr_trigger_nameMatch newMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger pTrigger, final String pValue) {
+  public Attr_trigger_nameMatch newMatch(final FixedIntervalTrigger pTrigger, final String pValue) {
     return Attr_trigger_nameMatch.newMatch(pTrigger, pValue);
   }
   
@@ -185,8 +186,8 @@ public class Attr_trigger_nameMatcher extends BaseMatcher<Attr_trigger_nameMatch
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  protected /* Set<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger> */Object rawAccumulateAllValuesOftrigger(final Object[] parameters) {
-    Set<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger> results = new HashSet<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger>();
+  protected Set<FixedIntervalTrigger> rawAccumulateAllValuesOftrigger(final Object[] parameters) {
+    Set<FixedIntervalTrigger> results = new HashSet<FixedIntervalTrigger>();
     rawAccumulateAllValues(POSITION_TRIGGER, parameters, results);
     return results;
   }
@@ -196,7 +197,7 @@ public class Attr_trigger_nameMatcher extends BaseMatcher<Attr_trigger_nameMatch
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public /* Set<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger> */Object getAllValuesOftrigger() {
+  public Set<FixedIntervalTrigger> getAllValuesOftrigger() {
     return rawAccumulateAllValuesOftrigger(emptyArray());
   }
   
@@ -205,7 +206,7 @@ public class Attr_trigger_nameMatcher extends BaseMatcher<Attr_trigger_nameMatch
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public /* Set<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger> */Object getAllValuesOftrigger(final Attr_trigger_nameMatch partialMatch) {
+  public Set<FixedIntervalTrigger> getAllValuesOftrigger(final Attr_trigger_nameMatch partialMatch) {
     return rawAccumulateAllValuesOftrigger(partialMatch.toArray());
   }
   
@@ -214,7 +215,7 @@ public class Attr_trigger_nameMatcher extends BaseMatcher<Attr_trigger_nameMatch
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public /* Set<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger> */Object getAllValuesOftrigger(final String pValue) {
+  public Set<FixedIntervalTrigger> getAllValuesOftrigger(final String pValue) {
     return rawAccumulateAllValuesOftrigger(new Object[]{
     null, 
     pValue
@@ -255,7 +256,7 @@ public class Attr_trigger_nameMatcher extends BaseMatcher<Attr_trigger_nameMatch
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<String> getAllValuesOfvalue(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger pTrigger) {
+  public Set<String> getAllValuesOfvalue(final FixedIntervalTrigger pTrigger) {
     return rawAccumulateAllValuesOfvalue(new Object[]{
     pTrigger, 
     null

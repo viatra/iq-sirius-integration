@@ -1,6 +1,7 @@
 package hu.bme.mit.concerto.telecare.example.tdk.view.design.patterns;
 
 import hu.bme.mit.concerto.telecare.example.tdk.view.design.patterns.util.Attr_trigger_nameQuerySpecification;
+import hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger;
 import java.util.Arrays;
 import java.util.List;
 import org.eclipse.incquery.runtime.api.IPatternMatch;
@@ -22,13 +23,13 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  */
 @SuppressWarnings("all")
 public abstract class Attr_trigger_nameMatch extends BasePatternMatch {
-  private hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger fTrigger;
+  private FixedIntervalTrigger fTrigger;
   
   private String fValue;
   
   private static List<String> parameterNames = makeImmutableList("trigger", "value");
   
-  private Attr_trigger_nameMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger pTrigger, final String pValue) {
+  private Attr_trigger_nameMatch(final FixedIntervalTrigger pTrigger, final String pValue) {
     this.fTrigger = pTrigger;
     this.fValue = pValue;
   }
@@ -40,7 +41,7 @@ public abstract class Attr_trigger_nameMatch extends BasePatternMatch {
     return null;
   }
   
-  public hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger getTrigger() {
+  public FixedIntervalTrigger getTrigger() {
     return this.fTrigger;
   }
   
@@ -62,7 +63,7 @@ public abstract class Attr_trigger_nameMatch extends BasePatternMatch {
     return false;
   }
   
-  public void setTrigger(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger pTrigger) {
+  public void setTrigger(final FixedIntervalTrigger pTrigger) {
     if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fTrigger = pTrigger;
   }
@@ -165,7 +166,7 @@ public abstract class Attr_trigger_nameMatch extends BasePatternMatch {
    * @return the new, mutable (partial) match object.
    * 
    */
-  public static Attr_trigger_nameMatch newMutableMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger pTrigger, final String pValue) {
+  public static Attr_trigger_nameMatch newMutableMatch(final FixedIntervalTrigger pTrigger, final String pValue) {
     return new Mutable(pTrigger, pValue);
   }
   
@@ -178,12 +179,12 @@ public abstract class Attr_trigger_nameMatch extends BasePatternMatch {
    * @return the (partial) match object.
    * 
    */
-  public static Attr_trigger_nameMatch newMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger pTrigger, final String pValue) {
+  public static Attr_trigger_nameMatch newMatch(final FixedIntervalTrigger pTrigger, final String pValue) {
     return new Immutable(pTrigger, pValue);
   }
   
   private static final class Mutable extends Attr_trigger_nameMatch {
-    Mutable(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger pTrigger, final String pValue) {
+    Mutable(final FixedIntervalTrigger pTrigger, final String pValue) {
       super(pTrigger, pValue);
     }
     
@@ -194,7 +195,7 @@ public abstract class Attr_trigger_nameMatch extends BasePatternMatch {
   }
   
   private static final class Immutable extends Attr_trigger_nameMatch {
-    Immutable(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger pTrigger, final String pValue) {
+    Immutable(final FixedIntervalTrigger pTrigger, final String pValue) {
       super(pTrigger, pValue);
     }
     

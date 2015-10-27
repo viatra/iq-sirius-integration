@@ -2,6 +2,7 @@ package hu.bme.mit.concerto.telecare.example.tdk.view.design.patterns;
 
 import hu.bme.mit.concerto.telecare.example.tdk.view.design.patterns.Element_serverMatch;
 import hu.bme.mit.concerto.telecare.example.tdk.view.design.patterns.util.Element_serverQuerySpecification;
+import hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
@@ -27,7 +28,13 @@ import org.eclipse.incquery.runtime.util.IncQueryLoggingUtil;
  * <p>Original source:
  * <code><pre>
  * pattern element_server(host : Host) {
- * 	ReportingEvent.address(_, host);
+ * 	TelecareSystem.gateways(_, gateway);
+ * 
+ * 	Gateway.triggers(gateway, ect);
+ * 
+ * 	EventCompletedTrigger(ect);	
+ * 	EventCompletedTrigger.triggeredEvents(ect, re);
+ * 	ReportingEvent.address(re, host);
  * }
  * </pre></code>
  * 
@@ -97,7 +104,7 @@ public class Element_serverMatcher extends BaseMatcher<Element_serverMatch> {
    * @return matches represented as a Element_serverMatch object.
    * 
    */
-  public Collection<Element_serverMatch> getAllMatches(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host pHost) {
+  public Collection<Element_serverMatch> getAllMatches(final Host pHost) {
     return rawGetAllMatches(new Object[]{pHost});
   }
   
@@ -108,7 +115,7 @@ public class Element_serverMatcher extends BaseMatcher<Element_serverMatch> {
    * @return a match represented as a Element_serverMatch object, or null if no match is found.
    * 
    */
-  public Element_serverMatch getOneArbitraryMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host pHost) {
+  public Element_serverMatch getOneArbitraryMatch(final Host pHost) {
     return rawGetOneArbitraryMatch(new Object[]{pHost});
   }
   
@@ -119,7 +126,7 @@ public class Element_serverMatcher extends BaseMatcher<Element_serverMatch> {
    * @return true if the input is a valid (partial) match of the pattern.
    * 
    */
-  public boolean hasMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host pHost) {
+  public boolean hasMatch(final Host pHost) {
     return rawHasMatch(new Object[]{pHost});
   }
   
@@ -129,7 +136,7 @@ public class Element_serverMatcher extends BaseMatcher<Element_serverMatch> {
    * @return the number of pattern matches found.
    * 
    */
-  public int countMatches(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host pHost) {
+  public int countMatches(final Host pHost) {
     return rawCountMatches(new Object[]{pHost});
   }
   
@@ -139,7 +146,7 @@ public class Element_serverMatcher extends BaseMatcher<Element_serverMatch> {
    * @param processor the action that will process each pattern match.
    * 
    */
-  public void forEachMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host pHost, final IMatchProcessor<? super Element_serverMatch> processor) {
+  public void forEachMatch(final Host pHost, final IMatchProcessor<? super Element_serverMatch> processor) {
     rawForEachMatch(new Object[]{pHost}, processor);
   }
   
@@ -151,7 +158,7 @@ public class Element_serverMatcher extends BaseMatcher<Element_serverMatch> {
    * @return true if the pattern has at least one match with the given parameter values, false if the processor was not invoked
    * 
    */
-  public boolean forOneArbitraryMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host pHost, final IMatchProcessor<? super Element_serverMatch> processor) {
+  public boolean forOneArbitraryMatch(final Host pHost, final IMatchProcessor<? super Element_serverMatch> processor) {
     return rawForOneArbitraryMatch(new Object[]{pHost}, processor);
   }
   
@@ -163,7 +170,7 @@ public class Element_serverMatcher extends BaseMatcher<Element_serverMatch> {
    * @return the (partial) match object.
    * 
    */
-  public Element_serverMatch newMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host pHost) {
+  public Element_serverMatch newMatch(final Host pHost) {
     return Element_serverMatch.newMatch(pHost);
   }
   
@@ -172,8 +179,8 @@ public class Element_serverMatcher extends BaseMatcher<Element_serverMatch> {
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  protected /* Set<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host> */Object rawAccumulateAllValuesOfhost(final Object[] parameters) {
-    Set<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host> results = new HashSet<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host>();
+  protected Set<Host> rawAccumulateAllValuesOfhost(final Object[] parameters) {
+    Set<Host> results = new HashSet<Host>();
     rawAccumulateAllValues(POSITION_HOST, parameters, results);
     return results;
   }
@@ -183,7 +190,7 @@ public class Element_serverMatcher extends BaseMatcher<Element_serverMatch> {
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public /* Set<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host> */Object getAllValuesOfhost() {
+  public Set<Host> getAllValuesOfhost() {
     return rawAccumulateAllValuesOfhost(emptyArray());
   }
   

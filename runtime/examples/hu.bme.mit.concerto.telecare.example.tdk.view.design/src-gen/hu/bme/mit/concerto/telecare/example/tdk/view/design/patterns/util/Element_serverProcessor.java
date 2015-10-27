@@ -1,6 +1,7 @@
 package hu.bme.mit.concerto.telecare.example.tdk.view.design.patterns.util;
 
 import hu.bme.mit.concerto.telecare.example.tdk.view.design.patterns.Element_serverMatch;
+import hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host;
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
 
 /**
@@ -16,7 +17,7 @@ public abstract class Element_serverProcessor implements IMatchProcessor<Element
    * @param pHost the value of pattern parameter host in the currently processed match
    * 
    */
-  public abstract void process(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host pHost);
+  public abstract void process(final Host pHost);
   
   @Override
   public void process(final Element_serverMatch match) {

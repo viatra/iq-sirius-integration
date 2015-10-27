@@ -89,7 +89,7 @@ public final class Ref_viewModel_serversQuerySpecification extends BaseGenerated
     
     @Override
     public List<PParameter> getParameters() {
-      return Arrays.asList(new PParameter("telecareSystem", ""),new PParameter("host", ""));
+      return Arrays.asList(new PParameter("telecareSystem", "hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem"),new PParameter("host", "hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host"));
     }
     
     @Override

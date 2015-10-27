@@ -2,6 +2,7 @@ package hu.bme.mit.concerto.telecare.example.tdk.view.design.patterns;
 
 import hu.bme.mit.concerto.telecare.example.tdk.view.design.patterns.Attr_sensor_nameMatch;
 import hu.bme.mit.concerto.telecare.example.tdk.view.design.patterns.util.Attr_sensor_nameQuerySpecification;
+import hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
@@ -104,7 +105,7 @@ public class Attr_sensor_nameMatcher extends BaseMatcher<Attr_sensor_nameMatch> 
    * @return matches represented as a Attr_sensor_nameMatch object.
    * 
    */
-  public Collection<Attr_sensor_nameMatch> getAllMatches(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor pSensor, final String pValue) {
+  public Collection<Attr_sensor_nameMatch> getAllMatches(final Sensor pSensor, final String pValue) {
     return rawGetAllMatches(new Object[]{pSensor, pValue});
   }
   
@@ -116,7 +117,7 @@ public class Attr_sensor_nameMatcher extends BaseMatcher<Attr_sensor_nameMatch> 
    * @return a match represented as a Attr_sensor_nameMatch object, or null if no match is found.
    * 
    */
-  public Attr_sensor_nameMatch getOneArbitraryMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor pSensor, final String pValue) {
+  public Attr_sensor_nameMatch getOneArbitraryMatch(final Sensor pSensor, final String pValue) {
     return rawGetOneArbitraryMatch(new Object[]{pSensor, pValue});
   }
   
@@ -128,7 +129,7 @@ public class Attr_sensor_nameMatcher extends BaseMatcher<Attr_sensor_nameMatch> 
    * @return true if the input is a valid (partial) match of the pattern.
    * 
    */
-  public boolean hasMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor pSensor, final String pValue) {
+  public boolean hasMatch(final Sensor pSensor, final String pValue) {
     return rawHasMatch(new Object[]{pSensor, pValue});
   }
   
@@ -139,7 +140,7 @@ public class Attr_sensor_nameMatcher extends BaseMatcher<Attr_sensor_nameMatch> 
    * @return the number of pattern matches found.
    * 
    */
-  public int countMatches(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor pSensor, final String pValue) {
+  public int countMatches(final Sensor pSensor, final String pValue) {
     return rawCountMatches(new Object[]{pSensor, pValue});
   }
   
@@ -150,7 +151,7 @@ public class Attr_sensor_nameMatcher extends BaseMatcher<Attr_sensor_nameMatch> 
    * @param processor the action that will process each pattern match.
    * 
    */
-  public void forEachMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor pSensor, final String pValue, final IMatchProcessor<? super Attr_sensor_nameMatch> processor) {
+  public void forEachMatch(final Sensor pSensor, final String pValue, final IMatchProcessor<? super Attr_sensor_nameMatch> processor) {
     rawForEachMatch(new Object[]{pSensor, pValue}, processor);
   }
   
@@ -163,7 +164,7 @@ public class Attr_sensor_nameMatcher extends BaseMatcher<Attr_sensor_nameMatch> 
    * @return true if the pattern has at least one match with the given parameter values, false if the processor was not invoked
    * 
    */
-  public boolean forOneArbitraryMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor pSensor, final String pValue, final IMatchProcessor<? super Attr_sensor_nameMatch> processor) {
+  public boolean forOneArbitraryMatch(final Sensor pSensor, final String pValue, final IMatchProcessor<? super Attr_sensor_nameMatch> processor) {
     return rawForOneArbitraryMatch(new Object[]{pSensor, pValue}, processor);
   }
   
@@ -176,7 +177,7 @@ public class Attr_sensor_nameMatcher extends BaseMatcher<Attr_sensor_nameMatch> 
    * @return the (partial) match object.
    * 
    */
-  public Attr_sensor_nameMatch newMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor pSensor, final String pValue) {
+  public Attr_sensor_nameMatch newMatch(final Sensor pSensor, final String pValue) {
     return Attr_sensor_nameMatch.newMatch(pSensor, pValue);
   }
   
@@ -185,8 +186,8 @@ public class Attr_sensor_nameMatcher extends BaseMatcher<Attr_sensor_nameMatch> 
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  protected /* Set<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor> */Object rawAccumulateAllValuesOfsensor(final Object[] parameters) {
-    Set<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor> results = new HashSet<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor>();
+  protected Set<Sensor> rawAccumulateAllValuesOfsensor(final Object[] parameters) {
+    Set<Sensor> results = new HashSet<Sensor>();
     rawAccumulateAllValues(POSITION_SENSOR, parameters, results);
     return results;
   }
@@ -196,7 +197,7 @@ public class Attr_sensor_nameMatcher extends BaseMatcher<Attr_sensor_nameMatch> 
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public /* Set<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor> */Object getAllValuesOfsensor() {
+  public Set<Sensor> getAllValuesOfsensor() {
     return rawAccumulateAllValuesOfsensor(emptyArray());
   }
   
@@ -205,7 +206,7 @@ public class Attr_sensor_nameMatcher extends BaseMatcher<Attr_sensor_nameMatch> 
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public /* Set<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor> */Object getAllValuesOfsensor(final Attr_sensor_nameMatch partialMatch) {
+  public Set<Sensor> getAllValuesOfsensor(final Attr_sensor_nameMatch partialMatch) {
     return rawAccumulateAllValuesOfsensor(partialMatch.toArray());
   }
   
@@ -214,7 +215,7 @@ public class Attr_sensor_nameMatcher extends BaseMatcher<Attr_sensor_nameMatch> 
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public /* Set<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor> */Object getAllValuesOfsensor(final String pValue) {
+  public Set<Sensor> getAllValuesOfsensor(final String pValue) {
     return rawAccumulateAllValuesOfsensor(new Object[]{
     null, 
     pValue
@@ -255,7 +256,7 @@ public class Attr_sensor_nameMatcher extends BaseMatcher<Attr_sensor_nameMatch> 
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<String> getAllValuesOfvalue(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor pSensor) {
+  public Set<String> getAllValuesOfvalue(final Sensor pSensor) {
     return rawAccumulateAllValuesOfvalue(new Object[]{
     pSensor, 
     null

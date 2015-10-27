@@ -1,6 +1,7 @@
 package hu.bme.mit.concerto.telecare.example.tdk.view.design.patterns.util;
 
 import hu.bme.mit.concerto.telecare.example.tdk.view.design.patterns.Element_sensorMatch;
+import hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor;
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
 
 /**
@@ -16,7 +17,7 @@ public abstract class Element_sensorProcessor implements IMatchProcessor<Element
    * @param pSensor the value of pattern parameter sensor in the currently processed match
    * 
    */
-  public abstract void process(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor pSensor);
+  public abstract void process(final Sensor pSensor);
   
   @Override
   public void process(final Element_sensorMatch match) {

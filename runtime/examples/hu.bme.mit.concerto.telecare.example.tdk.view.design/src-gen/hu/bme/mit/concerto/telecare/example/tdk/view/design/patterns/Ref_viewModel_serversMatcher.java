@@ -2,6 +2,8 @@ package hu.bme.mit.concerto.telecare.example.tdk.view.design.patterns;
 
 import hu.bme.mit.concerto.telecare.example.tdk.view.design.patterns.Ref_viewModel_serversMatch;
 import hu.bme.mit.concerto.telecare.example.tdk.view.design.patterns.util.Ref_viewModel_serversQuerySpecification;
+import hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host;
+import hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
@@ -103,7 +105,7 @@ public class Ref_viewModel_serversMatcher extends BaseMatcher<Ref_viewModel_serv
    * @return matches represented as a Ref_viewModel_serversMatch object.
    * 
    */
-  public Collection<Ref_viewModel_serversMatch> getAllMatches(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem pTelecareSystem, final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host pHost) {
+  public Collection<Ref_viewModel_serversMatch> getAllMatches(final TelecareSystem pTelecareSystem, final Host pHost) {
     return rawGetAllMatches(new Object[]{pTelecareSystem, pHost});
   }
   
@@ -115,7 +117,7 @@ public class Ref_viewModel_serversMatcher extends BaseMatcher<Ref_viewModel_serv
    * @return a match represented as a Ref_viewModel_serversMatch object, or null if no match is found.
    * 
    */
-  public Ref_viewModel_serversMatch getOneArbitraryMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem pTelecareSystem, final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host pHost) {
+  public Ref_viewModel_serversMatch getOneArbitraryMatch(final TelecareSystem pTelecareSystem, final Host pHost) {
     return rawGetOneArbitraryMatch(new Object[]{pTelecareSystem, pHost});
   }
   
@@ -127,7 +129,7 @@ public class Ref_viewModel_serversMatcher extends BaseMatcher<Ref_viewModel_serv
    * @return true if the input is a valid (partial) match of the pattern.
    * 
    */
-  public boolean hasMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem pTelecareSystem, final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host pHost) {
+  public boolean hasMatch(final TelecareSystem pTelecareSystem, final Host pHost) {
     return rawHasMatch(new Object[]{pTelecareSystem, pHost});
   }
   
@@ -138,7 +140,7 @@ public class Ref_viewModel_serversMatcher extends BaseMatcher<Ref_viewModel_serv
    * @return the number of pattern matches found.
    * 
    */
-  public int countMatches(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem pTelecareSystem, final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host pHost) {
+  public int countMatches(final TelecareSystem pTelecareSystem, final Host pHost) {
     return rawCountMatches(new Object[]{pTelecareSystem, pHost});
   }
   
@@ -149,7 +151,7 @@ public class Ref_viewModel_serversMatcher extends BaseMatcher<Ref_viewModel_serv
    * @param processor the action that will process each pattern match.
    * 
    */
-  public void forEachMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem pTelecareSystem, final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host pHost, final IMatchProcessor<? super Ref_viewModel_serversMatch> processor) {
+  public void forEachMatch(final TelecareSystem pTelecareSystem, final Host pHost, final IMatchProcessor<? super Ref_viewModel_serversMatch> processor) {
     rawForEachMatch(new Object[]{pTelecareSystem, pHost}, processor);
   }
   
@@ -162,7 +164,7 @@ public class Ref_viewModel_serversMatcher extends BaseMatcher<Ref_viewModel_serv
    * @return true if the pattern has at least one match with the given parameter values, false if the processor was not invoked
    * 
    */
-  public boolean forOneArbitraryMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem pTelecareSystem, final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host pHost, final IMatchProcessor<? super Ref_viewModel_serversMatch> processor) {
+  public boolean forOneArbitraryMatch(final TelecareSystem pTelecareSystem, final Host pHost, final IMatchProcessor<? super Ref_viewModel_serversMatch> processor) {
     return rawForOneArbitraryMatch(new Object[]{pTelecareSystem, pHost}, processor);
   }
   
@@ -175,7 +177,7 @@ public class Ref_viewModel_serversMatcher extends BaseMatcher<Ref_viewModel_serv
    * @return the (partial) match object.
    * 
    */
-  public Ref_viewModel_serversMatch newMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem pTelecareSystem, final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host pHost) {
+  public Ref_viewModel_serversMatch newMatch(final TelecareSystem pTelecareSystem, final Host pHost) {
     return Ref_viewModel_serversMatch.newMatch(pTelecareSystem, pHost);
   }
   
@@ -184,8 +186,8 @@ public class Ref_viewModel_serversMatcher extends BaseMatcher<Ref_viewModel_serv
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  protected /* Set<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem> */Object rawAccumulateAllValuesOftelecareSystem(final Object[] parameters) {
-    Set<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem> results = new HashSet<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem>();
+  protected Set<TelecareSystem> rawAccumulateAllValuesOftelecareSystem(final Object[] parameters) {
+    Set<TelecareSystem> results = new HashSet<TelecareSystem>();
     rawAccumulateAllValues(POSITION_TELECARESYSTEM, parameters, results);
     return results;
   }
@@ -195,7 +197,7 @@ public class Ref_viewModel_serversMatcher extends BaseMatcher<Ref_viewModel_serv
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public /* Set<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem> */Object getAllValuesOftelecareSystem() {
+  public Set<TelecareSystem> getAllValuesOftelecareSystem() {
     return rawAccumulateAllValuesOftelecareSystem(emptyArray());
   }
   
@@ -204,7 +206,7 @@ public class Ref_viewModel_serversMatcher extends BaseMatcher<Ref_viewModel_serv
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public /* Set<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem> */Object getAllValuesOftelecareSystem(final Ref_viewModel_serversMatch partialMatch) {
+  public Set<TelecareSystem> getAllValuesOftelecareSystem(final Ref_viewModel_serversMatch partialMatch) {
     return rawAccumulateAllValuesOftelecareSystem(partialMatch.toArray());
   }
   
@@ -213,7 +215,7 @@ public class Ref_viewModel_serversMatcher extends BaseMatcher<Ref_viewModel_serv
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public /* Set<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem> */Object getAllValuesOftelecareSystem(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host pHost) {
+  public Set<TelecareSystem> getAllValuesOftelecareSystem(final Host pHost) {
     return rawAccumulateAllValuesOftelecareSystem(new Object[]{
     null, 
     pHost
@@ -225,8 +227,8 @@ public class Ref_viewModel_serversMatcher extends BaseMatcher<Ref_viewModel_serv
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  protected /* Set<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host> */Object rawAccumulateAllValuesOfhost(final Object[] parameters) {
-    Set<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host> results = new HashSet<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host>();
+  protected Set<Host> rawAccumulateAllValuesOfhost(final Object[] parameters) {
+    Set<Host> results = new HashSet<Host>();
     rawAccumulateAllValues(POSITION_HOST, parameters, results);
     return results;
   }
@@ -236,7 +238,7 @@ public class Ref_viewModel_serversMatcher extends BaseMatcher<Ref_viewModel_serv
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public /* Set<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host> */Object getAllValuesOfhost() {
+  public Set<Host> getAllValuesOfhost() {
     return rawAccumulateAllValuesOfhost(emptyArray());
   }
   
@@ -245,7 +247,7 @@ public class Ref_viewModel_serversMatcher extends BaseMatcher<Ref_viewModel_serv
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public /* Set<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host> */Object getAllValuesOfhost(final Ref_viewModel_serversMatch partialMatch) {
+  public Set<Host> getAllValuesOfhost(final Ref_viewModel_serversMatch partialMatch) {
     return rawAccumulateAllValuesOfhost(partialMatch.toArray());
   }
   
@@ -254,7 +256,7 @@ public class Ref_viewModel_serversMatcher extends BaseMatcher<Ref_viewModel_serv
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public /* Set<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host> */Object getAllValuesOfhost(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem pTelecareSystem) {
+  public Set<Host> getAllValuesOfhost(final TelecareSystem pTelecareSystem) {
     return rawAccumulateAllValuesOfhost(new Object[]{
     pTelecareSystem, 
     null

@@ -1,6 +1,7 @@
 package hu.bme.mit.concerto.telecare.example.tdk.view.design.patterns;
 
 import hu.bme.mit.concerto.telecare.example.tdk.view.design.patterns.util.Element_triggerQuerySpecification;
+import hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger;
 import java.util.Arrays;
 import java.util.List;
 import org.eclipse.incquery.runtime.api.IPatternMatch;
@@ -22,11 +23,11 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  */
 @SuppressWarnings("all")
 public abstract class Element_triggerMatch extends BasePatternMatch {
-  private hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger fTrigger;
+  private FixedIntervalTrigger fTrigger;
   
   private static List<String> parameterNames = makeImmutableList("trigger");
   
-  private Element_triggerMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger pTrigger) {
+  private Element_triggerMatch(final FixedIntervalTrigger pTrigger) {
     this.fTrigger = pTrigger;
   }
   
@@ -36,7 +37,7 @@ public abstract class Element_triggerMatch extends BasePatternMatch {
     return null;
   }
   
-  public hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger getTrigger() {
+  public FixedIntervalTrigger getTrigger() {
     return this.fTrigger;
   }
   
@@ -50,7 +51,7 @@ public abstract class Element_triggerMatch extends BasePatternMatch {
     return false;
   }
   
-  public void setTrigger(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger pTrigger) {
+  public void setTrigger(final FixedIntervalTrigger pTrigger) {
     if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fTrigger = pTrigger;
   }
@@ -142,7 +143,7 @@ public abstract class Element_triggerMatch extends BasePatternMatch {
    * @return the new, mutable (partial) match object.
    * 
    */
-  public static Element_triggerMatch newMutableMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger pTrigger) {
+  public static Element_triggerMatch newMutableMatch(final FixedIntervalTrigger pTrigger) {
     return new Mutable(pTrigger);
   }
   
@@ -154,12 +155,12 @@ public abstract class Element_triggerMatch extends BasePatternMatch {
    * @return the (partial) match object.
    * 
    */
-  public static Element_triggerMatch newMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger pTrigger) {
+  public static Element_triggerMatch newMatch(final FixedIntervalTrigger pTrigger) {
     return new Immutable(pTrigger);
   }
   
   private static final class Mutable extends Element_triggerMatch {
-    Mutable(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger pTrigger) {
+    Mutable(final FixedIntervalTrigger pTrigger) {
       super(pTrigger);
     }
     
@@ -170,7 +171,7 @@ public abstract class Element_triggerMatch extends BasePatternMatch {
   }
   
   private static final class Immutable extends Element_triggerMatch {
-    Immutable(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger pTrigger) {
+    Immutable(final FixedIntervalTrigger pTrigger) {
       super(pTrigger);
     }
     

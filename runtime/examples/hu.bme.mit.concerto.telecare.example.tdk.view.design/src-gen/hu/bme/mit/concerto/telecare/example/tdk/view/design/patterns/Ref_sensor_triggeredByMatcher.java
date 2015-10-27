@@ -2,6 +2,8 @@ package hu.bme.mit.concerto.telecare.example.tdk.view.design.patterns;
 
 import hu.bme.mit.concerto.telecare.example.tdk.view.design.patterns.Ref_sensor_triggeredByMatch;
 import hu.bme.mit.concerto.telecare.example.tdk.view.design.patterns.util.Ref_sensor_triggeredByQuerySpecification;
+import hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger;
+import hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
@@ -104,7 +106,7 @@ public class Ref_sensor_triggeredByMatcher extends BaseMatcher<Ref_sensor_trigge
    * @return matches represented as a Ref_sensor_triggeredByMatch object.
    * 
    */
-  public Collection<Ref_sensor_triggeredByMatch> getAllMatches(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor pSensor, final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger pTrigger) {
+  public Collection<Ref_sensor_triggeredByMatch> getAllMatches(final Sensor pSensor, final FixedIntervalTrigger pTrigger) {
     return rawGetAllMatches(new Object[]{pSensor, pTrigger});
   }
   
@@ -116,7 +118,7 @@ public class Ref_sensor_triggeredByMatcher extends BaseMatcher<Ref_sensor_trigge
    * @return a match represented as a Ref_sensor_triggeredByMatch object, or null if no match is found.
    * 
    */
-  public Ref_sensor_triggeredByMatch getOneArbitraryMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor pSensor, final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger pTrigger) {
+  public Ref_sensor_triggeredByMatch getOneArbitraryMatch(final Sensor pSensor, final FixedIntervalTrigger pTrigger) {
     return rawGetOneArbitraryMatch(new Object[]{pSensor, pTrigger});
   }
   
@@ -128,7 +130,7 @@ public class Ref_sensor_triggeredByMatcher extends BaseMatcher<Ref_sensor_trigge
    * @return true if the input is a valid (partial) match of the pattern.
    * 
    */
-  public boolean hasMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor pSensor, final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger pTrigger) {
+  public boolean hasMatch(final Sensor pSensor, final FixedIntervalTrigger pTrigger) {
     return rawHasMatch(new Object[]{pSensor, pTrigger});
   }
   
@@ -139,7 +141,7 @@ public class Ref_sensor_triggeredByMatcher extends BaseMatcher<Ref_sensor_trigge
    * @return the number of pattern matches found.
    * 
    */
-  public int countMatches(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor pSensor, final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger pTrigger) {
+  public int countMatches(final Sensor pSensor, final FixedIntervalTrigger pTrigger) {
     return rawCountMatches(new Object[]{pSensor, pTrigger});
   }
   
@@ -150,7 +152,7 @@ public class Ref_sensor_triggeredByMatcher extends BaseMatcher<Ref_sensor_trigge
    * @param processor the action that will process each pattern match.
    * 
    */
-  public void forEachMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor pSensor, final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger pTrigger, final IMatchProcessor<? super Ref_sensor_triggeredByMatch> processor) {
+  public void forEachMatch(final Sensor pSensor, final FixedIntervalTrigger pTrigger, final IMatchProcessor<? super Ref_sensor_triggeredByMatch> processor) {
     rawForEachMatch(new Object[]{pSensor, pTrigger}, processor);
   }
   
@@ -163,7 +165,7 @@ public class Ref_sensor_triggeredByMatcher extends BaseMatcher<Ref_sensor_trigge
    * @return true if the pattern has at least one match with the given parameter values, false if the processor was not invoked
    * 
    */
-  public boolean forOneArbitraryMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor pSensor, final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger pTrigger, final IMatchProcessor<? super Ref_sensor_triggeredByMatch> processor) {
+  public boolean forOneArbitraryMatch(final Sensor pSensor, final FixedIntervalTrigger pTrigger, final IMatchProcessor<? super Ref_sensor_triggeredByMatch> processor) {
     return rawForOneArbitraryMatch(new Object[]{pSensor, pTrigger}, processor);
   }
   
@@ -176,7 +178,7 @@ public class Ref_sensor_triggeredByMatcher extends BaseMatcher<Ref_sensor_trigge
    * @return the (partial) match object.
    * 
    */
-  public Ref_sensor_triggeredByMatch newMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor pSensor, final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger pTrigger) {
+  public Ref_sensor_triggeredByMatch newMatch(final Sensor pSensor, final FixedIntervalTrigger pTrigger) {
     return Ref_sensor_triggeredByMatch.newMatch(pSensor, pTrigger);
   }
   
@@ -185,8 +187,8 @@ public class Ref_sensor_triggeredByMatcher extends BaseMatcher<Ref_sensor_trigge
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  protected /* Set<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor> */Object rawAccumulateAllValuesOfsensor(final Object[] parameters) {
-    Set<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor> results = new HashSet<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor>();
+  protected Set<Sensor> rawAccumulateAllValuesOfsensor(final Object[] parameters) {
+    Set<Sensor> results = new HashSet<Sensor>();
     rawAccumulateAllValues(POSITION_SENSOR, parameters, results);
     return results;
   }
@@ -196,7 +198,7 @@ public class Ref_sensor_triggeredByMatcher extends BaseMatcher<Ref_sensor_trigge
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public /* Set<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor> */Object getAllValuesOfsensor() {
+  public Set<Sensor> getAllValuesOfsensor() {
     return rawAccumulateAllValuesOfsensor(emptyArray());
   }
   
@@ -205,7 +207,7 @@ public class Ref_sensor_triggeredByMatcher extends BaseMatcher<Ref_sensor_trigge
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public /* Set<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor> */Object getAllValuesOfsensor(final Ref_sensor_triggeredByMatch partialMatch) {
+  public Set<Sensor> getAllValuesOfsensor(final Ref_sensor_triggeredByMatch partialMatch) {
     return rawAccumulateAllValuesOfsensor(partialMatch.toArray());
   }
   
@@ -214,7 +216,7 @@ public class Ref_sensor_triggeredByMatcher extends BaseMatcher<Ref_sensor_trigge
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public /* Set<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor> */Object getAllValuesOfsensor(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger pTrigger) {
+  public Set<Sensor> getAllValuesOfsensor(final FixedIntervalTrigger pTrigger) {
     return rawAccumulateAllValuesOfsensor(new Object[]{
     null, 
     pTrigger
@@ -226,8 +228,8 @@ public class Ref_sensor_triggeredByMatcher extends BaseMatcher<Ref_sensor_trigge
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  protected /* Set<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger> */Object rawAccumulateAllValuesOftrigger(final Object[] parameters) {
-    Set<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger> results = new HashSet<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger>();
+  protected Set<FixedIntervalTrigger> rawAccumulateAllValuesOftrigger(final Object[] parameters) {
+    Set<FixedIntervalTrigger> results = new HashSet<FixedIntervalTrigger>();
     rawAccumulateAllValues(POSITION_TRIGGER, parameters, results);
     return results;
   }
@@ -237,7 +239,7 @@ public class Ref_sensor_triggeredByMatcher extends BaseMatcher<Ref_sensor_trigge
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public /* Set<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger> */Object getAllValuesOftrigger() {
+  public Set<FixedIntervalTrigger> getAllValuesOftrigger() {
     return rawAccumulateAllValuesOftrigger(emptyArray());
   }
   
@@ -246,7 +248,7 @@ public class Ref_sensor_triggeredByMatcher extends BaseMatcher<Ref_sensor_trigge
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public /* Set<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger> */Object getAllValuesOftrigger(final Ref_sensor_triggeredByMatch partialMatch) {
+  public Set<FixedIntervalTrigger> getAllValuesOftrigger(final Ref_sensor_triggeredByMatch partialMatch) {
     return rawAccumulateAllValuesOftrigger(partialMatch.toArray());
   }
   
@@ -255,7 +257,7 @@ public class Ref_sensor_triggeredByMatcher extends BaseMatcher<Ref_sensor_trigge
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public /* Set<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger> */Object getAllValuesOftrigger(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor pSensor) {
+  public Set<FixedIntervalTrigger> getAllValuesOftrigger(final Sensor pSensor) {
     return rawAccumulateAllValuesOftrigger(new Object[]{
     pSensor, 
     null

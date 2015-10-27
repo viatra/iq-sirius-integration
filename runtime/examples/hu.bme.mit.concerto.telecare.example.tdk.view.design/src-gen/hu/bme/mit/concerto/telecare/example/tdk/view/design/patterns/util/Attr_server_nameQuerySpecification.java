@@ -91,7 +91,7 @@ public final class Attr_server_nameQuerySpecification extends BaseGeneratedEMFQu
     
     @Override
     public List<PParameter> getParameters() {
-      return Arrays.asList(new PParameter("host", ""),new PParameter("value", "java.lang.String"));
+      return Arrays.asList(new PParameter("host", "hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host"),new PParameter("value", "java.lang.String"));
     }
     
     @Override

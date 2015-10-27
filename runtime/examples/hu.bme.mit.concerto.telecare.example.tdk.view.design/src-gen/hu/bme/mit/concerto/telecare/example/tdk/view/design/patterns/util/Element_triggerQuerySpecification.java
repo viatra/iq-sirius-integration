@@ -86,7 +86,7 @@ public final class Element_triggerQuerySpecification extends BaseGeneratedEMFQue
     
     @Override
     public List<PParameter> getParameters() {
-      return Arrays.asList(new PParameter("trigger", ""));
+      return Arrays.asList(new PParameter("trigger", "hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger"));
     }
     
     @Override

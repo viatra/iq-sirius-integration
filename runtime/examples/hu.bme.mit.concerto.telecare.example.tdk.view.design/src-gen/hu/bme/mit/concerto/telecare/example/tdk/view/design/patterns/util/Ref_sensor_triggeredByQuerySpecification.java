@@ -89,7 +89,7 @@ public final class Ref_sensor_triggeredByQuerySpecification extends BaseGenerate
     
     @Override
     public List<PParameter> getParameters() {
-      return Arrays.asList(new PParameter("sensor", ""),new PParameter("trigger", ""));
+      return Arrays.asList(new PParameter("sensor", "hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor"),new PParameter("trigger", "hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger"));
     }
     
     @Override

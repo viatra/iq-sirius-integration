@@ -2,6 +2,7 @@ package hu.bme.mit.concerto.telecare.example.tdk.view.design.patterns;
 
 import hu.bme.mit.concerto.telecare.example.tdk.view.design.patterns.Element_triggerMatch;
 import hu.bme.mit.concerto.telecare.example.tdk.view.design.patterns.util.Element_triggerQuerySpecification;
+import hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
@@ -103,7 +104,7 @@ public class Element_triggerMatcher extends BaseMatcher<Element_triggerMatch> {
    * @return matches represented as a Element_triggerMatch object.
    * 
    */
-  public Collection<Element_triggerMatch> getAllMatches(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger pTrigger) {
+  public Collection<Element_triggerMatch> getAllMatches(final FixedIntervalTrigger pTrigger) {
     return rawGetAllMatches(new Object[]{pTrigger});
   }
   
@@ -114,7 +115,7 @@ public class Element_triggerMatcher extends BaseMatcher<Element_triggerMatch> {
    * @return a match represented as a Element_triggerMatch object, or null if no match is found.
    * 
    */
-  public Element_triggerMatch getOneArbitraryMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger pTrigger) {
+  public Element_triggerMatch getOneArbitraryMatch(final FixedIntervalTrigger pTrigger) {
     return rawGetOneArbitraryMatch(new Object[]{pTrigger});
   }
   
@@ -125,7 +126,7 @@ public class Element_triggerMatcher extends BaseMatcher<Element_triggerMatch> {
    * @return true if the input is a valid (partial) match of the pattern.
    * 
    */
-  public boolean hasMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger pTrigger) {
+  public boolean hasMatch(final FixedIntervalTrigger pTrigger) {
     return rawHasMatch(new Object[]{pTrigger});
   }
   
@@ -135,7 +136,7 @@ public class Element_triggerMatcher extends BaseMatcher<Element_triggerMatch> {
    * @return the number of pattern matches found.
    * 
    */
-  public int countMatches(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger pTrigger) {
+  public int countMatches(final FixedIntervalTrigger pTrigger) {
     return rawCountMatches(new Object[]{pTrigger});
   }
   
@@ -145,7 +146,7 @@ public class Element_triggerMatcher extends BaseMatcher<Element_triggerMatch> {
    * @param processor the action that will process each pattern match.
    * 
    */
-  public void forEachMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger pTrigger, final IMatchProcessor<? super Element_triggerMatch> processor) {
+  public void forEachMatch(final FixedIntervalTrigger pTrigger, final IMatchProcessor<? super Element_triggerMatch> processor) {
     rawForEachMatch(new Object[]{pTrigger}, processor);
   }
   
@@ -157,7 +158,7 @@ public class Element_triggerMatcher extends BaseMatcher<Element_triggerMatch> {
    * @return true if the pattern has at least one match with the given parameter values, false if the processor was not invoked
    * 
    */
-  public boolean forOneArbitraryMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger pTrigger, final IMatchProcessor<? super Element_triggerMatch> processor) {
+  public boolean forOneArbitraryMatch(final FixedIntervalTrigger pTrigger, final IMatchProcessor<? super Element_triggerMatch> processor) {
     return rawForOneArbitraryMatch(new Object[]{pTrigger}, processor);
   }
   
@@ -169,7 +170,7 @@ public class Element_triggerMatcher extends BaseMatcher<Element_triggerMatch> {
    * @return the (partial) match object.
    * 
    */
-  public Element_triggerMatch newMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger pTrigger) {
+  public Element_triggerMatch newMatch(final FixedIntervalTrigger pTrigger) {
     return Element_triggerMatch.newMatch(pTrigger);
   }
   
@@ -178,8 +179,8 @@ public class Element_triggerMatcher extends BaseMatcher<Element_triggerMatch> {
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  protected /* Set<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger> */Object rawAccumulateAllValuesOftrigger(final Object[] parameters) {
-    Set<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger> results = new HashSet<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger>();
+  protected Set<FixedIntervalTrigger> rawAccumulateAllValuesOftrigger(final Object[] parameters) {
+    Set<FixedIntervalTrigger> results = new HashSet<FixedIntervalTrigger>();
     rawAccumulateAllValues(POSITION_TRIGGER, parameters, results);
     return results;
   }
@@ -189,7 +190,7 @@ public class Element_triggerMatcher extends BaseMatcher<Element_triggerMatch> {
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public /* Set<hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger> */Object getAllValuesOftrigger() {
+  public Set<FixedIntervalTrigger> getAllValuesOftrigger() {
     return rawAccumulateAllValuesOftrigger(emptyArray());
   }
   

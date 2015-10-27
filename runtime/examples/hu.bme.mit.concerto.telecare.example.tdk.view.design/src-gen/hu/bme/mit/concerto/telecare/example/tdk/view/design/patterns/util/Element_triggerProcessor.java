@@ -1,6 +1,7 @@
 package hu.bme.mit.concerto.telecare.example.tdk.view.design.patterns.util;
 
 import hu.bme.mit.concerto.telecare.example.tdk.view.design.patterns.Element_triggerMatch;
+import hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger;
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
 
 /**
@@ -16,7 +17,7 @@ public abstract class Element_triggerProcessor implements IMatchProcessor<Elemen
    * @param pTrigger the value of pattern parameter trigger in the currently processed match
    * 
    */
-  public abstract void process(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger pTrigger);
+  public abstract void process(final FixedIntervalTrigger pTrigger);
   
   @Override
   public void process(final Element_triggerMatch match) {

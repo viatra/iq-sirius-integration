@@ -1,6 +1,8 @@
 package hu.bme.mit.concerto.telecare.example.tdk.view.design.patterns;
 
 import hu.bme.mit.concerto.telecare.example.tdk.view.design.patterns.util.Ref_viewModel_serversQuerySpecification;
+import hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host;
+import hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem;
 import java.util.Arrays;
 import java.util.List;
 import org.eclipse.incquery.runtime.api.IPatternMatch;
@@ -22,13 +24,13 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  */
 @SuppressWarnings("all")
 public abstract class Ref_viewModel_serversMatch extends BasePatternMatch {
-  private hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem fTelecareSystem;
+  private TelecareSystem fTelecareSystem;
   
-  private hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host fHost;
+  private Host fHost;
   
   private static List<String> parameterNames = makeImmutableList("telecareSystem", "host");
   
-  private Ref_viewModel_serversMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem pTelecareSystem, final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host pHost) {
+  private Ref_viewModel_serversMatch(final TelecareSystem pTelecareSystem, final Host pHost) {
     this.fTelecareSystem = pTelecareSystem;
     this.fHost = pHost;
   }
@@ -40,11 +42,11 @@ public abstract class Ref_viewModel_serversMatch extends BasePatternMatch {
     return null;
   }
   
-  public hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem getTelecareSystem() {
+  public TelecareSystem getTelecareSystem() {
     return this.fTelecareSystem;
   }
   
-  public hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host getHost() {
+  public Host getHost() {
     return this.fHost;
   }
   
@@ -62,12 +64,12 @@ public abstract class Ref_viewModel_serversMatch extends BasePatternMatch {
     return false;
   }
   
-  public void setTelecareSystem(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem pTelecareSystem) {
+  public void setTelecareSystem(final TelecareSystem pTelecareSystem) {
     if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fTelecareSystem = pTelecareSystem;
   }
   
-  public void setHost(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host pHost) {
+  public void setHost(final Host pHost) {
     if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fHost = pHost;
   }
@@ -165,7 +167,7 @@ public abstract class Ref_viewModel_serversMatch extends BasePatternMatch {
    * @return the new, mutable (partial) match object.
    * 
    */
-  public static Ref_viewModel_serversMatch newMutableMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem pTelecareSystem, final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host pHost) {
+  public static Ref_viewModel_serversMatch newMutableMatch(final TelecareSystem pTelecareSystem, final Host pHost) {
     return new Mutable(pTelecareSystem, pHost);
   }
   
@@ -178,12 +180,12 @@ public abstract class Ref_viewModel_serversMatch extends BasePatternMatch {
    * @return the (partial) match object.
    * 
    */
-  public static Ref_viewModel_serversMatch newMatch(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem pTelecareSystem, final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host pHost) {
+  public static Ref_viewModel_serversMatch newMatch(final TelecareSystem pTelecareSystem, final Host pHost) {
     return new Immutable(pTelecareSystem, pHost);
   }
   
   private static final class Mutable extends Ref_viewModel_serversMatch {
-    Mutable(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem pTelecareSystem, final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host pHost) {
+    Mutable(final TelecareSystem pTelecareSystem, final Host pHost) {
       super(pTelecareSystem, pHost);
     }
     
@@ -194,7 +196,7 @@ public abstract class Ref_viewModel_serversMatch extends BasePatternMatch {
   }
   
   private static final class Immutable extends Ref_viewModel_serversMatch {
-    Immutable(final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem pTelecareSystem, final hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host pHost) {
+    Immutable(final TelecareSystem pTelecareSystem, final Host pHost) {
       super(pTelecareSystem, pHost);
     }
     

@@ -86,7 +86,7 @@ public final class Element_serverQuerySpecification extends BaseGeneratedEMFQuer
     
     @Override
     public List<PParameter> getParameters() {
-      return Arrays.asList(new PParameter("host", ""));
+      return Arrays.asList(new PParameter("host", "hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host"));
     }
     
     @Override
@@ -97,14 +97,30 @@ public final class Element_serverQuerySpecification extends BaseGeneratedEMFQuer
       	PBody body = new PBody(this);
       	PVariable var_host = body.getOrCreateVariableByName("host");
       	PVariable var___0_ = body.getOrCreateVariableByName("_<0>");
+      	PVariable var_gateway = body.getOrCreateVariableByName("gateway");
       	PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
+      	PVariable var_ect = body.getOrCreateVariableByName("ect");
+      	PVariable var__virtual_1_ = body.getOrCreateVariableByName(".virtual{1}");
+      	PVariable var_re = body.getOrCreateVariableByName("re");
+      	PVariable var__virtual_2_ = body.getOrCreateVariableByName(".virtual{2}");
+      	PVariable var__virtual_3_ = body.getOrCreateVariableByName(".virtual{3}");
       	body.setExportedParameters(Arrays.<ExportedParameter>asList(
       		new ExportedParameter(body, var_host, "host")
       	));
       	new TypeConstraint(body, new FlatTuple(var_host), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://hu.bme.mit.inf.concerto/telecare/example/tdk/1.0", "Host")));
-      	new TypeConstraint(body, new FlatTuple(var___0_), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://hu.bme.mit.inf.concerto/telecare/example/tdk/1.0", "ReportingEvent")));
-      	new TypeConstraint(body, new FlatTuple(var___0_, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://hu.bme.mit.inf.concerto/telecare/example/tdk/1.0", "ReportingEvent", "address")));
-      	new Equality(body, var__virtual_0_, var_host);
+      	new TypeConstraint(body, new FlatTuple(var___0_), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://hu.bme.mit.inf.concerto/telecare/example/tdk/1.0", "TelecareSystem")));
+      	new TypeConstraint(body, new FlatTuple(var___0_, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://hu.bme.mit.inf.concerto/telecare/example/tdk/1.0", "TelecareSystem", "gateways")));
+      	new Equality(body, var__virtual_0_, var_gateway);
+      	new TypeConstraint(body, new FlatTuple(var_gateway), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://hu.bme.mit.inf.concerto/telecare/example/tdk/1.0", "Gateway")));
+      	new TypeConstraint(body, new FlatTuple(var_gateway, var__virtual_1_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://hu.bme.mit.inf.concerto/telecare/example/tdk/1.0", "Gateway", "triggers")));
+      	new Equality(body, var__virtual_1_, var_ect);
+      	new TypeConstraint(body, new FlatTuple(var_ect), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://hu.bme.mit.inf.concerto/telecare/example/tdk/1.0", "EventCompletedTrigger")));
+      	new TypeConstraint(body, new FlatTuple(var_ect), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://hu.bme.mit.inf.concerto/telecare/example/tdk/1.0", "EventCompletedTrigger")));
+      	new TypeConstraint(body, new FlatTuple(var_ect, var__virtual_2_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://hu.bme.mit.inf.concerto/telecare/example/tdk/1.0", "Trigger", "triggeredEvents")));
+      	new Equality(body, var__virtual_2_, var_re);
+      	new TypeConstraint(body, new FlatTuple(var_re), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://hu.bme.mit.inf.concerto/telecare/example/tdk/1.0", "ReportingEvent")));
+      	new TypeConstraint(body, new FlatTuple(var_re, var__virtual_3_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://hu.bme.mit.inf.concerto/telecare/example/tdk/1.0", "ReportingEvent", "address")));
+      	new Equality(body, var__virtual_3_, var_host);
       	bodies.add(body);
       }
       	// to silence compiler error
