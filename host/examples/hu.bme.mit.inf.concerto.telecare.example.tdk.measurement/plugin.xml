@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            name="TDK Measurement"
+            id="hu.bme.mit.inf.concerto.telecare.example.tdk.measurement.commands.category">
+      </category>
+      <command
+            name="Create models"
+            categoryId="hu.bme.mit.inf.concerto.telecare.example.tdk.measurement.commands.category"
+            id="hu.bme.mit.inf.concerto.telecare.example.tdk.measurement.commands.createModelsCommand">
+      </command>
+      <command
+            categoryId="hu.bme.mit.inf.concerto.telecare.example.tdk.measurement.commands.category"
+            id="hu.bme.mit.inf.concerto.telecare.example.tdk.measurement.commands.measureCommand"
+            name="Measure">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            commandId="hu.bme.mit.inf.concerto.telecare.example.tdk.measurement.commands.createModelsCommand"
+            class="hu.bme.mit.inf.concerto.telecare.example.tdk.measurement.handlers.CommandHandler">
+      </handler>
+      <handler
+            class="hu.bme.mit.inf.concerto.telecare.example.tdk.measurement.handlers.CommandHandler"
+            commandId="hu.bme.mit.inf.concerto.telecare.example.tdk.measurement.commands.measureCommand">
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="menu:org.eclipse.ui.main.menu?after=additions">
+         <menu
+               label="TDK"
+               mnemonic="M"
+               id="hu.bme.mit.inf.concerto.telecare.example.tdk.measurement.menus.tdkMenu">
+            <command
+                  commandId="hu.bme.mit.inf.concerto.telecare.example.tdk.measurement.commands.createModelsCommand"
+                  mnemonic="S"
+                  id="hu.bme.mit.inf.concerto.telecare.example.tdk.measurement.menus.createModelsCommand">
+            </command>
+            <command
+                  commandId="hu.bme.mit.inf.concerto.telecare.example.tdk.measurement.commands.measureCommand"
+                  id="hu.bme.mit.inf.concerto.telecare.example.tdk.measurement.menus.measureCommand"
+                  mnemonic="S">
+            </command>
+         </menu>
+      </menuContribution>
+      <menuContribution
+            locationURI="toolbar:org.eclipse.ui.main.toolbar?after=additions">
+         <toolbar
+               id="hu.bme.mit.inf.concerto.telecare.example.tdk.measurement.toolbars.tdkToolbar">
+            <command
+                  commandId="hu.bme.mit.inf.concerto.telecare.example.tdk.measurement.commands.createModelsCommand"
+                  icon="icons/sample.gif"
+                  tooltip="Create sample models"
+                  id="hu.bme.mit.inf.concerto.telecare.example.tdk.measurement.toolbars.createModelsCommand">
+            </command>
+            <command
+                  commandId="hu.bme.mit.inf.concerto.telecare.example.tdk.measurement.commands.measureCommand"
+                  icon="icons/sample.gif"
+                  id="hu.bme.mit.inf.concerto.telecare.example.tdk.measurement.toolbars.measureCommand"
+                  tooltip="Measure!">
+            </command>
+         </toolbar>
+      </menuContribution>
+   </extension>
+
+</plugin>
