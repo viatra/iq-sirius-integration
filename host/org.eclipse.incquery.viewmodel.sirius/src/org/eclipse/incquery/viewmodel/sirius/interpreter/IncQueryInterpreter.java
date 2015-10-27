@@ -34,7 +34,8 @@ public class IncQueryInterpreter implements IInterpreter {
 	
 	
 	public IncQueryInterpreter() {
-		logger.info("Constructor...");
+		// TODO
+		//logger.info("Constructor...");
 		
 		variables = new HashMap<String, Object>();
 		
@@ -91,7 +92,8 @@ public class IncQueryInterpreter implements IInterpreter {
 	@Override
 	public EObject evaluateEObject(EObject context, String expression)
 			throws EvaluationException {
-		logger.info("evaluateEObject::context:" + context + "::expression:" + expression);
+		// TODO
+		//logger.info("evaluateEObject::context:" + context + "::expression:" + expression);
 		
 		if (expression == null) {
 			throw new EvaluationException("The rootExpression field must be filled!");
