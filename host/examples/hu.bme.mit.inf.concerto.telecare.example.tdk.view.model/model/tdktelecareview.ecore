@@ -6,11 +6,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="servers" upperBound="-1"
         eType="#//Server" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="triggers" upperBound="-1"
-        eType="#//Tigger" containment="true"/>
+        eType="#//Trigger" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="sensors" upperBound="-1"
         eType="#//Sensor" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Tigger">
+  <eClassifiers xsi:type="ecore:EClass" name="Trigger">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Server">
@@ -20,7 +20,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="connectedTo" upperBound="-1"
         eType="#//Server"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="triggeredBy" upperBound="-1"
-        eType="#//Tigger"/>
+        eType="#//Trigger"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>

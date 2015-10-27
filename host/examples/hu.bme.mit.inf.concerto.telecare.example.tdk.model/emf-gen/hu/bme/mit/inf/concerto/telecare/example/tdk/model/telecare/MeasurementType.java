@@ -4,7 +4,6 @@ package hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare;
 
 import org.eclipse.emf.common.util.EList;
 
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Measurement Type</b></em>'.
@@ -56,7 +55,7 @@ public interface MeasurementType extends NamedElement {
 	 * It is bidirectional and its opposite is '{@link hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Measurement#getMeasurementType <em>Measurement Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Measurement</em>' reference isn't clear,
+	 * If the meaning of the '<em>Measurement</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->

@@ -10,10 +10,11 @@
     <genClasses ecoreClass="telecare.ecore#//TelecareSystem">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference telecare.ecore#//TelecareSystem/sensors"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference telecare.ecore#//TelecareSystem/hosts"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference telecare.ecore#//TelecareSystem/triggers"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference telecare.ecore#//TelecareSystem/gateways"/>
     </genClasses>
     <genClasses ecoreClass="telecare.ecore#//Sensor">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference telecare.ecore#//Sensor/measurementTypes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference telecare.ecore#//Sensor/connectedTo"/>
     </genClasses>
     <genClasses ecoreClass="telecare.ecore#//Host"/>
     <genClasses ecoreClass="telecare.ecore#//Trigger">
@@ -41,6 +42,10 @@
     </genClasses>
     <genClasses ecoreClass="telecare.ecore#//ReportingEvent">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference telecare.ecore#//ReportingEvent/address"/>
+    </genClasses>
+    <genClasses ecoreClass="telecare.ecore#//Gateway">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference telecare.ecore#//Gateway/triggers"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference telecare.ecore#//Gateway/sensors"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

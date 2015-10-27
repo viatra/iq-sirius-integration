@@ -7,8 +7,8 @@ import hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.MeasurementTy
 import hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecarePackage;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -37,6 +37,7 @@ public class MeasurementImpl extends EventImpl implements Measurement {
 	 * @ordered
 	 */
 	protected MeasurementType measurementType;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

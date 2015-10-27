@@ -5,6 +5,7 @@ package hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.impl;
 import hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Event;
 import hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.EventCompletedTrigger;
 import hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.FixedIntervalTrigger;
+import hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Gateway;
 import hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host;
 import hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Measurement;
 import hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.MeasurementType;
@@ -108,6 +109,13 @@ public class TelecarePackageImpl extends EPackageImpl implements TelecarePackage
 	private EClass reportingEventEClass = null;
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass gatewayEClass = null;
+
+	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
 	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
@@ -200,7 +208,7 @@ public class TelecarePackageImpl extends EPackageImpl implements TelecarePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getTelecareSystem_Triggers() {
+	public EReference getTelecareSystem_Gateways() {
 		return (EReference)telecareSystemEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -220,6 +228,15 @@ public class TelecarePackageImpl extends EPackageImpl implements TelecarePackage
 	 */
 	public EReference getSensor_MeasurementTypes() {
 		return (EReference)sensorEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSensor_ConnectedTo() {
+		return (EReference)sensorEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -398,6 +415,33 @@ public class TelecarePackageImpl extends EPackageImpl implements TelecarePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getGateway() {
+		return gatewayEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getGateway_Triggers() {
+		return (EReference)gatewayEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getGateway_Sensors() {
+		return (EReference)gatewayEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public TelecareFactory getTelecareFactory() {
 		return (TelecareFactory)getEFactoryInstance();
 	}
@@ -424,10 +468,11 @@ public class TelecarePackageImpl extends EPackageImpl implements TelecarePackage
 		telecareSystemEClass = createEClass(TELECARE_SYSTEM);
 		createEReference(telecareSystemEClass, TELECARE_SYSTEM__SENSORS);
 		createEReference(telecareSystemEClass, TELECARE_SYSTEM__HOSTS);
-		createEReference(telecareSystemEClass, TELECARE_SYSTEM__TRIGGERS);
+		createEReference(telecareSystemEClass, TELECARE_SYSTEM__GATEWAYS);
 
 		sensorEClass = createEClass(SENSOR);
 		createEReference(sensorEClass, SENSOR__MEASUREMENT_TYPES);
+		createEReference(sensorEClass, SENSOR__CONNECTED_TO);
 
 		hostEClass = createEClass(HOST);
 
@@ -456,6 +501,10 @@ public class TelecarePackageImpl extends EPackageImpl implements TelecarePackage
 
 		reportingEventEClass = createEClass(REPORTING_EVENT);
 		createEReference(reportingEventEClass, REPORTING_EVENT__ADDRESS);
+
+		gatewayEClass = createEClass(GATEWAY);
+		createEReference(gatewayEClass, GATEWAY__TRIGGERS);
+		createEReference(gatewayEClass, GATEWAY__SENSORS);
 	}
 
 	/**
@@ -495,15 +544,17 @@ public class TelecarePackageImpl extends EPackageImpl implements TelecarePackage
 		eventEClass.getESuperTypes().add(this.getNamedElement());
 		measurementEClass.getESuperTypes().add(this.getEvent());
 		reportingEventEClass.getESuperTypes().add(this.getEvent());
+		gatewayEClass.getESuperTypes().add(this.getNamedElement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(telecareSystemEClass, TelecareSystem.class, "TelecareSystem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTelecareSystem_Sensors(), this.getSensor(), null, "sensors", null, 0, -1, TelecareSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTelecareSystem_Hosts(), this.getHost(), null, "hosts", null, 0, -1, TelecareSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTelecareSystem_Triggers(), this.getTrigger(), null, "triggers", null, 0, -1, TelecareSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTelecareSystem_Gateways(), this.getGateway(), null, "gateways", null, 0, -1, TelecareSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(sensorEClass, Sensor.class, "Sensor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSensor_MeasurementTypes(), this.getMeasurementType(), this.getMeasurementType_Sensor(), "measurementTypes", null, 1, -1, Sensor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSensor_ConnectedTo(), this.getGateway(), this.getGateway_Sensors(), "connectedTo", null, 0, 1, Sensor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(hostEClass, Host.class, "Host", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -532,6 +583,10 @@ public class TelecarePackageImpl extends EPackageImpl implements TelecarePackage
 
 		initEClass(reportingEventEClass, ReportingEvent.class, "ReportingEvent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getReportingEvent_Address(), this.getHost(), null, "address", null, 1, 1, ReportingEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(gatewayEClass, Gateway.class, "Gateway", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getGateway_Triggers(), this.getTrigger(), null, "triggers", null, 0, -1, Gateway.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getGateway_Sensors(), this.getSensor(), this.getSensor_ConnectedTo(), "sensors", null, 0, -1, Gateway.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

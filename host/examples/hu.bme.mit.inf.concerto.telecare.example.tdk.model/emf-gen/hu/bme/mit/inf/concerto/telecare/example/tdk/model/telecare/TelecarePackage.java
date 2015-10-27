@@ -85,13 +85,13 @@ public interface TelecarePackage extends EPackage {
 	int TELECARE_SYSTEM__HOSTS = 1;
 
 	/**
-	 * The feature id for the '<em><b>Triggers</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Gateways</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TELECARE_SYSTEM__TRIGGERS = 2;
+	int TELECARE_SYSTEM__GATEWAYS = 2;
 
 	/**
 	 * The number of structural features of the '<em>System</em>' class.
@@ -177,13 +177,22 @@ public interface TelecarePackage extends EPackage {
 	int SENSOR__MEASUREMENT_TYPES = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Connected To</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SENSOR__CONNECTED_TO = NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Sensor</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SENSOR_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int SENSOR_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Sensor</em>' class.
@@ -607,6 +616,61 @@ public interface TelecarePackage extends EPackage {
 	 */
 	int REPORTING_EVENT_OPERATION_COUNT = EVENT_OPERATION_COUNT + 0;
 
+	/**
+	 * The meta object id for the '{@link hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.impl.GatewayImpl <em>Gateway</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.impl.GatewayImpl
+	 * @see hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.impl.TelecarePackageImpl#getGateway()
+	 * @generated
+	 */
+	int GATEWAY = 11;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GATEWAY__NAME = NAMED_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Triggers</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GATEWAY__TRIGGERS = NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Sensors</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GATEWAY__SENSORS = NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Gateway</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GATEWAY_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Gateway</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GATEWAY_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
+
 
 	/**
 	 * Returns the meta object for class '{@link hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem <em>System</em>}'.
@@ -641,15 +705,15 @@ public interface TelecarePackage extends EPackage {
 	EReference getTelecareSystem_Hosts();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem#getTriggers <em>Triggers</em>}'.
+	 * Returns the meta object for the containment reference list '{@link hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem#getGateways <em>Gateways</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Triggers</em>'.
-	 * @see hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem#getTriggers()
+	 * @return the meta object for the containment reference list '<em>Gateways</em>'.
+	 * @see hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem#getGateways()
 	 * @see #getTelecareSystem()
 	 * @generated
 	 */
-	EReference getTelecareSystem_Triggers();
+	EReference getTelecareSystem_Gateways();
 
 	/**
 	 * Returns the meta object for class '{@link hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor <em>Sensor</em>}'.
@@ -671,6 +735,17 @@ public interface TelecarePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getSensor_MeasurementTypes();
+
+	/**
+	 * Returns the meta object for the reference '{@link hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor#getConnectedTo <em>Connected To</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Connected To</em>'.
+	 * @see hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor#getConnectedTo()
+	 * @see #getSensor()
+	 * @generated
+	 */
+	EReference getSensor_ConnectedTo();
 
 	/**
 	 * Returns the meta object for class '{@link hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host <em>Host</em>}'.
@@ -873,6 +948,38 @@ public interface TelecarePackage extends EPackage {
 	EReference getReportingEvent_Address();
 
 	/**
+	 * Returns the meta object for class '{@link hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Gateway <em>Gateway</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Gateway</em>'.
+	 * @see hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Gateway
+	 * @generated
+	 */
+	EClass getGateway();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Gateway#getTriggers <em>Triggers</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Triggers</em>'.
+	 * @see hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Gateway#getTriggers()
+	 * @see #getGateway()
+	 * @generated
+	 */
+	EReference getGateway_Triggers();
+
+	/**
+	 * Returns the meta object for the reference list '{@link hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Gateway#getSensors <em>Sensors</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Sensors</em>'.
+	 * @see hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Gateway#getSensors()
+	 * @see #getGateway()
+	 * @generated
+	 */
+	EReference getGateway_Sensors();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -922,12 +1029,12 @@ public interface TelecarePackage extends EPackage {
 		EReference TELECARE_SYSTEM__HOSTS = eINSTANCE.getTelecareSystem_Hosts();
 
 		/**
-		 * The meta object literal for the '<em><b>Triggers</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Gateways</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TELECARE_SYSTEM__TRIGGERS = eINSTANCE.getTelecareSystem_Triggers();
+		EReference TELECARE_SYSTEM__GATEWAYS = eINSTANCE.getTelecareSystem_Gateways();
 
 		/**
 		 * The meta object literal for the '{@link hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.impl.SensorImpl <em>Sensor</em>}' class.
@@ -946,6 +1053,14 @@ public interface TelecarePackage extends EPackage {
 		 * @generated
 		 */
 		EReference SENSOR__MEASUREMENT_TYPES = eINSTANCE.getSensor_MeasurementTypes();
+
+		/**
+		 * The meta object literal for the '<em><b>Connected To</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SENSOR__CONNECTED_TO = eINSTANCE.getSensor_ConnectedTo();
 
 		/**
 		 * The meta object literal for the '{@link hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.impl.HostImpl <em>Host</em>}' class.
@@ -1116,6 +1231,32 @@ public interface TelecarePackage extends EPackage {
 		 * @generated
 		 */
 		EReference REPORTING_EVENT__ADDRESS = eINSTANCE.getReportingEvent_Address();
+
+		/**
+		 * The meta object literal for the '{@link hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.impl.GatewayImpl <em>Gateway</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.impl.GatewayImpl
+		 * @see hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.impl.TelecarePackageImpl#getGateway()
+		 * @generated
+		 */
+		EClass GATEWAY = eINSTANCE.getGateway();
+
+		/**
+		 * The meta object literal for the '<em><b>Triggers</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference GATEWAY__TRIGGERS = eINSTANCE.getGateway_Triggers();
+
+		/**
+		 * The meta object literal for the '<em><b>Sensors</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference GATEWAY__SENSORS = eINSTANCE.getGateway_Sensors();
 
 	}
 

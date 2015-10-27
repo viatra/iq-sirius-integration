@@ -20,7 +20,6 @@ package hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare;
  * @generated
  */
 public interface Event extends NamedElement {
-
 	/**
 	 * Returns the value of the '<em><b>Trigger</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Trigger#getTriggeredEvents <em>Triggered Events</em>}'.
@@ -48,4 +47,5 @@ public interface Event extends NamedElement {
 	 * @generated
 	 */
 	void setTrigger(Trigger value);
+
 } // Event

@@ -53,7 +53,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="address" lowerBound="1"
         eType="#//Host"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Gateway">
+  <eClassifiers xsi:type="ecore:EClass" name="Gateway" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="triggers" upperBound="-1"
         eType="#//Trigger" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="sensors" upperBound="-1"

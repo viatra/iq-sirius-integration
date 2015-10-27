@@ -5,11 +5,16 @@ package hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.impl;
 import hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Event;
 import hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecarePackage;
 import hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Trigger;
+
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 

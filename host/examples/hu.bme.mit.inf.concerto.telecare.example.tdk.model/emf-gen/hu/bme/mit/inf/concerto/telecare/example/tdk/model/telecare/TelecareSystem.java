@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem#getSensors <em>Sensors</em>}</li>
  *   <li>{@link hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem#getHosts <em>Hosts</em>}</li>
- *   <li>{@link hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem#getTriggers <em>Triggers</em>}</li>
+ *   <li>{@link hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem#getGateways <em>Gateways</em>}</li>
  * </ul>
  * </p>
  *
@@ -58,19 +58,19 @@ public interface TelecareSystem extends EObject {
 	EList<Host> getHosts();
 
 	/**
-	 * Returns the value of the '<em><b>Triggers</b></em>' containment reference list.
-	 * The list contents are of type {@link hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Trigger}.
+	 * Returns the value of the '<em><b>Gateways</b></em>' containment reference list.
+	 * The list contents are of type {@link hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Gateway}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Triggers</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Gateways</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Triggers</em>' containment reference list.
-	 * @see hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecarePackage#getTelecareSystem_Triggers()
+	 * @return the value of the '<em>Gateways</em>' containment reference list.
+	 * @see hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecarePackage#getTelecareSystem_Gateways()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Trigger> getTriggers();
+	EList<Gateway> getGateways();
 
 } // TelecareSystem

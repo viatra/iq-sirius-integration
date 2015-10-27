@@ -112,6 +112,10 @@ public class TelecareAdapterFactory extends AdapterFactoryImpl {
 				return createReportingEventAdapter();
 			}
 			@Override
+			public Adapter caseGateway(Gateway object) {
+				return createGatewayAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -282,6 +286,20 @@ public class TelecareAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createReportingEventAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Gateway <em>Gateway</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Gateway
+	 * @generated
+	 */
+	public Adapter createGatewayAdapter() {
 		return null;
 	}
 

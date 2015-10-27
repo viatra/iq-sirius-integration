@@ -2,11 +2,11 @@
  */
 package hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.impl;
 
+import hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Gateway;
 import hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host;
 import hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Sensor;
 import hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecarePackage;
 import hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem;
-import hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Trigger;
 
 import java.util.Collection;
 
@@ -31,7 +31,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.impl.TelecareSystemImpl#getSensors <em>Sensors</em>}</li>
  *   <li>{@link hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.impl.TelecareSystemImpl#getHosts <em>Hosts</em>}</li>
- *   <li>{@link hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.impl.TelecareSystemImpl#getTriggers <em>Triggers</em>}</li>
+ *   <li>{@link hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.impl.TelecareSystemImpl#getGateways <em>Gateways</em>}</li>
  * </ul>
  * </p>
  *
@@ -59,14 +59,14 @@ public class TelecareSystemImpl extends MinimalEObjectImpl.Container implements 
 	protected EList<Host> hosts;
 
 	/**
-	 * The cached value of the '{@link #getTriggers() <em>Triggers</em>}' containment reference list.
+	 * The cached value of the '{@link #getGateways() <em>Gateways</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTriggers()
+	 * @see #getGateways()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Trigger> triggers;
+	protected EList<Gateway> gateways;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -116,11 +116,11 @@ public class TelecareSystemImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Trigger> getTriggers() {
-		if (triggers == null) {
-			triggers = new EObjectContainmentEList<Trigger>(Trigger.class, this, TelecarePackage.TELECARE_SYSTEM__TRIGGERS);
+	public EList<Gateway> getGateways() {
+		if (gateways == null) {
+			gateways = new EObjectContainmentEList<Gateway>(Gateway.class, this, TelecarePackage.TELECARE_SYSTEM__GATEWAYS);
 		}
-		return triggers;
+		return gateways;
 	}
 
 	/**
@@ -135,8 +135,8 @@ public class TelecareSystemImpl extends MinimalEObjectImpl.Container implements 
 				return ((InternalEList<?>)getSensors()).basicRemove(otherEnd, msgs);
 			case TelecarePackage.TELECARE_SYSTEM__HOSTS:
 				return ((InternalEList<?>)getHosts()).basicRemove(otherEnd, msgs);
-			case TelecarePackage.TELECARE_SYSTEM__TRIGGERS:
-				return ((InternalEList<?>)getTriggers()).basicRemove(otherEnd, msgs);
+			case TelecarePackage.TELECARE_SYSTEM__GATEWAYS:
+				return ((InternalEList<?>)getGateways()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -153,8 +153,8 @@ public class TelecareSystemImpl extends MinimalEObjectImpl.Container implements 
 				return getSensors();
 			case TelecarePackage.TELECARE_SYSTEM__HOSTS:
 				return getHosts();
-			case TelecarePackage.TELECARE_SYSTEM__TRIGGERS:
-				return getTriggers();
+			case TelecarePackage.TELECARE_SYSTEM__GATEWAYS:
+				return getGateways();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -176,9 +176,9 @@ public class TelecareSystemImpl extends MinimalEObjectImpl.Container implements 
 				getHosts().clear();
 				getHosts().addAll((Collection<? extends Host>)newValue);
 				return;
-			case TelecarePackage.TELECARE_SYSTEM__TRIGGERS:
-				getTriggers().clear();
-				getTriggers().addAll((Collection<? extends Trigger>)newValue);
+			case TelecarePackage.TELECARE_SYSTEM__GATEWAYS:
+				getGateways().clear();
+				getGateways().addAll((Collection<? extends Gateway>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -198,8 +198,8 @@ public class TelecareSystemImpl extends MinimalEObjectImpl.Container implements 
 			case TelecarePackage.TELECARE_SYSTEM__HOSTS:
 				getHosts().clear();
 				return;
-			case TelecarePackage.TELECARE_SYSTEM__TRIGGERS:
-				getTriggers().clear();
+			case TelecarePackage.TELECARE_SYSTEM__GATEWAYS:
+				getGateways().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -217,8 +217,8 @@ public class TelecareSystemImpl extends MinimalEObjectImpl.Container implements 
 				return sensors != null && !sensors.isEmpty();
 			case TelecarePackage.TELECARE_SYSTEM__HOSTS:
 				return hosts != null && !hosts.isEmpty();
-			case TelecarePackage.TELECARE_SYSTEM__TRIGGERS:
-				return triggers != null && !triggers.isEmpty();
+			case TelecarePackage.TELECARE_SYSTEM__GATEWAYS:
+				return gateways != null && !gateways.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

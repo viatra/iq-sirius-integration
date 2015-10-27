@@ -64,6 +64,7 @@ public class TelecareFactoryImpl extends EFactoryImpl implements TelecareFactory
 			case TelecarePackage.EVENT_COMPLETED_TRIGGER: return createEventCompletedTrigger();
 			case TelecarePackage.MEASUREMENT: return createMeasurement();
 			case TelecarePackage.REPORTING_EVENT: return createReportingEvent();
+			case TelecarePackage.GATEWAY: return createGateway();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -147,6 +148,16 @@ public class TelecareFactoryImpl extends EFactoryImpl implements TelecareFactory
 	public ReportingEvent createReportingEvent() {
 		ReportingEventImpl reportingEvent = new ReportingEventImpl();
 		return reportingEvent;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Gateway createGateway() {
+		GatewayImpl gateway = new GatewayImpl();
+		return gateway;
 	}
 
 	/**

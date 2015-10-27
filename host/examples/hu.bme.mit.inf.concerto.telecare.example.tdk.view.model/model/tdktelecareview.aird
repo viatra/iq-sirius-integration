@@ -161,9 +161,9 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_0YchYGq_EeWn395JN7ZPZg" name="Tigger" tooltipText="" incomingEdges="_8hV7IGq_EeWn395JN7ZPZg _j3xH4GrAEeWn395JN7ZPZg" width="12" height="10">
-        <target xmi:type="ecore:EClass" href="tdktelecareview.ecore#//Tigger"/>
-        <semanticElements xmi:type="ecore:EClass" href="tdktelecareview.ecore#//Tigger"/>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_0YchYGq_EeWn395JN7ZPZg" name="Trigger" tooltipText="" incomingEdges="_8hV7IGq_EeWn395JN7ZPZg _j3xH4GrAEeWn395JN7ZPZg" width="12" height="10">
+        <target xmi:type="ecore:EClass" href="tdktelecareview.ecore#//Trigger"/>
+        <semanticElements xmi:type="ecore:EClass" href="tdktelecareview.ecore#//Trigger"/>
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
@@ -172,8 +172,8 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
         <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_4_HacGrTEeWn395JN7ZPZg" name="name : EString" tooltipText="">
-          <target xmi:type="ecore:EAttribute" href="tdktelecareview.ecore#//Tigger/name"/>
-          <semanticElements xmi:type="ecore:EAttribute" href="tdktelecareview.ecore#//Tigger/name"/>
+          <target xmi:type="ecore:EAttribute" href="tdktelecareview.ecore#//Trigger/name"/>
+          <semanticElements xmi:type="ecore:EAttribute" href="tdktelecareview.ecore#//Trigger/name"/>
           <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_6Xe7kGrTEeWn395JN7ZPZg" labelAlignment="LEFT">
             <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
           </ownedStyle>

@@ -12,8 +12,8 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tdktelecareview.ecore#//ViewModel/triggers"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tdktelecareview.ecore#//ViewModel/sensors"/>
     </genClasses>
-    <genClasses ecoreClass="tdktelecareview.ecore#//Tigger">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tdktelecareview.ecore#//Tigger/name"/>
+    <genClasses ecoreClass="tdktelecareview.ecore#//Trigger">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tdktelecareview.ecore#//Trigger/name"/>
     </genClasses>
     <genClasses ecoreClass="tdktelecareview.ecore#//Server">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tdktelecareview.ecore#//Server/name"/>
