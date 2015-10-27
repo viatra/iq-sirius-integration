@@ -674,7 +674,7 @@
           <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
-        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_CEiuwDt9EeW37_c6UWZY6Q" name="ruleDescriptorId : ELong = " tooltipText="">
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_CEiuwDt9EeW37_c6UWZY6Q" name="ruleDescriptorId : ELong = 0" tooltipText="">
           <target xmi:type="ecore:EAttribute" href="traceability.ecore#//Trace/ruleDescriptorId"/>
           <semanticElements xmi:type="ecore:EAttribute" href="traceability.ecore#//Trace/ruleDescriptorId"/>
           <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_CEkj8Dt9EeW37_c6UWZY6Q" labelAlignment="LEFT" description="_RlDAwDhzEeW3rIZINIWpRA">

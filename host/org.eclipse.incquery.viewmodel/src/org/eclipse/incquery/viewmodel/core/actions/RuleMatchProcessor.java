@@ -47,7 +47,7 @@ public abstract class RuleMatchProcessor<T extends ViewModelRule<? extends RuleD
 	@Override
 	public void process(final IPatternMatch match) {
 		// TODO
-		logger.info("Action: " + this.getClass().getSimpleName() + " Process match: " + match.prettyPrint());
+		//logger.info("Action: " + this.getClass().getSimpleName() + " Process match: " + match.prettyPrint());
 		
 		if (transactionalEditingDomain != null) {
 			transactionalEditingDomain.getCommandStack().execute(
