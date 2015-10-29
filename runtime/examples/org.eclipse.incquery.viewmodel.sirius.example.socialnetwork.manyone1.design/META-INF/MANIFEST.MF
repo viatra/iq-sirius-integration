@@ -4,10 +4,7 @@ Bundle-Name: org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.manyone
 Bundle-SymbolicName: org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.manyone1.design;singleton:=true
 Bundle-Version: 1.0.0
 Bundle-Activator: org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.manyone1.design.Activator
-Export-Package: hu.bme.mit.inf.socialnetwork.manyone.design.patterns,
- hu.bme.mit.inf.socialnetwork.manyone.design.patterns.util,
- org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.manyone.design.patterns,
- org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.manyone.design.patterns.util,
+Export-Package: 
  org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.manyone1.design.patterns,
  org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.manyone1.design.patterns.util
 Require-Bundle: org.eclipse.ui,

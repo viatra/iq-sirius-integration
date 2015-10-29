@@ -2,9 +2,6 @@
   <extension point="org.eclipse.sirius.componentization">
     <component class="org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design.Activator" id="hu.bme.mit.inf.socialnetwork.base.design" name="socialnwtwork_base"/>
   </extension>
-  <extension id="org.eclipse.incquery.sirius.interpreter.base.design.patterns.Patterns" point="org.eclipse.incquery.runtime.queryspecification">
-    <group group="org.eclipse.incquery.runtime.extensibility.SingletonExtensionFactory:org.eclipse.incquery.sirius.interpreter.base.design.patterns.Patterns" id="org.eclipse.incquery.sirius.interpreter.base.design.patterns.Patterns"/>
-  </extension>
   <extension id="org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design.patterns.Patterns" point="org.eclipse.incquery.runtime.queryspecification">
     <group group="org.eclipse.incquery.runtime.extensibility.SingletonExtensionFactory:org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design.patterns.Patterns" id="org.eclipse.incquery.sirius.interpreter.example.socialnetwork.base.design.patterns.Patterns"/>
   </extension>
