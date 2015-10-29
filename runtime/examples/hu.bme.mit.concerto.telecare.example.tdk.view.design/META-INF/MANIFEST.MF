@@ -5,9 +5,7 @@ Bundle-SymbolicName: hu.bme.mit.concerto.telecare.example.tdk.view.design;single
 Bundle-Version: 1.0.0
 Bundle-Activator: hu.bme.mit.concerto.telecare.example.tdk.view.design.Activator
 Export-Package: hu.bme.mit.concerto.telecare.example.tdk.view.design.patterns,
- hu.bme.mit.concerto.telecare.example.tdk.view.design.patterns.util,
- hu.bme.mit.concerto.telecare.view.design.patterns,
- hu.bme.mit.concerto.telecare.view.design.patterns.util
+ hu.bme.mit.concerto.telecare.example.tdk.view.design.patterns.util
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.core.resources,
