@@ -3,7 +3,7 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="configuration" nsURI="http://org.eclipse.incquery/viewmodel/configuration/1.0"
     nsPrefix="org.eclipse.incquery.viewmodel.configuration">
   <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-    <details key="settingDelegates" value="org.eclipse.incquery.querybasedfeature"/>
+    <details key="settingDelegates" value="org.eclipse.viatra.query.querybasedfeature"/>
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="Configuration">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="sourceModel" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResource"
@@ -15,28 +15,28 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="elementRuleDescriptors"
         upperBound="-1" eType="#//ElementRuleDescriptor" changeable="false" volatile="true"
         transient="true" derived="true">
-      <eAnnotations source="org.eclipse.incquery.querybasedfeature">
+      <eAnnotations source="org.eclipse.viatra.query.querybasedfeature">
         <details key="patternFQN" value="org.eclipse.incquery.viewmodel.configuration.patterns.configuration_elementRuleDescriptors"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="structuralFeatureRuleDescriptors"
         upperBound="-1" eType="#//StructuralFeatureRuleDescriptor" changeable="false"
         volatile="true" transient="true" derived="true">
-      <eAnnotations source="org.eclipse.incquery.querybasedfeature">
+      <eAnnotations source="org.eclipse.viatra.query.querybasedfeature">
         <details key="patternFQN" value="org.eclipse.incquery.viewmodel.configuration.patterns.configuration_structuralFeatureRuleDescriptors"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="referenceRuleDescriptors"
         upperBound="-1" eType="#//ReferenceRuleDescriptor" changeable="false" volatile="true"
         transient="true" derived="true">
-      <eAnnotations source="org.eclipse.incquery.querybasedfeature">
+      <eAnnotations source="org.eclipse.viatra.query.querybasedfeature">
         <details key="patternFQN" value="org.eclipse.incquery.viewmodel.configuration.patterns.configuration_referenceRuleDescriptors"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="attributeRuleDescriptors"
         upperBound="-1" eType="#//AttributeRuleDescriptor" changeable="false" volatile="true"
         transient="true" derived="true">
-      <eAnnotations source="org.eclipse.incquery.querybasedfeature">
+      <eAnnotations source="org.eclipse.viatra.query.querybasedfeature">
         <details key="patternFQN" value="org.eclipse.incquery.viewmodel.configuration.patterns.configuration_attributeRuleDescriptors"/>
       </eAnnotations>
     </eStructuralFeatures>
@@ -50,21 +50,21 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="transformationRuleDescriptors"
         upperBound="-1" eType="#//TransformationRuleDescriptor" changeable="false"
         volatile="true" transient="true" derived="true">
-      <eAnnotations source="org.eclipse.incquery.querybasedfeature">
+      <eAnnotations source="org.eclipse.viatra.query.querybasedfeature">
         <details key="patternFQN" value="org.eclipse.incquery.viewmodel.configuration.patterns.configuration_transformationRuleDescriptors"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="traceabilityRuleDescriptors"
         upperBound="-1" eType="#//TraceabilityRuleDescriptor" changeable="false" volatile="true"
         transient="true" derived="true">
-      <eAnnotations source="org.eclipse.incquery.querybasedfeature">
+      <eAnnotations source="org.eclipse.viatra.query.querybasedfeature">
         <details key="patternFQN" value="org.eclipse.incquery.viewmodel.configuration.patterns.configuration_traceabilityRuleDescriptors"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="hiddenParametersRuleDescriptors"
         upperBound="-1" eType="#//HiddenParametersRuleDescriptor" changeable="false"
         volatile="true" transient="true" derived="true">
-      <eAnnotations source="org.eclipse.incquery.querybasedfeature">
+      <eAnnotations source="org.eclipse.viatra.query.querybasedfeature">
         <details key="patternFQN" value="org.eclipse.incquery.viewmodel.configuration.patterns.configuration_hiddenParametersRuleDescriptors"/>
       </eAnnotations>
     </eStructuralFeatures>
@@ -77,14 +77,14 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="referenceRuleDescriptors"
         upperBound="-1" eType="#//ReferenceRuleDescriptor" changeable="false" volatile="true"
         transient="true" derived="true">
-      <eAnnotations source="org.eclipse.incquery.querybasedfeature">
+      <eAnnotations source="org.eclipse.viatra.query.querybasedfeature">
         <details key="patternFQN" value="org.eclipse.incquery.viewmodel.configuration.patterns.elementRule_referenceRuleDescriptors"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="attributeRuleDescriptors"
         upperBound="-1" eType="#//AttributeRuleDescriptor" changeable="false" volatile="true"
         transient="true" derived="true">
-      <eAnnotations source="org.eclipse.incquery.querybasedfeature">
+      <eAnnotations source="org.eclipse.viatra.query.querybasedfeature">
         <details key="patternFQN" value="org.eclipse.incquery.viewmodel.configuration.patterns.elementRule_attributeRuleDescriptors"/>
       </eAnnotations>
     </eStructuralFeatures>
@@ -127,6 +127,9 @@
       <eAnnotations source="org.eclipse.incquery.querybasedfeature">
         <details key="patternFQN" value="org.eclipse.incquery.viewmodel.configuration.patterns.namedElement_name"/>
       </eAnnotations>
+      <eAnnotations source="org.eclipse.viatra.query.querybasedfeature">
+        <details key="patternFQN" value="org.eclipse.incquery.viewmodel.configuration.patterns.namedElement_name"/>
+      </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PatternParameterMapping" eSuperTypes="#//NamedElement">
@@ -150,7 +153,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="transformationRuleDescriptors"
         upperBound="-1" eType="#//TransformationRuleDescriptor" changeable="false"
         volatile="true" transient="true" derived="true">
-      <eAnnotations source="org.eclipse.incquery.querybasedfeature">
+      <eAnnotations source="org.eclipse.viatra.query.querybasedfeature">
         <details key="patternFQN" value="org.eclipse.incquery.viewmodel.configuration.patterns.hiddenParametersRuleDescriptors_transformationRuleDescriptors"/>
       </eAnnotations>
     </eStructuralFeatures>

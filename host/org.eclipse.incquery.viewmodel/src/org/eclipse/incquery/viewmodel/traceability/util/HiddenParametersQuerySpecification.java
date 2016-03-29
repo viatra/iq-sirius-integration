@@ -5,20 +5,20 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 
-import org.eclipse.incquery.runtime.api.IncQueryEngine;
-import org.eclipse.incquery.runtime.api.impl.BaseGeneratedEMFPQuery;
-import org.eclipse.incquery.runtime.api.impl.BaseQuerySpecification;
-import org.eclipse.incquery.runtime.api.scope.IncQueryScope;
-import org.eclipse.incquery.runtime.emf.EMFScope;
-import org.eclipse.incquery.runtime.exception.IncQueryException;
-import org.eclipse.incquery.runtime.matchers.psystem.PBody;
-import org.eclipse.incquery.runtime.matchers.psystem.PVariable;
-import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.Equality;
-import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.ExportedParameter;
-import org.eclipse.incquery.runtime.matchers.psystem.basicenumerables.TypeConstraint;
-import org.eclipse.incquery.runtime.matchers.psystem.queries.PParameter;
-import org.eclipse.incquery.runtime.matchers.psystem.queries.QueryInitializationException;
-import org.eclipse.incquery.runtime.matchers.tuple.FlatTuple;
+import org.eclipse.viatra.query.runtime.api.ViatraQueryEngine;
+import org.eclipse.viatra.query.runtime.api.impl.BaseGeneratedEMFPQuery;
+import org.eclipse.viatra.query.runtime.api.impl.BaseQuerySpecification;
+import org.eclipse.viatra.query.runtime.api.scope.QueryScope;
+import org.eclipse.viatra.query.runtime.emf.EMFScope;
+import org.eclipse.viatra.query.runtime.exception.ViatraQueryException;
+import org.eclipse.viatra.query.runtime.matchers.psystem.PBody;
+import org.eclipse.viatra.query.runtime.matchers.psystem.PVariable;
+import org.eclipse.viatra.query.runtime.matchers.psystem.basicdeferred.Equality;
+import org.eclipse.viatra.query.runtime.matchers.psystem.basicdeferred.ExportedParameter;
+import org.eclipse.viatra.query.runtime.matchers.psystem.basicenumerables.TypeConstraint;
+import org.eclipse.viatra.query.runtime.matchers.psystem.queries.PParameter;
+import org.eclipse.viatra.query.runtime.matchers.psystem.queries.QueryInitializationException;
+import org.eclipse.viatra.query.runtime.matchers.tuple.FlatTuple;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
@@ -40,12 +40,12 @@ public class HiddenParametersQuerySpecification extends BaseQuerySpecification<H
 	}
 
 	@Override
-	public Class<? extends IncQueryScope> getPreferredScopeClass() {
+	public Class<? extends QueryScope> getPreferredScopeClass() {
 		return EMFScope.class;
 	}
 
 	@Override
-	protected HiddenParametersPatternMatcher instantiate(IncQueryEngine engine) throws IncQueryException {
+	protected HiddenParametersPatternMatcher instantiate(ViatraQueryEngine engine) throws ViatraQueryException {
 		return HiddenParametersPatternMatcher.instantiate(engine, this);
 	}
 	
@@ -130,7 +130,7 @@ public class HiddenParametersQuerySpecification extends BaseQuerySpecification<H
 				exportedParameters.add(new ExportedParameter(body, nonExportedVariable, nonExportedVariable.getName()));
 			}
 			
-			body.setExportedParameters(exportedParameters);
+			body.setSymbolicParameters(exportedParameters);
 
 			result.add(body);
 

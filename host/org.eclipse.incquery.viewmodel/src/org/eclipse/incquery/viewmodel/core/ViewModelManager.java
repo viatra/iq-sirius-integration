@@ -11,22 +11,6 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
-import org.eclipse.incquery.patternlanguage.emf.specification.SpecificationBuilder;
-import org.eclipse.incquery.patternlanguage.patternLanguage.Pattern;
-import org.eclipse.incquery.patternlanguage.patternLanguage.PatternModel;
-import org.eclipse.incquery.runtime.api.IQuerySpecification;
-import org.eclipse.incquery.runtime.api.IncQueryEngine;
-import org.eclipse.incquery.runtime.emf.EMFScope;
-import org.eclipse.incquery.runtime.evm.api.ActivationLifeCycle;
-import org.eclipse.incquery.runtime.evm.specific.ConflictResolvers;
-import org.eclipse.incquery.runtime.evm.specific.Lifecycles;
-import org.eclipse.incquery.runtime.evm.specific.TransactionalSchedulers;
-import org.eclipse.incquery.runtime.evm.specific.event.IncQueryActivationStateEnum;
-import org.eclipse.incquery.runtime.evm.specific.resolver.FixedPriorityConflictResolver;
-import org.eclipse.incquery.runtime.evm.specific.scheduler.UpdateCompleteBasedScheduler.UpdateCompleteBasedSchedulerFactory;
-import org.eclipse.incquery.runtime.evm.update.IQEngineUpdateCompleteProvider;
-import org.eclipse.incquery.runtime.exception.IncQueryException;
-import org.eclipse.incquery.runtime.matchers.psystem.PBody;
 import org.eclipse.incquery.viewmodel.configuration.AttributeRuleDescriptor;
 import org.eclipse.incquery.viewmodel.configuration.Configuration;
 import org.eclipse.incquery.viewmodel.configuration.ConfigurationFactory;
@@ -42,12 +26,28 @@ import org.eclipse.incquery.viewmodel.core.rules.ReferenceRule;
 import org.eclipse.incquery.viewmodel.core.rules.ViewModelRule;
 import org.eclipse.incquery.viewmodel.traceability.TraceabilityModelManager;
 import org.eclipse.incquery.viewmodel.traceability.util.HiddenParametersQuerySpecification;
-import org.eclipse.viatra.emf.runtime.rules.eventdriven.EventDrivenTransformationRule;
-import org.eclipse.viatra.emf.runtime.rules.eventdriven.EventDrivenTransformationRuleFactory;
-import org.eclipse.viatra.emf.runtime.transformation.eventdriven.EventDrivenTransformation;
-import org.eclipse.viatra.emf.runtime.transformation.eventdriven.EventDrivenTransformation.EventDrivenTransformationBuilder;
-import org.eclipse.viatra.emf.runtime.transformation.eventdriven.ExecutionSchemaBuilder;
-import org.eclipse.viatra.emf.runtime.transformation.eventdriven.InconsistentEventSemanticsException;
+import org.eclipse.viatra.query.patternlanguage.emf.specification.SpecificationBuilder;
+import org.eclipse.viatra.query.patternlanguage.patternLanguage.Pattern;
+import org.eclipse.viatra.query.patternlanguage.patternLanguage.PatternModel;
+import org.eclipse.viatra.query.runtime.api.IQuerySpecification;
+import org.eclipse.viatra.query.runtime.api.ViatraQueryEngine;
+import org.eclipse.viatra.query.runtime.emf.EMFScope;
+import org.eclipse.viatra.query.runtime.exception.ViatraQueryException;
+import org.eclipse.viatra.query.runtime.matchers.psystem.PBody;
+import org.eclipse.viatra.transformation.evm.api.ActivationLifeCycle;
+import org.eclipse.viatra.transformation.evm.specific.ConflictResolvers;
+import org.eclipse.viatra.transformation.evm.specific.Lifecycles;
+import org.eclipse.viatra.transformation.evm.specific.crud.CRUDActivationStateEnum;
+import org.eclipse.viatra.transformation.evm.specific.resolver.FixedPriorityConflictResolver;
+import org.eclipse.viatra.transformation.evm.specific.scheduler.UpdateCompleteBasedScheduler.UpdateCompleteBasedSchedulerFactory;
+import org.eclipse.viatra.transformation.evm.transactions.specific.TransactionalSchedulers;
+import org.eclipse.viatra.transformation.evm.update.QueryEngineUpdateCompleteProvider;
+import org.eclipse.viatra.transformation.runtime.emf.rules.eventdriven.EventDrivenTransformationRule;
+import org.eclipse.viatra.transformation.runtime.emf.rules.eventdriven.EventDrivenTransformationRuleFactory;
+import org.eclipse.viatra.transformation.runtime.emf.transformation.eventdriven.EventDrivenTransformation;
+import org.eclipse.viatra.transformation.runtime.emf.transformation.eventdriven.EventDrivenTransformation.EventDrivenTransformationBuilder;
+import org.eclipse.viatra.transformation.runtime.emf.transformation.eventdriven.ExecutionSchemaBuilder;
+import org.eclipse.viatra.transformation.runtime.emf.transformation.eventdriven.InconsistentEventSemanticsException;
 
 import com.google.common.collect.Lists;
 
@@ -132,7 +132,7 @@ public class ViewModelManager {
 	 *  egyébként pedig a sima ütemezőt (Update-re). Ha a target-hez van TED, akkor az egyes action-ök abban futnak
 	 *  (később a CommandStack-et javítani kell a visszavonások miatt), egyébként pedig sima getter/setter hívásokat használok a target modellen.
 	 */
-	public ViewModelManager(Configuration configurationModel) throws IncQueryException {
+	public ViewModelManager(Configuration configurationModel) throws ViatraQueryException {
 		if (configurationModel == null) {
 			throw new IllegalArgumentException("The 'configurationModel' parameter can not be null!");
 		}
@@ -222,8 +222,8 @@ public class ViewModelManager {
 	 * @throws InconsistentEventSemanticsException
 	 * @throws IncQueryException
 	 */
-	public void initialize() throws InconsistentEventSemanticsException, IncQueryException {
-		IncQueryEngine smEngine = IncQueryEngine.on(new EMFScope(configurationModel.getSourceModel()));
+	public void initialize() throws InconsistentEventSemanticsException, ViatraQueryException {
+		ViatraQueryEngine smEngine = ViatraQueryEngine.on(new EMFScope(configurationModel.getSourceModel()));
 		
 		FixedPriorityConflictResolver conflictResolver = ConflictResolvers.createFixedPriorityResolver();
 
@@ -238,7 +238,7 @@ public class ViewModelManager {
 		 * 	otherwise we use a TransactionalScheduler
 		 */
 		if (sourceTransactionalEditingDomain == null) {
-			esb.setScheduler(new UpdateCompleteBasedSchedulerFactory(new IQEngineUpdateCompleteProvider(smEngine)));
+			esb.setScheduler(new UpdateCompleteBasedSchedulerFactory(new QueryEngineUpdateCompleteProvider(smEngine)));
 		} else {
 			esb.setScheduler(TransactionalSchedulers.getTransactionSchedulerFactory(sourceTransactionalEditingDomain));
 		}
@@ -407,17 +407,17 @@ public class ViewModelManager {
 		
 		ActivationLifeCycle alc = rule.getActivationLifeCycle();
 		if (Lifecycles.getDefault(false, false).equals(alc)) {
-			builder.action(IncQueryActivationStateEnum.APPEARED, rule.getAppearedAction());
+			builder.action(CRUDActivationStateEnum.CREATED, rule.getAppearedAction());
 		} else if (Lifecycles.getDefault(true, false).equals(alc)) {
-			builder.action(IncQueryActivationStateEnum.APPEARED, rule.getAppearedAction());
-			builder.action(IncQueryActivationStateEnum.UPDATED, rule.getUpdatedAction());
+			builder.action(CRUDActivationStateEnum.CREATED, rule.getAppearedAction());
+			builder.action(CRUDActivationStateEnum.UPDATED, rule.getUpdatedAction());
 		} else if (Lifecycles.getDefault(false, true).equals(alc)) {
-			builder.action(IncQueryActivationStateEnum.APPEARED, rule.getAppearedAction());
-			builder.action(IncQueryActivationStateEnum.DISAPPEARED, rule.getDisappearedAction());
+			builder.action(CRUDActivationStateEnum.CREATED, rule.getAppearedAction());
+			builder.action(CRUDActivationStateEnum.DELETED, rule.getDisappearedAction());
 		} else if (Lifecycles.getDefault(true, true).equals(alc)) {
-			builder.action(IncQueryActivationStateEnum.APPEARED, rule.getAppearedAction());
-			builder.action(IncQueryActivationStateEnum.DISAPPEARED, rule.getDisappearedAction());
-			builder.action(IncQueryActivationStateEnum.UPDATED, rule.getUpdatedAction());
+			builder.action(CRUDActivationStateEnum.CREATED, rule.getAppearedAction());
+			builder.action(CRUDActivationStateEnum.DELETED, rule.getDisappearedAction());
+			builder.action(CRUDActivationStateEnum.UPDATED, rule.getUpdatedAction());
 		}
 
 		builder.addLifeCycle(alc);

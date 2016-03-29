@@ -3,10 +3,10 @@ package org.eclipse.incquery.viewmodel.traceability.util;
 import java.util.Arrays;
 import java.util.Map;
 
-import org.eclipse.incquery.runtime.api.GenericQuerySpecification;
-import org.eclipse.incquery.runtime.api.IPatternMatch;
-import org.eclipse.incquery.runtime.api.impl.BasePatternMatch;
-import org.eclipse.incquery.runtime.matchers.psystem.queries.PParameter;
+import org.eclipse.viatra.query.runtime.api.GenericQuerySpecification;
+import org.eclipse.viatra.query.runtime.api.IPatternMatch;
+import org.eclipse.viatra.query.runtime.api.impl.BasePatternMatch;
+import org.eclipse.viatra.query.runtime.matchers.psystem.queries.PParameter;
 
 import com.google.common.collect.Maps;
 

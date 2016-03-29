@@ -1,12 +1,6 @@
 package hu.bme.mit.inf.concerto.telecare.example.tdk.measurement.handlers;
 
 
-import hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.EventCompletedTrigger;
-import hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host;
-import hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.ReportingEvent;
-import hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareFactory;
-import hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem;
-
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.Collections;
@@ -23,14 +17,16 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.emf.transaction.RecordingCommand;
-import org.eclipse.emf.transaction.TransactionalEditingDomain;
-import org.eclipse.emf.transaction.util.TransactionUtil;
-import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.viewmodel.configuration.Configuration;
 import org.eclipse.incquery.viewmodel.core.ViewModelManager;
-import org.eclipse.ui.internal.themes.ThemeElementDefinition;
-import org.eclipse.viatra.emf.runtime.transformation.eventdriven.InconsistentEventSemanticsException;
+import org.eclipse.viatra.query.runtime.exception.ViatraQueryException;
+import org.eclipse.viatra.transformation.runtime.emf.transformation.eventdriven.InconsistentEventSemanticsException;
+
+import hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.EventCompletedTrigger;
+import hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.Host;
+import hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.ReportingEvent;
+import hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareFactory;
+import hu.bme.mit.inf.concerto.telecare.example.tdk.model.telecare.TelecareSystem;
 
 /**
  * Our sample handler extends AbstractHandler, an IHandler base class.
@@ -166,7 +162,7 @@ public class CommandHandler extends AbstractHandler {
 		}
 	}
 	
-	private void measure(Configuration configurationModel, int type) throws IncQueryException, InconsistentEventSemanticsException, InterruptedException, IOException {
+	private void measure(Configuration configurationModel, int type) throws ViatraQueryException, InconsistentEventSemanticsException, InterruptedException, IOException {
 		Iterator it = null;
 		long startTS = 0l;
 		long endTS = 0L;

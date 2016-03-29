@@ -2,10 +2,12 @@ package org.eclipse.incquery.viewmodel.traceability.util;
 
 import java.util.Collections;
 
-import org.eclipse.incquery.runtime.matchers.psystem.PBody;
-import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.ExportedParameter;
-import org.eclipse.incquery.runtime.matchers.psystem.queries.PQuery;
-import org.eclipse.incquery.runtime.matchers.psystem.rewriters.PBodyCopier;
+import org.eclipse.viatra.query.runtime.matchers.psystem.PBody;
+import org.eclipse.viatra.query.runtime.matchers.psystem.basicdeferred.ExportedParameter;
+import org.eclipse.viatra.query.runtime.matchers.psystem.queries.PQuery;
+import org.eclipse.viatra.query.runtime.matchers.psystem.rewriters.PBodyCopier;
+
+
 
 public class ExtendedPBodyCopier extends PBodyCopier {
 
@@ -18,7 +20,7 @@ public class ExtendedPBodyCopier extends PBodyCopier {
 		super(query);
 		
         // preinitialize parameter list
-        this.body.setExportedParameters(Collections.<ExportedParameter>emptyList());
+        this.body.setSymbolicParameters(Collections.<ExportedParameter>emptyList());
 
         // do the actual copying
         mergeBody(body);

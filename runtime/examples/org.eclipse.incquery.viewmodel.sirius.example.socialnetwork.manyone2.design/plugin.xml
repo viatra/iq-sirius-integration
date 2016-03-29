@@ -2,7 +2,7 @@
   <extension point="org.eclipse.sirius.componentization">
     <component class="org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.manyone2.design.Activator" id="hu.bme.mit.inf.socialnetwork.manyone.design" name="manyone"/>
   </extension>
-  <extension id="org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.manyone2.design.patterns.Patterns_many_one" point="org.eclipse.incquery.runtime.queryspecification">
-    <group group="org.eclipse.incquery.runtime.extensibility.SingletonExtensionFactory:org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.manyone2.design.patterns.Patterns_many_one" id="org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.manyone2.design.patterns.Patterns_many_one"/>
+  <extension id="org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.manyone2.design.patterns.Patterns_many_one" point="org.eclipse.viatra.query.runtime.queryspecification">
+    <group group="org.eclipse.viatra.query.runtime.extensibility.SingletonExtensionFactory:org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.manyone2.design.patterns.Patterns_many_one" id="org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.manyone2.design.patterns.Patterns_many_one"/>
   </extension>
 </plugin>

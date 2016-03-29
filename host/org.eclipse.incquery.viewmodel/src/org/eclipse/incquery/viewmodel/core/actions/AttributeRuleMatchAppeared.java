@@ -3,12 +3,14 @@ package org.eclipse.incquery.viewmodel.core.actions;
 import java.util.List;
 import java.util.Map;
 
-import org.eclipse.incquery.runtime.api.IPatternMatch;
 import org.eclipse.incquery.viewmodel.configuration.ElementRuleDescriptor;
 import org.eclipse.incquery.viewmodel.core.rules.AttributeRule;
 import org.eclipse.incquery.viewmodel.core.util.ViewModelUtil;
 import org.eclipse.incquery.viewmodel.traceability.EObjectTarget;
 import org.eclipse.incquery.viewmodel.traceability.TraceTarget;
+import org.eclipse.viatra.query.runtime.api.IPatternMatch;
+
+
 
 public class AttributeRuleMatchAppeared extends
 		RuleMatchProcessor<AttributeRule> {

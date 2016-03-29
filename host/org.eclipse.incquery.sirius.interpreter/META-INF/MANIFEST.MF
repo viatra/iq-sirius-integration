@@ -3,14 +3,15 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Interpreter
 Bundle-SymbolicName: org.eclipse.incquery.sirius.interpreter;singleton:=true
 Bundle-Version: 1.0.0.qualifier
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Require-Bundle: org.eclipse.sirius.common;bundle-version="3.0.0",
  org.eclipse.emf.ecore,
  org.eclipse.sirius.ecore.extender,
- org.eclipse.incquery.runtime,
- org.eclipse.incquery.patternlanguage,
- org.eclipse.incquery.patternlanguage.emf;bundle-version="1.0.0",
  org.eclipse.platform;bundle-version="4.5.0",
  org.eclipse.osgi,
  org.eclipse.sirius.diagram,
- org.eclipse.emf.transaction;bundle-version="1.9.0"
+ org.eclipse.emf.transaction;bundle-version="1.9.0",
+ org.eclipse.emf.emfstore.common,
+ org.eclipse.viatra.query.runtime,
+ org.eclipse.viatra.query.patternlanguage,
+ org.eclipse.viatra.query.patternlanguage.emf;bundle-version="[1.2.0,2.0.0)"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8

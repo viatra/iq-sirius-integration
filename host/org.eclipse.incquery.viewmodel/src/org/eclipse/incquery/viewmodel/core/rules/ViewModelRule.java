@@ -1,13 +1,13 @@
 package org.eclipse.incquery.viewmodel.core.rules;
 
-import org.eclipse.incquery.runtime.api.IMatchProcessor;
-import org.eclipse.incquery.runtime.api.IPatternMatch;
-import org.eclipse.incquery.runtime.api.IQuerySpecification;
-import org.eclipse.incquery.runtime.api.IncQueryMatcher;
-import org.eclipse.incquery.runtime.evm.api.ActivationLifeCycle;
-import org.eclipse.incquery.runtime.evm.specific.Lifecycles;
 import org.eclipse.incquery.viewmodel.configuration.RuleDescriptor;
 import org.eclipse.incquery.viewmodel.core.ViewModelManager;
+import org.eclipse.viatra.query.runtime.api.IMatchProcessor;
+import org.eclipse.viatra.query.runtime.api.IPatternMatch;
+import org.eclipse.viatra.query.runtime.api.IQuerySpecification;
+import org.eclipse.viatra.query.runtime.api.ViatraQueryMatcher;
+import org.eclipse.viatra.transformation.evm.api.ActivationLifeCycle;
+import org.eclipse.viatra.transformation.evm.specific.Lifecycles;
 
 /**
  * This class is an abstract ancestor for EVM rules.
@@ -22,7 +22,7 @@ public abstract class ViewModelRule<T extends RuleDescriptor> {
 	
 	protected ViewModelManager viewModelManager;
 	
-	protected IQuerySpecification<? extends IncQueryMatcher<? extends IPatternMatch>> querySpecification;
+	protected IQuerySpecification<? extends ViatraQueryMatcher<? extends IPatternMatch>> querySpecification;
 
 	
 	public static enum DefaultRulePriority {

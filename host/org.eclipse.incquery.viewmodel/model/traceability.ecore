@@ -3,7 +3,7 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="traceability" nsURI="http://org.eclipse.incquery/viewmodel/traceability/3.0"
     nsPrefix="org.eclipse.incquery.viewmodel.traceability">
   <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-    <details key="settingDelegates" value="org.eclipse.incquery.querybasedfeature"/>
+    <details key="settingDelegates" value="org.eclipse.viatra.query.querybasedfeature"/>
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="Traceability">
     <eStructuralFeatures xsi:type="ecore:EReference" name="traces" upperBound="-1"
@@ -19,42 +19,42 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="hiddenSources" upperBound="-1"
         eType="#//TraceSource" changeable="false" volatile="true" transient="true"
         derived="true">
-      <eAnnotations source="org.eclipse.incquery.querybasedfeature">
+      <eAnnotations source="org.eclipse.viatra.query.querybasedfeature">
         <details key="patternFQN" value="org.eclipse.incquery.viewmodel.traceability.patterns.trace_hiddenSources"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="eObjectSources" upperBound="-1"
         eType="#//EObjectSource" changeable="false" volatile="true" transient="true"
         derived="true">
-      <eAnnotations source="org.eclipse.incquery.querybasedfeature">
+      <eAnnotations source="org.eclipse.viatra.query.querybasedfeature">
         <details key="patternFQN" value="org.eclipse.incquery.viewmodel.traceability.patterns.trace_eObjectSources"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="javaObjectSources" upperBound="-1"
         eType="#//JavaObjectSource" changeable="false" volatile="true" transient="true"
         derived="true">
-      <eAnnotations source="org.eclipse.incquery.querybasedfeature">
+      <eAnnotations source="org.eclipse.viatra.query.querybasedfeature">
         <details key="patternFQN" value="org.eclipse.incquery.viewmodel.traceability.patterns.trace_javaObjectSources"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="referenceSources" upperBound="-1"
         eType="#//ReferenceSource" changeable="false" volatile="true" transient="true"
         derived="true">
-      <eAnnotations source="org.eclipse.incquery.querybasedfeature">
+      <eAnnotations source="org.eclipse.viatra.query.querybasedfeature">
         <details key="patternFQN" value="org.eclipse.incquery.viewmodel.traceability.patterns.trace_referenceSources"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="attributeSources" upperBound="-1"
         eType="#//AttributeSource" changeable="false" volatile="true" transient="true"
         derived="true">
-      <eAnnotations source="org.eclipse.incquery.querybasedfeature">
+      <eAnnotations source="org.eclipse.viatra.query.querybasedfeature">
         <details key="patternFQN" value="org.eclipse.incquery.viewmodel.traceability.patterns.trace_attributeSources"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="visibleSources" lowerBound="1"
         upperBound="-1" eType="#//TraceSource" changeable="false" volatile="true"
         transient="true" derived="true">
-      <eAnnotations source="org.eclipse.incquery.querybasedfeature">
+      <eAnnotations source="org.eclipse.viatra.query.querybasedfeature">
         <details key="patternFQN" value="org.eclipse.incquery.viewmodel.traceability.patterns.trace_visibleSources"/>
       </eAnnotations>
     </eStructuralFeatures>

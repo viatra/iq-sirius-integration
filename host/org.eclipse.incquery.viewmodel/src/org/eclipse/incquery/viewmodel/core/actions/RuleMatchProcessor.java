@@ -1,22 +1,18 @@
 package org.eclipse.incquery.viewmodel.core.actions;
 
-import java.util.List;
 import java.util.Map;
 import java.util.logging.Logger;
 
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
-import org.eclipse.incquery.runtime.api.IMatchProcessor;
-import org.eclipse.incquery.runtime.api.IPatternMatch;
-import org.eclipse.incquery.runtime.api.IQuerySpecification;
-import org.eclipse.incquery.runtime.extensibility.QuerySpecificationRegistry;
 import org.eclipse.incquery.viewmodel.configuration.PatternParameterMapping;
 import org.eclipse.incquery.viewmodel.configuration.ReferenceRuleDescriptor;
 import org.eclipse.incquery.viewmodel.configuration.RuleDescriptor;
 import org.eclipse.incquery.viewmodel.configuration.StructuralFeatureRuleDescriptor;
-import org.eclipse.incquery.viewmodel.configuration.TransformationRuleDescriptor;
 import org.eclipse.incquery.viewmodel.core.rules.ViewModelRule;
 import org.eclipse.incquery.viewmodel.traceability.TraceabilityModelManager;
+import org.eclipse.viatra.query.runtime.api.IMatchProcessor;
+import org.eclipse.viatra.query.runtime.api.IPatternMatch;
 
 import com.google.common.collect.Maps;
 

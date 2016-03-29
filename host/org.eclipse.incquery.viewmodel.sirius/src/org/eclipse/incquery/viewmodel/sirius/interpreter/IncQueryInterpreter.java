@@ -1,7 +1,5 @@
 package org.eclipse.incquery.viewmodel.sirius.interpreter;
 
-import hu.bme.mit.inf.eclipse.logging.utils.LoggingUtils;
-
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -23,6 +21,8 @@ import org.eclipse.sirius.common.tools.api.interpreter.IVariableStatusListener;
 import org.eclipse.sirius.diagram.DDiagram;
 import org.eclipse.sirius.ecore.extender.business.api.accessor.MetamodelDescriptor;
 import org.eclipse.sirius.ecore.extender.business.api.accessor.ModelAccessor;
+
+import hu.bme.mit.inf.eclipse.logging.utils.LoggingUtils;
 
 public class IncQueryInterpreter implements IInterpreter {
 	

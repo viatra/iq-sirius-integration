@@ -24,5 +24,5 @@
     <patternParameterMappings sfRulePatternParameterName="w2" eRulePatternParameterName="mother"/>
     <reference href="../../../plugin/org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.models/model/socialnetwork_many_one_1.ecore#//Family/friends"/>
   </ruleDescriptors>
-  <patternResourceURIs>platform:/resource/org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.manyone1.design/src/org/eclipse/incquery/viewmodel/sirius/example/socialnetwork/manyone1/design/patterns/patterns_many_one.eiq</patternResourceURIs>
+  <patternResourceURIs>platform:/resource/org.eclipse.incquery.viewmodel.sirius.example.socialnetwork.manyone1.design/src/org/eclipse/incquery/viewmodel/sirius/example/socialnetwork/manyone1/design/patterns/patterns_many_one.vql</patternResourceURIs>
 </org.eclipse.incquery.viewmodel.configuration:Configuration>

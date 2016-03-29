@@ -8,10 +8,6 @@ import java.util.Set;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.incquery.runtime.api.GenericPatternMatch;
-import org.eclipse.incquery.runtime.api.IncQueryEngine;
-import org.eclipse.incquery.runtime.emf.EMFScope;
-import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.viewmodel.configuration.TransformationRuleDescriptor;
 import org.eclipse.incquery.viewmodel.traceability.patterns.GetTraceByAttributeTargetMatch;
 import org.eclipse.incquery.viewmodel.traceability.patterns.GetTraceByEObjectTargetMatch;
@@ -22,6 +18,10 @@ import org.eclipse.incquery.viewmodel.traceability.patterns.util.GetTraceByEObje
 import org.eclipse.incquery.viewmodel.traceability.patterns.util.GetTraceByReferenceTargetQuerySpecification;
 import org.eclipse.incquery.viewmodel.traceability.patterns.util.GetTraceSourceQuerySpecification;
 import org.eclipse.incquery.viewmodel.traceability.util.TraceQuerySpecification;
+import org.eclipse.viatra.query.runtime.api.GenericPatternMatch;
+import org.eclipse.viatra.query.runtime.api.ViatraQueryEngine;
+import org.eclipse.viatra.query.runtime.emf.EMFScope;
+import org.eclipse.viatra.query.runtime.exception.ViatraQueryException;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
@@ -35,7 +35,7 @@ import com.google.common.collect.Sets;
  */
 public class TraceabilityModelManager {
 	
-	private IncQueryEngine engine;
+	private ViatraQueryEngine engine;
 
 	private Traceability traceability;
 	
@@ -43,10 +43,10 @@ public class TraceabilityModelManager {
 	
 	
 	
-	public TraceabilityModelManager() throws IncQueryException {
+	public TraceabilityModelManager() throws ViatraQueryException {
 		this.traceability = createTraceabilityEObject();
 		
-		this.engine = IncQueryEngine.on(new EMFScope(traceability));
+		this.engine = ViatraQueryEngine.on(new EMFScope(traceability));
 		
 		this.traceQuerySpecifications = Maps.newHashMap();
 	}
@@ -95,7 +95,7 @@ public class TraceabilityModelManager {
 					}
 				}			
 			}
-		} catch (IncQueryException e) {
+		} catch (ViatraQueryException e) {
 			e.printStackTrace();
 			// TODO
 		}
@@ -237,7 +237,7 @@ public class TraceabilityModelManager {
 			for (GetTraceByEObjectTargetMatch match : querySpecification.getMatcher(engine).getAllMatches(emptyMatch)) {
 				result.add(match.getTrace());
 			}
-		} catch (IncQueryException e) {
+		} catch (ViatraQueryException e) {
 			e.printStackTrace();
 			
 			// TODO
@@ -261,7 +261,7 @@ public class TraceabilityModelManager {
 			for (GetTraceByReferenceTargetMatch match : querySpecification.getMatcher(engine).getAllMatches(emptyMatch)) {
 				result.add(match.getTrace());
 			}
-		} catch (IncQueryException e) {
+		} catch (ViatraQueryException e) {
 			e.printStackTrace();
 			
 			// TODO
@@ -285,7 +285,7 @@ public class TraceabilityModelManager {
 			for (GetTraceByAttributeTargetMatch match : querySpecification.getMatcher(engine).getAllMatches(emptyMatch)) {
 				result.add(match.getTrace());
 			}
-		} catch (IncQueryException e) {
+		} catch (ViatraQueryException e) {
 			e.printStackTrace();
 			
 			// TODO
@@ -333,7 +333,7 @@ public class TraceabilityModelManager {
 			for (GenericPatternMatch match : matches) {
 				result.add((Trace) match.get(TraceQuerySpecification.TracePQuery.PARAMETER_TRACE));
 			}
-		} catch (IncQueryException e) {
+		} catch (ViatraQueryException e) {
 			// TODO hibakezelés...
 		}
 		
@@ -388,7 +388,7 @@ public class TraceabilityModelManager {
 					}
 				}
 			}
-		} catch (IncQueryException e) {
+		} catch (ViatraQueryException e) {
 			e.printStackTrace();
 			// TODO
 		}

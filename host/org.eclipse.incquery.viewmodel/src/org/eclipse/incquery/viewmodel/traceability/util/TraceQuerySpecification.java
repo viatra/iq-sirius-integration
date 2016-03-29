@@ -3,24 +3,24 @@ package org.eclipse.incquery.viewmodel.traceability.util;
 import java.util.List;
 import java.util.Set;
 
-import org.eclipse.incquery.runtime.api.GenericPatternMatcher;
-import org.eclipse.incquery.runtime.api.GenericQuerySpecification;
-import org.eclipse.incquery.runtime.api.IQuerySpecification;
-import org.eclipse.incquery.runtime.api.IncQueryEngine;
-import org.eclipse.incquery.runtime.api.impl.BaseGeneratedEMFPQuery;
-import org.eclipse.incquery.runtime.api.scope.IncQueryScope;
-import org.eclipse.incquery.runtime.emf.EMFScope;
-import org.eclipse.incquery.runtime.exception.IncQueryException;
-import org.eclipse.incquery.runtime.matchers.psystem.PBody;
-import org.eclipse.incquery.runtime.matchers.psystem.PVariable;
-import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.ExportedParameter;
-import org.eclipse.incquery.runtime.matchers.psystem.basicenumerables.PositivePatternCall;
-import org.eclipse.incquery.runtime.matchers.psystem.queries.PParameter;
-import org.eclipse.incquery.runtime.matchers.psystem.queries.PQuery;
-import org.eclipse.incquery.runtime.matchers.psystem.queries.QueryInitializationException;
-import org.eclipse.incquery.runtime.matchers.tuple.FlatTuple;
-import org.eclipse.incquery.viewmodel.traceability.Trace;
 import org.eclipse.incquery.viewmodel.traceability.patterns.util.TraceBySourceAndRuleDescriptorIdQuerySpecification;
+import org.eclipse.viatra.query.runtime.api.GenericPatternMatcher;
+import org.eclipse.viatra.query.runtime.api.GenericQuerySpecification;
+import org.eclipse.viatra.query.runtime.api.IQuerySpecification;
+import org.eclipse.viatra.query.runtime.api.ViatraQueryEngine;
+import org.eclipse.viatra.query.runtime.api.impl.BaseGeneratedEMFPQuery;
+import org.eclipse.viatra.query.runtime.api.scope.QueryScope;
+import org.eclipse.viatra.query.runtime.emf.EMFScope;
+import org.eclipse.viatra.query.runtime.exception.ViatraQueryException;
+import org.eclipse.viatra.query.runtime.matchers.psystem.PBody;
+import org.eclipse.viatra.query.runtime.matchers.psystem.PVariable;
+import org.eclipse.viatra.query.runtime.matchers.psystem.basicdeferred.ExportedParameter;
+import org.eclipse.viatra.query.runtime.matchers.psystem.basicenumerables.PositivePatternCall;
+import org.eclipse.viatra.query.runtime.matchers.psystem.queries.PParameter;
+import org.eclipse.viatra.query.runtime.matchers.psystem.queries.PQuery;
+import org.eclipse.viatra.query.runtime.matchers.psystem.queries.QueryInitializationException;
+import org.eclipse.viatra.query.runtime.matchers.tuple.FlatTuple;
+import org.eclipse.viatra.transformation.views.traceability.Trace;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
@@ -48,13 +48,13 @@ public class TraceQuerySpecification extends
 	}
 
 	@Override
-	public Class<? extends IncQueryScope> getPreferredScopeClass() {
+	public Class<? extends QueryScope> getPreferredScopeClass() {
 		return EMFScope.class;
 	}
 
 	@Override
-	protected GenericPatternMatcher instantiate(IncQueryEngine engine)
-			throws IncQueryException {
+	protected GenericPatternMatcher instantiate(ViatraQueryEngine engine)
+			throws ViatraQueryException {
 		GenericPatternMatcher matcher = defaultInstantiate(engine);
         return matcher;
 	}
@@ -151,7 +151,7 @@ public class TraceQuerySpecification extends
 				exportedParameters.add(new ExportedParameter(body, var_ruleDescriptorId, PARAMETER_RULE_DESCRIPTOR_ID));
 				exportedParameters.add(new ExportedParameter(body, var_trace, PARAMETER_TRACE));
 				
-				body.setExportedParameters(exportedParameters);
+				body.setSymbolicParameters(exportedParameters);
 
 				PVariable var_source = null;
 				PVariable var_patternParameterName = null;
@@ -164,7 +164,7 @@ public class TraceQuerySpecification extends
 							new FlatTuple(var_source, var_patternParameterName, var_ruleDescriptorId, var_trace),
 							TraceBySourceAndRuleDescriptorIdQuerySpecification.instance().getInternalQueryRepresentation());
 				}
-			} catch (IncQueryException e) {
+			} catch (ViatraQueryException e) {
 				throw new QueryInitializationException("Pattern initialization failed!", null, null, null);
 			}
 

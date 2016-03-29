@@ -1,9 +1,9 @@
 package org.eclipse.incquery.viewmodel.core.actions;
 
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.incquery.runtime.api.IPatternMatch;
 import org.eclipse.incquery.viewmodel.core.rules.ElementRule;
 import org.eclipse.incquery.viewmodel.core.util.ViewModelUtil;
+import org.eclipse.viatra.query.runtime.api.IPatternMatch;
 
 public class ElementRuleMatchAppeared extends RuleMatchProcessor<ElementRule> {
 

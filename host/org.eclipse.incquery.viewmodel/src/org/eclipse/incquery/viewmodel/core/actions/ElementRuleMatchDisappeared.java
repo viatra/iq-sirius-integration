@@ -2,11 +2,11 @@ package org.eclipse.incquery.viewmodel.core.actions;
 
 import java.util.List;
 
-import org.eclipse.incquery.runtime.api.IPatternMatch;
 import org.eclipse.incquery.viewmodel.core.rules.ElementRule;
 import org.eclipse.incquery.viewmodel.core.util.ViewModelUtil;
 import org.eclipse.incquery.viewmodel.traceability.EObjectTarget;
 import org.eclipse.incquery.viewmodel.traceability.Trace;
+import org.eclipse.viatra.query.runtime.api.IPatternMatch;
 
 
 public class ElementRuleMatchDisappeared extends RuleMatchProcessor<ElementRule> {

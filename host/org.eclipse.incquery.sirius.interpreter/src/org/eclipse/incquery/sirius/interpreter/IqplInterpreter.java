@@ -18,19 +18,17 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.ECrossReferenceAdapter;
-import org.eclipse.incquery.patternlanguage.emf.specification.SpecificationBuilder;
-import org.eclipse.incquery.patternlanguage.patternLanguage.Pattern;
-import org.eclipse.incquery.patternlanguage.patternLanguage.PatternModel;
-import org.eclipse.incquery.runtime.api.AdvancedIncQueryEngine;
-import org.eclipse.incquery.runtime.api.IPatternMatch;
-import org.eclipse.incquery.runtime.api.IQuerySpecification;
-import org.eclipse.incquery.runtime.api.IncQueryEngine;
-import org.eclipse.incquery.runtime.api.IncQueryEngineManager;
-import org.eclipse.incquery.runtime.api.IncQueryMatcher;
-import org.eclipse.incquery.runtime.base.api.BaseIndexOptions;
-import org.eclipse.incquery.runtime.emf.EMFScope;
-import org.eclipse.incquery.runtime.exception.IncQueryException;
-import org.eclipse.incquery.runtime.matchers.psystem.annotations.PAnnotation;
+import org.eclipse.viatra.query.patternlanguage.emf.specification.SpecificationBuilder;
+import org.eclipse.viatra.query.patternlanguage.patternLanguage.Pattern;
+import org.eclipse.viatra.query.patternlanguage.patternLanguage.PatternModel;
+import org.eclipse.viatra.query.runtime.api.AdvancedViatraQueryEngine;
+import org.eclipse.viatra.query.runtime.api.IPatternMatch;
+import org.eclipse.viatra.query.runtime.api.IQuerySpecification;
+import org.eclipse.viatra.query.runtime.api.ViatraQueryMatcher;
+import org.eclipse.viatra.query.runtime.base.api.BaseIndexOptions;
+import org.eclipse.viatra.query.runtime.emf.EMFScope;
+import org.eclipse.viatra.query.runtime.exception.ViatraQueryException;
+import org.eclipse.viatra.query.runtime.matchers.psystem.annotations.PAnnotation;
 import org.eclipse.sirius.business.api.dialect.DialectManager;
 import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.business.api.session.SessionManager;
@@ -46,11 +44,10 @@ import org.eclipse.sirius.ecore.extender.business.api.accessor.MetamodelDescript
 import org.eclipse.sirius.ecore.extender.business.api.accessor.ModelAccessor;
 import org.eclipse.sirius.viewpoint.DRepresentation;
 
-import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 
 public class IqplInterpreter implements IInterpreter {
-	private static final String RESOURCE_URI = "dummy:/queries.eiq";
+	private static final String RESOURCE_URI = "dummy:/queries.vql";
 
 	private static final String ANNOTATION_BIND = "Bind";
 
@@ -60,7 +57,7 @@ public class IqplInterpreter implements IInterpreter {
 	
 	private Map<String, Object> variables = null;
 	
-	private Map<Resource, AdvancedIncQueryEngine> engines = null;
+	private Map<Resource, AdvancedViatraQueryEngine> engines = null;
 	
 	private HashMap<String, IQuerySpecification<?>> expressionToQuerySpecificationMap = null;
 
@@ -68,7 +65,7 @@ public class IqplInterpreter implements IInterpreter {
 	public IqplInterpreter() {
 		variables = new HashMap<String, Object>();
 		
-		engines = new HashMap<Resource, AdvancedIncQueryEngine>();
+		engines = new HashMap<Resource, AdvancedViatraQueryEngine>();
 		
 		expressionToQuerySpecificationMap = new HashMap<String, IQuerySpecification<?>>();
 	}
@@ -197,7 +194,7 @@ public class IqplInterpreter implements IInterpreter {
 
 	@Override
 	public void dispose() {
-		for (Entry<Resource, AdvancedIncQueryEngine> entry : engines.entrySet()) {
+		for (Entry<Resource, AdvancedViatraQueryEngine> entry : engines.entrySet()) {
 			entry.getValue().dispose();
 		}
 		
@@ -317,11 +314,11 @@ public class IqplInterpreter implements IInterpreter {
 		try {
 			setVariable("self", context);
 			
-			IncQueryMatcher<IPatternMatch> matcher = null;
+			ViatraQueryMatcher<IPatternMatch> matcher = null;
 			
 			IQuerySpecification<?> querySpecification = getQuerySpecification(context, expression);
 			
-			matcher = (IncQueryMatcher<IPatternMatch>) querySpecification.getMatcher(getEngine(context));
+			matcher = (ViatraQueryMatcher<IPatternMatch>) querySpecification.getMatcher(getEngine(context));
 			
 			if (matcher != null) {
 				String resultParameterName = getResultParameterName(querySpecification);
@@ -330,7 +327,7 @@ public class IqplInterpreter implements IInterpreter {
 				
 				result = matcher.getAllValues(resultParameterName, partialMatch);
 			}
-		} catch (IncQueryException e) {
+		} catch (ViatraQueryException e) {
 			// TODO
 			e.printStackTrace();
 		} finally {
@@ -405,7 +402,7 @@ public class IqplInterpreter implements IInterpreter {
 					return querySpecification;
 				}
 		    }
-		} catch (IOException | IncQueryException e) {
+		} catch (IOException | ViatraQueryException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -467,18 +464,18 @@ public class IqplInterpreter implements IInterpreter {
 	 * @param context The context of the IQPL expression
 	 * @return an AdvancedIncQueryEngine instance
 	 */
-	private AdvancedIncQueryEngine getEngine(EObject context) {
+	private AdvancedViatraQueryEngine getEngine(EObject context) {
 		if (context != null) {
 			Resource resource = context.eResource();
 			
 			if (resource != null) {
 				try {
 					if (!engines.containsKey(resource)) {
-						engines.put(resource, AdvancedIncQueryEngine.createUnmanagedEngine(new EMFScope(resource, new BaseIndexOptions(false, true))));
+						engines.put(resource, AdvancedViatraQueryEngine.createUnmanagedEngine(new EMFScope(resource, new BaseIndexOptions(false, true))));
 					}
 					
 					return engines.get(resource);
-				} catch (IncQueryException e) {
+				} catch (ViatraQueryException e) {
 					e.printStackTrace();
 				}
 			}

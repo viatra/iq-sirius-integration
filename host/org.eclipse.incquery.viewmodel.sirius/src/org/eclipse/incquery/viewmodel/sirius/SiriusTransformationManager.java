@@ -7,7 +7,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.viewmodel.configuration.Configuration;
 import org.eclipse.incquery.viewmodel.core.ViewModelManager;
 import org.eclipse.incquery.viewmodel.sirius.inmemoryresource.InMemoryResourceImpl;
@@ -16,7 +15,10 @@ import org.eclipse.sirius.business.api.session.SessionManager;
 import org.eclipse.sirius.diagram.DDiagram;
 import org.eclipse.sirius.tools.api.command.semantic.AddSemanticResourceCommand;
 import org.eclipse.sirius.tools.api.command.semantic.RemoveSemanticResourceCommand;
-import org.eclipse.viatra.emf.runtime.transformation.eventdriven.InconsistentEventSemanticsException;
+import org.eclipse.viatra.query.runtime.exception.ViatraQueryException;
+import org.eclipse.viatra.transformation.runtime.emf.transformation.eventdriven.InconsistentEventSemanticsException;
+
+
 
 public class SiriusTransformationManager {
 
@@ -41,7 +43,7 @@ public class SiriusTransformationManager {
 		this.targetResourceURI = URI.createURI(InMemoryResourceImpl.URI_SCHEME + diagramId);
 	}
 	
-	public EObject initialize(EObject sourceRoot, URI configModelURI) throws IncQueryException, InconsistentEventSemanticsException {
+	public EObject initialize(EObject sourceRoot, URI configModelURI) throws ViatraQueryException, InconsistentEventSemanticsException {
 		EObject result = null;
 		
 		// TODO

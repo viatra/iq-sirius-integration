@@ -1,9 +1,9 @@
 package org.eclipse.incquery.viewmodel.traceability.util;
 
-import org.eclipse.incquery.runtime.api.IncQueryEngine;
-import org.eclipse.incquery.runtime.api.impl.BaseMatcher;
-import org.eclipse.incquery.runtime.exception.IncQueryException;
-import org.eclipse.incquery.runtime.matchers.tuple.Tuple;
+import org.eclipse.viatra.query.runtime.api.ViatraQueryEngine;
+import org.eclipse.viatra.query.runtime.api.impl.BaseMatcher;
+import org.eclipse.viatra.query.runtime.exception.ViatraQueryException;
+import org.eclipse.viatra.query.runtime.matchers.tuple.Tuple;
 
 public class HiddenParametersPatternMatcher extends BaseMatcher<HiddenParametersMatch> {
 
@@ -15,7 +15,7 @@ public class HiddenParametersPatternMatcher extends BaseMatcher<HiddenParameters
 	 * @throws IncQueryException if an error occurs during pattern matcher creation
 	 * 
 	 */
-	public static HiddenParametersPatternMatcher instantiate(final IncQueryEngine engine, final HiddenParametersQuerySpecification specification) throws IncQueryException {
+	public static HiddenParametersPatternMatcher instantiate(final ViatraQueryEngine engine, final HiddenParametersQuerySpecification specification) throws ViatraQueryException {
 		// check if matcher already exists
 		HiddenParametersPatternMatcher matcher = engine.getExistingMatcher(specification);
 		if (matcher == null) {
@@ -25,8 +25,8 @@ public class HiddenParametersPatternMatcher extends BaseMatcher<HiddenParameters
 		return matcher;
 	}
 	
-	protected HiddenParametersPatternMatcher(IncQueryEngine engine,
-			HiddenParametersQuerySpecification specification) throws IncQueryException {
+	protected HiddenParametersPatternMatcher(ViatraQueryEngine engine,
+			HiddenParametersQuerySpecification specification) throws ViatraQueryException {
 		super(engine, specification);
 	}
 
