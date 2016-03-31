@@ -1,14 +1,14 @@
-package org.eclipse.incquery.sirius.interpreter;
+package org.eclipse.viatra.query.sirius.interpreter;
 
 import org.eclipse.sirius.common.tools.api.interpreter.IInterpreter;
 import org.eclipse.sirius.common.tools.api.interpreter.IInterpreterProvider;
 
-public class IqplInterpreterProvider implements IInterpreterProvider {
+public class VQLInterpreterProvider implements IInterpreterProvider {
 	
 	@Override
 	public boolean provides(String expression) {
 		if (expression != null
-				&& expression.startsWith(IqplInterpreterConstants.PREFIX)) {
+				&& expression.startsWith(VQLInterpreterConstants.PREFIX)) {
 			return true;
 		}
 		
@@ -20,7 +20,7 @@ public class IqplInterpreterProvider implements IInterpreterProvider {
 		// TODO
 		System.out.println("IqplInterpreterProvider:createInterpreter");
 		
-		return new IqplInterpreter();
+		return new VQLInterpreter();
 	}
 
 }

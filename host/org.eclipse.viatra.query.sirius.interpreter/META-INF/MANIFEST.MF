@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Interpreter
-Bundle-SymbolicName: org.eclipse.incquery.sirius.interpreter;singleton:=true
+Bundle-SymbolicName: org.eclipse.viatra.query.sirius.interpreter;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Require-Bundle: org.eclipse.sirius.common;bundle-version="3.0.0",
  org.eclipse.emf.ecore,
@@ -14,4 +14,4 @@ Require-Bundle: org.eclipse.sirius.common;bundle-version="3.0.0",
  org.eclipse.viatra.query.runtime,
  org.eclipse.viatra.query.patternlanguage,
  org.eclipse.viatra.query.patternlanguage.emf;bundle-version="[1.2.0,2.0.0)"
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7

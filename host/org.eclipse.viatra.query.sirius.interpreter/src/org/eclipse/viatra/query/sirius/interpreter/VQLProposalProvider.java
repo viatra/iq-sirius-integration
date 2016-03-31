@@ -1,4 +1,4 @@
-package org.eclipse.incquery.sirius.interpreter;
+package org.eclipse.viatra.query.sirius.interpreter;
 
 import java.util.List;
 
@@ -8,7 +8,7 @@ import org.eclipse.sirius.common.tools.api.contentassist.ContentProposal;
 import org.eclipse.sirius.common.tools.api.contentassist.IProposalProvider;
 import org.eclipse.sirius.common.tools.api.interpreter.IInterpreter;
 
-public class IqplProposalProvider implements IProposalProvider {
+public class VQLProposalProvider implements IProposalProvider {
 
 	@Override
 	public List<ContentProposal> getProposals(IInterpreter interpreter, ContentContext context) {

@@ -1,4 +1,4 @@
-package org.eclipse.incquery.sirius.interpreter;
+package org.eclipse.viatra.query.sirius.interpreter;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -46,7 +46,7 @@ import org.eclipse.sirius.viewpoint.DRepresentation;
 
 import com.google.common.collect.Sets;
 
-public class IqplInterpreter implements IInterpreter {
+public class VQLInterpreter implements IInterpreter {
 	private static final String RESOURCE_URI = "dummy:/queries.vql";
 
 	private static final String ANNOTATION_BIND = "Bind";
@@ -62,7 +62,7 @@ public class IqplInterpreter implements IInterpreter {
 	private HashMap<String, IQuerySpecification<?>> expressionToQuerySpecificationMap = null;
 
 	
-	public IqplInterpreter() {
+	public VQLInterpreter() {
 		variables = new HashMap<String, Object>();
 		
 		engines = new HashMap<Resource, AdvancedViatraQueryEngine>();
@@ -73,7 +73,7 @@ public class IqplInterpreter implements IInterpreter {
 	@Override
 	public boolean provides(String expression) {
 		if (expression != null
-				&& expression.startsWith(IqplInterpreterConstants.PREFIX)) {
+				&& expression.startsWith(VQLInterpreterConstants.PREFIX)) {
 			return true;
 		}
 		
@@ -226,7 +226,7 @@ public class IqplInterpreter implements IInterpreter {
 
 	@Override
 	public String getPrefix() {
-		return IqplInterpreterConstants.PREFIX;
+		return VQLInterpreterConstants.PREFIX;
 	}
 
 	@Override
@@ -350,7 +350,7 @@ public class IqplInterpreter implements IInterpreter {
 		}
 		
 		// Remove the prefix from the expression
-		expression = expression.replace(IqplInterpreterConstants.PREFIX, "");
+		expression = expression.replace(VQLInterpreterConstants.PREFIX, "");
 
 		/* Load imports from DiagramDescription */
 		StringBuilder stringBuilder = new StringBuilder();

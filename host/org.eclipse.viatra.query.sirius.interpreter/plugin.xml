@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         id="org.eclipse.viatra.query.sirius.interpreter.VQLInterpreterProvider"
+         name="Viatra Query Language interpreter provider"
+         point="org.eclipse.sirius.common.expressionInterpreter">
+      <expressionInterpreterProvider
+            interpreterProviderClass="org.eclipse.viatra.query.sirius.interpreter.VQLInterpreterProvider">
+      </expressionInterpreterProvider>
+   </extension>
+   <extension
+         point="org.eclipse.sirius.common.proposalProvider">
+      <proposalProvider
+            class="org.eclipse.viatra.query.sirius.interpreter.VQLProposalProvider"
+            interpreter="org.eclipse.viatra.query.sirius.interpreter.VQLInterpreter">
+      </proposalProvider>
+   </extension>
+
+</plugin>
