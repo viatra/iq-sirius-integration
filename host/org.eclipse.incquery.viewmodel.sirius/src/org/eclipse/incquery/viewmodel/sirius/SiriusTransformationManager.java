@@ -8,6 +8,7 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.incquery.viewmodel.configuration.Configuration;
+import org.eclipse.incquery.viewmodel.core.TransformationInitializer;
 import org.eclipse.incquery.viewmodel.core.ViewModelManager;
 import org.eclipse.incquery.viewmodel.sirius.inmemoryresource.InMemoryResourceImpl;
 import org.eclipse.sirius.business.api.session.Session;
@@ -61,7 +62,14 @@ public class SiriusTransformationManager {
 			configuration.setSourceModel(sourceRoot.eResource());
 			configuration.setTargetModel(targetResource);
 			
-			viewModelManager = new ViewModelManager(configuration);
+			viewModelManager = new ViewModelManager(configuration, null, new TransformationInitializer() {
+				
+				@Override
+				public void initialize(ViewModelManager viewModelManager) {
+					viewModelManager.getExecutionSchema().startUnscheduledExecution();
+				}
+				
+			});
 			
 			viewModelManager.initialize();
 			

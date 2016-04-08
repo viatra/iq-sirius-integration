@@ -7,6 +7,11 @@
   <foreignModel>configuration.ecore</foreignModel>
   <genPackages prefix="Configuration" basePackage="org.eclipse.incquery.viewmodel"
       disposableProviderFactory="true" ecorePackage="configuration.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="configuration.ecore#//Scheduler">
+      <genEnumLiterals ecoreEnumLiteral="configuration.ecore#//Scheduler/UPDATE_COMPLETE_BASED"/>
+      <genEnumLiterals ecoreEnumLiteral="configuration.ecore#//Scheduler/TRANSACTIONAL"/>
+      <genEnumLiterals ecoreEnumLiteral="configuration.ecore#//Scheduler/MANUAL"/>
+    </genEnums>
     <genClasses ecoreClass="configuration.ecore#//Configuration">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute configuration.ecore#//Configuration/sourceModel"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute configuration.ecore#//Configuration/targetModel"/>
@@ -22,6 +27,7 @@
       <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference configuration.ecore#//Configuration/transformationRuleDescriptors"/>
       <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference configuration.ecore#//Configuration/traceabilityRuleDescriptors"/>
       <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference configuration.ecore#//Configuration/hiddenParametersRuleDescriptors"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute configuration.ecore#//Configuration/scheduler"/>
     </genClasses>
     <genClasses ecoreClass="configuration.ecore#//ElementRuleDescriptor">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference configuration.ecore#//ElementRuleDescriptor/elementType"/>

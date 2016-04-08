@@ -68,6 +68,8 @@
         <details key="patternFQN" value="org.eclipse.incquery.viewmodel.configuration.patterns.configuration_hiddenParametersRuleDescriptors"/>
       </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="scheduler" lowerBound="1"
+        eType="#//Scheduler"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ElementRuleDescriptor" eSuperTypes="#//TransformationRuleDescriptor">
     <eStructuralFeatures xsi:type="ecore:EReference" name="elementType" lowerBound="1"
@@ -157,5 +159,10 @@
         <details key="patternFQN" value="org.eclipse.incquery.viewmodel.configuration.patterns.hiddenParametersRuleDescriptors_transformationRuleDescriptors"/>
       </eAnnotations>
     </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Scheduler">
+    <eLiterals name="UPDATE_COMPLETE_BASED" literal="UpdateCompleteBased"/>
+    <eLiterals name="TRANSACTIONAL" value="1" literal="Transactional"/>
+    <eLiterals name="MANUAL" value="2" literal="Manual"/>
   </eClassifiers>
 </ecore:EPackage>
