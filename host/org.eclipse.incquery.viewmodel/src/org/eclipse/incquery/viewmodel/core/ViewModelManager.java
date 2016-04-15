@@ -57,7 +57,6 @@ import org.eclipse.viatra.transformation.evm.specific.scheduler.UpdateCompleteBa
 import org.eclipse.viatra.transformation.evm.transactions.specific.TransactionalSchedulers;
 import org.eclipse.viatra.transformation.evm.update.QueryEngineUpdateCompleteProvider;
 import org.eclipse.viatra.transformation.runtime.emf.rules.eventdriven.EventDrivenTransformationRule;
-import org.eclipse.viatra.transformation.runtime.emf.transformation.eventdriven.EventDrivenTransformation;
 import org.eclipse.viatra.transformation.runtime.emf.transformation.eventdriven.InconsistentEventSemanticsException;
 
 import com.google.common.collect.Lists;
@@ -140,7 +139,7 @@ public class ViewModelManager {
 	
 	// TODO: javadoc
 	public ViewModelManager(Configuration configurationModel) throws ViatraQueryException {
-		this(configurationModel, null, null);
+		this(configurationModel, null);
 	}
 	
 	/**
@@ -153,7 +152,7 @@ public class ViewModelManager {
 	 * Ha a target-hez van TED, akkor az egyes action-ök abban futnak
 	 *  (később a CommandStack-et javítani kell a visszavonások miatt), egyébként pedig sima getter/setter hívásokat használok a target modellen.
 	 */
-	public ViewModelManager(Configuration configurationModel, AbstractRuleProvider ruleProvider, 
+	public ViewModelManager(Configuration configurationModel,
 			TransformationInitializer transformationInitializer) throws ViatraQueryException {
 		if (configurationModel == null) {
 			throw new IllegalArgumentException("The 'configurationModel' parameter can not be null!");
@@ -161,7 +160,7 @@ public class ViewModelManager {
 		
 		this.configurationModel = configurationModel;
 		
-		this.ruleProvider = ruleProvider;
+		this.ruleProvider = null;
 		
 		this.transformationInitializer = transformationInitializer;
 		
@@ -249,6 +248,10 @@ public class ViewModelManager {
 	 * @throws IncQueryException
 	 */
 	public void initialize() throws InconsistentEventSemanticsException, ViatraQueryException {
+		if (transformationInitializer != null) {
+			transformationInitializer.beforeInitialize(this);
+		}
+		
 		ViatraQueryEngine smEngine = ViatraQueryEngine.on(new EMFScope(configurationModel.getSourceModel()));
 		
 		FixedPriorityConflictResolver conflictResolver = ConflictResolvers.createFixedPriorityResolver();
@@ -281,8 +284,8 @@ public class ViewModelManager {
 		RuleSpecification<?> ruleSpecification = null;
 		ViewModelRule<? extends RuleDescriptor> rule = null;
 		for (ElementRuleDescriptor ruleDescriptor : configurationModel.getElementRuleDescriptors()) {
-			if (ruleProvider != null && ruleProvider.getRuleForDescriptor(ruleDescriptor.getId()) != null) {
-				rule = ruleProvider.getRuleForDescriptor(ruleDescriptor.getId());
+			if (ruleProvider != null && ruleProvider.getRuleForDescriptor(ruleDescriptor) != null) {
+				rule = ruleProvider.getRuleForDescriptor(ruleDescriptor);
 			} else {
 				rule = new ElementRule(ruleDescriptor, this);
 			}
@@ -295,8 +298,8 @@ public class ViewModelManager {
 		}
 
 		for (ReferenceRuleDescriptor ruleDescriptor : configurationModel.getReferenceRuleDescriptors()) {
-			if (ruleProvider != null && ruleProvider.getRuleForDescriptor(ruleDescriptor.getId()) != null) {
-				rule = ruleProvider.getRuleForDescriptor(ruleDescriptor.getId());
+			if (ruleProvider != null && ruleProvider.getRuleForDescriptor(ruleDescriptor) != null) {
+				rule = ruleProvider.getRuleForDescriptor(ruleDescriptor);
 			} else {
 				rule = new ReferenceRule(ruleDescriptor, this);
 			}
@@ -309,8 +312,8 @@ public class ViewModelManager {
 		}
 
 		for (AttributeRuleDescriptor ruleDescriptor : configurationModel.getAttributeRuleDescriptors()) {
-			if (ruleProvider != null && ruleProvider.getRuleForDescriptor(ruleDescriptor.getId()) != null) {
-				rule = ruleProvider.getRuleForDescriptor(ruleDescriptor.getId());
+			if (ruleProvider != null && ruleProvider.getRuleForDescriptor(ruleDescriptor) != null) {
+				rule = ruleProvider.getRuleForDescriptor(ruleDescriptor);
 			} else {
 				rule = new AttributeRule(ruleDescriptor, this);
 			}
@@ -337,10 +340,8 @@ public class ViewModelManager {
 		
 		// Run custom initialization if it's needed
 		if (transformationInitializer != null) {
-			transformationInitializer.initialize(this);
+			transformationInitializer.afterInitialize(this);
 		}
-		// TODO: mindíg kell ez ide?! Nem biztos. => TransformationInitializer!
-		//executionSchema.startUnscheduledExecution();
 	}
 	
 	/**
@@ -397,6 +398,26 @@ public class ViewModelManager {
 	 */
 	public ExecutionSchema getExecutionSchema() {
 		return this.executionSchema;
+	}
+
+	/**
+	 * Setter for RuleProvider
+	 * @param ruleProvider
+	 */
+	public void setRuleProvider(AbstractRuleProvider ruleProvider) {
+		this.ruleProvider = ruleProvider;
+	}
+
+	/**
+	 * 
+	 * @return a fully qualified name (FQN) -> IQuerySpecification map, which contains those
+	 * 	IQuerySpecification instances, that are used by the transformation. Basically the
+	 * 	{@link ViewModelManager} cares with this (loads the query specifications based on
+	 * 	the configuration model, etc.), but this map can be modified if it's really necessary.
+	 * 	Use it with caution!
+	 */
+	public Map<String, IQuerySpecification<?>> getQuerySpecifications() {
+		return querySpecifications;
 	}
 	
 	// TODO comment

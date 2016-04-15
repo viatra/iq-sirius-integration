@@ -65,7 +65,7 @@ public class SiriusTransformationManager {
 			viewModelManager = new ViewModelManager(configuration, null, new TransformationInitializer() {
 				
 				@Override
-				public void initialize(ViewModelManager viewModelManager) {
+				public void afterInitialize(ViewModelManager viewModelManager) {
 					viewModelManager.getExecutionSchema().startUnscheduledExecution();
 				}
 				

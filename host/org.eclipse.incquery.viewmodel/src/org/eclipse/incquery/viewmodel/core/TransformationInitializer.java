@@ -2,6 +2,8 @@ package org.eclipse.incquery.viewmodel.core;
 
 public interface TransformationInitializer {
 
-	public void initialize(ViewModelManager viewModelManager);
+	public void afterInitialize(ViewModelManager viewModelManager);
+	
+	public void beforeInitialize(ViewModelManager viewModelManager);
 	
 }

@@ -9,15 +9,15 @@ import org.eclipse.incquery.viewmodel.core.rules.ViewModelRule;
 
 public class AbstractRuleProvider {
 
-	protected Map<Long, ViewModelRule<? extends RuleDescriptor>> ruleDescriptorToRule = null;
+	protected Map<RuleDescriptor, ViewModelRule<? extends RuleDescriptor>> ruleDescriptorToRule = null;
 	
 	
 	public AbstractRuleProvider() {
-		this.ruleDescriptorToRule = new HashMap<Long, ViewModelRule<? extends RuleDescriptor>>();
+		this.ruleDescriptorToRule = new HashMap<RuleDescriptor, ViewModelRule<? extends RuleDescriptor>>();
 	}
 	
-	public ViewModelRule<? extends RuleDescriptor> getRuleForDescriptor(long ruleDescriptorId) {
-		return ruleDescriptorToRule.get(ruleDescriptorId);
+	public ViewModelRule<? extends RuleDescriptor> getRuleForDescriptor(RuleDescriptor ruleDescriptor) {
+		return ruleDescriptorToRule.get(ruleDescriptor);
 	}
 	
 }
