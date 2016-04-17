@@ -62,11 +62,17 @@ public class SiriusTransformationManager {
 			configuration.setSourceModel(sourceRoot.eResource());
 			configuration.setTargetModel(targetResource);
 			
-			viewModelManager = new ViewModelManager(configuration, null, new TransformationInitializer() {
+			viewModelManager = new ViewModelManager(configuration, new TransformationInitializer() {
 				
 				@Override
 				public void afterInitialize(ViewModelManager viewModelManager) {
 					viewModelManager.getExecutionSchema().startUnscheduledExecution();
+				}
+
+				@Override
+				public void beforeInitialize(ViewModelManager viewModelManager) {
+					// TODO Auto-generated method stub
+					
 				}
 				
 			});

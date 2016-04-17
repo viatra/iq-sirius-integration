@@ -87,6 +87,9 @@ public class ViewModelManager {
 	// Rule provider instance
 	private AbstractRuleProvider ruleProvider;
 	
+	// ViatraQueryEngine for the transformation
+	private ViatraQueryEngine viatraQueryEngine;
+
 	// Transformation initializer instance
 	private TransformationInitializer transformationInitializer;
 	
@@ -103,7 +106,8 @@ public class ViewModelManager {
 	private TransactionalEditingDomain targetTransactionalEditingDomain;
 	
 	// Loaded IQuerySpecification instances
-	private Map<String, IQuerySpecification<?>> querySpecifications;
+	private Map<String, IQuerySpecification<? extends ViatraQueryMatcher<? extends IPatternMatch>>> querySpecifications;
+
 
 	
 	
@@ -162,11 +166,13 @@ public class ViewModelManager {
 		
 		this.ruleProvider = null;
 		
+		this.viatraQueryEngine = null;
+		
 		this.transformationInitializer = transformationInitializer;
 		
 		this.traceabilityModelManager = new TraceabilityModelManager();
 
-		this.querySpecifications = new HashMap<String, IQuerySpecification<?>>();
+		this.querySpecifications = new HashMap<String, IQuerySpecification<? extends ViatraQueryMatcher<? extends IPatternMatch>>>();
 		
 		
 		ResourceSet resourceSet = new ResourceSetImpl();
@@ -220,14 +226,14 @@ public class ViewModelManager {
 		
 		// Create IQuerySpecification instances from pattern resources
 		PatternModel patternModel = null;
-		IQuerySpecification<?> querySpecification = null;
+		IQuerySpecification<ViatraQueryMatcher<IPatternMatch>> querySpecification = null;
 		SpecificationBuilder specificationBuilder = new SpecificationBuilder();
 		for (Resource resource : this.configurationModel.getPatternResources()) {
 			if (!resource.getContents().isEmpty() && (resource.getContents().get(0) instanceof PatternModel)) {
 				patternModel = (PatternModel) resource.getContents().get(0);
 
 				for (Pattern pattern : patternModel.getPatterns()) {
-					querySpecification = specificationBuilder.getOrCreateSpecification(pattern);
+					querySpecification = (IQuerySpecification<ViatraQueryMatcher<IPatternMatch>>) specificationBuilder.getOrCreateSpecification(pattern);
 					
 					querySpecifications.put(querySpecification.getFullyQualifiedName(), querySpecification);
 				}
@@ -248,30 +254,33 @@ public class ViewModelManager {
 	 * @throws IncQueryException
 	 */
 	public void initialize() throws InconsistentEventSemanticsException, ViatraQueryException {
+		// Run custom initialization if it's needed
 		if (transformationInitializer != null) {
 			transformationInitializer.beforeInitialize(this);
 		}
 		
-		ViatraQueryEngine smEngine = ViatraQueryEngine.on(new EMFScope(configurationModel.getSourceModel()));
+		if (viatraQueryEngine == null) {
+			viatraQueryEngine = ViatraQueryEngine.on(new EMFScope(configurationModel.getSourceModel()));
+		}
 		
 		FixedPriorityConflictResolver conflictResolver = ConflictResolvers.createFixedPriorityResolver();
 
 		
 		switch (configurationModel.getScheduler()) {
 		case UPDATE_COMPLETE_BASED:
-			executionSchema = ExecutionSchemas.createViatraQueryExecutionSchema(smEngine,
-					new UpdateCompleteBasedScheduler.UpdateCompleteBasedSchedulerFactory(new QueryEngineUpdateCompleteProvider(smEngine)));
+			executionSchema = ExecutionSchemas.createViatraQueryExecutionSchema(viatraQueryEngine,
+					new UpdateCompleteBasedScheduler.UpdateCompleteBasedSchedulerFactory(new QueryEngineUpdateCompleteProvider(viatraQueryEngine)));
 			
 			break;
 			
 		case TRANSACTIONAL:
-			executionSchema = ExecutionSchemas.createViatraQueryExecutionSchema(smEngine,
+			executionSchema = ExecutionSchemas.createViatraQueryExecutionSchema(viatraQueryEngine,
 					TransactionalSchedulers.getTransactionSchedulerFactory(sourceTransactionalEditingDomain));
 			
 			break;
 			
 		case MANUAL:
-	        Executor executor = new Executor(ViatraQueryEventRealm.create(smEngine));
+	        Executor executor = new Executor(ViatraQueryEventRealm.create(viatraQueryEngine));
 	        Scheduler scheduler = (new ManualScheduler.ManualSchedulerFactory()) .prepareScheduler(executor);
 	        executionSchema = ExecutionSchema.create(scheduler);
 			
@@ -281,7 +290,7 @@ public class ViewModelManager {
 		// Set ConflictResolver for RuleEngine
 		executionSchema.setConflictResolver(conflictResolver);
 
-		RuleSpecification<?> ruleSpecification = null;
+		RuleSpecification<IPatternMatch> ruleSpecification = null;
 		ViewModelRule<? extends RuleDescriptor> rule = null;
 		for (ElementRuleDescriptor ruleDescriptor : configurationModel.getElementRuleDescriptors()) {
 			if (ruleProvider != null && ruleProvider.getRuleForDescriptor(ruleDescriptor) != null) {
@@ -292,7 +301,11 @@ public class ViewModelManager {
 
 			ruleSpecification = createRuleSpecification(rule);
 			
-			executionSchema.addRule(ruleSpecification);
+			if (rule.getEventFilter() == null) {
+				executionSchema.addRule(ruleSpecification);
+			} else {
+				executionSchema.addRule(ruleSpecification, rule.getEventFilter());
+			}
 			
 			conflictResolver.setPriority(ruleSpecification, rule.getPriority());
 		}
@@ -306,7 +319,11 @@ public class ViewModelManager {
 
 			ruleSpecification = createRuleSpecification(rule);
 			
-			executionSchema.addRule(ruleSpecification);
+			if (rule.getEventFilter() == null) {
+				executionSchema.addRule(ruleSpecification);
+			} else {
+				executionSchema.addRule(ruleSpecification, rule.getEventFilter());
+			}
 
 			conflictResolver.setPriority(ruleSpecification, rule.getPriority());
 		}
@@ -320,7 +337,11 @@ public class ViewModelManager {
 
 			ruleSpecification = createRuleSpecification(rule);
 			
-			executionSchema.addRule(ruleSpecification);
+			if (rule.getEventFilter() == null) {
+				executionSchema.addRule(ruleSpecification);
+			} else {
+				executionSchema.addRule(ruleSpecification, rule.getEventFilter());
+			}
 
 			conflictResolver.setPriority(ruleSpecification, rule.getPriority());
 		}
@@ -333,7 +354,11 @@ public class ViewModelManager {
 
 			ruleSpecification = createRuleSpecification(rule);
 			
-			executionSchema.addRule(ruleSpecification);
+			if (rule.getEventFilter() == null) {
+				executionSchema.addRule(ruleSpecification);
+			} else {
+				executionSchema.addRule(ruleSpecification, rule.getEventFilter());
+			}
 
 			conflictResolver.setPriority(ruleSpecification, rule.getPriority());
 		}
@@ -366,7 +391,7 @@ public class ViewModelManager {
 	 * @param patternFQN The fully qualified name of the pattern
 	 * @return An IQuerySpecification instance with the given FQN or NULL if it doesn't exist
 	 */
-	public IQuerySpecification<?> getQuerySpecification(String patternFQN) {
+	public IQuerySpecification<? extends ViatraQueryMatcher<? extends IPatternMatch>> getQuerySpecification(String patternFQN) {
 		if (querySpecifications != null) {
 			return querySpecifications.get(patternFQN);
 		}
@@ -416,10 +441,18 @@ public class ViewModelManager {
 	 * 	the configuration model, etc.), but this map can be modified if it's really necessary.
 	 * 	Use it with caution!
 	 */
-	public Map<String, IQuerySpecification<?>> getQuerySpecifications() {
+	public Map<String, IQuerySpecification<? extends ViatraQueryMatcher<? extends IPatternMatch>>> getQuerySpecifications() {
 		return querySpecifications;
 	}
 	
+	public ViatraQueryEngine getViatraQueryEngine() {
+		return viatraQueryEngine;
+	}
+	
+	public void setViatraQueryEngine(ViatraQueryEngine viatraQueryEngine) {
+		this.viatraQueryEngine = viatraQueryEngine;
+	}
+
 	// TODO comment
 	private void createHiddenParametersRuleDescriptors() {
 		if (configurationModel == null) {
@@ -430,8 +463,8 @@ public class ViewModelManager {
 		// TODO ha OR van az eredeti mintában, akkor több HiddenParametersRuleDescriptors példány szükséges...
 		List<String> processedPatternFQNs = Lists.newArrayList();
 		HiddenParametersRuleDescriptor hiddenParametersRuleDescriptor = null;
-		IQuerySpecification<?> transformationRuleQuerySpecification = null;
-		IQuerySpecification<?> hiddenParametersRuleQuerySpecification = null;
+		IQuerySpecification<? extends ViatraQueryMatcher<? extends IPatternMatch>> transformationRuleQuerySpecification = null;
+		IQuerySpecification<? extends ViatraQueryMatcher<? extends IPatternMatch>> hiddenParametersRuleQuerySpecification = null;
 		for (TransformationRuleDescriptor transformationRuleDescriptor : configurationModel.getTransformationRuleDescriptors()) {
 			// If the given FQN has been processed, we skip it...
 			if (processedPatternFQNs.contains(transformationRuleDescriptor.getPatternFQN())) {
@@ -475,7 +508,7 @@ public class ViewModelManager {
 	 * @throws InconsistentEventSemanticsException
 	 */
 	@SuppressWarnings("unchecked")
-	private RuleSpecification<?> createRuleSpecification(ViewModelRule<? extends RuleDescriptor> rule)
+	private RuleSpecification<IPatternMatch> createRuleSpecification(ViewModelRule<? extends RuleDescriptor> rule)
 			throws InconsistentEventSemanticsException {
 
 		Set<Job<IPatternMatch>> jobs = new HashSet<Job<IPatternMatch>>();

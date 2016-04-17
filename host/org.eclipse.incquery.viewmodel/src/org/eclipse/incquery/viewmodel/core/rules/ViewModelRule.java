@@ -7,6 +7,7 @@ import org.eclipse.viatra.query.runtime.api.IPatternMatch;
 import org.eclipse.viatra.query.runtime.api.IQuerySpecification;
 import org.eclipse.viatra.query.runtime.api.ViatraQueryMatcher;
 import org.eclipse.viatra.transformation.evm.api.ActivationLifeCycle;
+import org.eclipse.viatra.transformation.evm.api.event.EventFilter;
 import org.eclipse.viatra.transformation.evm.specific.Lifecycles;
 
 /**
@@ -19,6 +20,8 @@ import org.eclipse.viatra.transformation.evm.specific.Lifecycles;
 public abstract class ViewModelRule<T extends RuleDescriptor> {
 	
 	protected T ruleDescriptor;
+	
+	protected EventFilter<IPatternMatch> eventFilter;
 	
 	protected ViewModelManager viewModelManager;
 	
@@ -45,11 +48,17 @@ public abstract class ViewModelRule<T extends RuleDescriptor> {
 	
 	
 	public ViewModelRule(T ruleDescriptor, ViewModelManager viewModelManager) {
+		this(ruleDescriptor, null, viewModelManager);
+	}
+
+	public ViewModelRule(T ruleDescriptor, EventFilter<IPatternMatch> eventFilter, ViewModelManager viewModelManager) {
 		this.ruleDescriptor = ruleDescriptor;
+		this.eventFilter = eventFilter;
 		this.viewModelManager = viewModelManager;
 		
 		this.querySpecification = this.viewModelManager.getQuerySpecification(this.ruleDescriptor.getPatternFQN());
 	}
+	
 	
 	public IMatchProcessor<?> getAppearedAction() {
 		return null;
@@ -67,11 +76,15 @@ public abstract class ViewModelRule<T extends RuleDescriptor> {
 		return Lifecycles.getDefault(false, false);
 	}
 	
+	public EventFilter<IPatternMatch> getEventFilter() {
+		return eventFilter;
+	}
+	
 	public int getPriority() {
 		return DefaultRulePriority.DEFAULT.getPriorityValue();
 	}
 	
-	public IQuerySpecification<?> getQuerySpecification() {
+	public IQuerySpecification<? extends ViatraQueryMatcher<? extends IPatternMatch>> getQuerySpecification() {
 		return querySpecification;
 	}
 	
@@ -81,5 +94,9 @@ public abstract class ViewModelRule<T extends RuleDescriptor> {
 	
 	public ViewModelManager getViewModelManager() {
 		return this.viewModelManager;
+	}
+	
+	public void setEventFilter(EventFilter<IPatternMatch> eventFilter) {
+		this.eventFilter = eventFilter;
 	}
 }
