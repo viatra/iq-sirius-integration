@@ -1,51 +1,50 @@
 package org.eclipse.incquery.viewmodel.core.actions;
 
-import java.util.List;
-import java.util.Map;
-
+import org.eclipse.incquery.viewmodel.configuration.AttributeRuleDescriptor;
 import org.eclipse.incquery.viewmodel.configuration.ElementRuleDescriptor;
 import org.eclipse.incquery.viewmodel.core.rules.AttributeRule;
 import org.eclipse.incquery.viewmodel.core.util.ViewModelUtil;
 import org.eclipse.incquery.viewmodel.traceability.EObjectTarget;
-import org.eclipse.incquery.viewmodel.traceability.TraceTarget;
+import org.eclipse.incquery.viewmodel.traceability.Trace;
 import org.eclipse.viatra.query.runtime.api.IPatternMatch;
 
 
 
-public class AttributeRuleMatchAppeared extends
-		RuleMatchProcessor<AttributeRule> {
+public class AttributeRuleMatchAppeared<T extends AttributeRule<? extends AttributeRuleDescriptor>> extends
+		RuleMatchProcessor<T> {
 
-	public AttributeRuleMatchAppeared(AttributeRule rule) {
+	public AttributeRuleMatchAppeared(T rule) {
 		super(rule);
 	}
 
 	@Override
-	public void doProcess(IPatternMatch match) {
+	public Trace doProcess(IPatternMatch match) {
 		ElementRuleDescriptor ownerERD = rule.getRuleDescriptor().getOwnerElementRuleDescriptor();
 
-		Map<String, Object> sourcesOfOwnerElement = getSourcesOfOwnerElement(match, rule.getRuleDescriptor());
-		
 		Object calculatedValue = match.get(rule.getRuleDescriptor().getCalculatedPatternParameterName());
-		
-		// TODO Ebből pontosan egy darab lehet minden esetben, még akkor is, ha a használt minta egyszerűsítve van
-		// TODO egyszerűsített mintákból készíteni kell egy olyat, ami ki van eglszítve a hiányzó source illetve target paraméterekkel
-		List<TraceTarget> owners = traceabilityModelManager.getTargets(sourcesOfOwnerElement, ownerERD.getId());
 
-		if (owners.size() != 1) {
-			throw new IllegalStateException("Not exactly one owner belongs to the given match and ruleDescriptorId!(" + owners.toString() + ")");
+		// Get Match for the 'owner element'
+		IPatternMatch ownerElementRuleMatch = getPatternMatch(ownerERD.getPatternFQN(),
+				getSourcesOfOwnerElement(match, rule.getRuleDescriptor()));
+
+		// Get trace for the owner element
+		Trace ownerTrace = traceabilityModelManager.getTrace(ownerElementRuleMatch, ownerERD.getId());
+		if (ownerTrace ==  null) {
+			throw new IllegalStateException("The appropriate Trace object can not be found!");
 		}
 		
 		// Set the corresponding attribute in the target model
 		ViewModelUtil.set(
-				((EObjectTarget) owners.get(0)).getTarget(),
+				((EObjectTarget) ownerTrace.getTarget()).getTarget(),
 				rule.getRuleDescriptor().getAttribute(),
 				calculatedValue);
 		
-		// Create a new trace
-		traceabilityModelManager.createTrace(
+		// Create a new trace and add it to the Traceability model
+		return traceabilityModelManager.createTrace(
+				match,
 				rule.getRuleDescriptor().getId(),
 				getSourcesForMatch(match),
-				(EObjectTarget) owners.get(0),
+				(EObjectTarget) ownerTrace.getTarget(),
 				calculatedValue,
 				rule.getRuleDescriptor().getAttribute().getName());
 	}

@@ -1,58 +1,53 @@
 package org.eclipse.incquery.viewmodel.core.actions;
 
-import java.util.List;
-import java.util.Map;
-
 import org.eclipse.incquery.viewmodel.configuration.ElementRuleDescriptor;
+import org.eclipse.incquery.viewmodel.configuration.ReferenceRuleDescriptor;
 import org.eclipse.incquery.viewmodel.core.rules.ReferenceRule;
 import org.eclipse.incquery.viewmodel.core.util.ViewModelUtil;
 import org.eclipse.incquery.viewmodel.traceability.EObjectTarget;
 import org.eclipse.incquery.viewmodel.traceability.Trace;
-import org.eclipse.incquery.viewmodel.traceability.TraceTarget;
 import org.eclipse.viatra.query.runtime.api.IPatternMatch;
 
 
-public class ReferenceRuleMatchDisappeared extends
-		RuleMatchProcessor<ReferenceRule> {
+public class ReferenceRuleMatchDisappeared<T extends ReferenceRule<? extends ReferenceRuleDescriptor>> extends
+		RuleMatchProcessor<T> {
 
-	public ReferenceRuleMatchDisappeared(ReferenceRule rule) {
+	public ReferenceRuleMatchDisappeared(T rule) {
 		super(rule);
 	}
 
 	@Override
-	public void doProcess(IPatternMatch match) {
+	public Trace doProcess(IPatternMatch match) {
 		ElementRuleDescriptor ownerERD = rule.getRuleDescriptor().getOwnerElementRuleDescriptor();
 		ElementRuleDescriptor targetERD = rule.getRuleDescriptor().getTargetElementRuleDescriptor();
 		
-		Map<String, Object> sourcesOfReferenceOwner = getSourcesOfOwnerElement(match, rule.getRuleDescriptor());
-		Map<String, Object> sourcesOfReferenceTarget = getSourcesOfTargetElement(match, rule.getRuleDescriptor());
+		// Get Match instances for the 'owner element' and 'target element'
+		IPatternMatch ownerElementRuleMatch = getPatternMatch(ownerERD.getPatternFQN(),
+				getSourcesOfOwnerElement(match, rule.getRuleDescriptor()));
+		IPatternMatch targetElementRuleMatch = getPatternMatch(targetERD.getPatternFQN(),
+				getSourcesOfTargetElement(match, rule.getRuleDescriptor()));
 		
-		// TODO Ebből pontosan egy darab lehet minden esetben, még akkor is, ha a használt minta egyszerűsítve van
-		// TODO egyszerűsített mintákból készíteni kell egy olyat, ami ki van eglszítve a hiányzó source illetve target paraméterekkel
-		List<TraceTarget> owners = traceabilityModelManager.getTargets(sourcesOfReferenceOwner, ownerERD.getId());
-		List<TraceTarget> targets = traceabilityModelManager.getTargets(sourcesOfReferenceTarget, targetERD.getId());
-		
-		if (owners.size() > 1 || targets.size() > 1) {
-			throw new IllegalStateException("More than one owner or target belongs to the given match and ruleDescriptorId!");
-		}
+		Trace ownerTrace = traceabilityModelManager.getTrace(ownerElementRuleMatch, ownerERD.getId());
+		Trace targetTrace = traceabilityModelManager.getTrace(targetElementRuleMatch, targetERD.getId());
+
 		
 		// Remove reference from the target model
-		if (owners.size() == 1 && targets.size() == 1) {
+		if (ownerTrace != null && targetTrace != null) {
 			ViewModelUtil.unset(
-					((EObjectTarget) owners.get(0)).getTarget(),
+					((EObjectTarget) ownerTrace.getTarget()).getTarget(),
 					rule.getRuleDescriptor().getReference(),
-					((EObjectTarget) targets.get(0)).getTarget());
+					((EObjectTarget) targetTrace.getTarget()).getTarget());
 		}
 		
 		/* Remove trace */
-		List<Trace> traces = traceabilityModelManager.getTraces(
-				getSourcesForMatch(match), rule.getRuleDescriptor().getId());
-		
-		if (traces.size() != 1) {
-			throw new IllegalStateException("Not exactly one trace belongs to the given match and ruleDescriptorId!");
+		Trace trace = traceabilityModelManager.getTrace(match, rule.getRuleDescriptor().getId());
+		if (trace == null) {
+			throw new IllegalStateException("Trace for the given match can not be found!");
 		}
+
+		traceabilityModelManager.removeTrace(match, rule.getRuleDescriptor().getId(), trace);
 		
-		traceabilityModelManager.removeTrace(traces.get(0));
+		return trace;
 		/* ************ */
 	}
 

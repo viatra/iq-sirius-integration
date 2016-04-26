@@ -5,7 +5,9 @@ import org.eclipse.incquery.viewmodel.core.ViewModelManager;
 import org.eclipse.incquery.viewmodel.core.actions.ReferenceRuleMatchAppeared;
 import org.eclipse.incquery.viewmodel.core.actions.ReferenceRuleMatchDisappeared;
 import org.eclipse.viatra.query.runtime.api.IMatchProcessor;
+import org.eclipse.viatra.query.runtime.api.IPatternMatch;
 import org.eclipse.viatra.transformation.evm.api.ActivationLifeCycle;
+import org.eclipse.viatra.transformation.evm.api.event.EventFilter;
 import org.eclipse.viatra.transformation.evm.specific.Lifecycles;
 
 /**
@@ -14,11 +16,16 @@ import org.eclipse.viatra.transformation.evm.specific.Lifecycles;
  * @author lengyela
  *
  */
-public class ReferenceRule extends ViewModelRule<ReferenceRuleDescriptor> {
+public class ReferenceRule<T extends ReferenceRuleDescriptor> extends ViewModelRule<T> {
 
-	public ReferenceRule(ReferenceRuleDescriptor ruleDescriptor,
+	public ReferenceRule(T ruleDescriptor,
 			ViewModelManager viewModelManager) {
 		super(ruleDescriptor, viewModelManager);
+	}
+	
+	public ReferenceRule(T ruleDescriptor, EventFilter<IPatternMatch> eventFilter,
+			ViewModelManager viewModelManager) {
+		super(ruleDescriptor, eventFilter, viewModelManager);
 	}
 
 	@Override

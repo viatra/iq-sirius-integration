@@ -1,0 +1,19 @@
+package org.eclipse.incquery.viewmodel.traceability.patterns
+
+import "http://www.eclipse.org/emf/2002/Ecore"
+import "http://org.eclipse.incquery/viewmodel/traceability/3.0"
+
+
+pattern testTrace(source_0, patternParameterName_0, source_1, patternParameterName_1,
+	source_2, patternParameterName_2, source_3, patternParameterName_3,
+	source_4, patternParameterName_4, source_5, patternParameterName_5,
+	source_6, patternParameterName_6, ruleDescriptorId, trace : Trace) {
+	
+	find traceBySourceAndRuleDescriptorId(source_0, patternParameterName_0, ruleDescriptorId, trace);
+	find traceBySourceAndRuleDescriptorId(source_1, patternParameterName_1, ruleDescriptorId, trace);
+	find traceBySourceAndRuleDescriptorId(source_2, patternParameterName_2, ruleDescriptorId, trace);
+	find traceBySourceAndRuleDescriptorId(source_3, patternParameterName_3, ruleDescriptorId, trace);
+	find traceBySourceAndRuleDescriptorId(source_4, patternParameterName_4, ruleDescriptorId, trace);
+	find traceBySourceAndRuleDescriptorId(source_5, patternParameterName_5, ruleDescriptorId, trace);
+	find traceBySourceAndRuleDescriptorId(source_6, patternParameterName_6, ruleDescriptorId, trace);
+}

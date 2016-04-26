@@ -1,53 +1,57 @@
 package org.eclipse.incquery.viewmodel.core.actions;
 
-import java.util.List;
-import java.util.Map;
-
 import org.eclipse.incquery.viewmodel.configuration.ElementRuleDescriptor;
+import org.eclipse.incquery.viewmodel.configuration.ReferenceRuleDescriptor;
 import org.eclipse.incquery.viewmodel.core.rules.ReferenceRule;
 import org.eclipse.incquery.viewmodel.core.util.ViewModelUtil;
 import org.eclipse.incquery.viewmodel.traceability.EObjectTarget;
-import org.eclipse.incquery.viewmodel.traceability.TraceTarget;
+import org.eclipse.incquery.viewmodel.traceability.Trace;
 import org.eclipse.viatra.query.runtime.api.IPatternMatch;
 
 
 
-public class ReferenceRuleMatchAppeared extends
-		RuleMatchProcessor<ReferenceRule> {
+public class ReferenceRuleMatchAppeared<T extends ReferenceRule<? extends ReferenceRuleDescriptor>> extends
+		RuleMatchProcessor<T> {
 
-	public ReferenceRuleMatchAppeared(ReferenceRule rule) {
+	public ReferenceRuleMatchAppeared(T rule) {
 		super(rule);
 	}
 
 	@Override
-	public void doProcess(IPatternMatch match) {
+	public Trace doProcess(IPatternMatch match) {
 		ElementRuleDescriptor ownerERD = rule.getRuleDescriptor().getOwnerElementRuleDescriptor();
 		ElementRuleDescriptor targetERD = rule.getRuleDescriptor().getTargetElementRuleDescriptor();
 		
-		Map<String, Object> sourcesOfReferenceOwner = getSourcesOfOwnerElement(match, rule.getRuleDescriptor());
-		Map<String, Object> sourcesOfReferenceTarget = getSourcesOfTargetElement(match, rule.getRuleDescriptor());
+		// Get Match instances for 'owner element' and 'target element'
+		IPatternMatch ownerElementRuleMatch = getPatternMatch(ownerERD.getPatternFQN(),
+				getSourcesOfOwnerElement(match, rule.getRuleDescriptor()));
+		IPatternMatch targetElementRuleMatch = getPatternMatch(targetERD.getPatternFQN(),
+				getSourcesOfTargetElement(match, rule.getRuleDescriptor()));
 		
-		// TODO Ebből pontosan egy darab lehet minden esetben, még akkor is, ha a használt minta egyszerűsítve van
-		// TODO egyszerűsített mintákból készíteni kell egy olyat, ami ki van eglszítve a hiányzó source illetve target paraméterekkel
-		List<TraceTarget> owners = traceabilityModelManager.getTargets(sourcesOfReferenceOwner, ownerERD.getId());
-		List<TraceTarget> targets = traceabilityModelManager.getTargets(sourcesOfReferenceTarget, targetERD.getId());
+		Trace ownerTrace = traceabilityModelManager.getTrace(ownerElementRuleMatch, ownerERD.getId());
+		Trace targetTrace = traceabilityModelManager.getTrace(targetElementRuleMatch, targetERD.getId());
 		
-		if (owners.size() != 1 || targets.size() != 1) {
-			throw new IllegalStateException("Not exactly one owner or target belongs to the given match and ruleDescriptorId!");
+		if (ownerTrace ==  null) {
+			throw new IllegalStateException("The appropriate Trace object can not be found for the 'owner element'!");
 		}
-					
+		if (targetTrace ==  null) {
+			throw new IllegalStateException("The appropriate Trace object can not be found for the 'target element'!");
+		}
+		
+		
 		// Set the corresponding reference in the target model
 		ViewModelUtil.set(
-				((EObjectTarget) owners.get(0)).getTarget(),
+				((EObjectTarget) ownerTrace.getTarget()).getTarget(),
 				rule.getRuleDescriptor().getReference(),
-				((EObjectTarget) targets.get(0)).getTarget());
+				((EObjectTarget) targetTrace.getTarget()).getTarget());
 		
 		// Create new trace
-		traceabilityModelManager.createTrace(
+		return traceabilityModelManager.createTrace(
+				match,
 				rule.getRuleDescriptor().getId(),
 				getSourcesForMatch(match),
-				(EObjectTarget) owners.get(0),
-				(EObjectTarget) targets.get(0),
+				(EObjectTarget) ownerTrace.getTarget(),
+				(EObjectTarget) targetTrace.getTarget(),
 				rule.getRuleDescriptor().getReference().getName());
 	}
 

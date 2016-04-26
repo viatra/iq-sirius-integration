@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.eclipse.incquery.viewmodel.traceability:Traceability xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.eclipse.incquery.viewmodel.traceability="http://org.eclipse.incquery/viewmodel/traceability/3.0">
+  <traces>
+    <target xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectTarget">
+      <target href="platform:/resource/org.eclipse.incquery.examples.cps.instances/representations.aird#_bfgPwAidEeauIPGbXrUQHw"/>
+    </target>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_0_param_0">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#/"/>
+    </sources>
+  </traces>
+  <traces ruleDescriptorId="3">
+    <target xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectTarget">
+      <target href="platform:/resource/org.eclipse.incquery.examples.cps.instances/representations.aird#_j7N30AidEeafwYvMLzY49w"/>
+    </target>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_1_param_0">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#152.66.102.6"/>
+    </sources>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_1_param_1">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#/"/>
+    </sources>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_2_param_0">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#//@hosts.0/@applications.1"/>
+    </sources>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_2_param_1">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#152.66.102.6"/>
+    </sources>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_3_param_0">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#//@hosts.0/@applications.1/@behavior/@states.0"/>
+    </sources>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_0_param_0">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#/"/>
+    </sources>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_3_param_1">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#//@hosts.0/@applications.1"/>
+    </sources>
+  </traces>
+  <traces ruleDescriptorId="1">
+    <target xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectTarget">
+      <target href="platform:/resource/org.eclipse.incquery.examples.cps.instances/representations.aird#_j76bYAidEeafwYvMLzY49w"/>
+    </target>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_1_param_0">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#152.66.102.5"/>
+    </sources>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_1_param_1">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#/"/>
+    </sources>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_0_param_0">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#/"/>
+    </sources>
+  </traces>
+  <traces ruleDescriptorId="3">
+    <target xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectTarget">
+      <target href="platform:/resource/org.eclipse.incquery.examples.cps.instances/representations.aird#_j783oAidEeafwYvMLzY49w"/>
+    </target>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_1_param_0">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#152.66.102.5"/>
+    </sources>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_1_param_1">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#/"/>
+    </sources>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_2_param_0">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#//@hosts.1/@applications.0"/>
+    </sources>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_2_param_1">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#152.66.102.5"/>
+    </sources>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_3_param_0">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#//@hosts.1/@applications.0/@behavior/@states.0"/>
+    </sources>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_0_param_0">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#/"/>
+    </sources>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_3_param_1">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#//@hosts.1/@applications.0"/>
+    </sources>
+  </traces>
+  <traces ruleDescriptorId="1">
+    <target xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectTarget">
+      <target href="platform:/resource/org.eclipse.incquery.examples.cps.instances/representations.aird#_j7-s0AidEeafwYvMLzY49w"/>
+    </target>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_1_param_0">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#152.66.102.6"/>
+    </sources>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_1_param_1">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#/"/>
+    </sources>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_0_param_0">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#/"/>
+    </sources>
+  </traces>
+  <traces ruleDescriptorId="2">
+    <target xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectTarget">
+      <target href="platform:/resource/org.eclipse.incquery.examples.cps.instances/representations.aird#_j8BJEAidEeafwYvMLzY49w"/>
+    </target>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_1_param_0">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#152.66.102.6"/>
+    </sources>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_1_param_1">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#/"/>
+    </sources>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_2_param_0">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#//@hosts.0/@applications.0"/>
+    </sources>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_2_param_1">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#152.66.102.6"/>
+    </sources>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_0_param_0">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#/"/>
+    </sources>
+  </traces>
+  <traces ruleDescriptorId="3">
+    <target xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectTarget">
+      <target href="platform:/resource/org.eclipse.incquery.examples.cps.instances/representations.aird#_j8C-QAidEeafwYvMLzY49w"/>
+    </target>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_1_param_0">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#152.66.102.6"/>
+    </sources>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_1_param_1">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#/"/>
+    </sources>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_2_param_0">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#//@hosts.0/@applications.2"/>
+    </sources>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_2_param_1">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#152.66.102.6"/>
+    </sources>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_3_param_0">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#//@hosts.0/@applications.2/@behavior/@states.1"/>
+    </sources>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_0_param_0">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#/"/>
+    </sources>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_3_param_1">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#//@hosts.0/@applications.2"/>
+    </sources>
+  </traces>
+  <traces ruleDescriptorId="2">
+    <target xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectTarget">
+      <target href="platform:/resource/org.eclipse.incquery.examples.cps.instances/representations.aird#_j8EMYAidEeafwYvMLzY49w"/>
+    </target>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_1_param_0">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#152.66.102.6"/>
+    </sources>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_1_param_1">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#/"/>
+    </sources>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_2_param_0">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#//@hosts.0/@applications.1"/>
+    </sources>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_2_param_1">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#152.66.102.6"/>
+    </sources>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_0_param_0">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#/"/>
+    </sources>
+  </traces>
+  <traces ruleDescriptorId="2">
+    <target xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectTarget">
+      <target href="platform:/resource/org.eclipse.incquery.examples.cps.instances/representations.aird#_j8GooAidEeafwYvMLzY49w"/>
+    </target>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_1_param_0">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#152.66.102.6"/>
+    </sources>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_1_param_1">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#/"/>
+    </sources>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_2_param_0">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#//@hosts.0/@applications.2"/>
+    </sources>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_2_param_1">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#152.66.102.6"/>
+    </sources>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_0_param_0">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#/"/>
+    </sources>
+  </traces>
+  <traces ruleDescriptorId="3">
+    <target xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectTarget">
+      <target href="platform:/resource/org.eclipse.incquery.examples.cps.instances/representations.aird#_j8KTAAidEeafwYvMLzY49w"/>
+    </target>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_1_param_0">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#152.66.102.6"/>
+    </sources>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_1_param_1">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#/"/>
+    </sources>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_2_param_0">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#//@hosts.0/@applications.0"/>
+    </sources>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_2_param_1">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#152.66.102.6"/>
+    </sources>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_3_param_0">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#//@hosts.0/@applications.0/@behavior/@states.0"/>
+    </sources>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_0_param_0">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#/"/>
+    </sources>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_3_param_1">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#//@hosts.0/@applications.0"/>
+    </sources>
+  </traces>
+  <traces ruleDescriptorId="3">
+    <target xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectTarget">
+      <target href="platform:/resource/org.eclipse.incquery.examples.cps.instances/representations.aird#_j8MIMAidEeafwYvMLzY49w"/>
+    </target>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_1_param_0">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#152.66.102.6"/>
+    </sources>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_1_param_1">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#/"/>
+    </sources>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_2_param_0">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#//@hosts.0/@applications.0"/>
+    </sources>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_2_param_1">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#152.66.102.6"/>
+    </sources>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_3_param_0">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#//@hosts.0/@applications.0/@behavior/@states.1"/>
+    </sources>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_0_param_0">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#/"/>
+    </sources>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_3_param_1">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#//@hosts.0/@applications.0"/>
+    </sources>
+  </traces>
+  <traces ruleDescriptorId="3">
+    <target xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectTarget">
+      <target href="platform:/resource/org.eclipse.incquery.examples.cps.instances/representations.aird#_j8OkcAidEeafwYvMLzY49w"/>
+    </target>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_1_param_0">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#152.66.102.6"/>
+    </sources>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_1_param_1">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#/"/>
+    </sources>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_2_param_0">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#//@hosts.0/@applications.2"/>
+    </sources>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_2_param_1">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#152.66.102.6"/>
+    </sources>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_3_param_0">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#//@hosts.0/@applications.2/@behavior/@states.0"/>
+    </sources>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_0_param_0">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#/"/>
+    </sources>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_3_param_1">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#//@hosts.0/@applications.2"/>
+    </sources>
+  </traces>
+  <traces ruleDescriptorId="1">
+    <target xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectTarget">
+      <target href="platform:/resource/org.eclipse.incquery.examples.cps.instances/representations.aird#_j8QZoAidEeafwYvMLzY49w"/>
+    </target>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_1_param_0">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#//@hosts.2"/>
+    </sources>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_1_param_1">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#/"/>
+    </sources>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_0_param_0">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#/"/>
+    </sources>
+  </traces>
+  <traces ruleDescriptorId="3">
+    <target xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectTarget">
+      <target href="platform:/resource/org.eclipse.incquery.examples.cps.instances/representations.aird#_j8RnwAidEeafwYvMLzY49w"/>
+    </target>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_1_param_0">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#152.66.102.6"/>
+    </sources>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_1_param_1">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#/"/>
+    </sources>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_2_param_0">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#//@hosts.0/@applications.1"/>
+    </sources>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_2_param_1">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#152.66.102.6"/>
+    </sources>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_3_param_0">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#//@hosts.0/@applications.1/@behavior/@states.1"/>
+    </sources>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_0_param_0">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#/"/>
+    </sources>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_3_param_1">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#//@hosts.0/@applications.1"/>
+    </sources>
+  </traces>
+  <traces ruleDescriptorId="2">
+    <target xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectTarget">
+      <target href="platform:/resource/org.eclipse.incquery.examples.cps.instances/representations.aird#_j8S14AidEeafwYvMLzY49w"/>
+    </target>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_1_param_0">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#152.66.102.5"/>
+    </sources>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_1_param_1">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#/"/>
+    </sources>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_2_param_0">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#//@hosts.1/@applications.0"/>
+    </sources>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_2_param_1">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#152.66.102.5"/>
+    </sources>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_0_param_0">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#/"/>
+    </sources>
+  </traces>
+  <traces ruleDescriptorId="3">
+    <target xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectTarget">
+      <target href="platform:/resource/org.eclipse.incquery.examples.cps.instances/representations.aird#_j8UrEAidEeafwYvMLzY49w"/>
+    </target>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_1_param_0">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#152.66.102.5"/>
+    </sources>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_1_param_1">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#/"/>
+    </sources>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_2_param_0">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#//@hosts.1/@applications.0"/>
+    </sources>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_2_param_1">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#152.66.102.5"/>
+    </sources>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_3_param_0">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#//@hosts.1/@applications.0/@behavior/@states.1"/>
+    </sources>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_0_param_0">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#/"/>
+    </sources>
+    <sources xsi:type="org.eclipse.incquery.viewmodel.traceability:EObjectSource" patternParameterName="pattern_3_param_1">
+      <source href="platform:/resource/org.eclipse.incquery.examples.cps.instances/example.deployment#//@hosts.1/@applications.0"/>
+    </sources>
+  </traces>
+</org.eclipse.incquery.viewmodel.traceability:Traceability>

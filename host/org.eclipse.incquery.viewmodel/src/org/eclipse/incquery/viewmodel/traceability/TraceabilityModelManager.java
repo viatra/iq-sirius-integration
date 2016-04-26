@@ -1,7 +1,6 @@
 package org.eclipse.incquery.viewmodel.traceability;
 
 import java.util.Collection;
-import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
@@ -9,6 +8,7 @@ import java.util.Set;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.incquery.viewmodel.configuration.TransformationRuleDescriptor;
+import org.eclipse.incquery.viewmodel.core.ViewModelManager;
 import org.eclipse.incquery.viewmodel.traceability.patterns.GetTraceByAttributeTargetMatch;
 import org.eclipse.incquery.viewmodel.traceability.patterns.GetTraceByEObjectTargetMatch;
 import org.eclipse.incquery.viewmodel.traceability.patterns.GetTraceByReferenceTargetMatch;
@@ -17,13 +17,12 @@ import org.eclipse.incquery.viewmodel.traceability.patterns.util.GetTraceByAttri
 import org.eclipse.incquery.viewmodel.traceability.patterns.util.GetTraceByEObjectTargetQuerySpecification;
 import org.eclipse.incquery.viewmodel.traceability.patterns.util.GetTraceByReferenceTargetQuerySpecification;
 import org.eclipse.incquery.viewmodel.traceability.patterns.util.GetTraceSourceQuerySpecification;
-import org.eclipse.incquery.viewmodel.traceability.util.TraceQuerySpecification;
-import org.eclipse.viatra.query.runtime.api.GenericPatternMatch;
+import org.eclipse.viatra.query.runtime.api.IPatternMatch;
+import org.eclipse.viatra.query.runtime.api.IQuerySpecification;
 import org.eclipse.viatra.query.runtime.api.ViatraQueryEngine;
 import org.eclipse.viatra.query.runtime.emf.EMFScope;
 import org.eclipse.viatra.query.runtime.exception.ViatraQueryException;
 
-import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
 
@@ -39,7 +38,7 @@ public class TraceabilityModelManager {
 
 	private Traceability traceability;
 	
-	private Map<Integer, TraceQuerySpecification> traceQuerySpecifications;
+	private Map<IPatternMatch, Map<Long, Trace>> patternMatchToTracesMap;
 	
 	
 	
@@ -48,7 +47,7 @@ public class TraceabilityModelManager {
 		
 		this.engine = ViatraQueryEngine.on(new EMFScope(traceability));
 		
-		this.traceQuerySpecifications = Maps.newHashMap();
+		this.patternMatchToTracesMap = Maps.newHashMap();
 	}
 	
 	/**
@@ -121,7 +120,7 @@ public class TraceabilityModelManager {
 		return result;
 	}
 	
-	public Trace createTrace(long ruleDescriptorId, Map<String, Object> sources, EObject targetEObject) {
+	public Trace createTrace(IPatternMatch match, long ruleDescriptorId, Map<String, Object> sources, EObject targetEObject) {
 		Trace result = createTraceEObject();
 
 		result.setRuleDescriptorId(ruleDescriptorId);
@@ -134,11 +133,13 @@ public class TraceabilityModelManager {
 		result.setTarget(eObjectTarget);
 
 		traceability.getTraces().add(result);
+		
+		addTraceToPatternMatch(match, ruleDescriptorId, result);
 
 		return result;
 	}	
 	
-	public Trace createTrace(long ruleDescriptorId, Map<String, Object> sources, EObjectTarget owner, EObjectTarget target, String referenceName) {
+	public Trace createTrace(IPatternMatch match, long ruleDescriptorId, Map<String, Object> sources, EObjectTarget owner, EObjectTarget target, String referenceName) {
 		Trace result = createTraceEObject();
 		
 		result.setRuleDescriptorId(ruleDescriptorId);
@@ -154,10 +155,14 @@ public class TraceabilityModelManager {
 		
 		traceability.getTraces().add(result);
 		
+		addTraceToPatternMatch(match, ruleDescriptorId, result);
+		
 		return result;
 	}
 	
-	public Trace createTrace(long ruleDescriptorId, Map<String, Object> sources, EObjectTarget owner, Object target, String attributeName) {
+	public Trace createTrace(IPatternMatch match, long ruleDescriptorId, Map<String, Object> sources,
+			EObjectTarget owner, Object target, String attributeName) {
+		
 		Trace result = createTraceEObject();
 		
 		result.setRuleDescriptorId(ruleDescriptorId);
@@ -172,6 +177,8 @@ public class TraceabilityModelManager {
 		result.setTarget(attributeTarget);
 		
 		traceability.getTraces().add(result);
+		
+		addTraceToPatternMatch(match, ruleDescriptorId, result);
 		
 		return result;
 	}
@@ -212,22 +219,8 @@ public class TraceabilityModelManager {
 		return TraceabilityFactory.eINSTANCE.createAttributeTarget();
 	}
 	
-	// TODO JAVADOC, TESZT
-	// TODO Lehetne egy mintával is...
-	public Set<Trace> getTraces(Map<String, Object> sources, Collection<TransformationRuleDescriptor> transformationRuleDescriptors) {
-		Set<Trace> result = Sets.newHashSet();
-		
-		for (TransformationRuleDescriptor transformationRuleDescriptor : transformationRuleDescriptors) {
-			result.addAll(getTraces(sources, transformationRuleDescriptor.getId()));
-		}
-		
-		return result;
-	}
-	
-	// TODO teszt, javadoc
-	public Set<Trace> getTraces(EObject target) {
-		Set<Trace> result = Sets.newHashSet();
-		
+	// TODO: unused? Remove?
+	public Trace getTrace(EObject target) {
 		try {
 			GetTraceByEObjectTargetQuerySpecification querySpecification = GetTraceByEObjectTargetQuerySpecification.instance();
 			
@@ -235,7 +228,7 @@ public class TraceabilityModelManager {
 			emptyMatch.setTargetEObject(target);
 			
 			for (GetTraceByEObjectTargetMatch match : querySpecification.getMatcher(engine).getAllMatches(emptyMatch)) {
-				result.add(match.getTrace());
+				return match.getTrace();
 			}
 		} catch (ViatraQueryException e) {
 			e.printStackTrace();
@@ -243,9 +236,10 @@ public class TraceabilityModelManager {
 			// TODO
 		}
 
-		return result;
+		return null;
 	}
 	
+	// TODO: unused? Remove?
 	// TODO teszt, javadoc
 	public Set<Trace> getTraces(EObject owner, EObject target, String referenceName) {
 		Set<Trace> result = Sets.newHashSet();
@@ -270,6 +264,7 @@ public class TraceabilityModelManager {
 		return result;
 	}
 	
+	// TODO: unused? Remove?
 	// TODO teszt, javadoc
 	public Set<Trace> getTraces(EObject owner, Object target, String attributeName) {
 		Set<Trace> result = Sets.newHashSet();
@@ -294,67 +289,58 @@ public class TraceabilityModelManager {
 		return result;
 	}
 	
-	/**
-	 * Get Trace instances from the traceability model by ruleDescriptorId and sources.
-	 * @param sources The source Objects / EObjects, that belong to the trace
-	 * @param ruleDescriptorId The id of the RuleDescriptor instance, that created the Trace
-	 * @return Trace instances, which have the given id and sources
-	 */
-	// TODO jobb lenne settel...
-	public List<Trace> getTraces(Map<String, Object> sources, Long ruleDescriptorId) {
-		List<Trace> result = Lists.newArrayList();
-
-		try {
-			TraceQuerySpecification querySpecification = null; 
-					
-			if (traceQuerySpecifications.get(sources.size()) != null) {
-				querySpecification = traceQuerySpecifications.get(sources.size());
-			} else {
-				querySpecification = new TraceQuerySpecification(sources.size());
-				
-				traceQuerySpecifications.put(sources.size(), querySpecification);
+	
+	public Set<Trace> getTraces(ViewModelManager viewModelManager, Map<String, Object> sources,
+			Collection<TransformationRuleDescriptor> transformationRuleDescriptors) {
+		Set<Trace> result = Sets.newHashSet();
+		
+		for (TransformationRuleDescriptor transformationRuleDescriptor : transformationRuleDescriptors) {
+			IQuerySpecification<?> transformationRuleQS = 
+					viewModelManager.getQuerySpecification(transformationRuleDescriptor.getPatternFQN());
+			
+			IPatternMatch transformationRuleMatch = transformationRuleQS.newEmptyMatch();
+			for (Entry<String, Object> entry : sources.entrySet()) {
+				transformationRuleMatch.set(entry.getKey(), entry.getValue());
 			}
 			
-			int i = 0;
-			GenericPatternMatch emptyMatch = querySpecification.newEmptyMatch();
-			for (Entry<String, Object> source : sources.entrySet()) {
-				emptyMatch.set(TraceQuerySpecification.TracePQuery.getSourceParameterName(i), source.getValue());
-				emptyMatch.set(TraceQuerySpecification.TracePQuery.getPatternParameterNameParameterName(i), source.getKey());
-				
-				i++;
+			Trace trace = getTrace(transformationRuleMatch, transformationRuleDescriptor.getId());
+			if (trace != null) {
+				result.add(trace);
 			}
-			
-			if (ruleDescriptorId != null) {
-				emptyMatch.set(TraceQuerySpecification.TracePQuery.PARAMETER_RULE_DESCRIPTOR_ID, ruleDescriptorId);
-			}
-
-			
-			Collection<GenericPatternMatch> matches = querySpecification.getMatcher(engine).getAllMatches(emptyMatch);
-			for (GenericPatternMatch match : matches) {
-				result.add((Trace) match.get(TraceQuerySpecification.TracePQuery.PARAMETER_TRACE));
-			}
-		} catch (ViatraQueryException e) {
-			// TODO hibakezelés...
 		}
 		
 		return result;
 	}
 	
-	/**
-	 * Get TraceTarget instances of the matching traces.
-	 * @param sources Source objects of the trace
-	 * @param ruleDescriptorId Id of the RuleDescriptor instance, that created the trace
-	 * @return TraceTarget instances of the matching traces
-	 */
-	public List<TraceTarget> getTargets(Map<String, Object> sources, Long ruleDescriptorId) {
-		List<TraceTarget> result = Lists.newArrayList();
-		
-		List<Trace> traces = getTraces(sources, ruleDescriptorId);
-		for (Trace trace : traces) {
-			result.add(trace.getTarget());
+	public Trace getTrace(IPatternMatch match, Long ruleDescriptorId) {
+		Map<Long, Trace> tracesForMatch = patternMatchToTracesMap.get(match);
+		if (tracesForMatch != null) {
+			return tracesForMatch.get(ruleDescriptorId);
 		}
 		
-		return result;
+		return null;
+	}
+	
+	private void addTraceToPatternMatch(IPatternMatch match, Long ruleDescriptorId, Trace trace) {
+		Map<Long, Trace> tracesForPatternMatch = patternMatchToTracesMap.get(match);
+		if (tracesForPatternMatch == null) {
+			tracesForPatternMatch = Maps.newHashMap();
+
+			patternMatchToTracesMap.put(match, tracesForPatternMatch);
+		}
+		
+		tracesForPatternMatch.put(ruleDescriptorId, trace);
+	}
+	
+	private void removeTraceFromPatternMatch(IPatternMatch match, Long ruleDescriptorId, Trace trace) {
+		Map<Long, Trace> tracesForPatternMatch = patternMatchToTracesMap.get(match);
+		if (tracesForPatternMatch != null) {
+			tracesForPatternMatch.remove(ruleDescriptorId);
+		}
+	}
+	
+	public Map<IPatternMatch, Map<Long, Trace>> getPatternMatchToTracesMap() {
+		return this.patternMatchToTracesMap;
 	}
 	
 	/**
@@ -398,7 +384,9 @@ public class TraceabilityModelManager {
 	 * Removes the given Trace instance from the traceability model.
 	 * @param trace The Trace instance to remove
 	 */
-	public void removeTrace(Trace trace) {
+	public void removeTrace(IPatternMatch match, Long ruleDescriptorId, Trace trace) {
 		EcoreUtil.remove(trace);
+		
+		removeTraceFromPatternMatch(match, ruleDescriptorId, trace);
 	}
 }

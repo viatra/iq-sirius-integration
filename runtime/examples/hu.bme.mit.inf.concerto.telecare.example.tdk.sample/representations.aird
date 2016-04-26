@@ -130,22 +130,6 @@
             <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_sOUFUHEREeWx-_V7RCV_7Q" id="(0.5,0.0)"/>
             <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_sOUFUXEREeWx-_V7RCV_7Q" id="(0.5,1.0)"/>
           </edges>
-          <edges xmi:type="notation:Edge" xmi:id="_sPiNUHEREeWx-_V7RCV_7Q" type="4001" element="_sPfxEHEREeWx-_V7RCV_7Q" source="_sOMwkHEREeWx-_V7RCV_7Q" target="_sOJtQHEREeWx-_V7RCV_7Q">
-            <children xmi:type="notation:Node" xmi:id="_sPi0YnEREeWx-_V7RCV_7Q" type="6001">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sPi0Y3EREeWx-_V7RCV_7Q" y="-10"/>
-            </children>
-            <children xmi:type="notation:Node" xmi:id="_sPi0ZHEREeWx-_V7RCV_7Q" type="6002">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sPi0ZXEREeWx-_V7RCV_7Q" y="10"/>
-            </children>
-            <children xmi:type="notation:Node" xmi:id="_sPjbcHEREeWx-_V7RCV_7Q" type="6003">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sPjbcXEREeWx-_V7RCV_7Q" y="10"/>
-            </children>
-            <styles xmi:type="notation:ConnectorStyle" xmi:id="_sPiNUXEREeWx-_V7RCV_7Q"/>
-            <styles xmi:type="notation:FontStyle" xmi:id="_sPi0YHEREeWx-_V7RCV_7Q" fontName="Cantarell" fontHeight="8"/>
-            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_sPi0YXEREeWx-_V7RCV_7Q" points="[0, 0, -110, 60]$[110, -60, 0, 0]"/>
-            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_sPjbcnEREeWx-_V7RCV_7Q" id="(0.5,0.0)"/>
-            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_sPjbc3EREeWx-_V7RCV_7Q" id="(0.5,1.0)"/>
-          </edges>
           <edges xmi:type="notation:Edge" xmi:id="_sSA5kHEREeWx-_V7RCV_7Q" type="4001" element="_sR92QHEREeWx-_V7RCV_7Q" source="_sOK7YnEREeWx-_V7RCV_7Q" target="_sOJtQHEREeWx-_V7RCV_7Q">
             <children xmi:type="notation:Node" xmi:id="_sSBgoHEREeWx-_V7RCV_7Q" type="6001">
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sSBgoXEREeWx-_V7RCV_7Q" y="-10"/>
@@ -161,38 +145,6 @@
             <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_sSA5k3EREeWx-_V7RCV_7Q" points="[0, 0, 110, 60]$[-110, -60, 0, 0]"/>
             <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_sSCHsHEREeWx-_V7RCV_7Q" id="(0.5,0.0)"/>
             <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_sSCHsXEREeWx-_V7RCV_7Q" id="(0.5,1.0)"/>
-          </edges>
-          <edges xmi:type="notation:Edge" xmi:id="_sSSmYHEREeWx-_V7RCV_7Q" type="4001" element="_sSQKIHEREeWx-_V7RCV_7Q" source="_sOLicnEREeWx-_V7RCV_7Q" target="_sOOlwHEREeWx-_V7RCV_7Q">
-            <children xmi:type="notation:Node" xmi:id="_sSTNcHEREeWx-_V7RCV_7Q" type="6001">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sSTNcXEREeWx-_V7RCV_7Q" y="-10"/>
-            </children>
-            <children xmi:type="notation:Node" xmi:id="_sSTNcnEREeWx-_V7RCV_7Q" type="6002">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sSTNc3EREeWx-_V7RCV_7Q" y="10"/>
-            </children>
-            <children xmi:type="notation:Node" xmi:id="_sSTNdHEREeWx-_V7RCV_7Q" type="6003">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sSTNdXEREeWx-_V7RCV_7Q" y="10"/>
-            </children>
-            <styles xmi:type="notation:ConnectorStyle" xmi:id="_sSSmYXEREeWx-_V7RCV_7Q"/>
-            <styles xmi:type="notation:FontStyle" xmi:id="_sSSmYnEREeWx-_V7RCV_7Q" fontName="Cantarell" fontHeight="8"/>
-            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_sSSmY3EREeWx-_V7RCV_7Q" points="[0, 0, 110, 60]$[-110, -60, 0, 0]"/>
-            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_sSTNdnEREeWx-_V7RCV_7Q" id="(0.5,0.0)"/>
-            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_sSTNd3EREeWx-_V7RCV_7Q" id="(0.5,1.0)"/>
-          </edges>
-          <edges xmi:type="notation:Edge" xmi:id="_rbdZYHy0EeWM3aiC9ikRSQ" type="4001" element="_raXNMHy0EeWM3aiC9ikRSQ" source="_sOK7YnEREeWx-_V7RCV_7Q" target="_sOKUUnEREeWx-_V7RCV_7Q">
-            <children xmi:type="notation:Node" xmi:id="_rclawHy0EeWM3aiC9ikRSQ" type="6001">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_rclawXy0EeWM3aiC9ikRSQ" y="-10"/>
-            </children>
-            <children xmi:type="notation:Node" xmi:id="_rcwZ4Hy0EeWM3aiC9ikRSQ" type="6002">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_rcwZ4Xy0EeWM3aiC9ikRSQ" y="10"/>
-            </children>
-            <children xmi:type="notation:Node" xmi:id="_rc0EQHy0EeWM3aiC9ikRSQ" type="6003">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_rc0EQXy0EeWM3aiC9ikRSQ" y="10"/>
-            </children>
-            <styles xmi:type="notation:ConnectorStyle" xmi:id="_rbdZYXy0EeWM3aiC9ikRSQ"/>
-            <styles xmi:type="notation:FontStyle" xmi:id="_rbdZYny0EeWM3aiC9ikRSQ" fontName="Cantarell" fontHeight="8"/>
-            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_rbdZY3y0EeWM3aiC9ikRSQ" points="[0, 0, 0, 60]$[0, -60, 0, 0]"/>
-            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_rdMewHy0EeWM3aiC9ikRSQ" id="(0.5,0.0)"/>
-            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_rdMewXy0EeWM3aiC9ikRSQ" id="(0.5,1.0)"/>
           </edges>
           <edges xmi:type="notation:Edge" xmi:id="_rdQJIny0EeWM3aiC9ikRSQ" type="4001" element="_raphEHy0EeWM3aiC9ikRSQ" source="_sOMwkHEREeWx-_V7RCV_7Q" target="_sOOlwHEREeWx-_V7RCV_7Q">
             <children xmi:type="notation:Node" xmi:id="_rdRXQHy0EeWM3aiC9ikRSQ" type="6001">
@@ -242,9 +194,57 @@
             <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_T5EuDPXSEeWwU_o1FTEosg" id="(0.5,0.5)"/>
             <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_T5EuDfXSEeWwU_o1FTEosg" id="(0.5,0.5)"/>
           </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_zTt5QAoFEea9wN-fBFtwtA" type="4001" element="_zTnyoAoFEea9wN-fBFtwtA" source="_sOLicnEREeWx-_V7RCV_7Q" target="_sOJtQHEREeWx-_V7RCV_7Q">
+            <children xmi:type="notation:Node" xmi:id="_zTt5RAoFEea9wN-fBFtwtA" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zTt5RQoFEea9wN-fBFtwtA" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_zTt5RgoFEea9wN-fBFtwtA" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zTt5RwoFEea9wN-fBFtwtA" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_zTt5SAoFEea9wN-fBFtwtA" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zTt5SQoFEea9wN-fBFtwtA" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_zTt5QQoFEea9wN-fBFtwtA"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_zTt5QgoFEea9wN-fBFtwtA" fontName="Cantarell" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_zTt5QwoFEea9wN-fBFtwtA" points="[216, 108, 216, 108]$[216, 0, 216, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_zTugUAoFEea9wN-fBFtwtA" id="(0.5,0.5)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_zTugUQoFEea9wN-fBFtwtA" id="(0.5,0.5)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_zTugUgoFEea9wN-fBFtwtA" type="4001" element="_zToZsAoFEea9wN-fBFtwtA" source="_sOMwkHEREeWx-_V7RCV_7Q" target="_sOKUUnEREeWx-_V7RCV_7Q">
+            <children xmi:type="notation:Node" xmi:id="_zTugVgoFEea9wN-fBFtwtA" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zTugVwoFEea9wN-fBFtwtA" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_zTugWAoFEea9wN-fBFtwtA" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zTugWQoFEea9wN-fBFtwtA" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_zTugWgoFEea9wN-fBFtwtA" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zTugWwoFEea9wN-fBFtwtA" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_zTugUwoFEea9wN-fBFtwtA"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_zTugVAoFEea9wN-fBFtwtA" fontName="Cantarell" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_zTugVQoFEea9wN-fBFtwtA" points="[108, 108, 108, 108]$[336, 0, 336, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_zTugXAoFEea9wN-fBFtwtA" id="(0.5,0.5)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_zTugXQoFEea9wN-fBFtwtA" id="(0.5,0.5)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_zTugXgoFEea9wN-fBFtwtA" type="4001" element="_zTsrIAoFEea9wN-fBFtwtA" source="_sOK7YnEREeWx-_V7RCV_7Q" target="_sOOlwHEREeWx-_V7RCV_7Q">
+            <children xmi:type="notation:Node" xmi:id="_zTugYgoFEea9wN-fBFtwtA" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zTugYwoFEea9wN-fBFtwtA" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_zTugZAoFEea9wN-fBFtwtA" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zTugZQoFEea9wN-fBFtwtA" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_zTugZgoFEea9wN-fBFtwtA" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zTugZwoFEea9wN-fBFtwtA" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_zTugXwoFEea9wN-fBFtwtA"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_zTugYAoFEea9wN-fBFtwtA" fontName="Cantarell" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_zTugYQoFEea9wN-fBFtwtA" points="[336, 108, 336, 108]$[108, 0, 108, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_zTvHYAoFEea9wN-fBFtwtA" id="(0.5,0.5)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_zTvHYQoFEea9wN-fBFtwtA" id="(0.5,0.5)"/>
+          </edges>
         </data>
       </ownedAnnotationEntries>
-      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_sODmoHEREeWx-_V7RCV_7Q" name="Server::Host1" incomingEdges="_sPfxEHEREeWx-_V7RCV_7Q _sR92QHEREeWx-_V7RCV_7Q" width="-1" height="-1" resizeKind="NSEW">
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_sODmoHEREeWx-_V7RCV_7Q" name="Server::Host2" incomingEdges="_sR92QHEREeWx-_V7RCV_7Q _zTnyoAoFEea9wN-fBFtwtA" width="-1" height="-1" resizeKind="NSEW">
         <target xmi:type="tdktelecareview:Server" href="inmemoryresource:/_slQXQGrSEeWKCoj5Vq9CQQ#//@servers.0"/>
         <semanticElements xmi:type="tdktelecareview:Server" href="inmemoryresource:/_slQXQGrSEeWKCoj5Vq9CQQ#//@servers.0"/>
         <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_sODmoXEREeWx-_V7RCV_7Q" showIcon="false" workspacePath="/hu.bme.mit.concerto.telecare.example.tdk.view.design/img/server.png">
@@ -252,7 +252,7 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/hu.bme.mit.concerto.telecare.example.tdk.view.design/description/view.odesign#//@ownedViewpoints[name='vp_telecare_tdk_view']/@ownedRepresentations[name='dd_diagram']/@defaultLayer/@nodeMappings[name='sn_server']"/>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_sOENsHEREeWx-_V7RCV_7Q" name="Server::Host2" incomingEdges="_sOGp8nEREeWx-_V7RCV_7Q _raXNMHy0EeWM3aiC9ikRSQ" width="-1" height="-1" resizeKind="NSEW">
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_sOENsHEREeWx-_V7RCV_7Q" name="Server::Host1" incomingEdges="_sOGp8nEREeWx-_V7RCV_7Q _zToZsAoFEea9wN-fBFtwtA" width="-1" height="-1" resizeKind="NSEW">
         <target xmi:type="tdktelecareview:Server" href="inmemoryresource:/_slQXQGrSEeWKCoj5Vq9CQQ#//@servers.1"/>
         <semanticElements xmi:type="tdktelecareview:Server" href="inmemoryresource:/_slQXQGrSEeWKCoj5Vq9CQQ#//@servers.1"/>
         <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_sOENsXEREeWx-_V7RCV_7Q" showIcon="false" workspacePath="/hu.bme.mit.concerto.telecare.example.tdk.view.design/img/server.png">
@@ -260,7 +260,7 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/hu.bme.mit.concerto.telecare.example.tdk.view.design/description/view.odesign#//@ownedViewpoints[name='vp_telecare_tdk_view']/@ownedRepresentations[name='dd_diagram']/@defaultLayer/@nodeMappings[name='sn_server']"/>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_sOE0wHEREeWx-_V7RCV_7Q" name="Sensor::WeightScale1" outgoingEdges="_sR92QHEREeWx-_V7RCV_7Q _raXNMHy0EeWM3aiC9ikRSQ _T5BqsPXSEeWwU_o1FTEosg" width="-1" height="-1" resizeKind="NSEW">
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_sOE0wHEREeWx-_V7RCV_7Q" name="Sensor::SmartPhone1" outgoingEdges="_sR92QHEREeWx-_V7RCV_7Q _T5BqsPXSEeWwU_o1FTEosg _zTsrIAoFEea9wN-fBFtwtA" width="-1" height="-1" resizeKind="NSEW">
         <target xmi:type="tdktelecareview:Sensor" href="inmemoryresource:/_slQXQGrSEeWKCoj5Vq9CQQ#//@sensors.0"/>
         <semanticElements xmi:type="tdktelecareview:Sensor" href="inmemoryresource:/_slQXQGrSEeWKCoj5Vq9CQQ#//@sensors.0"/>
         <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_sOE0wXEREeWx-_V7RCV_7Q" showIcon="false" workspacePath="/hu.bme.mit.concerto.telecare.example.tdk.view.design/img/sensor.png">
@@ -268,7 +268,7 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/hu.bme.mit.concerto.telecare.example.tdk.view.design/description/view.odesign#//@ownedViewpoints[name='vp_telecare_tdk_view']/@ownedRepresentations[name='dd_diagram']/@defaultLayer/@nodeMappings[name='sn_sensor']"/>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_sOE0wnEREeWx-_V7RCV_7Q" name="Sensor::SmartPhone1" outgoingEdges="_sOGp8nEREeWx-_V7RCV_7Q _sSQKIHEREeWx-_V7RCV_7Q _T5C40PXSEeWwU_o1FTEosg" width="-1" height="-1" resizeKind="NSEW">
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_sOE0wnEREeWx-_V7RCV_7Q" name="Sensor::WeightScale1" outgoingEdges="_sOGp8nEREeWx-_V7RCV_7Q _T5C40PXSEeWwU_o1FTEosg _zTnyoAoFEea9wN-fBFtwtA" width="-1" height="-1" resizeKind="NSEW">
         <target xmi:type="tdktelecareview:Sensor" href="inmemoryresource:/_slQXQGrSEeWKCoj5Vq9CQQ#//@sensors.1"/>
         <semanticElements xmi:type="tdktelecareview:Sensor" href="inmemoryresource:/_slQXQGrSEeWKCoj5Vq9CQQ#//@sensors.1"/>
         <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_sOE0w3EREeWx-_V7RCV_7Q" showIcon="false" workspacePath="/hu.bme.mit.concerto.telecare.example.tdk.view.design/img/sensor.png">
@@ -276,7 +276,7 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/hu.bme.mit.concerto.telecare.example.tdk.view.design/description/view.odesign#//@ownedViewpoints[name='vp_telecare_tdk_view']/@ownedRepresentations[name='dd_diagram']/@defaultLayer/@nodeMappings[name='sn_sensor']"/>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_sOFb0HEREeWx-_V7RCV_7Q" name="Sensor::BloodPressureMonitor1" outgoingEdges="_sPfxEHEREeWx-_V7RCV_7Q _raphEHy0EeWM3aiC9ikRSQ" width="-1" height="-1" resizeKind="NSEW">
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_sOFb0HEREeWx-_V7RCV_7Q" name="Sensor::BloodPressureMonitor1" outgoingEdges="_raphEHy0EeWM3aiC9ikRSQ _zToZsAoFEea9wN-fBFtwtA" width="-1" height="-1" resizeKind="NSEW">
         <target xmi:type="tdktelecareview:Sensor" href="inmemoryresource:/_slQXQGrSEeWKCoj5Vq9CQQ#//@sensors.2"/>
         <semanticElements xmi:type="tdktelecareview:Sensor" href="inmemoryresource:/_slQXQGrSEeWKCoj5Vq9CQQ#//@sensors.2"/>
         <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_sOFb0XEREeWx-_V7RCV_7Q" showIcon="false" workspacePath="/hu.bme.mit.concerto.telecare.example.tdk.view.design/img/sensor.png">
@@ -284,7 +284,7 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/hu.bme.mit.concerto.telecare.example.tdk.view.design/description/view.odesign#//@ownedViewpoints[name='vp_telecare_tdk_view']/@ownedRepresentations[name='dd_diagram']/@defaultLayer/@nodeMappings[name='sn_sensor']"/>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_sOGC4HEREeWx-_V7RCV_7Q" name="Trigger::FIT (1 day)" incomingEdges="_T5BqsPXSEeWwU_o1FTEosg" width="-1" height="-1" resizeKind="NSEW">
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_sOGC4HEREeWx-_V7RCV_7Q" name="Trigger::FIT (5 minutes)" incomingEdges="_T5BqsPXSEeWwU_o1FTEosg" width="-1" height="-1" resizeKind="NSEW">
         <target xmi:type="tdktelecareview:Tigger" href="inmemoryresource:/_slQXQGrSEeWKCoj5Vq9CQQ#//@triggers.0"/>
         <semanticElements xmi:type="tdktelecareview:Tigger" href="inmemoryresource:/_slQXQGrSEeWKCoj5Vq9CQQ#//@triggers.0"/>
         <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_sOGC4XEREeWx-_V7RCV_7Q" showIcon="false" workspacePath="/hu.bme.mit.concerto.telecare.example.tdk.view.design/img/trigger.png">
@@ -292,7 +292,7 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/hu.bme.mit.concerto.telecare.example.tdk.view.design/description/view.odesign#//@ownedViewpoints[name='vp_telecare_tdk_view']/@ownedRepresentations[name='dd_diagram']/@defaultLayer/@nodeMappings[name='sn_trigger']"/>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_sOGC4nEREeWx-_V7RCV_7Q" name="Trigger::FIT (5 minutes)" incomingEdges="_T5C40PXSEeWwU_o1FTEosg" width="-1" height="-1" resizeKind="NSEW">
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_sOGC4nEREeWx-_V7RCV_7Q" name="Trigger::FIT (1 day)" incomingEdges="_T5C40PXSEeWwU_o1FTEosg" width="-1" height="-1" resizeKind="NSEW">
         <target xmi:type="tdktelecareview:Tigger" href="inmemoryresource:/_slQXQGrSEeWKCoj5Vq9CQQ#//@triggers.1"/>
         <semanticElements xmi:type="tdktelecareview:Tigger" href="inmemoryresource:/_slQXQGrSEeWKCoj5Vq9CQQ#//@triggers.1"/>
         <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_sOGC43EREeWx-_V7RCV_7Q" showIcon="false" workspacePath="/hu.bme.mit.concerto.telecare.example.tdk.view.design/img/trigger.png">
@@ -300,7 +300,7 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/hu.bme.mit.concerto.telecare.example.tdk.view.design/description/view.odesign#//@ownedViewpoints[name='vp_telecare_tdk_view']/@ownedRepresentations[name='dd_diagram']/@defaultLayer/@nodeMappings[name='sn_trigger']"/>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_sOGp8HEREeWx-_V7RCV_7Q" name="Trigger::FIT (10 minutes)" incomingEdges="_sSQKIHEREeWx-_V7RCV_7Q _raphEHy0EeWM3aiC9ikRSQ" width="-1" height="-1" resizeKind="NSEW">
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_sOGp8HEREeWx-_V7RCV_7Q" name="Trigger::FIT (10 minutes)" incomingEdges="_raphEHy0EeWM3aiC9ikRSQ _zTsrIAoFEea9wN-fBFtwtA" width="-1" height="-1" resizeKind="NSEW">
         <target xmi:type="tdktelecareview:Tigger" href="inmemoryresource:/_slQXQGrSEeWKCoj5Vq9CQQ#//@triggers.2"/>
         <semanticElements xmi:type="tdktelecareview:Tigger" href="inmemoryresource:/_slQXQGrSEeWKCoj5Vq9CQQ#//@triggers.2"/>
         <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_sOGp8XEREeWx-_V7RCV_7Q" showIcon="false" workspacePath="/hu.bme.mit.concerto.telecare.example.tdk.view.design/img/trigger.png">
@@ -316,35 +316,11 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/hu.bme.mit.concerto.telecare.example.tdk.view.design/description/view.odesign#//@ownedViewpoints[name='vp_telecare_tdk_view']/@ownedRepresentations[name='dd_diagram']/@additionalLayers[name='layer_sensor_connectedTo']/@edgeMappings[name='rbe_sensor_connectedTo']"/>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_sPfxEHEREeWx-_V7RCV_7Q" sourceNode="_sOFb0HEREeWx-_V7RCV_7Q" targetNode="_sODmoHEREeWx-_V7RCV_7Q">
-        <target xmi:type="tdktelecareview:Sensor" href="inmemoryresource:/_slQXQGrSEeWKCoj5Vq9CQQ#//@sensors.2"/>
-        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_sPfxEXEREeWx-_V7RCV_7Q" size="2">
-          <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/hu.bme.mit.concerto.telecare.example.tdk.view.design/description/view.odesign#//@ownedViewpoints[name='vp_telecare_tdk_view']/@ownedRepresentations[name='dd_diagram']/@additionalLayers[name='layer_sensor_connectedTo']/@edgeMappings[name='rbe_sensor_connectedTo']/@style"/>
-          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_sPfxEnEREeWx-_V7RCV_7Q"/>
-        </ownedStyle>
-        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/hu.bme.mit.concerto.telecare.example.tdk.view.design/description/view.odesign#//@ownedViewpoints[name='vp_telecare_tdk_view']/@ownedRepresentations[name='dd_diagram']/@additionalLayers[name='layer_sensor_connectedTo']/@edgeMappings[name='rbe_sensor_connectedTo']"/>
-      </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_sR92QHEREeWx-_V7RCV_7Q" sourceNode="_sOE0wHEREeWx-_V7RCV_7Q" targetNode="_sODmoHEREeWx-_V7RCV_7Q">
         <target xmi:type="tdktelecareview:Sensor" href="inmemoryresource:/_slQXQGrSEeWKCoj5Vq9CQQ#//@sensors.0"/>
         <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_sR92QXEREeWx-_V7RCV_7Q" size="2">
           <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/hu.bme.mit.concerto.telecare.example.tdk.view.design/description/view.odesign#//@ownedViewpoints[name='vp_telecare_tdk_view']/@ownedRepresentations[name='dd_diagram']/@additionalLayers[name='layer_sensor_connectedTo']/@edgeMappings[name='rbe_sensor_connectedTo']/@style"/>
           <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_sR92QnEREeWx-_V7RCV_7Q"/>
-        </ownedStyle>
-        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/hu.bme.mit.concerto.telecare.example.tdk.view.design/description/view.odesign#//@ownedViewpoints[name='vp_telecare_tdk_view']/@ownedRepresentations[name='dd_diagram']/@additionalLayers[name='layer_sensor_connectedTo']/@edgeMappings[name='rbe_sensor_connectedTo']"/>
-      </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_sSQKIHEREeWx-_V7RCV_7Q" sourceNode="_sOE0wnEREeWx-_V7RCV_7Q" targetNode="_sOGp8HEREeWx-_V7RCV_7Q">
-        <target xmi:type="tdktelecareview:Sensor" href="inmemoryresource:/_slQXQGrSEeWKCoj5Vq9CQQ#//@sensors.1"/>
-        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_sSQxMHEREeWx-_V7RCV_7Q" size="2">
-          <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/hu.bme.mit.concerto.telecare.example.tdk.view.design/description/view.odesign#//@ownedViewpoints[name='vp_telecare_tdk_view']/@ownedRepresentations[name='dd_diagram']/@additionalLayers[name='layer_sensor_triggeredBy']/@edgeMappings[name='rbe_sensor_connectedTo']/@style"/>
-          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_sSQxMXEREeWx-_V7RCV_7Q"/>
-        </ownedStyle>
-        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/hu.bme.mit.concerto.telecare.example.tdk.view.design/description/view.odesign#//@ownedViewpoints[name='vp_telecare_tdk_view']/@ownedRepresentations[name='dd_diagram']/@additionalLayers[name='layer_sensor_triggeredBy']/@edgeMappings[name='rbe_sensor_connectedTo']"/>
-      </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_raXNMHy0EeWM3aiC9ikRSQ" sourceNode="_sOE0wHEREeWx-_V7RCV_7Q" targetNode="_sOENsHEREeWx-_V7RCV_7Q">
-        <target xmi:type="tdktelecareview:Sensor" href="inmemoryresource:/_slQXQGrSEeWKCoj5Vq9CQQ#//@sensors.0"/>
-        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_raYbUHy0EeWM3aiC9ikRSQ" size="2">
-          <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/hu.bme.mit.concerto.telecare.example.tdk.view.design/description/view.odesign#//@ownedViewpoints[name='vp_telecare_tdk_view']/@ownedRepresentations[name='dd_diagram']/@additionalLayers[name='layer_sensor_connectedTo']/@edgeMappings[name='rbe_sensor_connectedTo']/@style"/>
-          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_raYbUXy0EeWM3aiC9ikRSQ"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/hu.bme.mit.concerto.telecare.example.tdk.view.design/description/view.odesign#//@ownedViewpoints[name='vp_telecare_tdk_view']/@ownedRepresentations[name='dd_diagram']/@additionalLayers[name='layer_sensor_connectedTo']/@edgeMappings[name='rbe_sensor_connectedTo']"/>
       </ownedDiagramElements>
@@ -369,6 +345,30 @@
         <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_T5C40fXSEeWwU_o1FTEosg" size="2">
           <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/hu.bme.mit.concerto.telecare.example.tdk.view.design/description/view.odesign#//@ownedViewpoints[name='vp_telecare_tdk_view']/@ownedRepresentations[name='dd_diagram']/@additionalLayers[name='layer_sensor_triggeredBy']/@edgeMappings[name='rbe_sensor_connectedTo']/@style"/>
           <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_T5C40vXSEeWwU_o1FTEosg"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/hu.bme.mit.concerto.telecare.example.tdk.view.design/description/view.odesign#//@ownedViewpoints[name='vp_telecare_tdk_view']/@ownedRepresentations[name='dd_diagram']/@additionalLayers[name='layer_sensor_triggeredBy']/@edgeMappings[name='rbe_sensor_connectedTo']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_zTnyoAoFEea9wN-fBFtwtA" sourceNode="_sOE0wnEREeWx-_V7RCV_7Q" targetNode="_sODmoHEREeWx-_V7RCV_7Q">
+        <target xmi:type="tdktelecareview:Sensor" href="inmemoryresource:/_slQXQGrSEeWKCoj5Vq9CQQ#//@sensors.1"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_zTnyoQoFEea9wN-fBFtwtA" size="2">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/hu.bme.mit.concerto.telecare.example.tdk.view.design/description/view.odesign#//@ownedViewpoints[name='vp_telecare_tdk_view']/@ownedRepresentations[name='dd_diagram']/@additionalLayers[name='layer_sensor_connectedTo']/@edgeMappings[name='rbe_sensor_connectedTo']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_zTnyogoFEea9wN-fBFtwtA"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/hu.bme.mit.concerto.telecare.example.tdk.view.design/description/view.odesign#//@ownedViewpoints[name='vp_telecare_tdk_view']/@ownedRepresentations[name='dd_diagram']/@additionalLayers[name='layer_sensor_connectedTo']/@edgeMappings[name='rbe_sensor_connectedTo']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_zToZsAoFEea9wN-fBFtwtA" sourceNode="_sOFb0HEREeWx-_V7RCV_7Q" targetNode="_sOENsHEREeWx-_V7RCV_7Q">
+        <target xmi:type="tdktelecareview:Sensor" href="inmemoryresource:/_slQXQGrSEeWKCoj5Vq9CQQ#//@sensors.2"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_zToZsQoFEea9wN-fBFtwtA" size="2">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/hu.bme.mit.concerto.telecare.example.tdk.view.design/description/view.odesign#//@ownedViewpoints[name='vp_telecare_tdk_view']/@ownedRepresentations[name='dd_diagram']/@additionalLayers[name='layer_sensor_connectedTo']/@edgeMappings[name='rbe_sensor_connectedTo']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_zToZsgoFEea9wN-fBFtwtA"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/hu.bme.mit.concerto.telecare.example.tdk.view.design/description/view.odesign#//@ownedViewpoints[name='vp_telecare_tdk_view']/@ownedRepresentations[name='dd_diagram']/@additionalLayers[name='layer_sensor_connectedTo']/@edgeMappings[name='rbe_sensor_connectedTo']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_zTsrIAoFEea9wN-fBFtwtA" sourceNode="_sOE0wHEREeWx-_V7RCV_7Q" targetNode="_sOGp8HEREeWx-_V7RCV_7Q">
+        <target xmi:type="tdktelecareview:Sensor" href="inmemoryresource:/_slQXQGrSEeWKCoj5Vq9CQQ#//@sensors.0"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_zTsrIQoFEea9wN-fBFtwtA" size="2">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/hu.bme.mit.concerto.telecare.example.tdk.view.design/description/view.odesign#//@ownedViewpoints[name='vp_telecare_tdk_view']/@ownedRepresentations[name='dd_diagram']/@additionalLayers[name='layer_sensor_triggeredBy']/@edgeMappings[name='rbe_sensor_connectedTo']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_zTsrIgoFEea9wN-fBFtwtA"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/hu.bme.mit.concerto.telecare.example.tdk.view.design/description/view.odesign#//@ownedViewpoints[name='vp_telecare_tdk_view']/@ownedRepresentations[name='dd_diagram']/@additionalLayers[name='layer_sensor_triggeredBy']/@edgeMappings[name='rbe_sensor_connectedTo']"/>
       </ownedDiagramElements>

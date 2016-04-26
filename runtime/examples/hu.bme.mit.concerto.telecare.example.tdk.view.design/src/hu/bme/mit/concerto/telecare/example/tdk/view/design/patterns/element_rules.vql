@@ -40,3 +40,11 @@ pattern element_sensor(sensor : Sensor) {
 	EventCompletedTrigger.triggeredBy(ect, measurement);
 	Measurement.measurementType.sensor(measurement, sensor);
 }
+
+@Bind(foo="sss")
+pattern composite(sensor : Sensor, trigger : FixedIntervalTrigger, sensor2 : Sensor) {
+	find element_sensor(sensor);
+	find element_trigger(trigger);
+	
+	sensor == sensor2;
+}
