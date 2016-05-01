@@ -126,9 +126,6 @@
       <eAnnotations>
         <details key="get" value="return org.eclipse.incquery.viewmodel.configuration.util.ConfigurationModelUtil.getInstance(this).getDerivedName(this);"/>
       </eAnnotations>
-      <eAnnotations source="org.eclipse.incquery.querybasedfeature">
-        <details key="patternFQN" value="org.eclipse.incquery.viewmodel.configuration.patterns.namedElement_name"/>
-      </eAnnotations>
       <eAnnotations source="org.eclipse.viatra.query.querybasedfeature">
         <details key="patternFQN" value="org.eclipse.incquery.viewmodel.configuration.patterns.namedElement_name"/>
       </eAnnotations>

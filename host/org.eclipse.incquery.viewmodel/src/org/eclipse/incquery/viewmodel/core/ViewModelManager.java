@@ -41,9 +41,9 @@ import org.eclipse.viatra.query.runtime.exception.ViatraQueryException;
 import org.eclipse.viatra.query.runtime.matchers.psystem.PBody;
 import org.eclipse.viatra.transformation.evm.api.ActivationLifeCycle;
 import org.eclipse.viatra.transformation.evm.api.ExecutionSchema;
-import org.eclipse.viatra.transformation.evm.api.Executor;
 import org.eclipse.viatra.transformation.evm.api.Job;
 import org.eclipse.viatra.transformation.evm.api.RuleSpecification;
+import org.eclipse.viatra.transformation.evm.api.ScheduledExecution;
 import org.eclipse.viatra.transformation.evm.api.Scheduler;
 import org.eclipse.viatra.transformation.evm.specific.ConflictResolvers;
 import org.eclipse.viatra.transformation.evm.specific.ExecutionSchemas;
@@ -280,8 +280,9 @@ public class ViewModelManager {
 			break;
 			
 		case MANUAL:
-	        Executor executor = new Executor(ViatraQueryEventRealm.create(viatraQueryEngine));
-	        Scheduler scheduler = (new ManualScheduler.ManualSchedulerFactory()) .prepareScheduler(executor);
+	        ViatraQueryEventRealm eventRealm = ViatraQueryEventRealm.create(viatraQueryEngine);
+	        ScheduledExecution scheduledExecution = new ScheduledExecution(eventRealm);
+	        Scheduler scheduler = (new ManualScheduler.ManualSchedulerFactory()) .prepareScheduler(scheduledExecution);
 	        executionSchema = ExecutionSchema.create(scheduler);
 			
 			break;
