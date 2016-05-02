@@ -61,7 +61,7 @@ public class ConfigurationModelUtil {
 	 * @param target
 	 * @return
 	 */
-	public static ReferenceRuleDescriptor createReferenceRUleDescriptor(long id, EReference reference, String patternFQN, ElementRuleDescriptor owner, ElementRuleDescriptor target) {
+	public static ReferenceRuleDescriptor createReferenceRuleDescriptor(long id, EReference reference, String patternFQN, ElementRuleDescriptor owner, ElementRuleDescriptor target) {
         ReferenceRuleDescriptor ruleDescriptor = ConfigurationFactory.eINSTANCE.createReferenceRuleDescriptor();
         ruleDescriptor.setId(id);
         ruleDescriptor.setOwnerElementRuleDescriptor(owner);

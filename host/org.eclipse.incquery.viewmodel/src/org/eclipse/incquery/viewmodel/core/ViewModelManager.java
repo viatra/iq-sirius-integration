@@ -297,7 +297,7 @@ public class ViewModelManager {
 			if (ruleProvider != null && ruleProvider.getRuleForDescriptor(ruleDescriptor) != null) {
 				rule = ruleProvider.getRuleForDescriptor(ruleDescriptor);
 			} else {
-				rule = new ElementRule(ruleDescriptor, this);
+				rule = new ElementRule<ElementRuleDescriptor>(ruleDescriptor, this);
 			}
 
 			ruleSpecification = createRuleSpecification(rule);
@@ -315,7 +315,7 @@ public class ViewModelManager {
 			if (ruleProvider != null && ruleProvider.getRuleForDescriptor(ruleDescriptor) != null) {
 				rule = ruleProvider.getRuleForDescriptor(ruleDescriptor);
 			} else {
-				rule = new ReferenceRule(ruleDescriptor, this);
+				rule = new ReferenceRule<ReferenceRuleDescriptor>(ruleDescriptor, this);
 			}
 
 			ruleSpecification = createRuleSpecification(rule);
@@ -333,7 +333,7 @@ public class ViewModelManager {
 			if (ruleProvider != null && ruleProvider.getRuleForDescriptor(ruleDescriptor) != null) {
 				rule = ruleProvider.getRuleForDescriptor(ruleDescriptor);
 			} else {
-				rule = new AttributeRule(ruleDescriptor, this);
+				rule = new AttributeRule<AttributeRuleDescriptor>(ruleDescriptor, this);
 			}
 
 			ruleSpecification = createRuleSpecification(rule);
@@ -347,21 +347,22 @@ public class ViewModelManager {
 			conflictResolver.setPriority(ruleSpecification, rule.getPriority());
 		}
 
-		// TODO: opcionális lehetne, hogy ezeket létrehozzuk-e, mivel csak a "vissza iránynál" kellenek
-		// Creating HiddenParametersRuleDescriptors
-		createHiddenParametersRuleDescriptors();
-		for (HiddenParametersRuleDescriptor ruleDescriptor : configurationModel.getHiddenParametersRuleDescriptors()) {
-			rule = new HiddenParametersRule(ruleDescriptor, this);
-
-			ruleSpecification = createRuleSpecification(rule);
-			
-			if (rule.getEventFilter() == null) {
-				executionSchema.addRule(ruleSpecification);
-			} else {
-				executionSchema.addRule(ruleSpecification, rule.getEventFilter());
+		if (configurationModel.isEnableDetailedTraceability()) {
+			// Creating HiddenParametersRuleDescriptors
+			createHiddenParametersRuleDescriptors();
+			for (HiddenParametersRuleDescriptor ruleDescriptor : configurationModel.getHiddenParametersRuleDescriptors()) {
+				rule = new HiddenParametersRule<HiddenParametersRuleDescriptor>(ruleDescriptor, this);
+	
+				ruleSpecification = createRuleSpecification(rule);
+				
+				if (rule.getEventFilter() == null) {
+					executionSchema.addRule(ruleSpecification);
+				} else {
+					executionSchema.addRule(ruleSpecification, rule.getEventFilter());
+				}
+	
+				conflictResolver.setPriority(ruleSpecification, rule.getPriority());
 			}
-
-			conflictResolver.setPriority(ruleSpecification, rule.getPriority());
 		}
 		
 		// Run custom initialization if it's needed

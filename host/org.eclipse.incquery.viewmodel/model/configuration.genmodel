@@ -28,6 +28,7 @@
       <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference configuration.ecore#//Configuration/traceabilityRuleDescriptors"/>
       <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference configuration.ecore#//Configuration/hiddenParametersRuleDescriptors"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute configuration.ecore#//Configuration/scheduler"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute configuration.ecore#//Configuration/enableDetailedTraceability"/>
     </genClasses>
     <genClasses ecoreClass="configuration.ecore#//ElementRuleDescriptor">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference configuration.ecore#//ElementRuleDescriptor/elementType"/>
