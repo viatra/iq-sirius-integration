@@ -99,9 +99,45 @@ public class CommandHandler extends AbstractHandler {
 			targetURI = URI.createPlatformResourceURI("/hu.bme.mit.inf.concerto.telecare.example.tdk.sample/model/tc_400.telecare", true);
 			copyModel(resourceSet, sourceURI, targetURI, 400);
 			
-//			// 10000x
-//			targetURI = URI.createPlatformResourceURI("/hu.bme.mit.inf.concerto.telecare.example.tdk.sample/model/tc_10000.telecare", true);
-//			copyModel(resourceSet, sourceURI, targetURI, 10000);
+			// 500x
+			targetURI = URI.createPlatformResourceURI("/hu.bme.mit.inf.concerto.telecare.example.tdk.sample/model/tc_500.telecare", true);
+			copyModel(resourceSet, sourceURI, targetURI, 500);
+
+			// 750x
+			targetURI = URI.createPlatformResourceURI("/hu.bme.mit.inf.concerto.telecare.example.tdk.sample/model/tc_750.telecare", true);
+			copyModel(resourceSet, sourceURI, targetURI, 750);
+
+			// 1000x
+			targetURI = URI.createPlatformResourceURI("/hu.bme.mit.inf.concerto.telecare.example.tdk.sample/model/tc_1000.telecare", true);
+			copyModel(resourceSet, sourceURI, targetURI, 1000);
+
+			// 1500x
+			targetURI = URI.createPlatformResourceURI("/hu.bme.mit.inf.concerto.telecare.example.tdk.sample/model/tc_1500.telecare", true);
+			copyModel(resourceSet, sourceURI, targetURI, 1500);
+
+			// 2000x
+			targetURI = URI.createPlatformResourceURI("/hu.bme.mit.inf.concerto.telecare.example.tdk.sample/model/tc_2000.telecare", true);
+			copyModel(resourceSet, sourceURI, targetURI, 2000);
+
+			// 3000x
+			targetURI = URI.createPlatformResourceURI("/hu.bme.mit.inf.concerto.telecare.example.tdk.sample/model/tc_3000.telecare", true);
+			copyModel(resourceSet, sourceURI, targetURI, 3000);
+			
+			// 4000x
+			targetURI = URI.createPlatformResourceURI("/hu.bme.mit.inf.concerto.telecare.example.tdk.sample/model/tc_4000.telecare", true);
+			copyModel(resourceSet, sourceURI, targetURI, 4000);
+
+			// 5000x
+			targetURI = URI.createPlatformResourceURI("/hu.bme.mit.inf.concerto.telecare.example.tdk.sample/model/tc_5000.telecare", true);
+			copyModel(resourceSet, sourceURI, targetURI, 5000);
+			
+			// 7500x
+			targetURI = URI.createPlatformResourceURI("/hu.bme.mit.inf.concerto.telecare.example.tdk.sample/model/tc_7500.telecare", true);
+			copyModel(resourceSet, sourceURI, targetURI, 7500);
+			
+			// 10000x
+			targetURI = URI.createPlatformResourceURI("/hu.bme.mit.inf.concerto.telecare.example.tdk.sample/model/tc_10000.telecare", true);
+			copyModel(resourceSet, sourceURI, targetURI, 10000);
 			
 			System.out.println("EOF CREATE MODELS");
 		} else if (COMMAND_MEASURE.equals(commandId)) {			

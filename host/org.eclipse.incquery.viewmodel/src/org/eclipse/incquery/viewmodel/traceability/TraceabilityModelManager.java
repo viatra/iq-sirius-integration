@@ -219,6 +219,11 @@ public class TraceabilityModelManager {
 		return TraceabilityFactory.eINSTANCE.createAttributeTarget();
 	}
 	
+	// TODO: remove!!!!
+	public Traceability getTraceability() {
+		return traceability;
+	}
+	
 	// TODO: unused? Remove?
 	public Trace getTrace(EObject target) {
 		try {

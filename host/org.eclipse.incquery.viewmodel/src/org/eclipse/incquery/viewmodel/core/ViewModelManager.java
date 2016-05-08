@@ -32,6 +32,7 @@ import org.eclipse.incquery.viewmodel.traceability.util.HiddenParametersQuerySpe
 import org.eclipse.viatra.query.patternlanguage.emf.specification.SpecificationBuilder;
 import org.eclipse.viatra.query.patternlanguage.patternLanguage.Pattern;
 import org.eclipse.viatra.query.patternlanguage.patternLanguage.PatternModel;
+import org.eclipse.viatra.query.runtime.api.AdvancedViatraQueryEngine;
 import org.eclipse.viatra.query.runtime.api.IPatternMatch;
 import org.eclipse.viatra.query.runtime.api.IQuerySpecification;
 import org.eclipse.viatra.query.runtime.api.ViatraQueryEngine;
@@ -88,7 +89,7 @@ public class ViewModelManager {
 	private AbstractRuleProvider ruleProvider;
 	
 	// ViatraQueryEngine for the transformation
-	private ViatraQueryEngine viatraQueryEngine;
+	private AdvancedViatraQueryEngine viatraQueryEngine;
 
 	// Transformation initializer instance
 	private TransformationInitializer transformationInitializer;
@@ -260,7 +261,7 @@ public class ViewModelManager {
 		}
 		
 		if (viatraQueryEngine == null) {
-			viatraQueryEngine = ViatraQueryEngine.on(new EMFScope(configurationModel.getSourceModel()));
+			viatraQueryEngine = AdvancedViatraQueryEngine.createUnmanagedEngine(new EMFScope(configurationModel.getSourceModel()));
 		}
 		
 		FixedPriorityConflictResolver conflictResolver = ConflictResolvers.createFixedPriorityResolver();
@@ -378,6 +379,11 @@ public class ViewModelManager {
 		if (executionSchema != null) {
 			executionSchema.dispose();
 		}
+		
+		if (viatraQueryEngine != null) {
+			viatraQueryEngine.wipe();
+			viatraQueryEngine.dispose();
+		}
 	}
 	
 	/**
@@ -400,7 +406,24 @@ public class ViewModelManager {
 		
 		return null;
 	}
-	
+
+	/**
+	 * 
+	 * @return The {@link TransactionalEditingDomain} for the source model, if it's exist,
+	 * 	otherwise null
+	 */
+	public TransactionalEditingDomain getSourceTransactionalEditingDomain() {
+		return sourceTransactionalEditingDomain;
+	}
+
+	/**
+	 * Sets the {@link TransactionalEditingDomain} for the source model
+	 * @param sourceTransactionalEditingDomain
+	 */
+	public void setSourceTransactionalEditingDomain(TransactionalEditingDomain sourceTransactionalEditingDomain) {
+		this.sourceTransactionalEditingDomain = sourceTransactionalEditingDomain;
+	}
+
 	/**
 	 * 
 	 * @return The {@link TransactionalEditingDomain} for the target model if it's exist,
@@ -408,6 +431,14 @@ public class ViewModelManager {
 	 */
 	public TransactionalEditingDomain getTargetTransactionalEditingDomain() {
 		return this.targetTransactionalEditingDomain;
+	}
+
+	/**
+	 * Sets the {@link TransactionalEditingDomain} for the target model
+	 * @param targetTransactionalEditingDomain
+	 */
+	public void setTargetTransactionalEditingDomain(TransactionalEditingDomain targetTransactionalEditingDomain) {
+		this.targetTransactionalEditingDomain = targetTransactionalEditingDomain;
 	}
 	
 	/**
@@ -451,7 +482,7 @@ public class ViewModelManager {
 		return viatraQueryEngine;
 	}
 	
-	public void setViatraQueryEngine(ViatraQueryEngine viatraQueryEngine) {
+	public void setViatraQueryEngine(AdvancedViatraQueryEngine viatraQueryEngine) {
 		this.viatraQueryEngine = viatraQueryEngine;
 	}
 

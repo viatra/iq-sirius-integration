@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding="ASCII"?>
+<telecare:TelecareSystem xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:telecare="http://hu.bme.mit.inf.concerto/telecare/example/tdk/1.0">
+  <sensors name="BloodPressureMonitor1" connectedTo="//@gateways.0">
+    <measurementTypes name="BloodPressureMonitor1 - Systole" minInterval="10" measurement="//@gateways.0/@triggers.0/@triggeredEvents.0"/>
+    <measurementTypes name="BloodPressureMonitor1 - Diastole" minInterval="10" measurement="//@gateways.0/@triggers.0/@triggeredEvents.1"/>
+    <measurementTypes name="BloodPressureMonitor1 - Pulse" minInterval="10" measurement="//@gateways.0/@triggers.0/@triggeredEvents.2"/>
+  </sensors>
+  <sensors name="BloodGlucoseMeter1">
+    <measurementTypes name="BloodGlucoseMeter1 - Blood Glucose Level" minInterval="180"/>
+  </sensors>
+  <sensors name="Accelerometer1">
+    <measurementTypes name="Accelerometer1 - Acceleration" minInterval="5"/>
+  </sensors>
+  <sensors name="WeightScale1" connectedTo="//@gateways.0">
+    <measurementTypes name="WeightScale1 - Body Weight" minInterval="1440" measurement="//@gateways.0/@triggers.3/@triggeredEvents.0"/>
+    <measurementTypes name="WeightScale1 - Body Fat" minInterval="1440" measurement="//@gateways.0/@triggers.3/@triggeredEvents.1"/>
+  </sensors>
+  <sensors name="SmartPhone1" connectedTo="//@gateways.0">
+    <measurementTypes name="SmartPhone1 - Acceleration" minInterval="5" measurement="//@gateways.0/@triggers.1/@triggeredEvents.0"/>
+    <measurementTypes name="SmartPhone1 - Orientation" minInterval="5"/>
+    <measurementTypes name="SmartPhone1 - Pulse" minInterval="10" measurement="//@gateways.0/@triggers.0/@triggeredEvents.3"/>
+  </sensors>
+  <sensors name="BloodPressureMonitor1" connectedTo="//@gateways.2">
+    <measurementTypes name="BloodPressureMonitor1 - Systole" minInterval="10" measurement="//@gateways.2/@triggers.0/@triggeredEvents.0"/>
+    <measurementTypes name="BloodPressureMonitor1 - Diastole" minInterval="10" measurement="//@gateways.2/@triggers.0/@triggeredEvents.1"/>
+    <measurementTypes name="BloodPressureMonitor1 - Pulse" minInterval="10" measurement="//@gateways.2/@triggers.0/@triggeredEvents.2"/>
+  </sensors>
+  <sensors name="BloodGlucoseMeter1">
+    <measurementTypes name="BloodGlucoseMeter1 - Blood Glucose Level" minInterval="180"/>
+  </sensors>
+  <sensors name="Accelerometer1">
+    <measurementTypes name="Accelerometer1 - Acceleration" minInterval="5"/>
+  </sensors>
+  <sensors name="WeightScale1" connectedTo="//@gateways.2">
+    <measurementTypes name="WeightScale1 - Body Weight" minInterval="1440" measurement="//@gateways.2/@triggers.3/@triggeredEvents.0"/>
+    <measurementTypes name="WeightScale1 - Body Fat" minInterval="1440" measurement="//@gateways.2/@triggers.3/@triggeredEvents.1"/>
+  </sensors>
+  <sensors name="SmartPhone1" connectedTo="//@gateways.2">
+    <measurementTypes name="SmartPhone1 - Acceleration" minInterval="5" measurement="//@gateways.2/@triggers.1/@triggeredEvents.0"/>
+    <measurementTypes name="SmartPhone1 - Orientation" minInterval="5"/>
+    <measurementTypes name="SmartPhone1 - Pulse" minInterval="10" measurement="//@gateways.2/@triggers.0/@triggeredEvents.3"/>
+  </sensors>
+  <sensors name="BloodPressureMonitor1" connectedTo="//@gateways.4">
+    <measurementTypes name="BloodPressureMonitor1 - Systole" minInterval="10" measurement="//@gateways.4/@triggers.0/@triggeredEvents.0"/>
+    <measurementTypes name="BloodPressureMonitor1 - Diastole" minInterval="10" measurement="//@gateways.4/@triggers.0/@triggeredEvents.1"/>
+    <measurementTypes name="BloodPressureMonitor1 - Pulse" minInterval="10" measurement="//@gateways.4/@triggers.0/@triggeredEvents.2"/>
+  </sensors>
+  <sensors name="BloodGlucoseMeter1">
+    <measurementTypes name="BloodGlucoseMeter1 - Blood Glucose Level" minInterval="180"/>
+  </sensors>
+  <sensors name="Accelerometer1">
+    <measurementTypes name="Accelerometer1 - Acceleration" minInterval="5"/>
+  </sensors>
+  <sensors name="WeightScale1" connectedTo="//@gateways.4">
+    <measurementTypes name="WeightScale1 - Body Weight" minInterval="1440" measurement="//@gateways.4/@triggers.3/@triggeredEvents.0"/>
+    <measurementTypes name="WeightScale1 - Body Fat" minInterval="1440" measurement="//@gateways.4/@triggers.3/@triggeredEvents.1"/>
+  </sensors>
+  <sensors name="SmartPhone1" connectedTo="//@gateways.4">
+    <measurementTypes name="SmartPhone1 - Acceleration" minInterval="5" measurement="//@gateways.4/@triggers.1/@triggeredEvents.0"/>
+    <measurementTypes name="SmartPhone1 - Orientation" minInterval="5"/>
+    <measurementTypes name="SmartPhone1 - Pulse" minInterval="10" measurement="//@gateways.4/@triggers.0/@triggeredEvents.3"/>
+  </sensors>
+  <sensors name="BloodPressureMonitor1" connectedTo="//@gateways.6">
+    <measurementTypes name="BloodPressureMonitor1 - Systole" minInterval="10" measurement="//@gateways.6/@triggers.0/@triggeredEvents.0"/>
+    <measurementTypes name="BloodPressureMonitor1 - Diastole" minInterval="10" measurement="//@gateways.6/@triggers.0/@triggeredEvents.1"/>
+    <measurementTypes name="BloodPressureMonitor1 - Pulse" minInterval="10" measurement="//@gateways.6/@triggers.0/@triggeredEvents.2"/>
+  </sensors>
+  <sensors name="BloodGlucoseMeter1">
+    <measurementTypes name="BloodGlucoseMeter1 - Blood Glucose Level" minInterval="180"/>
+  </sensors>
+  <sensors name="Accelerometer1">
+    <measurementTypes name="Accelerometer1 - Acceleration" minInterval="5"/>
+  </sensors>
+  <sensors name="WeightScale1" connectedTo="//@gateways.6">
+    <measurementTypes name="WeightScale1 - Body Weight" minInterval="1440" measurement="//@gateways.6/@triggers.3/@triggeredEvents.0"/>
+    <measurementTypes name="WeightScale1 - Body Fat" minInterval="1440" measurement="//@gateways.6/@triggers.3/@triggeredEvents.1"/>
+  </sensors>
+  <sensors name="SmartPhone1" connectedTo="//@gateways.6">
+    <measurementTypes name="SmartPhone1 - Acceleration" minInterval="5" measurement="//@gateways.6/@triggers.1/@triggeredEvents.0"/>
+    <measurementTypes name="SmartPhone1 - Orientation" minInterval="5"/>
+    <measurementTypes name="SmartPhone1 - Pulse" minInterval="10" measurement="//@gateways.6/@triggers.0/@triggeredEvents.3"/>
+  </sensors>
+  <sensors name="BloodPressureMonitor1" connectedTo="//@gateways.8">
+    <measurementTypes name="BloodPressureMonitor1 - Systole" minInterval="10" measurement="//@gateways.8/@triggers.0/@triggeredEvents.0"/>
+    <measurementTypes name="BloodPressureMonitor1 - Diastole" minInterval="10" measurement="//@gateways.8/@triggers.0/@triggeredEvents.1"/>
+    <measurementTypes name="BloodPressureMonitor1 - Pulse" minInterval="10" measurement="//@gateways.8/@triggers.0/@triggeredEvents.2"/>
+  </sensors>
+  <sensors name="BloodGlucoseMeter1">
+    <measurementTypes name="BloodGlucoseMeter1 - Blood Glucose Level" minInterval="180"/>
+  </sensors>
+  <sensors name="Accelerometer1">
+    <measurementTypes name="Accelerometer1 - Acceleration" minInterval="5"/>
+  </sensors>
+  <sensors name="WeightScale1" connectedTo="//@gateways.8">
+    <measurementTypes name="WeightScale1 - Body Weight" minInterval="1440" measurement="//@gateways.8/@triggers.3/@triggeredEvents.0"/>
+    <measurementTypes name="WeightScale1 - Body Fat" minInterval="1440" measurement="//@gateways.8/@triggers.3/@triggeredEvents.1"/>
+  </sensors>
+  <sensors name="SmartPhone1" connectedTo="//@gateways.8">
+    <measurementTypes name="SmartPhone1 - Acceleration" minInterval="5" measurement="//@gateways.8/@triggers.1/@triggeredEvents.0"/>
+    <measurementTypes name="SmartPhone1 - Orientation" minInterval="5"/>
+    <measurementTypes name="SmartPhone1 - Pulse" minInterval="10" measurement="//@gateways.8/@triggers.0/@triggeredEvents.3"/>
+  </sensors>
+  <sensors name="BloodPressureMonitor1" connectedTo="//@gateways.10">
+    <measurementTypes name="BloodPressureMonitor1 - Systole" minInterval="10" measurement="//@gateways.10/@triggers.0/@triggeredEvents.0"/>
+    <measurementTypes name="BloodPressureMonitor1 - Diastole" minInterval="10" measurement="//@gateways.10/@triggers.0/@triggeredEvents.1"/>
+    <measurementTypes name="BloodPressureMonitor1 - Pulse" minInterval="10" measurement="//@gateways.10/@triggers.0/@triggeredEvents.2"/>
+  </sensors>
+  <sensors name="BloodGlucoseMeter1">
+    <measurementTypes name="BloodGlucoseMeter1 - Blood Glucose Level" minInterval="180"/>
+  </sensors>
+  <sensors name="Accelerometer1">
+    <measurementTypes name="Accelerometer1 - Acceleration" minInterval="5"/>
+  </sensors>
+  <sensors name="WeightScale1" connectedTo="//@gateways.10">
+    <measurementTypes name="WeightScale1 - Body Weight" minInterval="1440" measurement="//@gateways.10/@triggers.3/@triggeredEvents.0"/>
+    <measurementTypes name="WeightScale1 - Body Fat" minInterval="1440" measurement="//@gateways.10/@triggers.3/@triggeredEvents.1"/>
+  </sensors>
+  <sensors name="SmartPhone1" connectedTo="//@gateways.10">
+    <measurementTypes name="SmartPhone1 - Acceleration" minInterval="5" measurement="//@gateways.10/@triggers.1/@triggeredEvents.0"/>
+    <measurementTypes name="SmartPhone1 - Orientation" minInterval="5"/>
+    <measurementTypes name="SmartPhone1 - Pulse" minInterval="10" measurement="//@gateways.10/@triggers.0/@triggeredEvents.3"/>
+  </sensors>
+  <sensors name="BloodPressureMonitor1" connectedTo="//@gateways.12">
+    <measurementTypes name="BloodPressureMonitor1 - Systole" minInterval="10" measurement="//@gateways.12/@triggers.0/@triggeredEvents.0"/>
+    <measurementTypes name="BloodPressureMonitor1 - Diastole" minInterval="10" measurement="//@gateways.12/@triggers.0/@triggeredEvents.1"/>
+    <measurementTypes name="BloodPressureMonitor1 - Pulse" minInterval="10" measurement="//@gateways.12/@triggers.0/@triggeredEvents.2"/>
+  </sensors>
+  <sensors name="BloodGlucoseMeter1">
+    <measurementTypes name="BloodGlucoseMeter1 - Blood Glucose Level" minInterval="180"/>
+  </sensors>
+  <sensors name="Accelerometer1">
+    <measurementTypes name="Accelerometer1 - Acceleration" minInterval="5"/>
+  </sensors>
+  <sensors name="WeightScale1" connectedTo="//@gateways.12">
+    <measurementTypes name="WeightScale1 - Body Weight" minInterval="1440" measurement="//@gateways.12/@triggers.3/@triggeredEvents.0"/>
+    <measurementTypes name="WeightScale1 - Body Fat" minInterval="1440" measurement="//@gateways.12/@triggers.3/@triggeredEvents.1"/>
+  </sensors>
+  <sensors name="SmartPhone1" connectedTo="//@gateways.12">
+    <measurementTypes name="SmartPhone1 - Acceleration" minInterval="5" measurement="//@gateways.12/@triggers.1/@triggeredEvents.0"/>
+    <measurementTypes name="SmartPhone1 - Orientation" minInterval="5"/>
+    <measurementTypes name="SmartPhone1 - Pulse" minInterval="10" measurement="//@gateways.12/@triggers.0/@triggeredEvents.3"/>
+  </sensors>
+  <sensors name="BloodPressureMonitor1" connectedTo="//@gateways.14">
+    <measurementTypes name="BloodPressureMonitor1 - Systole" minInterval="10" measurement="//@gateways.14/@triggers.0/@triggeredEvents.0"/>
+    <measurementTypes name="BloodPressureMonitor1 - Diastole" minInterval="10" measurement="//@gateways.14/@triggers.0/@triggeredEvents.1"/>
+    <measurementTypes name="BloodPressureMonitor1 - Pulse" minInterval="10" measurement="//@gateways.14/@triggers.0/@triggeredEvents.2"/>
+  </sensors>
+  <sensors name="BloodGlucoseMeter1">
+    <measurementTypes name="BloodGlucoseMeter1 - Blood Glucose Level" minInterval="180"/>
+  </sensors>
+  <sensors name="Accelerometer1">
+    <measurementTypes name="Accelerometer1 - Acceleration" minInterval="5"/>
+  </sensors>
+  <sensors name="WeightScale1" connectedTo="//@gateways.14">
+    <measurementTypes name="WeightScale1 - Body Weight" minInterval="1440" measurement="//@gateways.14/@triggers.3/@triggeredEvents.0"/>
+    <measurementTypes name="WeightScale1 - Body Fat" minInterval="1440" measurement="//@gateways.14/@triggers.3/@triggeredEvents.1"/>
+  </sensors>
+  <sensors name="SmartPhone1" connectedTo="//@gateways.14">
+    <measurementTypes name="SmartPhone1 - Acceleration" minInterval="5" measurement="//@gateways.14/@triggers.1/@triggeredEvents.0"/>
+    <measurementTypes name="SmartPhone1 - Orientation" minInterval="5"/>
+    <measurementTypes name="SmartPhone1 - Pulse" minInterval="10" measurement="//@gateways.14/@triggers.0/@triggeredEvents.3"/>
+  </sensors>
+  <sensors name="BloodPressureMonitor1" connectedTo="//@gateways.16">
+    <measurementTypes name="BloodPressureMonitor1 - Systole" minInterval="10" measurement="//@gateways.16/@triggers.0/@triggeredEvents.0"/>
+    <measurementTypes name="BloodPressureMonitor1 - Diastole" minInterval="10" measurement="//@gateways.16/@triggers.0/@triggeredEvents.1"/>
+    <measurementTypes name="BloodPressureMonitor1 - Pulse" minInterval="10" measurement="//@gateways.16/@triggers.0/@triggeredEvents.2"/>
+  </sensors>
+  <sensors name="BloodGlucoseMeter1">
+    <measurementTypes name="BloodGlucoseMeter1 - Blood Glucose Level" minInterval="180"/>
+  </sensors>
+  <sensors name="Accelerometer1">
+    <measurementTypes name="Accelerometer1 - Acceleration" minInterval="5"/>
+  </sensors>
+  <sensors name="WeightScale1" connectedTo="//@gateways.16">
+    <measurementTypes name="WeightScale1 - Body Weight" minInterval="1440" measurement="//@gateways.16/@triggers.3/@triggeredEvents.0"/>
+    <measurementTypes name="WeightScale1 - Body Fat" minInterval="1440" measurement="//@gateways.16/@triggers.3/@triggeredEvents.1"/>
+  </sensors>
+  <sensors name="SmartPhone1" connectedTo="//@gateways.16">
+    <measurementTypes name="SmartPhone1 - Acceleration" minInterval="5" measurement="//@gateways.16/@triggers.1/@triggeredEvents.0"/>
+    <measurementTypes name="SmartPhone1 - Orientation" minInterval="5"/>
+    <measurementTypes name="SmartPhone1 - Pulse" minInterval="10" measurement="//@gateways.16/@triggers.0/@triggeredEvents.3"/>
+  </sensors>
+  <sensors name="BloodPressureMonitor1" connectedTo="//@gateways.18">
+    <measurementTypes name="BloodPressureMonitor1 - Systole" minInterval="10" measurement="//@gateways.18/@triggers.0/@triggeredEvents.0"/>
+    <measurementTypes name="BloodPressureMonitor1 - Diastole" minInterval="10" measurement="//@gateways.18/@triggers.0/@triggeredEvents.1"/>
+    <measurementTypes name="BloodPressureMonitor1 - Pulse" minInterval="10" measurement="//@gateways.18/@triggers.0/@triggeredEvents.2"/>
+  </sensors>
+  <sensors name="BloodGlucoseMeter1">
+    <measurementTypes name="BloodGlucoseMeter1 - Blood Glucose Level" minInterval="180"/>
+  </sensors>
+  <sensors name="Accelerometer1">
+    <measurementTypes name="Accelerometer1 - Acceleration" minInterval="5"/>
+  </sensors>
+  <sensors name="WeightScale1" connectedTo="//@gateways.18">
+    <measurementTypes name="WeightScale1 - Body Weight" minInterval="1440" measurement="//@gateways.18/@triggers.3/@triggeredEvents.0"/>
+    <measurementTypes name="WeightScale1 - Body Fat" minInterval="1440" measurement="//@gateways.18/@triggers.3/@triggeredEvents.1"/>
+  </sensors>
+  <sensors name="SmartPhone1" connectedTo="//@gateways.18">
+    <measurementTypes name="SmartPhone1 - Acceleration" minInterval="5" measurement="//@gateways.18/@triggers.1/@triggeredEvents.0"/>
+    <measurementTypes name="SmartPhone1 - Orientation" minInterval="5"/>
+    <measurementTypes name="SmartPhone1 - Pulse" minInterval="10" measurement="//@gateways.18/@triggers.0/@triggeredEvents.3"/>
+  </sensors>
+  <hosts name="Host1"/>
+  <hosts name="Host2"/>
+  <hosts name="Host3"/>
+  <hosts name="Host1"/>
+  <hosts name="Host2"/>
+  <hosts name="Host3"/>
+  <hosts name="Host1"/>
+  <hosts name="Host2"/>
+  <hosts name="Host3"/>
+  <hosts name="Host1"/>
+  <hosts name="Host2"/>
+  <hosts name="Host3"/>
+  <hosts name="Host1"/>
+  <hosts name="Host2"/>
+  <hosts name="Host3"/>
+  <hosts name="Host1"/>
+  <hosts name="Host2"/>
+  <hosts name="Host3"/>
+  <hosts name="Host1"/>
+  <hosts name="Host2"/>
+  <hosts name="Host3"/>
+  <hosts name="Host1"/>
+  <hosts name="Host2"/>
+  <hosts name="Host3"/>
+  <hosts name="Host1"/>
+  <hosts name="Host2"/>
+  <hosts name="Host3"/>
+  <hosts name="Host1"/>
+  <hosts name="Host2"/>
+  <hosts name="Host3"/>
+  <gateways name="gateway1" sensors="//@sensors.0 //@sensors.3 //@sensors.4">
+    <triggers xsi:type="telecare:FixedIntervalTrigger" name="FIT (10 minutes)" interval="10">
+      <triggeredEvents xsi:type="telecare:Measurement" name="FIT (10 minutes) - BloodPressureMonitor1 - Systole" measurementType="//@sensors.0/@measurementTypes.0"/>
+      <triggeredEvents xsi:type="telecare:Measurement" name="FIT (10 minutes) - BloodPressureMonitor1 - Diastole" measurementType="//@sensors.0/@measurementTypes.1"/>
+      <triggeredEvents xsi:type="telecare:Measurement" name="FIT (10 minutes) - BloodPressureMonitor1 - Pulse" measurementType="//@sensors.0/@measurementTypes.2"/>
+      <triggeredEvents xsi:type="telecare:Measurement" name="FIT (10 minutes) - SmartPhone1 - Pulse" measurementType="//@sensors.4/@measurementTypes.2"/>
+    </triggers>
+    <triggers xsi:type="telecare:FixedIntervalTrigger" name="FIT (5 minutes)" interval="5">
+      <triggeredEvents xsi:type="telecare:Measurement" name="FIT (5 minutes) - SmartPhone1 - Acceleration" measurementType="//@sensors.4/@measurementTypes.0"/>
+      <triggeredEvents xsi:type="telecare:Measurement" name="FIT (5 minutes) - SmartPhone1 - Orientation"/>
+    </triggers>
+    <triggers xsi:type="telecare:FixedIntervalTrigger" name="FIT (180 minutes)" interval="180"/>
+    <triggers xsi:type="telecare:FixedIntervalTrigger" name="FIT (1 day)" interval="1440">
+      <triggeredEvents xsi:type="telecare:Measurement" name="FIT (1 day) - WeightScale1 - Body weight" measurementType="//@sensors.3/@measurementTypes.0"/>
+      <triggeredEvents xsi:type="telecare:Measurement" name="FIT (1 day) - WeightScale1 - Body fat" measurementType="//@sensors.3/@measurementTypes.1"/>
+    </triggers>
+    <triggers xsi:type="telecare:EventCompletedTrigger" name="ECT (Host1)" triggeredBy="//@gateways.0/@triggers.0/@triggeredEvents.0 //@gateways.0/@triggers.0/@triggeredEvents.1 //@gateways.0/@triggers.0/@triggeredEvents.2 //@gateways.0/@triggers.3/@triggeredEvents.0 //@gateways.0/@triggers.3/@triggeredEvents.1">
+      <triggeredEvents xsi:type="telecare:ReportingEvent" name="RE (Host1)" address="//@hosts.0"/>
+    </triggers>
+    <triggers xsi:type="telecare:EventCompletedTrigger" name="ECT (Host2)" triggeredBy="//@gateways.0/@triggers.0/@triggeredEvents.3 //@gateways.0/@triggers.1/@triggeredEvents.0 //@gateways.0/@triggers.1/@triggeredEvents.1 //@gateways.0/@triggers.3/@triggeredEvents.0 //@gateways.0/@triggers.3/@triggeredEvents.1">
+      <triggeredEvents xsi:type="telecare:ReportingEvent" name="RE (Host2)" address="//@hosts.1"/>
+    </triggers>
+  </gateways>
+  <gateways name="gateway2">
+    <triggers xsi:type="telecare:EventCompletedTrigger" name="ECT (-)"/>
+  </gateways>
+  <gateways name="gateway1" sensors="//@sensors.5 //@sensors.8 //@sensors.9">
+    <triggers xsi:type="telecare:FixedIntervalTrigger" name="FIT (10 minutes)" interval="10">
+      <triggeredEvents xsi:type="telecare:Measurement" name="FIT (10 minutes) - BloodPressureMonitor1 - Systole" measurementType="//@sensors.5/@measurementTypes.0"/>
+      <triggeredEvents xsi:type="telecare:Measurement" name="FIT (10 minutes) - BloodPressureMonitor1 - Diastole" measurementType="//@sensors.5/@measurementTypes.1"/>
+      <triggeredEvents xsi:type="telecare:Measurement" name="FIT (10 minutes) - BloodPressureMonitor1 - Pulse" measurementType="//@sensors.5/@measurementTypes.2"/>
+      <triggeredEvents xsi:type="telecare:Measurement" name="FIT (10 minutes) - SmartPhone1 - Pulse" measurementType="//@sensors.9/@measurementTypes.2"/>
+    </triggers>
+    <triggers xsi:type="telecare:FixedIntervalTrigger" name="FIT (5 minutes)" interval="5">
+      <triggeredEvents xsi:type="telecare:Measurement" name="FIT (5 minutes) - SmartPhone1 - Acceleration" measurementType="//@sensors.9/@measurementTypes.0"/>
+      <triggeredEvents xsi:type="telecare:Measurement" name="FIT (5 minutes) - SmartPhone1 - Orientation"/>
+    </triggers>
+    <triggers xsi:type="telecare:FixedIntervalTrigger" name="FIT (180 minutes)" interval="180"/>
+    <triggers xsi:type="telecare:FixedIntervalTrigger" name="FIT (1 day)" interval="1440">
+      <triggeredEvents xsi:type="telecare:Measurement" name="FIT (1 day) - WeightScale1 - Body weight" measurementType="//@sensors.8/@measurementTypes.0"/>
+      <triggeredEvents xsi:type="telecare:Measurement" name="FIT (1 day) - WeightScale1 - Body fat" measurementType="//@sensors.8/@measurementTypes.1"/>
+    </triggers>
+    <triggers xsi:type="telecare:EventCompletedTrigger" name="ECT (Host1)" triggeredBy="//@gateways.2/@triggers.0/@triggeredEvents.0 //@gateways.2/@triggers.0/@triggeredEvents.1 //@gateways.2/@triggers.0/@triggeredEvents.2 //@gateways.2/@triggers.3/@triggeredEvents.0 //@gateways.2/@triggers.3/@triggeredEvents.1">
+      <triggeredEvents xsi:type="telecare:ReportingEvent" name="RE (Host1)" address="//@hosts.3"/>
+    </triggers>
+    <triggers xsi:type="telecare:EventCompletedTrigger" name="ECT (Host2)" triggeredBy="//@gateways.2/@triggers.0/@triggeredEvents.3 //@gateways.2/@triggers.1/@triggeredEvents.0 //@gateways.2/@triggers.1/@triggeredEvents.1 //@gateways.2/@triggers.3/@triggeredEvents.0 //@gateways.2/@triggers.3/@triggeredEvents.1">
+      <triggeredEvents xsi:type="telecare:ReportingEvent" name="RE (Host2)" address="//@hosts.4"/>
+    </triggers>
+  </gateways>
+  <gateways name="gateway2">
+    <triggers xsi:type="telecare:EventCompletedTrigger" name="ECT (-)"/>
+  </gateways>
+  <gateways name="gateway1" sensors="//@sensors.10 //@sensors.13 //@sensors.14">
+    <triggers xsi:type="telecare:FixedIntervalTrigger" name="FIT (10 minutes)" interval="10">
+      <triggeredEvents xsi:type="telecare:Measurement" name="FIT (10 minutes) - BloodPressureMonitor1 - Systole" measurementType="//@sensors.10/@measurementTypes.0"/>
+      <triggeredEvents xsi:type="telecare:Measurement" name="FIT (10 minutes) - BloodPressureMonitor1 - Diastole" measurementType="//@sensors.10/@measurementTypes.1"/>
+      <triggeredEvents xsi:type="telecare:Measurement" name="FIT (10 minutes) - BloodPressureMonitor1 - Pulse" measurementType="//@sensors.10/@measurementTypes.2"/>
+      <triggeredEvents xsi:type="telecare:Measurement" name="FIT (10 minutes) - SmartPhone1 - Pulse" measurementType="//@sensors.14/@measurementTypes.2"/>
+    </triggers>
+    <triggers xsi:type="telecare:FixedIntervalTrigger" name="FIT (5 minutes)" interval="5">
+      <triggeredEvents xsi:type="telecare:Measurement" name="FIT (5 minutes) - SmartPhone1 - Acceleration" measurementType="//@sensors.14/@measurementTypes.0"/>
+      <triggeredEvents xsi:type="telecare:Measurement" name="FIT (5 minutes) - SmartPhone1 - Orientation"/>
+    </triggers>
+    <triggers xsi:type="telecare:FixedIntervalTrigger" name="FIT (180 minutes)" interval="180"/>
+    <triggers xsi:type="telecare:FixedIntervalTrigger" name="FIT (1 day)" interval="1440">
+      <triggeredEvents xsi:type="telecare:Measurement" name="FIT (1 day) - WeightScale1 - Body weight" measurementType="//@sensors.13/@measurementTypes.0"/>
+      <triggeredEvents xsi:type="telecare:Measurement" name="FIT (1 day) - WeightScale1 - Body fat" measurementType="//@sensors.13/@measurementTypes.1"/>
+    </triggers>
+    <triggers xsi:type="telecare:EventCompletedTrigger" name="ECT (Host1)" triggeredBy="//@gateways.4/@triggers.0/@triggeredEvents.0 //@gateways.4/@triggers.0/@triggeredEvents.1 //@gateways.4/@triggers.0/@triggeredEvents.2 //@gateways.4/@triggers.3/@triggeredEvents.0 //@gateways.4/@triggers.3/@triggeredEvents.1">
+      <triggeredEvents xsi:type="telecare:ReportingEvent" name="RE (Host1)" address="//@hosts.6"/>
+    </triggers>
+    <triggers xsi:type="telecare:EventCompletedTrigger" name="ECT (Host2)" triggeredBy="//@gateways.4/@triggers.0/@triggeredEvents.3 //@gateways.4/@triggers.1/@triggeredEvents.0 //@gateways.4/@triggers.1/@triggeredEvents.1 //@gateways.4/@triggers.3/@triggeredEvents.0 //@gateways.4/@triggers.3/@triggeredEvents.1">
+      <triggeredEvents xsi:type="telecare:ReportingEvent" name="RE (Host2)" address="//@hosts.7"/>
+    </triggers>
+  </gateways>
+  <gateways name="gateway2">
+    <triggers xsi:type="telecare:EventCompletedTrigger" name="ECT (-)"/>
+  </gateways>
+  <gateways name="gateway1" sensors="//@sensors.15 //@sensors.18 //@sensors.19">
+    <triggers xsi:type="telecare:FixedIntervalTrigger" name="FIT (10 minutes)" interval="10">
+      <triggeredEvents xsi:type="telecare:Measurement" name="FIT (10 minutes) - BloodPressureMonitor1 - Systole" measurementType="//@sensors.15/@measurementTypes.0"/>
+      <triggeredEvents xsi:type="telecare:Measurement" name="FIT (10 minutes) - BloodPressureMonitor1 - Diastole" measurementType="//@sensors.15/@measurementTypes.1"/>
+      <triggeredEvents xsi:type="telecare:Measurement" name="FIT (10 minutes) - BloodPressureMonitor1 - Pulse" measurementType="//@sensors.15/@measurementTypes.2"/>
+      <triggeredEvents xsi:type="telecare:Measurement" name="FIT (10 minutes) - SmartPhone1 - Pulse" measurementType="//@sensors.19/@measurementTypes.2"/>
+    </triggers>
+    <triggers xsi:type="telecare:FixedIntervalTrigger" name="FIT (5 minutes)" interval="5">
+      <triggeredEvents xsi:type="telecare:Measurement" name="FIT (5 minutes) - SmartPhone1 - Acceleration" measurementType="//@sensors.19/@measurementTypes.0"/>
+      <triggeredEvents xsi:type="telecare:Measurement" name="FIT (5 minutes) - SmartPhone1 - Orientation"/>
+    </triggers>
+    <triggers xsi:type="telecare:FixedIntervalTrigger" name="FIT (180 minutes)" interval="180"/>
+    <triggers xsi:type="telecare:FixedIntervalTrigger" name="FIT (1 day)" interval="1440">
+      <triggeredEvents xsi:type="telecare:Measurement" name="FIT (1 day) - WeightScale1 - Body weight" measurementType="//@sensors.18/@measurementTypes.0"/>
+      <triggeredEvents xsi:type="telecare:Measurement" name="FIT (1 day) - WeightScale1 - Body fat" measurementType="//@sensors.18/@measurementTypes.1"/>
+    </triggers>
+    <triggers xsi:type="telecare:EventCompletedTrigger" name="ECT (Host1)" triggeredBy="//@gateways.6/@triggers.0/@triggeredEvents.0 //@gateways.6/@triggers.0/@triggeredEvents.1 //@gateways.6/@triggers.0/@triggeredEvents.2 //@gateways.6/@triggers.3/@triggeredEvents.0 //@gateways.6/@triggers.3/@triggeredEvents.1">
+      <triggeredEvents xsi:type="telecare:ReportingEvent" name="RE (Host1)" address="//@hosts.9"/>
+    </triggers>
+    <triggers xsi:type="telecare:EventCompletedTrigger" name="ECT (Host2)" triggeredBy="//@gateways.6/@triggers.0/@triggeredEvents.3 //@gateways.6/@triggers.1/@triggeredEvents.0 //@gateways.6/@triggers.1/@triggeredEvents.1 //@gateways.6/@triggers.3/@triggeredEvents.0 //@gateways.6/@triggers.3/@triggeredEvents.1">
+      <triggeredEvents xsi:type="telecare:ReportingEvent" name="RE (Host2)" address="//@hosts.10"/>
+    </triggers>
+  </gateways>
+  <gateways name="gateway2">
+    <triggers xsi:type="telecare:EventCompletedTrigger" name="ECT (-)"/>
+  </gateways>
+  <gateways name="gateway1" sensors="//@sensors.20 //@sensors.23 //@sensors.24">
+    <triggers xsi:type="telecare:FixedIntervalTrigger" name="FIT (10 minutes)" interval="10">
+      <triggeredEvents xsi:type="telecare:Measurement" name="FIT (10 minutes) - BloodPressureMonitor1 - Systole" measurementType="//@sensors.20/@measurementTypes.0"/>
+      <triggeredEvents xsi:type="telecare:Measurement" name="FIT (10 minutes) - BloodPressureMonitor1 - Diastole" measurementType="//@sensors.20/@measurementTypes.1"/>
+      <triggeredEvents xsi:type="telecare:Measurement" name="FIT (10 minutes) - BloodPressureMonitor1 - Pulse" measurementType="//@sensors.20/@measurementTypes.2"/>
+      <triggeredEvents xsi:type="telecare:Measurement" name="FIT (10 minutes) - SmartPhone1 - Pulse" measurementType="//@sensors.24/@measurementTypes.2"/>
+    </triggers>
+    <triggers xsi:type="telecare:FixedIntervalTrigger" name="FIT (5 minutes)" interval="5">
+      <triggeredEvents xsi:type="telecare:Measurement" name="FIT (5 minutes) - SmartPhone1 - Acceleration" measurementType="//@sensors.24/@measurementTypes.0"/>
+      <triggeredEvents xsi:type="telecare:Measurement" name="FIT (5 minutes) - SmartPhone1 - Orientation"/>
+    </triggers>
+    <triggers xsi:type="telecare:FixedIntervalTrigger" name="FIT (180 minutes)" interval="180"/>
+    <triggers xsi:type="telecare:FixedIntervalTrigger" name="FIT (1 day)" interval="1440">
+      <triggeredEvents xsi:type="telecare:Measurement" name="FIT (1 day) - WeightScale1 - Body weight" measurementType="//@sensors.23/@measurementTypes.0"/>
+      <triggeredEvents xsi:type="telecare:Measurement" name="FIT (1 day) - WeightScale1 - Body fat" measurementType="//@sensors.23/@measurementTypes.1"/>
+    </triggers>
+    <triggers xsi:type="telecare:EventCompletedTrigger" name="ECT (Host1)" triggeredBy="//@gateways.8/@triggers.0/@triggeredEvents.0 //@gateways.8/@triggers.0/@triggeredEvents.1 //@gateways.8/@triggers.0/@triggeredEvents.2 //@gateways.8/@triggers.3/@triggeredEvents.0 //@gateways.8/@triggers.3/@triggeredEvents.1">
+      <triggeredEvents xsi:type="telecare:ReportingEvent" name="RE (Host1)" address="//@hosts.12"/>
+    </triggers>
+    <triggers xsi:type="telecare:EventCompletedTrigger" name="ECT (Host2)" triggeredBy="//@gateways.8/@triggers.0/@triggeredEvents.3 //@gateways.8/@triggers.1/@triggeredEvents.0 //@gateways.8/@triggers.1/@triggeredEvents.1 //@gateways.8/@triggers.3/@triggeredEvents.0 //@gateways.8/@triggers.3/@triggeredEvents.1">
+      <triggeredEvents xsi:type="telecare:ReportingEvent" name="RE (Host2)" address="//@hosts.13"/>
+    </triggers>
+  </gateways>
+  <gateways name="gateway2">
+    <triggers xsi:type="telecare:EventCompletedTrigger" name="ECT (-)"/>
+  </gateways>
+  <gateways name="gateway1" sensors="//@sensors.25 //@sensors.28 //@sensors.29">
+    <triggers xsi:type="telecare:FixedIntervalTrigger" name="FIT (10 minutes)" interval="10">
+      <triggeredEvents xsi:type="telecare:Measurement" name="FIT (10 minutes) - BloodPressureMonitor1 - Systole" measurementType="//@sensors.25/@measurementTypes.0"/>
+      <triggeredEvents xsi:type="telecare:Measurement" name="FIT (10 minutes) - BloodPressureMonitor1 - Diastole" measurementType="//@sensors.25/@measurementTypes.1"/>
+      <triggeredEvents xsi:type="telecare:Measurement" name="FIT (10 minutes) - BloodPressureMonitor1 - Pulse" measurementType="//@sensors.25/@measurementTypes.2"/>
+      <triggeredEvents xsi:type="telecare:Measurement" name="FIT (10 minutes) - SmartPhone1 - Pulse" measurementType="//@sensors.29/@measurementTypes.2"/>
+    </triggers>
+    <triggers xsi:type="telecare:FixedIntervalTrigger" name="FIT (5 minutes)" interval="5">
+      <triggeredEvents xsi:type="telecare:Measurement" name="FIT (5 minutes) - SmartPhone1 - Acceleration" measurementType="//@sensors.29/@measurementTypes.0"/>
+      <triggeredEvents xsi:type="telecare:Measurement" name="FIT (5 minutes) - SmartPhone1 - Orientation"/>
+    </triggers>
+    <triggers xsi:type="telecare:FixedIntervalTrigger" name="FIT (180 minutes)" interval="180"/>
+    <triggers xsi:type="telecare:FixedIntervalTrigger" name="FIT (1 day)" interval="1440">
+      <triggeredEvents xsi:type="telecare:Measurement" name="FIT (1 day) - WeightScale1 - Body weight" measurementType="//@sensors.28/@measurementTypes.0"/>
+      <triggeredEvents xsi:type="telecare:Measurement" name="FIT (1 day) - WeightScale1 - Body fat" measurementType="//@sensors.28/@measurementTypes.1"/>
+    </triggers>
+    <triggers xsi:type="telecare:EventCompletedTrigger" name="ECT (Host1)" triggeredBy="//@gateways.10/@triggers.0/@triggeredEvents.0 //@gateways.10/@triggers.0/@triggeredEvents.1 //@gateways.10/@triggers.0/@triggeredEvents.2 //@gateways.10/@triggers.3/@triggeredEvents.0 //@gateways.10/@triggers.3/@triggeredEvents.1">
+      <triggeredEvents xsi:type="telecare:ReportingEvent" name="RE (Host1)" address="//@hosts.15"/>
+    </triggers>
+    <triggers xsi:type="telecare:EventCompletedTrigger" name="ECT (Host2)" triggeredBy="//@gateways.10/@triggers.0/@triggeredEvents.3 //@gateways.10/@triggers.1/@triggeredEvents.0 //@gateways.10/@triggers.1/@triggeredEvents.1 //@gateways.10/@triggers.3/@triggeredEvents.0 //@gateways.10/@triggers.3/@triggeredEvents.1">
+      <triggeredEvents xsi:type="telecare:ReportingEvent" name="RE (Host2)" address="//@hosts.16"/>
+    </triggers>
+  </gateways>
+  <gateways name="gateway2">
+    <triggers xsi:type="telecare:EventCompletedTrigger" name="ECT (-)"/>
+  </gateways>
+  <gateways name="gateway1" sensors="//@sensors.30 //@sensors.33 //@sensors.34">
+    <triggers xsi:type="telecare:FixedIntervalTrigger" name="FIT (10 minutes)" interval="10">
+      <triggeredEvents xsi:type="telecare:Measurement" name="FIT (10 minutes) - BloodPressureMonitor1 - Systole" measurementType="//@sensors.30/@measurementTypes.0"/>
+      <triggeredEvents xsi:type="telecare:Measurement" name="FIT (10 minutes) - BloodPressureMonitor1 - Diastole" measurementType="//@sensors.30/@measurementTypes.1"/>
+      <triggeredEvents xsi:type="telecare:Measurement" name="FIT (10 minutes) - BloodPressureMonitor1 - Pulse" measurementType="//@sensors.30/@measurementTypes.2"/>
+      <triggeredEvents xsi:type="telecare:Measurement" name="FIT (10 minutes) - SmartPhone1 - Pulse" measurementType="//@sensors.34/@measurementTypes.2"/>
+    </triggers>
+    <triggers xsi:type="telecare:FixedIntervalTrigger" name="FIT (5 minutes)" interval="5">
+      <triggeredEvents xsi:type="telecare:Measurement" name="FIT (5 minutes) - SmartPhone1 - Acceleration" measurementType="//@sensors.34/@measurementTypes.0"/>
+      <triggeredEvents xsi:type="telecare:Measurement" name="FIT (5 minutes) - SmartPhone1 - Orientation"/>
+    </triggers>
+    <triggers xsi:type="telecare:FixedIntervalTrigger" name="FIT (180 minutes)" interval="180"/>
+    <triggers xsi:type="telecare:FixedIntervalTrigger" name="FIT (1 day)" interval="1440">
+      <triggeredEvents xsi:type="telecare:Measurement" name="FIT (1 day) - WeightScale1 - Body weight" measurementType="//@sensors.33/@measurementTypes.0"/>
+      <triggeredEvents xsi:type="telecare:Measurement" name="FIT (1 day) - WeightScale1 - Body fat" measurementType="//@sensors.33/@measurementTypes.1"/>
+    </triggers>
+    <triggers xsi:type="telecare:EventCompletedTrigger" name="ECT (Host1)" triggeredBy="//@gateways.12/@triggers.0/@triggeredEvents.0 //@gateways.12/@triggers.0/@triggeredEvents.1 //@gateways.12/@triggers.0/@triggeredEvents.2 //@gateways.12/@triggers.3/@triggeredEvents.0 //@gateways.12/@triggers.3/@triggeredEvents.1">
+      <triggeredEvents xsi:type="telecare:ReportingEvent" name="RE (Host1)" address="//@hosts.18"/>
+    </triggers>
+    <triggers xsi:type="telecare:EventCompletedTrigger" name="ECT (Host2)" triggeredBy="//@gateways.12/@triggers.0/@triggeredEvents.3 //@gateways.12/@triggers.1/@triggeredEvents.0 //@gateways.12/@triggers.1/@triggeredEvents.1 //@gateways.12/@triggers.3/@triggeredEvents.0 //@gateways.12/@triggers.3/@triggeredEvents.1">
+      <triggeredEvents xsi:type="telecare:ReportingEvent" name="RE (Host2)" address="//@hosts.19"/>
+    </triggers>
+  </gateways>
+  <gateways name="gateway2">
+    <triggers xsi:type="telecare:EventCompletedTrigger" name="ECT (-)"/>
+  </gateways>
+  <gateways name="gateway1" sensors="//@sensors.35 //@sensors.38 //@sensors.39">
+    <triggers xsi:type="telecare:FixedIntervalTrigger" name="FIT (10 minutes)" interval="10">
+      <triggeredEvents xsi:type="telecare:Measurement" name="FIT (10 minutes) - BloodPressureMonitor1 - Systole" measurementType="//@sensors.35/@measurementTypes.0"/>
+      <triggeredEvents xsi:type="telecare:Measurement" name="FIT (10 minutes) - BloodPressureMonitor1 - Diastole" measurementType="//@sensors.35/@measurementTypes.1"/>
+      <triggeredEvents xsi:type="telecare:Measurement" name="FIT (10 minutes) - BloodPressureMonitor1 - Pulse" measurementType="//@sensors.35/@measurementTypes.2"/>
+      <triggeredEvents xsi:type="telecare:Measurement" name="FIT (10 minutes) - SmartPhone1 - Pulse" measurementType="//@sensors.39/@measurementTypes.2"/>
+    </triggers>
+    <triggers xsi:type="telecare:FixedIntervalTrigger" name="FIT (5 minutes)" interval="5">
+      <triggeredEvents xsi:type="telecare:Measurement" name="FIT (5 minutes) - SmartPhone1 - Acceleration" measurementType="//@sensors.39/@measurementTypes.0"/>
+      <triggeredEvents xsi:type="telecare:Measurement" name="FIT (5 minutes) - SmartPhone1 - Orientation"/>
+    </triggers>
+    <triggers xsi:type="telecare:FixedIntervalTrigger" name="FIT (180 minutes)" interval="180"/>
+    <triggers xsi:type="telecare:FixedIntervalTrigger" name="FIT (1 day)" interval="1440">
+      <triggeredEvents xsi:type="telecare:Measurement" name="FIT (1 day) - WeightScale1 - Body weight" measurementType="//@sensors.38/@measurementTypes.0"/>
+      <triggeredEvents xsi:type="telecare:Measurement" name="FIT (1 day) - WeightScale1 - Body fat" measurementType="//@sensors.38/@measurementTypes.1"/>
+    </triggers>
+    <triggers xsi:type="telecare:EventCompletedTrigger" name="ECT (Host1)" triggeredBy="//@gateways.14/@triggers.0/@triggeredEvents.0 //@gateways.14/@triggers.0/@triggeredEvents.1 //@gateways.14/@triggers.0/@triggeredEvents.2 //@gateways.14/@triggers.3/@triggeredEvents.0 //@gateways.14/@triggers.3/@triggeredEvents.1">
+      <triggeredEvents xsi:type="telecare:ReportingEvent" name="RE (Host1)" address="//@hosts.21"/>
+    </triggers>
+    <triggers xsi:type="telecare:EventCompletedTrigger" name="ECT (Host2)" triggeredBy="//@gateways.14/@triggers.0/@triggeredEvents.3 //@gateways.14/@triggers.1/@triggeredEvents.0 //@gateways.14/@triggers.1/@triggeredEvents.1 //@gateways.14/@triggers.3/@triggeredEvents.0 //@gateways.14/@triggers.3/@triggeredEvents.1">
+      <triggeredEvents xsi:type="telecare:ReportingEvent" name="RE (Host2)" address="//@hosts.22"/>
+    </triggers>
+  </gateways>
+  <gateways name="gateway2">
+    <triggers xsi:type="telecare:EventCompletedTrigger" name="ECT (-)"/>
+  </gateways>
+  <gateways name="gateway1" sensors="//@sensors.40 //@sensors.43 //@sensors.44">
+    <triggers xsi:type="telecare:FixedIntervalTrigger" name="FIT (10 minutes)" interval="10">
+      <triggeredEvents xsi:type="telecare:Measurement" name="FIT (10 minutes) - BloodPressureMonitor1 - Systole" measurementType="//@sensors.40/@measurementTypes.0"/>
+      <triggeredEvents xsi:type="telecare:Measurement" name="FIT (10 minutes) - BloodPressureMonitor1 - Diastole" measurementType="//@sensors.40/@measurementTypes.1"/>
+      <triggeredEvents xsi:type="telecare:Measurement" name="FIT (10 minutes) - BloodPressureMonitor1 - Pulse" measurementType="//@sensors.40/@measurementTypes.2"/>
+      <triggeredEvents xsi:type="telecare:Measurement" name="FIT (10 minutes) - SmartPhone1 - Pulse" measurementType="//@sensors.44/@measurementTypes.2"/>
+    </triggers>
+    <triggers xsi:type="telecare:FixedIntervalTrigger" name="FIT (5 minutes)" interval="5">
+      <triggeredEvents xsi:type="telecare:Measurement" name="FIT (5 minutes) - SmartPhone1 - Acceleration" measurementType="//@sensors.44/@measurementTypes.0"/>
+      <triggeredEvents xsi:type="telecare:Measurement" name="FIT (5 minutes) - SmartPhone1 - Orientation"/>
+    </triggers>
+    <triggers xsi:type="telecare:FixedIntervalTrigger" name="FIT (180 minutes)" interval="180"/>
+    <triggers xsi:type="telecare:FixedIntervalTrigger" name="FIT (1 day)" interval="1440">
+      <triggeredEvents xsi:type="telecare:Measurement" name="FIT (1 day) - WeightScale1 - Body weight" measurementType="//@sensors.43/@measurementTypes.0"/>
+      <triggeredEvents xsi:type="telecare:Measurement" name="FIT (1 day) - WeightScale1 - Body fat" measurementType="//@sensors.43/@measurementTypes.1"/>
+    </triggers>
+    <triggers xsi:type="telecare:EventCompletedTrigger" name="ECT (Host1)" triggeredBy="//@gateways.16/@triggers.0/@triggeredEvents.0 //@gateways.16/@triggers.0/@triggeredEvents.1 //@gateways.16/@triggers.0/@triggeredEvents.2 //@gateways.16/@triggers.3/@triggeredEvents.0 //@gateways.16/@triggers.3/@triggeredEvents.1">
+      <triggeredEvents xsi:type="telecare:ReportingEvent" name="RE (Host1)" address="//@hosts.24"/>
+    </triggers>
+    <triggers xsi:type="telecare:EventCompletedTrigger" name="ECT (Host2)" triggeredBy="//@gateways.16/@triggers.0/@triggeredEvents.3 //@gateways.16/@triggers.1/@triggeredEvents.0 //@gateways.16/@triggers.1/@triggeredEvents.1 //@gateways.16/@triggers.3/@triggeredEvents.0 //@gateways.16/@triggers.3/@triggeredEvents.1">
+      <triggeredEvents xsi:type="telecare:ReportingEvent" name="RE (Host2)" address="//@hosts.25"/>
+    </triggers>
+  </gateways>
+  <gateways name="gateway2">
+    <triggers xsi:type="telecare:EventCompletedTrigger" name="ECT (-)"/>
+  </gateways>
+  <gateways name="gateway1" sensors="//@sensors.45 //@sensors.48 //@sensors.49">
+    <triggers xsi:type="telecare:FixedIntervalTrigger" name="FIT (10 minutes)" interval="10">
+      <triggeredEvents xsi:type="telecare:Measurement" name="FIT (10 minutes) - BloodPressureMonitor1 - Systole" measurementType="//@sensors.45/@measurementTypes.0"/>
+      <triggeredEvents xsi:type="telecare:Measurement" name="FIT (10 minutes) - BloodPressureMonitor1 - Diastole" measurementType="//@sensors.45/@measurementTypes.1"/>
+      <triggeredEvents xsi:type="telecare:Measurement" name="FIT (10 minutes) - BloodPressureMonitor1 - Pulse" measurementType="//@sensors.45/@measurementTypes.2"/>
+      <triggeredEvents xsi:type="telecare:Measurement" name="FIT (10 minutes) - SmartPhone1 - Pulse" measurementType="//@sensors.49/@measurementTypes.2"/>
+    </triggers>
+    <triggers xsi:type="telecare:FixedIntervalTrigger" name="FIT (5 minutes)" interval="5">
+      <triggeredEvents xsi:type="telecare:Measurement" name="FIT (5 minutes) - SmartPhone1 - Acceleration" measurementType="//@sensors.49/@measurementTypes.0"/>
+      <triggeredEvents xsi:type="telecare:Measurement" name="FIT (5 minutes) - SmartPhone1 - Orientation"/>
+    </triggers>
+    <triggers xsi:type="telecare:FixedIntervalTrigger" name="FIT (180 minutes)" interval="180"/>
+    <triggers xsi:type="telecare:FixedIntervalTrigger" name="FIT (1 day)" interval="1440">
+      <triggeredEvents xsi:type="telecare:Measurement" name="FIT (1 day) - WeightScale1 - Body weight" measurementType="//@sensors.48/@measurementTypes.0"/>
+      <triggeredEvents xsi:type="telecare:Measurement" name="FIT (1 day) - WeightScale1 - Body fat" measurementType="//@sensors.48/@measurementTypes.1"/>
+    </triggers>
+    <triggers xsi:type="telecare:EventCompletedTrigger" name="ECT (Host1)" triggeredBy="//@gateways.18/@triggers.0/@triggeredEvents.0 //@gateways.18/@triggers.0/@triggeredEvents.1 //@gateways.18/@triggers.0/@triggeredEvents.2 //@gateways.18/@triggers.3/@triggeredEvents.0 //@gateways.18/@triggers.3/@triggeredEvents.1">
+      <triggeredEvents xsi:type="telecare:ReportingEvent" name="RE (Host1)" address="//@hosts.27"/>
+    </triggers>
+    <triggers xsi:type="telecare:EventCompletedTrigger" name="ECT (Host2)" triggeredBy="//@gateways.18/@triggers.0/@triggeredEvents.3 //@gateways.18/@triggers.1/@triggeredEvents.0 //@gateways.18/@triggers.1/@triggeredEvents.1 //@gateways.18/@triggers.3/@triggeredEvents.0 //@gateways.18/@triggers.3/@triggeredEvents.1">
+      <triggeredEvents xsi:type="telecare:ReportingEvent" name="RE (Host2)" address="//@hosts.28"/>
+    </triggers>
+  </gateways>
+  <gateways name="gateway2">
+    <triggers xsi:type="telecare:EventCompletedTrigger" name="ECT (-)"/>
+  </gateways>
+</telecare:TelecareSystem>
