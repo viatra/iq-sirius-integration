@@ -17,9 +17,9 @@ import org.eclipse.incquery.viewmodel.traceability.patterns.util.GetTraceByAttri
 import org.eclipse.incquery.viewmodel.traceability.patterns.util.GetTraceByEObjectTargetQuerySpecification;
 import org.eclipse.incquery.viewmodel.traceability.patterns.util.GetTraceByReferenceTargetQuerySpecification;
 import org.eclipse.incquery.viewmodel.traceability.patterns.util.GetTraceSourceQuerySpecification;
+import org.eclipse.viatra.query.runtime.api.AdvancedViatraQueryEngine;
 import org.eclipse.viatra.query.runtime.api.IPatternMatch;
 import org.eclipse.viatra.query.runtime.api.IQuerySpecification;
-import org.eclipse.viatra.query.runtime.api.ViatraQueryEngine;
 import org.eclipse.viatra.query.runtime.emf.EMFScope;
 import org.eclipse.viatra.query.runtime.exception.ViatraQueryException;
 
@@ -34,7 +34,7 @@ import com.google.common.collect.Sets;
  */
 public class TraceabilityModelManager {
 	
-	private ViatraQueryEngine engine;
+	private AdvancedViatraQueryEngine engine;
 
 	private Traceability traceability;
 	
@@ -45,7 +45,7 @@ public class TraceabilityModelManager {
 	public TraceabilityModelManager() throws ViatraQueryException {
 		this.traceability = createTraceabilityEObject();
 		
-		this.engine = ViatraQueryEngine.on(new EMFScope(traceability));
+		this.engine = AdvancedViatraQueryEngine.createUnmanagedEngine(new EMFScope(traceability)); //ViatraQueryEngine.on(new EMFScope(traceability));
 		
 		this.patternMatchToTracesMap = Maps.newHashMap();
 	}
@@ -217,6 +217,16 @@ public class TraceabilityModelManager {
 	
 	public AttributeTarget createAttributeTargetEObject() {
 		return TraceabilityFactory.eINSTANCE.createAttributeTarget();
+	}
+	
+	public void dispose() {
+		if (engine != null) {
+			engine.dispose();
+		}
+		
+		patternMatchToTracesMap.clear();
+		
+		traceability = null;
 	}
 	
 	// TODO: remove!!!!

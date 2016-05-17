@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" name="view" version="10.0.0.201505222000">
-  <ownedViewpoints name="vp_telecare_tdk_view" label="Telecare TDK View" modelFileExtension="telecare">
-    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="dd_diagram" label="Diagram" domainClass="tdktelecareview.ViewModel" rootExpression="incquery:initTransformation[configModelURI=platform:/resource/hu.bme.mit.concerto.telecare.example.tdk.view.design/model/telecareview_transformation.configuration]" enablePopupBars="true">
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" name="view" version="10.1.3.201511131800">
+  <ownedViewpoints name="vp_telecare_tdk_view" modelFileExtension="telecare">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="dd_tdk_view_transformation" domainClass="tdktelecareview.ViewModel" rootExpression="incquery:initTransformation[configModelURI=platform:/resource/hu.bme.mit.concerto.telecare.example.tdk.view.design/model/telecareview_transformation.configuration]" enablePopupBars="true">
       <metamodel href="http://hu.bme.mit.inf.concerto/telecare/example/tdk/view/1.0#/"/>
       <defaultLayer name="Default">
-        <nodeMappings name="sn_server" label="Server" semanticCandidatesExpression="[self.servers /]" domainClass="tdktelecareview.Server">
+        <nodeMappings name="sn_server_transformation" semanticCandidatesExpression="[self.servers /]" domainClass="tdktelecareview.Server">
           <style xsi:type="style:WorkspaceImageDescription" showIcon="false" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/hu.bme.mit.concerto.telecare.example.tdk.view.design/img/server.png">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
-        <nodeMappings name="sn_sensor" label="Sensor" semanticCandidatesExpression="[self.sensors /]" domainClass="tdktelecareview.Sensor">
+        <nodeMappings name="sn_sensor_transformation" semanticCandidatesExpression="[self.sensors /]" domainClass="tdktelecareview.Sensor">
           <style xsi:type="style:WorkspaceImageDescription" showIcon="false" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/hu.bme.mit.concerto.telecare.example.tdk.view.design/img/sensor.png">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
-        <nodeMappings name="sn_trigger" label="Trigger" semanticCandidatesExpression="[self.triggers /]" domainClass="tdktelecareview.Tigger">
+        <nodeMappings name="sn_trigger_transformation" semanticCandidatesExpression="[self.triggers /]" domainClass="tdktelecareview.Tigger">
           <style xsi:type="style:WorkspaceImageDescription" showIcon="false" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/hu.bme.mit.concerto.telecare.example.tdk.view.design/img/trigger.png">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -24,7 +24,7 @@
         </nodeMappings>
       </defaultLayer>
       <additionalLayers name="layer_sensor_connectedTo" label="Sensor ConnectedTo">
-        <edgeMappings name="rbe_sensor_connectedTo" label="Sensor ConnectedTo" sourceMapping="//@ownedViewpoints[name='vp_telecare_tdk_view']/@ownedRepresentations[name='dd_diagram']/@defaultLayer/@nodeMappings[name='sn_sensor']" targetMapping="//@ownedViewpoints[name='vp_telecare_tdk_view']/@ownedRepresentations[name='dd_diagram']/@defaultLayer/@nodeMappings[name='sn_server']" targetFinderExpression="[self.connectedTo /]">
+        <edgeMappings name="rbe_sensor_connectedTo_transformation" sourceMapping="//@ownedViewpoints[name='vp_telecare_tdk_view']/@ownedRepresentations[name='dd_tdk_view_transformation']/@defaultLayer/@nodeMappings[name='sn_sensor_transformation']" targetMapping="//@ownedViewpoints[name='vp_telecare_tdk_view']/@ownedRepresentations[name='dd_tdk_view_transformation']/@defaultLayer/@nodeMappings[name='sn_server_transformation']" targetFinderExpression="[self.connectedTo /]">
           <style sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription>
@@ -34,7 +34,93 @@
         </edgeMappings>
       </additionalLayers>
       <additionalLayers name="layer_sensor_triggeredBy" label="Sensor TriggeredBy">
-        <edgeMappings name="rbe_sensor_connectedTo" label="Sensor ConnectedTo" sourceMapping="//@ownedViewpoints[name='vp_telecare_tdk_view']/@ownedRepresentations[name='dd_diagram']/@defaultLayer/@nodeMappings[name='sn_sensor']" targetMapping="//@ownedViewpoints[name='vp_telecare_tdk_view']/@ownedRepresentations[name='dd_diagram']/@defaultLayer/@nodeMappings[name='sn_trigger']" targetFinderExpression="[self.triggeredBy /]">
+        <edgeMappings name="rbe_sensor_connectedTo_transformation" sourceMapping="//@ownedViewpoints[name='vp_telecare_tdk_view']/@ownedRepresentations[name='dd_tdk_view_transformation']/@defaultLayer/@nodeMappings[name='sn_sensor_transformation']" targetMapping="//@ownedViewpoints[name='vp_telecare_tdk_view']/@ownedRepresentations[name='dd_tdk_view_transformation']/@defaultLayer/@nodeMappings[name='sn_trigger_transformation']" targetFinderExpression="[self.triggeredBy /]">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+      </additionalLayers>
+    </ownedRepresentations>
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="dd_tdk_view_ir" domainClass="tdktelecareview.ViewModel" enablePopupBars="true">
+      <metamodel href="http://hu.bme.mit.inf.concerto/telecare/example/tdk/view/1.0#/"/>
+      <defaultLayer name="Default">
+        <nodeMappings name="sn_server_ir" semanticCandidatesExpression="vql:@Return(parameter=&quot;server&quot;)@Context(parameter=&quot;vm&quot;)pattern element_server(server, vm) {ViewModel.servers(vm, server);}" domainClass="tdktelecareview.Server">
+          <style xsi:type="style:WorkspaceImageDescription" showIcon="false" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/hu.bme.mit.concerto.telecare.example.tdk.view.design/img/server.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="sn_sensor_ir" semanticCandidatesExpression="vql:@Return(parameter=&quot;sensor&quot;)@Context(parameter=&quot;vm&quot;)pattern element_sensor(sensor, vm) {ViewModel.sensors(vm, sensor);}" domainClass="tdktelecareview.Sensor">
+          <style xsi:type="style:WorkspaceImageDescription" showIcon="false" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/hu.bme.mit.concerto.telecare.example.tdk.view.design/img/sensor.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="sn_trigger_ir" semanticCandidatesExpression="vql:@Return(parameter=&quot;trigger&quot;)@Context(parameter=&quot;vm&quot;)pattern element_trigger(trigger, vm) {ViewModel.triggers(vm, trigger);}" domainClass="tdktelecareview.Tigger">
+          <style xsi:type="style:WorkspaceImageDescription" showIcon="false" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/hu.bme.mit.concerto.telecare.example.tdk.view.design/img/trigger.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+      </defaultLayer>
+      <additionalLayers name="layer_sensor_connectedTo" label="Sensor ConnectedTo" activeByDefault="true">
+        <edgeMappings name="rbe_sensor_connectedTo_sr" sourceMapping="//@ownedViewpoints[name='vp_telecare_tdk_view']/@ownedRepresentations[name='dd_tdk_view_ir']/@defaultLayer/@nodeMappings[name='sn_sensor_ir']" targetMapping="//@ownedViewpoints[name='vp_telecare_tdk_view']/@ownedRepresentations[name='dd_tdk_view_ir']/@defaultLayer/@nodeMappings[name='sn_server_ir']" targetFinderExpression="vql:@Return(parameter=&quot;server&quot;)@Context(parameter=&quot;sensor&quot;)pattern ref_sensor_connectedTo(server, sensor) {Sensor.connectedTo(sensor, server);}">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+      </additionalLayers>
+      <additionalLayers name="layer_sensor_triggeredBy" label="Sensor TriggeredBy" activeByDefault="true">
+        <edgeMappings name="rbe_sensor_connectedTo_sr" sourceMapping="//@ownedViewpoints[name='vp_telecare_tdk_view']/@ownedRepresentations[name='dd_tdk_view_ir']/@defaultLayer/@nodeMappings[name='sn_sensor_ir']" targetMapping="//@ownedViewpoints[name='vp_telecare_tdk_view']/@ownedRepresentations[name='dd_tdk_view_ir']/@defaultLayer/@nodeMappings[name='sn_trigger_ir']" targetFinderExpression="vql:@Return(parameter=&quot;trigger&quot;)@Context(parameter=&quot;sensor&quot;)pattern ref_sensor_triggeredBy(trigger, sensor) {Sensor.triggeredBy(sensor, trigger);}">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+      </additionalLayers>
+    </ownedRepresentations>
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="dd_tdk_view_sr" domainClass="tdktelecareview.ViewModel" enablePopupBars="true">
+      <metamodel href="http://hu.bme.mit.inf.concerto/telecare/example/tdk/view/1.0#/"/>
+      <defaultLayer name="Default">
+        <nodeMappings name="sn_server_sr" semanticCandidatesExpression="[self.servers /]" domainClass="tdktelecareview.Server">
+          <style xsi:type="style:WorkspaceImageDescription" showIcon="false" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/hu.bme.mit.concerto.telecare.example.tdk.view.design/img/server.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="sn_sensor_sr" semanticCandidatesExpression="[self.sensors /]" domainClass="tdktelecareview.Sensor">
+          <style xsi:type="style:WorkspaceImageDescription" showIcon="false" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/hu.bme.mit.concerto.telecare.example.tdk.view.design/img/sensor.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="sn_trigger_sr" semanticCandidatesExpression="[self.triggers /]" domainClass="tdktelecareview.Tigger">
+          <style xsi:type="style:WorkspaceImageDescription" showIcon="false" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/hu.bme.mit.concerto.telecare.example.tdk.view.design/img/trigger.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+      </defaultLayer>
+      <additionalLayers name="layer_sensor_connectedTo" label="Sensor ConnectedTo" activeByDefault="true">
+        <edgeMappings name="rbe_sensor_connectedTo_sr" sourceMapping="//@ownedViewpoints[name='vp_telecare_tdk_view']/@ownedRepresentations[name='dd_tdk_view_sr']/@defaultLayer/@nodeMappings[name='sn_sensor_sr']" targetMapping="//@ownedViewpoints[name='vp_telecare_tdk_view']/@ownedRepresentations[name='dd_tdk_view_sr']/@defaultLayer/@nodeMappings[name='sn_server_sr']" targetFinderExpression="[self.connectedTo /]">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+      </additionalLayers>
+      <additionalLayers name="layer_sensor_triggeredBy" label="Sensor TriggeredBy" activeByDefault="true">
+        <edgeMappings name="rbe_sensor_connectedTo_sr" sourceMapping="//@ownedViewpoints[name='vp_telecare_tdk_view']/@ownedRepresentations[name='dd_tdk_view_sr']/@defaultLayer/@nodeMappings[name='sn_sensor_sr']" targetMapping="//@ownedViewpoints[name='vp_telecare_tdk_view']/@ownedRepresentations[name='dd_tdk_view_sr']/@defaultLayer/@nodeMappings[name='sn_trigger_sr']" targetFinderExpression="[self.triggeredBy /]">
           <style sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription>

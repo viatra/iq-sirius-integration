@@ -10,6 +10,7 @@ import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
@@ -18,6 +19,8 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.incquery.viewmodel.configuration.Configuration;
+import org.eclipse.incquery.viewmodel.configuration.Scheduler;
+import org.eclipse.incquery.viewmodel.core.TransformationInitializer;
 import org.eclipse.incquery.viewmodel.core.ViewModelManager;
 import org.eclipse.viatra.query.runtime.exception.ViatraQueryException;
 import org.eclipse.viatra.transformation.runtime.emf.transformation.eventdriven.InconsistentEventSemanticsException;
@@ -150,19 +153,29 @@ public class CommandHandler extends AbstractHandler {
 			
 			try {
 //				measure(configurationModel, 0);
-				measure(configurationModel, 1);
-				
-				measure(configurationModel, 1);
-				measure(configurationModel, 10);
 				measure(configurationModel, 25);
-				measure(configurationModel, 50);
-				measure(configurationModel, 75);
-				measure(configurationModel, 100);
-				measure(configurationModel, 150);
-
+				measure(configurationModel, 25);
+				measure(configurationModel, 25);
+				measure(configurationModel, 25);
+				measure(configurationModel, 25);
+				
+				System.out.println("--------------");
+				
+//				measure(configurationModel, 1);
+//				measure(configurationModel, 10);
+//				measure(configurationModel, 25);
+//				measure(configurationModel, 50);
+//				measure(configurationModel, 75);
+//				measure(configurationModel, 100);
+//				measure(configurationModel, 150);
 //				measure(configurationModel, 200);
+				
 //				measure(configurationModel, 300);
 //				measure(configurationModel, 400);
+//				measure(configurationModel, 500);
+//				measure(configurationModel, 750);
+				
+//				measure(configurationModel, 1000);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -197,9 +210,10 @@ public class CommandHandler extends AbstractHandler {
 			e.printStackTrace();
 		}
 	}
-	
+
 	private void measure(Configuration configurationModel, int type) throws ViatraQueryException, InconsistentEventSemanticsException, InterruptedException, IOException {
-		Iterator it = null;
+//		System.out.println("************* MEASURE - " + type + " *************");
+		
 		long startTS = 0l;
 		long endTS = 0L;
 		long numberOfSourceElements = 0;
@@ -207,109 +221,115 @@ public class CommandHandler extends AbstractHandler {
 		long numberOfTargetElements = 0;
 		long numberOfTargetReferences = 0;
 		
-		ResourceSet modelsRSet = new ResourceSetImpl();
 
 		
 		/* Measurement */
-		configurationModel.setSourceModel(modelsRSet.getResource(URI.createPlatformResourceURI("/hu.bme.mit.inf.concerto.telecare.example.tdk.sample/model/tc_"+type+".telecare", true), true));
-		configurationModel.setTargetModel(modelsRSet.createResource(URI.createPlatformResourceURI("/hu.bme.mit.inf.concerto.telecare.example.tdk.sample/model/out_tc_"+type+".telecare", true)));
 		
 		EventCompletedTrigger ect = null;
 		ReportingEvent re = null;
 		Host h = null;
-		
-		Long[] times = new Long[1];
-		for (int i = 0; i < times.length; i++) {
+
+		int repeat = 5;
+		Long[] openingTimes = new Long[repeat];
+		Long[] addingTimes = new Long[repeat];
+		Long[] removingTimes = new Long[repeat];
+		for (int i = 0; i < repeat; i++) {
+			ResourceSet modelsRSet = new ResourceSetImpl();
+			configurationModel.setScheduler(Scheduler.MANUAL);
+			configurationModel.setSourceModel(modelsRSet.getResource(URI.createPlatformResourceURI("/hu.bme.mit.inf.concerto.telecare.example.tdk.sample/model/tc_"+type+".telecare", true), true));
+			configurationModel.setTargetModel(modelsRSet.createResource(URI.createPlatformResourceURI("/hu.bme.mit.inf.concerto.telecare.example.tdk.sample/model/out_tc_"+type+".telecare", true)));
+
 			startTS = System.nanoTime();
-			ViewModelManager vmm = new ViewModelManager(configurationModel);
+			ViewModelManager vmm = new ViewModelManager(configurationModel, new TransformationInitializer() {
+				
+				@Override
+				public void beforeInitialize(ViewModelManager viewModelManager) {
+					// Nothing to do...
+				}
+				
+				@Override
+				public void afterInitialize(ViewModelManager viewModelManager) {
+					viewModelManager.getExecutionSchema().startUnscheduledExecution();
+				}
+			});
 			vmm.initialize();
 			endTS = System.nanoTime();
-			//vmm.dispose();
-			
-			times[i] = endTS-startTS;
-			
-			System.out.println("Measurement("+type+"x)::"
-					+ "#sourceElements:-"
-					+ "#targetElements:-"
-					+ "time:"+times[i]+"(ns) | "+(double)times[i] / 1000000000+"(s)");
+			openingTimes[i] = endTS-startTS;
+
 			
 			ect = TelecareFactory.eINSTANCE.createEventCompletedTrigger();
+			ect.setName("newECT!!");
 			re = TelecareFactory.eINSTANCE.createReportingEvent();
+			re.setName("newRE!!!");
 			h = TelecareFactory.eINSTANCE.createHost();
-			
-			ect.getTriggeredEvents().add(re);
-			re.setAddress(h);
+			h.setName("newH!!!");
 			
 			
 			startTS = System.nanoTime();
 			((TelecareSystem) configurationModel.getSourceModel().getContents().get(0)).getHosts().add(h);
 			((TelecareSystem) configurationModel.getSourceModel().getContents().get(0)).getGateways().get(0).getTriggers().add(ect);
+			ect.getTriggeredEvents().add(re);
+			re.setAddress(h);
+			vmm.getExecutionSchema().startUnscheduledExecution();
 			endTS = System.nanoTime();
-			System.out.println("Measurement("+type+"x)::"
-					+ "#sourceElements:-"
-					+ "#targetElements:"+numberOfTargetElements+""
-					+ "#targetReferences:"+numberOfTargetReferences+""
-					+ "time(add):"+(endTS-startTS)+"(ns) | "+(double)(endTS-startTS) / 1000000000+"(s)");
+			addingTimes[i] = (endTS-startTS);
 			
 			startTS = System.nanoTime();
 			EcoreUtil.remove(ect);
+			vmm.getExecutionSchema().startUnscheduledExecution();
 			endTS = System.nanoTime();
+			removingTimes[i] = (endTS-startTS);
 			
-			System.out.println("Measurement("+type+"x)::"
-					+ "#sourceElements:-"
-					+ "#targetElements:-"
-					+ "time(remove):"+(endTS-startTS)+"(ns) | "+(double)(endTS-startTS) / 1000000000+"(s)");
+			EcoreUtil.remove(h);
+			vmm.getExecutionSchema().startUnscheduledExecution();
 			
-			vmm.dispose();			
-		}
-		
-		long minTime = Collections.min(Arrays.asList(times));
-		double avgTime = 0;
-		
-		for (int i = 0; i < times.length; i++) {
-			avgTime += times[i];
-		}
-		avgTime = (double)avgTime / times.length;
-		
-		numberOfSourceElements = 0;
-		numberOfSourceReferences = 0;
-		it = configurationModel.getSourceModel().getAllContents();
-		while (it.hasNext()) { 
-			numberOfSourceElements++; 
-			
-			EObject obj = (EObject)it.next();
-			for (EReference ref : obj.eClass().getEAllReferences()) {
-				if (obj.eGet(ref) instanceof EList) {
-					numberOfSourceReferences += ((EList)obj.eGet(ref)).size();
-				} else {
-					if (obj.eGet(ref) != null) numberOfSourceReferences++;
-				}
-			}
-		}
-
-		numberOfTargetElements = 0;
-		numberOfTargetReferences = 0;
-		it = configurationModel.getTargetModel().getAllContents();
-		while (it.hasNext()) {
-			numberOfTargetElements++; 
-			
-			EObject obj = (EObject)it.next();
-			for (EReference ref : obj.eClass().getEAllReferences()) {
-				if (obj.eGet(ref) instanceof EList) {
-					numberOfTargetReferences += ((EList)obj.eGet(ref)).size();
-				} else {
-					if (obj.eGet(ref) != null) numberOfTargetReferences++;
-				}
+			vmm.dispose();
+			if (i < repeat-1) {
+				configurationModel.getSourceModel().unload();
+				configurationModel.getTargetModel().unload();
+				modelsRSet = null;
 			}
 		}
 		
-		System.out.println("Measurement("+type+"x)::"
-				+ "#sourceElements:"+numberOfSourceElements+""
-				+ "#sourceReferences:"+numberOfSourceReferences+""
-				+ "#targetElements:"+numberOfTargetElements+""
-				+ "#targetReferences:"+numberOfTargetReferences+""
-				+ "time(minimum):"+minTime+"(ns) | "+(double)minTime / 1000000000+"(s)"
-				+ "time(average):"+avgTime+"(ns) | "+avgTime / 1000000000+"(s)");
+		int[] modelSizes = null;
+		long minTime_opening = Collections.min(Arrays.asList(openingTimes));
+		long minTime_adding = Collections.min(Arrays.asList(addingTimes));
+		long minTime_removing = Collections.min(Arrays.asList(removingTimes));
+		double avgTime_opening = 0;
+		double avgTime_adding = 0;
+		double avgTime_removing = 0;
+		
+		for (int i = 0; i < repeat; i++) {
+			avgTime_opening += openingTimes[i];
+			avgTime_adding += addingTimes[i];
+			avgTime_removing += removingTimes[i];
+		}
+		avgTime_opening = (double)avgTime_opening / repeat;
+		avgTime_adding = (double)avgTime_adding / repeat;
+		avgTime_removing = (double)avgTime_removing / repeat;
+		
+		modelSizes = getElementAndReferenceNumberInModel(configurationModel.getSourceModel());
+		numberOfSourceElements = modelSizes[0];
+		numberOfSourceReferences = modelSizes[1];
+		
+		modelSizes = getElementAndReferenceNumberInModel(configurationModel.getTargetModel());
+		numberOfTargetElements = modelSizes[0];
+		numberOfTargetReferences = modelSizes[1];
+		
+//		System.out.println("Measurement("+type+"x)::");
+//		System.out.println("#sourceElements:"+numberOfSourceElements);
+//		System.out.println("#sourceReferences:"+numberOfSourceReferences);
+//		System.out.println("#targetElements:"+numberOfTargetElements);
+//		System.out.println("#targetReferences:"+numberOfTargetReferences);
+//		//System.out.println("openingTime(minimum):"+minTime_opening+"(ns) | "+(double)minTime_opening / 1000000+"(ms)");
+//		System.out.println("openingTime(average):"+avgTime_opening+"(ns) | "+avgTime_opening / 1000000+"(ms)");
+//		//System.out.println("addingTime(minimum):"+minTime_adding+"(ns) | "+(double)minTime_adding / 1000000+"(ms)");
+//		System.out.println("addingTime(average):"+avgTime_adding+"(ns) | "+avgTime_adding / 1000000+"(ms)");
+//		//System.out.println("removingTime(minimum):"+minTime_removing+"(ns) | "+(double)minTime_removing / 1000000+"(ms)");
+//		System.out.println("removingTime(average):"+avgTime_removing+"(ns) | "+avgTime_removing / 1000000+"(ms)");
+//		System.out.println();
+		System.out.println("tc_" + type + ".telecare;" + numberOfSourceElements + ";" + numberOfSourceReferences + ";" + numberOfTargetElements + ";" + numberOfTargetReferences + ";" + (avgTime_opening / 1000000) + ";" + (avgTime_adding / 1000000) + ";" + (avgTime_removing / 1000000));
+		
 		/* eof measurement */
 
 		configurationModel.getTargetModel().save(null);
@@ -318,5 +338,25 @@ public class CommandHandler extends AbstractHandler {
 		System.gc();
 		
 		Thread.sleep(2000L);
+	}
+	
+	private int[] getElementAndReferenceNumberInModel(Resource resource) {
+		int numberOfElements = 0;
+		int numberOfReferences = 0;
+		TreeIterator<EObject> it = resource.getAllContents();
+		while (it.hasNext()) { 
+			numberOfElements++; 
+			
+			EObject obj = (EObject)it.next();
+			for (EReference ref : obj.eClass().getEAllReferences()) {
+				if (obj.eGet(ref) instanceof EList) {
+					numberOfReferences += ((EList)obj.eGet(ref)).size();
+				} else {
+					if (obj.eGet(ref) != null) numberOfReferences++;
+				}
+			}
+		}
+		
+		return new int[] {numberOfElements, numberOfReferences};
 	}
 }

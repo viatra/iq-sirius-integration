@@ -384,6 +384,10 @@ public class ViewModelManager {
 			viatraQueryEngine.wipe();
 			viatraQueryEngine.dispose();
 		}
+		
+		if (traceabilityModelManager != null) {
+			traceabilityModelManager.dispose();
+		}
 	}
 	
 	/**
