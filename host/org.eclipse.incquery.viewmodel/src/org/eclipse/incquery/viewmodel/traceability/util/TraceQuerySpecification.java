@@ -3,6 +3,7 @@ package org.eclipse.incquery.viewmodel.traceability.util;
 import java.util.List;
 import java.util.Set;
 
+import org.eclipse.incquery.viewmodel.traceability.Trace;
 import org.eclipse.incquery.viewmodel.traceability.patterns.util.TraceBySourceAndRuleDescriptorIdQuerySpecification;
 import org.eclipse.viatra.query.runtime.api.GenericPatternMatcher;
 import org.eclipse.viatra.query.runtime.api.GenericQuerySpecification;
@@ -20,7 +21,6 @@ import org.eclipse.viatra.query.runtime.matchers.psystem.queries.PParameter;
 import org.eclipse.viatra.query.runtime.matchers.psystem.queries.PQuery;
 import org.eclipse.viatra.query.runtime.matchers.psystem.queries.QueryInitializationException;
 import org.eclipse.viatra.query.runtime.matchers.tuple.FlatTuple;
-import org.eclipse.viatra.transformation.views.traceability.Trace;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;

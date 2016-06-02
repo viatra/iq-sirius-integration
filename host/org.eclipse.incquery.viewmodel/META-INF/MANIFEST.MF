@@ -34,8 +34,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.viatra.query.runtime.matchers,
  org.eclipse.viatra.transformation.runtime.emf,
  org.eclipse.viatra.transformation.evm.transactions,
- org.eclipse.viatra.query.patternlanguage.emf,
- org.eclipse.viatra.transformation.views
+ org.eclipse.viatra.query.patternlanguage.emf
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy
 Import-Package: com.google.common.collect,
