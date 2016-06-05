@@ -18,13 +18,15 @@ public class IncQueryInterpreterProposalProvider implements IProposalProvider {
 	
 	
 	public IncQueryInterpreterProposalProvider() {
-		logger.info("Constructor");
+		// TODO
+		//logger.info("Constructor");
 	}
 
 	@Override
 	public List<ContentProposal> getProposals(IInterpreter interpreter,
 			ContentContext context) {
-		logger.info("getProposals");
+		// TODO
+		//logger.info("getProposals");
 		
 		List<ContentProposal> result = new ArrayList<ContentProposal>();
 		
@@ -47,7 +49,8 @@ public class IncQueryInterpreterProposalProvider implements IProposalProvider {
 	@Override
 	public List<ContentProposal> getProposals(IInterpreter interpreter,
 			ContentInstanceContext context) {
-		logger.info("getProposals-instance context");
+		// TODO
+		//logger.info("getProposals-instance context");
 
 		// TODO Auto-generated method stub
 		return new ArrayList<ContentProposal>();
@@ -55,7 +58,8 @@ public class IncQueryInterpreterProposalProvider implements IProposalProvider {
 
 	@Override
 	public ContentProposal getNewEmtpyExpression() {
-		logger.info("getNewEmptyExpression");
+		// TODO
+		//logger.info("getNewEmptyExpression");
 
 		return new ContentProposal(
 				IncQueryInterpreterConstants.PREFIX,

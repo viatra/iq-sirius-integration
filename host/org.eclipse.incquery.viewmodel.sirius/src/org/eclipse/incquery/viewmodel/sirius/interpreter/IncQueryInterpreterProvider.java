@@ -20,7 +20,8 @@ public class IncQueryInterpreterProvider implements IInterpreterProvider {
 
 	@Override
 	public IInterpreter createInterpreter() {
-		logger.info("Create interpreter...");
+		// TODO
+		//logger.info("Create interpreter...");
 		
 		return interpreter;
 	}
