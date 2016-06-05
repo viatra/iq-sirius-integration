@@ -58,16 +58,13 @@
   <extension id="extension.derived.org.eclipse.incquery.viewmodel.traceability.patterns.trace_referenceSources" point="org.eclipse.viatra.query.runtime.base.wellbehaving.derived.features">
     <wellbehaving-derived-feature classifier-name="Trace" feature-name="referenceSources" package-nsUri="http://org.eclipse.incquery/viewmodel/traceability/3.0"/>
   </extension>
+  <extension id="org.eclipse.incquery.viewmodel.traceability.patterns.Helpers" point="org.eclipse.viatra.query.runtime.queryspecification">
+    <group group="org.eclipse.viatra.query.runtime.extensibility.SingletonExtensionFactory:org.eclipse.incquery.viewmodel.traceability.patterns.Helpers" id="org.eclipse.incquery.viewmodel.traceability.patterns.Helpers"/>
+  </extension>
   <extension id="org.eclipse.incquery.viewmodel.configuration.patterns.Derived" point="org.eclipse.viatra.query.runtime.queryspecification">
     <group group="org.eclipse.viatra.query.runtime.extensibility.SingletonExtensionFactory:org.eclipse.incquery.viewmodel.configuration.patterns.Derived" id="org.eclipse.incquery.viewmodel.configuration.patterns.Derived"/>
   </extension>
   <extension id="org.eclipse.incquery.viewmodel.traceability.patterns.Derived" point="org.eclipse.viatra.query.runtime.queryspecification">
     <group group="org.eclipse.viatra.query.runtime.extensibility.SingletonExtensionFactory:org.eclipse.incquery.viewmodel.traceability.patterns.Derived" id="org.eclipse.incquery.viewmodel.traceability.patterns.Derived"/>
-  </extension>
-  <extension id="org.eclipse.incquery.viewmodel.traceability.patterns.Test" point="org.eclipse.viatra.query.runtime.queryspecification">
-    <group group="org.eclipse.viatra.query.runtime.extensibility.SingletonExtensionFactory:org.eclipse.incquery.viewmodel.traceability.patterns.Test" id="org.eclipse.incquery.viewmodel.traceability.patterns.Test"/>
-  </extension>
-  <extension id="org.eclipse.incquery.viewmodel.traceability.patterns.Helpers" point="org.eclipse.viatra.query.runtime.queryspecification">
-    <group group="org.eclipse.viatra.query.runtime.extensibility.SingletonExtensionFactory:org.eclipse.incquery.viewmodel.traceability.patterns.Helpers" id="org.eclipse.incquery.viewmodel.traceability.patterns.Helpers"/>
   </extension>
 </plugin>
